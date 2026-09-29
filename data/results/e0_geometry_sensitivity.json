@@ -1,0 +1,277 @@
+{
+  "meta": {
+    "doc": "geometry: D-hat and q-hat by share of width-clamped frames per event (0, <= 10 %, > 10 %) and by class;\n     |aspect error| (sprite aspect / GT-box aspect - 1, before the clamp) by camera group.",
+    "camera_groups": "elevated = backdoor, blizzard, boats, boulevard, bungalows, busStation, canoe, fall, fountain01, fountain02, lakeSide, overpass, park, parking, pedestrians, port_0_17fps, skating, snowFall, streetLight, traffic, tramCrossroad_1fps, tunnelExit_0_35fps, turnpike_0_5fps, wetSnow, winterDriveway; LASIESTA and the rest = level (judgement from dataset descriptions, no metadata)"
+  },
+  "by_op": {
+    "OP*": {
+      "op": {
+        "d_min": 32,
+        "K": 16
+      },
+      "by_clamp": {
+        "a_none": {
+          "N": 1,
+          "D_hat": 0.0,
+          "D_num": 0.0,
+          "q_hat": 0.0,
+          "p_hat": 0.0,
+          "twin_recall_app": null,
+          "abs_aspect_err_median": 0.03421802906034688
+        },
+        "c_gt10pct": {
+          "N": 179,
+          "D_hat": 0.0017458100558659217,
+          "D_num": 0.3125,
+          "q_hat": 0.008729050279329608,
+          "p_hat": 0.007332402234636872,
+          "twin_recall_app": 0.7619047619047619,
+          "abs_aspect_err_median": 0.14459665144596645
+        }
+      },
+      "by_kind": {
+        "person": {
+          "N": 114,
+          "D_hat": 0.0,
+          "D_num": 0.0,
+          "q_hat": 0.01206140350877193,
+          "p_hat": 0.008771929824561403,
+          "twin_recall_app": 1.0,
+          "abs_aspect_err_median": 0.12446721473691147
+        },
+        "vehicle": {
+          "N": 66,
+          "D_hat": 0.004734848484848485,
+          "D_num": 0.3125,
+          "q_hat": 0.002840909090909091,
+          "p_hat": 0.004734848484848485,
+          "twin_recall_app": 0.0,
+          "abs_aspect_err_median": 0.2083679204796859
+        }
+      },
+      "by_camera": {
+        "elevated": {
+          "N": 81,
+          "D_hat": 0.0038580246913580245,
+          "D_num": 0.3125,
+          "q_hat": 0.014660493827160493,
+          "p_hat": 0.016203703703703703,
+          "twin_recall_app": 0.7619047619047619,
+          "abs_aspect_err_median": 0.1818040697453917
+        },
+        "level": {
+          "N": 99,
+          "D_hat": 0.0,
+          "D_num": 0.0,
+          "q_hat": 0.003787878787878788,
+          "p_hat": 0.0,
+          "twin_recall_app": null,
+          "abs_aspect_err_median": 0.125
+        }
+      },
+      "by_camera_kind": {
+        "elevated/person": {
+          "N": 20,
+          "abs_aspect_err_median": 0.12081201936465102,
+          "clamp_share_mean": 0.6832216854111325,
+          "q_hat": 0.05,
+          "D_hat": 0.0
+        },
+        "elevated/vehicle": {
+          "N": 61,
+          "abs_aspect_err_median": 0.19948661532819956,
+          "clamp_share_mean": 0.7106459132057138,
+          "q_hat": 0.0030737704918032786,
+          "D_hat": 0.005122950819672131
+        },
+        "level/person": {
+          "N": 94,
+          "abs_aspect_err_median": 0.12446721473691147,
+          "clamp_share_mean": 0.6408214176159562,
+          "q_hat": 0.003989361702127659,
+          "D_hat": 0.0
+        },
+        "level/vehicle": {
+          "N": 5,
+          "abs_aspect_err_median": 0.2976388427003658,
+          "clamp_share_mean": 0.8316359280920498,
+          "q_hat": 0.0,
+          "D_hat": 0.0
+        }
+      }
+    },
+    "challenged": {
+      "op": {
+        "d_min": 16,
+        "K": 16
+      },
+      "by_clamp": {
+        "a_none": {
+          "N": 1,
+          "D_hat": 0.0,
+          "D_num": 0.0,
+          "q_hat": 0.0,
+          "p_hat": 0.0,
+          "twin_recall_app": null,
+          "abs_aspect_err_median": 0.03421802906034688
+        },
+        "c_gt10pct": {
+          "N": 199,
+          "D_hat": 0.009736180904522614,
+          "D_num": 1.9375,
+          "q_hat": 0.04239949748743719,
+          "p_hat": 0.03391959798994975,
+          "twin_recall_app": 0.7129629629629629,
+          "abs_aspect_err_median": 0.15068493150684925
+        }
+      },
+      "by_kind": {
+        "person": {
+          "N": 116,
+          "D_hat": 0.0,
+          "D_num": 0.0,
+          "q_hat": 0.029094827586206896,
+          "p_hat": 0.025323275862068964,
+          "twin_recall_app": 1.0,
+          "abs_aspect_err_median": 0.12461637975159157
+        },
+        "vehicle": {
+          "N": 84,
+          "D_hat": 0.023065476190476192,
+          "D_num": 1.9375,
+          "q_hat": 0.060267857142857144,
+          "p_hat": 0.04538690476190476,
+          "twin_recall_app": 0.4918032786885246,
+          "abs_aspect_err_median": 0.20219989809452454
+        }
+      },
+      "by_camera": {
+        "elevated": {
+          "N": 101,
+          "D_hat": 0.019183168316831683,
+          "D_num": 1.9375,
+          "q_hat": 0.07982673267326733,
+          "p_hat": 0.06683168316831684,
+          "twin_recall_app": 0.7129629629629629,
+          "abs_aspect_err_median": 0.18810557968593378
+        },
+        "level": {
+          "N": 99,
+          "D_hat": 0.0,
+          "D_num": 0.0,
+          "q_hat": 0.003787878787878788,
+          "p_hat": 0.0,
+          "twin_recall_app": null,
+          "abs_aspect_err_median": 0.125
+        }
+      },
+      "by_camera_kind": {
+        "elevated/person": {
+          "N": 22,
+          "abs_aspect_err_median": 0.1286301340467233,
+          "clamp_share_mean": 0.7112222658442512,
+          "q_hat": 0.13636363636363635,
+          "D_hat": 0.0
+        },
+        "elevated/vehicle": {
+          "N": 79,
+          "abs_aspect_err_median": 0.19779693486590033,
+          "clamp_share_mean": 0.703027352673111,
+          "q_hat": 0.06408227848101265,
+          "D_hat": 0.0245253164556962
+        },
+        "level/person": {
+          "N": 94,
+          "abs_aspect_err_median": 0.12446721473691147,
+          "clamp_share_mean": 0.6408214176159562,
+          "q_hat": 0.003989361702127659,
+          "D_hat": 0.0
+        },
+        "level/vehicle": {
+          "N": 5,
+          "abs_aspect_err_median": 0.2976388427003658,
+          "clamp_share_mean": 0.8316359280920498,
+          "q_hat": 0.0,
+          "D_hat": 0.0
+        }
+      }
+    }
+  },
+  "note_groups": "the pre-specified event groups (a) no clamp / (b) <= 10% / (c) > 10% of frames clamped are degenerate: almost every event has > 10% clamped frames (counts in by_clamp) -> the frame-level paired analysis below is the usable test",
+  "frame_level": {
+    "unit": "twin frame rows (event x variant x frame, early-stopped at 48 covered residues)",
+    "n_rows": 38264,
+    "clamp_share": 0.6953272005017771,
+    "by_clamp": {
+      "False": {
+        "n": 11658,
+        "twin_hit": 0.9098473151483959,
+        "real_hit": 0.9396122834105335
+      },
+      "True": {
+        "n": 26606,
+        "twin_hit": 0.7151394422310757,
+        "real_hit": 0.7785461925881381
+      }
+    },
+    "by_kind_aspect": {
+      "person/<=10%": {
+        "n": 8870,
+        "twin_hit": 0.9167981961668545,
+        "real_hit": 0.9483652762119504,
+        "twin_minus_real": -0.0315670800450959
+      },
+      "person/10-20%": {
+        "n": 5899,
+        "twin_hit": 0.9006611290049161,
+        "real_hit": 0.94219359213426,
+        "twin_minus_real": -0.04153246312934389
+      },
+      "person/20-40%": {
+        "n": 4404,
+        "twin_hit": 0.7404632152588556,
+        "real_hit": 0.8621707538601272,
+        "twin_minus_real": -0.12170753860127159
+      },
+      "person/>40%": {
+        "n": 5449,
+        "twin_hit": 0.34446687465590015,
+        "real_hit": 0.4446687465590016,
+        "twin_minus_real": -0.10020187190310148
+      },
+      "vehicle/<=10%": {
+        "n": 4105,
+        "twin_hit": 0.8689403166869671,
+        "real_hit": 0.8901339829476248,
+        "twin_minus_real": -0.021193666260657662
+      },
+      "vehicle/10-20%": {
+        "n": 2569,
+        "twin_hit": 0.8801089918256131,
+        "real_hit": 0.9022966134682756,
+        "twin_minus_real": -0.022187621642662525
+      },
+      "vehicle/20-40%": {
+        "n": 3087,
+        "twin_hit": 0.876255264010366,
+        "real_hit": 0.8509880142533204,
+        "twin_minus_real": 0.02526724975704564
+      },
+      "vehicle/>40%": {
+        "n": 3881,
+        "twin_hit": 0.6488018551919609,
+        "real_hit": 0.7418191187838186,
+        "twin_minus_real": -0.09301726359185769
+      }
+    },
+    "paired_within_event": {
+      "n_event_variants": 631,
+      "twin_unclamped": 0.906332090677824,
+      "twin_clamped": 0.7896190080492245,
+      "real_unclamped": 0.9302170818272177,
+      "real_clamped": 0.8430062230967559,
+      "extra_twin_drop_pts": 2.9502223898137725,
+      "wilcoxon_twin_p": 6.759553025016515e-57
+    }
+  }
+}

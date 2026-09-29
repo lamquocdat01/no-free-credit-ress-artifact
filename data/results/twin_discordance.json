@@ -1,0 +1,4214 @@
+{
+  "meta": {
+    "mode": "full",
+    "n_frames": 49628,
+    "n_scenes": 64,
+    "operating_point": {
+      "eps": 0.2,
+      "d_min": 32,
+      "K": 16
+    },
+    "lemma_C3_per_event": "asserted p_e <= q_e + D_e for every event x K x variant",
+    "permutation": "10,000 perms, seed 42",
+    "note": "M2 — discordance between real events and their paired twins (exact over the K phases).\n\nFor event e, period K, hit-residue sets R_real = {t mod K : real frame t is a G* hit},\nR_twin = {t mod K : twin frame t is a G* hit}. Under a uniform random phase:\n  p_e = 1 - |R_real|/K (real miss), q_e = 1 - |R_twin|/K (twin miss),\n  D_e = |R_twin \\ R_real| / K = P(real miss AND twin catch),   disagreement = |R_real xor R_twin| / K.\nLemma C3 holds per event: p_e <= q_e + D_e (checked).\nScene level: D_s = mean_e D_e, Clopper-Pearson on the expected count (fractional, as M1). Heterogeneity:\nCochran Q / I^2 on scene proportions and a permutation test of homogeneity (events shuffled across scenes,\n10,000 permutations, seed 42) at K = 1 (binary D_e).\nCertificates on the real numbers:\n  C4a-fleet: U_CP(X, N) with X = sum_e D_e (expected count; plus one seeded random-phase draw, seed 42).\n  C4a-pop:   J = #scenes with >= 1 discordant event: J_possible (some D_e > 0) and J at the seeded draw.\nReported for definition a256 (primary) and orig, per sprite variant and averaged over the 3 variants,\nat the chosen operating point (d_min, K) and over the K grid. Detector confidence twin vs real on hit frames."
+  },
+  "by_definition": {
+    "a256": {
+      "n_events": 257,
+      "n_scenes": 64,
+      "K1": {
+        "variant_mean": {
+          "N": 257,
+          "m_scenes": 64,
+          "X_expected": 18.666666666666668,
+          "D_hat": 0.07263294422827497,
+          "cp95": [
+            0.04407215930102918,
+            0.11151088174035458
+          ],
+          "c4a_fleet_U_expected": 0.1050964938016875,
+          "X_draw": 18,
+          "c4a_fleet_U_draw": 0.10209359875137823,
+          "J_possible": 8,
+          "J_draw": 8,
+          "c4a_pop_U_possible": 0.2142556703086208,
+          "c4a_pop_U_draw": 0.2142556703086208,
+          "p_hat": 0.08560311284046693,
+          "q_hat": 0.03242542153047989,
+          "disagreement": 0.09208819714656291
+        },
+        "per_variant": {
+          "0": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 19.0,
+            "D_hat": 0.07392996108949416,
+            "cp95": [
+              0.045095238035526126,
+              0.11304482191999163
+            ],
+            "c4a_fleet_U_expected": 0.10659442247001988,
+            "X_draw": 19,
+            "c4a_fleet_U_draw": 0.10659442247001988,
+            "J_possible": 8,
+            "J_draw": 8,
+            "c4a_pop_U_possible": 0.2142556703086208,
+            "c4a_pop_U_draw": 0.2142556703086208,
+            "p_hat": 0.08560311284046693,
+            "q_hat": 0.023346303501945526,
+            "disagreement": 0.08560311284046693
+          },
+          "1": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 17.0,
+            "D_hat": 0.06614785992217899,
+            "cp95": [
+              0.039002557898254846,
+              0.10379840641007415
+            ],
+            "c4a_fleet_U_expected": 0.09757077969917718,
+            "X_draw": 17,
+            "c4a_fleet_U_draw": 0.09757077969917718,
+            "J_possible": 8,
+            "J_draw": 8,
+            "c4a_pop_U_possible": 0.2142556703086208,
+            "c4a_pop_U_draw": 0.2142556703086208,
+            "p_hat": 0.08560311284046693,
+            "q_hat": 0.04669260700389105,
+            "disagreement": 0.0933852140077821
+          },
+          "2": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 20.0,
+            "D_hat": 0.07782101167315175,
+            "cp95": [
+              0.048181469713419876,
+              0.11763070854585654
+            ],
+            "c4a_fleet_U_expected": 0.11107477388297683,
+            "X_draw": 20,
+            "c4a_fleet_U_draw": 0.11107477388297683,
+            "J_possible": 8,
+            "J_draw": 8,
+            "c4a_pop_U_possible": 0.2142556703086208,
+            "c4a_pop_U_draw": 0.2142556703086208,
+            "p_hat": 0.08560311284046693,
+            "q_hat": 0.027237354085603113,
+            "disagreement": 0.09727626459143969
+          }
+        }
+      },
+      "K2": {
+        "variant_mean": {
+          "N": 257,
+          "m_scenes": 64,
+          "X_expected": 21.5,
+          "D_hat": 0.08365758754863813,
+          "cp95": [
+            0.05285558234412986,
+            0.12446744136590383
+          ],
+          "c4a_fleet_U_expected": 0.11775981176780798,
+          "X_draw": 20,
+          "c4a_fleet_U_draw": 0.11107477388297683,
+          "J_possible": 10,
+          "J_draw": 7,
+          "c4a_pop_U_possible": 0.25061145507501076,
+          "c4a_pop_U_draw": 0.1956403996025778,
+          "p_hat": 0.11867704280155641,
+          "q_hat": 0.055771725032425425,
+          "disagreement": 0.10440985732814526
+        },
+        "per_variant": {
+          "0": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 21.5,
+            "D_hat": 0.08365758754863813,
+            "cp95": [
+              0.05285558234412986,
+              0.12446744136590383
+            ],
+            "c4a_fleet_U_expected": 0.11775981176780798,
+            "X_draw": 21,
+            "c4a_fleet_U_draw": 0.11553599624372192,
+            "J_possible": 9,
+            "J_draw": 7,
+            "c4a_pop_U_possible": 0.2325664460703016,
+            "c4a_pop_U_draw": 0.1956403996025778,
+            "p_hat": 0.11867704280155641,
+            "q_hat": 0.054474708171206226,
+            "disagreement": 0.10311284046692606
+          },
+          "1": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 20.5,
+            "D_hat": 0.07976653696498054,
+            "cp95": [
+              0.049733740769207314,
+              0.1199150509732874
+            ],
+            "c4a_fleet_U_expected": 0.11330769844369351,
+            "X_draw": 17,
+            "c4a_fleet_U_draw": 0.09757077969917718,
+            "J_possible": 10,
+            "J_draw": 7,
+            "c4a_pop_U_possible": 0.25061145507501076,
+            "c4a_pop_U_draw": 0.1956403996025778,
+            "p_hat": 0.11867704280155641,
+            "q_hat": 0.06614785992217899,
+            "disagreement": 0.10700389105058365
+          },
+          "2": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 22.5,
+            "D_hat": 0.08754863813229571,
+            "cp95": [
+              0.055999276140899196,
+              0.12899919961181727
+            ],
+            "c4a_fleet_U_expected": 0.12219453458117766,
+            "X_draw": 22,
+            "c4a_fleet_U_draw": 0.119979281509991,
+            "J_possible": 10,
+            "J_draw": 8,
+            "c4a_pop_U_possible": 0.25061145507501076,
+            "c4a_pop_U_draw": 0.2142556703086208,
+            "p_hat": 0.11867704280155641,
+            "q_hat": 0.04669260700389105,
+            "disagreement": 0.10311284046692606
+          }
+        }
+      },
+      "K3": {
+        "variant_mean": {
+          "N": 257,
+          "m_scenes": 64,
+          "X_expected": 21.666666666666664,
+          "D_hat": 0.08430609597924772,
+          "cp95": [
+            0.05337805123700024,
+            0.1252241333872492
+          ],
+          "c4a_fleet_U_expected": 0.11850011135760283,
+          "X_draw": 21,
+          "c4a_fleet_U_draw": 0.11553599624372192,
+          "J_possible": 10,
+          "J_draw": 6,
+          "c4a_pop_U_possible": 0.25061145507501076,
+          "c4a_pop_U_draw": 0.17666902232407403,
+          "p_hat": 0.13618677042801555,
+          "q_hat": 0.07522697795071337,
+          "disagreement": 0.10765239948119325
+        },
+        "per_variant": {
+          "0": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 21.666666666666664,
+            "D_hat": 0.08430609597924772,
+            "cp95": [
+              0.05337805123700024,
+              0.1252241333872492
+            ],
+            "c4a_fleet_U_expected": 0.11850011135760283,
+            "X_draw": 22,
+            "c4a_fleet_U_draw": 0.119979281509991,
+            "J_possible": 9,
+            "J_draw": 8,
+            "c4a_pop_U_possible": 0.2325664460703016,
+            "c4a_pop_U_draw": 0.2142556703086208,
+            "p_hat": 0.13618677042801555,
+            "q_hat": 0.07392996108949416,
+            "disagreement": 0.10635538261997404
+          },
+          "1": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 21.0,
+            "D_hat": 0.08171206225680934,
+            "cp95": [
+              0.05129184168392179,
+              0.12219390489796288
+            ],
+            "c4a_fleet_U_expected": 0.11553599624372192,
+            "X_draw": 24,
+            "c4a_fleet_U_draw": 0.12881618530995145,
+            "J_possible": 10,
+            "J_draw": 9,
+            "c4a_pop_U_possible": 0.25061145507501076,
+            "c4a_pop_U_draw": 0.2325664460703016,
+            "p_hat": 0.13618677042801555,
+            "q_hat": 0.08300907911802854,
+            "disagreement": 0.11024643320363164
+          },
+          "2": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 22.333333333333332,
+            "D_hat": 0.08690012970168612,
+            "cp95": [
+              0.05547386739565677,
+              0.12824528718999456
+            ],
+            "c4a_fleet_U_expected": 0.12145657772686973,
+            "X_draw": 26,
+            "c4a_fleet_U_draw": 0.13759276586689273,
+            "J_possible": 10,
+            "J_draw": 10,
+            "c4a_pop_U_possible": 0.25061145507501076,
+            "c4a_pop_U_draw": 0.25061145507501076,
+            "p_hat": 0.13618677042801555,
+            "q_hat": 0.06874189364461739,
+            "disagreement": 0.10635538261997407
+          }
+        }
+      },
+      "K4": {
+        "variant_mean": {
+          "N": 257,
+          "m_scenes": 64,
+          "X_expected": 23.916666666666668,
+          "D_hat": 0.0930609597924773,
+          "cp95": [
+            0.0604877088775267,
+            0.1353861711116931
+          ],
+          "c4a_fleet_U_expected": 0.1284492308073355,
+          "X_draw": 25,
+          "c4a_fleet_U_draw": 0.1332116170095217,
+          "J_possible": 11,
+          "J_draw": 7,
+          "c4a_pop_U_possible": 0.26842062072547407,
+          "c4a_pop_U_draw": 0.1956403996025778,
+          "p_hat": 0.1566147859922179,
+          "q_hat": 0.08787289234760051,
+          "disagreement": 0.11738002594033721
+        },
+        "per_variant": {
+          "0": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 23.75,
+            "D_hat": 0.09241245136186771,
+            "cp95": [
+              0.05995762923676947,
+              0.13463668757496383
+            ],
+            "c4a_fleet_U_expected": 0.1277150062856358,
+            "X_draw": 26,
+            "c4a_fleet_U_draw": 0.13759276586689273,
+            "J_possible": 10,
+            "J_draw": 8,
+            "c4a_pop_U_possible": 0.25061145507501076,
+            "c4a_pop_U_draw": 0.2142556703086208,
+            "p_hat": 0.1566147859922179,
+            "q_hat": 0.09046692607003891,
+            "disagreement": 0.11867704280155641
+          },
+          "1": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 23.25,
+            "D_hat": 0.09046692607003891,
+            "cp95": [
+              0.05837058902728556,
+              0.1323852001508406
+            ],
+            "c4a_fleet_U_expected": 0.12550977366565763,
+            "X_draw": 22,
+            "c4a_fleet_U_draw": 0.119979281509991,
+            "J_possible": 11,
+            "J_draw": 8,
+            "c4a_pop_U_possible": 0.26842062072547407,
+            "c4a_pop_U_draw": 0.2142556703086208,
+            "p_hat": 0.1566147859922179,
+            "q_hat": 0.0943579766536965,
+            "disagreement": 0.11867704280155641
+          },
+          "2": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 24.75,
+            "D_hat": 0.0963035019455253,
+            "cp95": [
+              0.06314588113672741,
+              0.13912619978256072
+            ],
+            "c4a_fleet_U_expected": 0.13211412717962395,
+            "X_draw": 27,
+            "c4a_fleet_U_draw": 0.14196033809613245,
+            "J_possible": 11,
+            "J_draw": 8,
+            "c4a_pop_U_possible": 0.26842062072547407,
+            "c4a_pop_U_draw": 0.2142556703086208,
+            "p_hat": 0.1566147859922179,
+            "q_hat": 0.07879377431906615,
+            "disagreement": 0.11478599221789883
+          }
+        }
+      },
+      "K6": {
+        "variant_mean": {
+          "N": 257,
+          "m_scenes": 64,
+          "X_expected": 23.944444444444446,
+          "D_hat": 0.09316904453091224,
+          "cp95": [
+            0.06057610663303387,
+            0.13551103644832652
+          ],
+          "c4a_fleet_U_expected": 0.1285715606194829,
+          "X_draw": 23,
+          "c4a_fleet_U_draw": 0.12440569325840643,
+          "J_possible": 12,
+          "J_draw": 7,
+          "c4a_pop_U_possible": 0.286017608800191,
+          "c4a_pop_U_draw": 0.1956403996025778,
+          "p_hat": 0.18417639429312582,
+          "q_hat": 0.1169476869865975,
+          "disagreement": 0.11910938175529616
+        },
+        "per_variant": {
+          "0": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 24.0,
+            "D_hat": 0.0933852140077821,
+            "cp95": [
+              0.06075294577936531,
+              0.13576072566448705
+            ],
+            "c4a_fleet_U_expected": 0.12881618530995145,
+            "X_draw": 25,
+            "c4a_fleet_U_draw": 0.1332116170095217,
+            "J_possible": 11,
+            "J_draw": 8,
+            "c4a_pop_U_possible": 0.26842062072547407,
+            "c4a_pop_U_draw": 0.2142556703086208,
+            "p_hat": 0.18417639429312582,
+            "q_hat": 0.11867704280155643,
+            "disagreement": 0.1212710765239948
+          },
+          "1": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 23.666666666666664,
+            "D_hat": 0.0920881971465629,
+            "cp95": [
+              0.05969278774546481,
+              0.13426175745410018
+            ],
+            "c4a_fleet_U_expected": 0.12734773530669163,
+            "X_draw": 24,
+            "c4a_fleet_U_draw": 0.12881618530995145,
+            "J_possible": 12,
+            "J_draw": 8,
+            "c4a_pop_U_possible": 0.286017608800191,
+            "c4a_pop_U_draw": 0.2142556703086208,
+            "p_hat": 0.18417639429312582,
+            "q_hat": 0.12062256809338522,
+            "disagreement": 0.12062256809338522
+          },
+          "2": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 24.166666666666668,
+            "D_hat": 0.0940337224383917,
+            "cp95": [
+              0.061283810667109195,
+              0.13650946314589793
+            ],
+            "c4a_fleet_U_expected": 0.1295497811684733,
+            "X_draw": 24,
+            "c4a_fleet_U_draw": 0.12881618530995145,
+            "J_possible": 12,
+            "J_draw": 8,
+            "c4a_pop_U_possible": 0.286017608800191,
+            "c4a_pop_U_draw": 0.2142556703086208,
+            "p_hat": 0.18417639429312582,
+            "q_hat": 0.11154345006485085,
+            "disagreement": 0.11543450064850842
+          }
+        }
+      },
+      "K8": {
+        "variant_mean": {
+          "N": 257,
+          "m_scenes": 64,
+          "X_expected": 25.0,
+          "D_hat": 0.09727626459143969,
+          "cp95": [
+            0.06394580171420922,
+            0.14024585960261668
+          ],
+          "c4a_fleet_U_expected": 0.1332116170095217,
+          "X_draw": 23,
+          "c4a_fleet_U_draw": 0.12440569325840643,
+          "J_possible": 12,
+          "J_draw": 7,
+          "c4a_pop_U_possible": 0.286017608800191,
+          "c4a_pop_U_draw": 0.1956403996025778,
+          "p_hat": 0.21254863813229571,
+          "q_hat": 0.14137483787289234,
+          "disagreement": 0.123378728923476
+        },
+        "per_variant": {
+          "0": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 25.125,
+            "D_hat": 0.09776264591439689,
+            "cp95": [
+              0.06434617999467694,
+              0.14080529150958665
+            ],
+            "c4a_fleet_U_expected": 0.1337600265805031,
+            "X_draw": 24,
+            "c4a_fleet_U_draw": 0.12881618530995145,
+            "J_possible": 12,
+            "J_draw": 7,
+            "c4a_pop_U_possible": 0.286017608800191,
+            "c4a_pop_U_draw": 0.1956403996025778,
+            "p_hat": 0.21254863813229571,
+            "q_hat": 0.14202334630350194,
+            "disagreement": 0.125
+          },
+          "1": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 24.5,
+            "D_hat": 0.09533073929961089,
+            "cp95": [
+              0.06234708786676502,
+              0.13800546704089536
+            ],
+            "c4a_fleet_U_expected": 0.13101573332401203,
+            "X_draw": 26,
+            "c4a_fleet_U_draw": 0.13759276586689273,
+            "J_possible": 12,
+            "J_draw": 10,
+            "c4a_pop_U_possible": 0.286017608800191,
+            "c4a_pop_U_draw": 0.25061145507501076,
+            "p_hat": 0.21254863813229571,
+            "q_hat": 0.14640077821011674,
+            "disagreement": 0.1245136186770428
+          },
+          "2": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 25.375,
+            "D_hat": 0.09873540856031128,
+            "cp95": [
+              0.06514776324623787,
+              0.14192336782179807
+            ],
+            "c4a_fleet_U_expected": 0.1348561822131188,
+            "X_draw": 28,
+            "c4a_fleet_U_draw": 0.14631497746582472,
+            "J_possible": 12,
+            "J_draw": 10,
+            "c4a_pop_U_possible": 0.286017608800191,
+            "c4a_pop_U_draw": 0.25061145507501076,
+            "p_hat": 0.21254863813229571,
+            "q_hat": 0.13570038910505836,
+            "disagreement": 0.12062256809338522
+          }
+        }
+      },
+      "K12": {
+        "variant_mean": {
+          "N": 257,
+          "m_scenes": 64,
+          "X_expected": 26.61111111111111,
+          "D_hat": 0.1035451794206658,
+          "cp95": [
+            0.06912689715133588,
+            0.14743661441456776
+          ],
+          "c4a_fleet_U_expected": 0.14026340868366596,
+          "X_draw": 23,
+          "c4a_fleet_U_draw": 0.12440569325840643,
+          "J_possible": 15,
+          "J_draw": 6,
+          "c4a_pop_U_possible": 0.33770972390668996,
+          "c4a_pop_U_draw": 0.17666902232407403,
+          "p_hat": 0.25,
+          "q_hat": 0.17358408992650237,
+          "disagreement": 0.13067444876783396
+        },
+        "per_variant": {
+          "0": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 26.833333333333336,
+            "D_hat": 0.10440985732814527,
+            "cp95": [
+              0.069844945293981,
+              0.14842518390029974
+            ],
+            "c4a_fleet_U_expected": 0.14123332417485193,
+            "X_draw": 28,
+            "c4a_fleet_U_draw": 0.14631497746582472,
+            "J_possible": 15,
+            "J_draw": 10,
+            "c4a_pop_U_possible": 0.33770972390668996,
+            "c4a_pop_U_draw": 0.25061145507501076,
+            "p_hat": 0.25,
+            "q_hat": 0.17639429312581062,
+            "disagreement": 0.13521400778210116
+          },
+          "1": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 25.916666666666668,
+            "D_hat": 0.10084306095979248,
+            "cp95": [
+              0.06688824771759025,
+              0.14434231990363833
+            ],
+            "c4a_fleet_U_expected": 0.1372281979858947,
+            "X_draw": 27,
+            "c4a_fleet_U_draw": 0.14196033809613245,
+            "J_possible": 15,
+            "J_draw": 8,
+            "c4a_pop_U_possible": 0.33770972390668996,
+            "c4a_pop_U_draw": 0.2142556703086208,
+            "p_hat": 0.25,
+            "q_hat": 0.17542153047989623,
+            "disagreement": 0.1271076523994812
+          },
+          "2": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 27.083333333333332,
+            "D_hat": 0.10538261997405966,
+            "cp95": [
+              0.07065370444978027,
+              0.14953641185585798
+            ],
+            "c4a_fleet_U_expected": 0.14232371020824877,
+            "X_draw": 24,
+            "c4a_fleet_U_draw": 0.12881618530995145,
+            "J_possible": 15,
+            "J_draw": 9,
+            "c4a_pop_U_possible": 0.33770972390668996,
+            "c4a_pop_U_draw": 0.2325664460703016,
+            "p_hat": 0.25,
+            "q_hat": 0.16893644617380027,
+            "disagreement": 0.1297016861219196
+          }
+        }
+      },
+      "K16": {
+        "variant_mean": {
+          "N": 257,
+          "m_scenes": 64,
+          "X_expected": 26.354166666666668,
+          "D_hat": 0.10254539559014268,
+          "cp95": [
+            0.06829766209028049,
+            0.1462926179090927
+          ],
+          "c4a_fleet_U_expected": 0.1391411325938946,
+          "X_draw": 27,
+          "c4a_fleet_U_draw": 0.14196033809613245,
+          "J_possible": 16,
+          "J_draw": 8,
+          "c4a_pop_U_possible": 0.35461785202439106,
+          "c4a_pop_U_draw": 0.2142556703086208,
+          "p_hat": 0.2728599221789883,
+          "q_hat": 0.19803826199740598,
+          "disagreement": 0.13026913099870296
+        },
+        "per_variant": {
+          "0": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 26.625,
+            "D_hat": 0.10359922178988328,
+            "cp95": [
+              0.06917175157519545,
+              0.14749842254196502
+            ],
+            "c4a_fleet_U_expected": 0.1403240473857551,
+            "X_draw": 24,
+            "c4a_fleet_U_draw": 0.12881618530995145,
+            "J_possible": 16,
+            "J_draw": 9,
+            "c4a_pop_U_possible": 0.35461785202439106,
+            "c4a_pop_U_draw": 0.2325664460703016,
+            "p_hat": 0.2728599221789883,
+            "q_hat": 0.20111867704280156,
+            "disagreement": 0.13545719844357976
+          },
+          "1": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 25.5,
+            "D_hat": 0.09922178988326848,
+            "cp95": [
+              0.06554896456834232,
+              0.14248201556848444
+            ],
+            "c4a_fleet_U_expected": 0.13540393109520554,
+            "X_draw": 26,
+            "c4a_fleet_U_draw": 0.13759276586689273,
+            "J_possible": 16,
+            "J_draw": 10,
+            "c4a_pop_U_possible": 0.35461785202439106,
+            "c4a_pop_U_draw": 0.25061145507501076,
+            "p_hat": 0.2728599221789883,
+            "q_hat": 0.19990272373540857,
+            "disagreement": 0.1254863813229572
+          },
+          "2": {
+            "N": 257,
+            "m_scenes": 64,
+            "X_expected": 26.9375,
+            "D_hat": 0.10481517509727627,
+            "cp95": [
+              0.07018180605196057,
+              0.1488883123844609
+            ],
+            "c4a_fleet_U_expected": 0.14168775011338242,
+            "X_draw": 24,
+            "c4a_fleet_U_draw": 0.12881618530995145,
+            "J_possible": 16,
+            "J_draw": 8,
+            "c4a_pop_U_possible": 0.35461785202439106,
+            "c4a_pop_U_draw": 0.2142556703086208,
+            "p_hat": 0.2728599221789883,
+            "q_hat": 0.1930933852140078,
+            "disagreement": 0.129863813229572
+          }
+        }
+      },
+      "operating_point": {
+        "n_events": 176,
+        "N": 176,
+        "m_scenes": 64,
+        "X_expected": 11.9375,
+        "D_hat": 0.06782670454545454,
+        "cp95": [
+          0.035464850291347945,
+          0.11563553953570925
+        ],
+        "c4a_fleet_U_expected": 0.10770635357741269,
+        "X_draw": 12,
+        "c4a_fleet_U_draw": 0.10812946002278317,
+        "J_possible": 11,
+        "J_draw": 5,
+        "c4a_pop_U_possible": 0.26842062072547407,
+        "c4a_pop_U_draw": 0.15727012750712213,
+        "p_hat": 0.10369318181818182,
+        "q_hat": 0.04628314393939393,
+        "disagreement": 0.0782433712121212,
+        "per_variant": {
+          "0": {
+            "N": 176,
+            "m_scenes": 64,
+            "X_expected": 12.0625,
+            "D_hat": 0.06853693181818182,
+            "cp95": [
+              0.03598403293418906,
+              0.1165054232943127
+            ],
+            "c4a_fleet_U_expected": 0.10855234353244236,
+            "X_draw": 11,
+            "c4a_fleet_U_draw": 0.1013319232026607,
+            "J_possible": 10,
+            "J_draw": 5,
+            "c4a_pop_U_possible": 0.25061145507501076,
+            "c4a_pop_U_draw": 0.15727012750712213,
+            "p_hat": 0.10369318181818182,
+            "q_hat": 0.044389204545454544,
+            "disagreement": 0.07776988636363637
+          },
+          "1": {
+            "N": 176,
+            "m_scenes": 64,
+            "X_expected": 11.4375,
+            "D_hat": 0.06498579545454546,
+            "cp95": [
+              0.033400047446009384,
+              0.1121452305855964
+            ],
+            "c4a_fleet_U_expected": 0.10431328970078646,
+            "X_draw": 11,
+            "c4a_fleet_U_draw": 0.1013319232026607,
+            "J_possible": 9,
+            "J_draw": 6,
+            "c4a_pop_U_possible": 0.2325664460703016,
+            "c4a_pop_U_draw": 0.17666902232407403,
+            "p_hat": 0.10369318181818182,
+            "q_hat": 0.046875,
+            "disagreement": 0.07315340909090909
+          },
+          "2": {
+            "N": 176,
+            "m_scenes": 64,
+            "X_expected": 12.3125,
+            "D_hat": 0.06995738636363637,
+            "cp95": [
+              0.03702585604860642,
+              0.11824205986141897
+            ],
+            "c4a_fleet_U_expected": 0.11024167801507281,
+            "X_draw": 14,
+            "c4a_fleet_U_draw": 0.12155868616429845,
+            "J_possible": 11,
+            "J_draw": 6,
+            "c4a_pop_U_possible": 0.26842062072547407,
+            "c4a_pop_U_draw": 0.17666902232407403,
+            "p_hat": 0.10369318181818182,
+            "q_hat": 0.04758522727272727,
+            "disagreement": 0.08380681818181818
+          }
+        }
+      },
+      "operating_point_by_kind": {
+        "person": {
+          "N": 73,
+          "p_hat": 0.06592465753424658,
+          "q_hat": 0.07591324200913242,
+          "D_hat": 0.003424657534246575,
+          "U_fleet": 0.04642242837444567
+        },
+        "vehicle": {
+          "N": 103,
+          "p_hat": 0.1304611650485437,
+          "q_hat": 0.0252831715210356,
+          "D_hat": 0.11347087378640777,
+          "U_fleet": 0.1783878548988731
+        }
+      },
+      "operating_point_by_category": {
+        "LASIESTA": {
+          "N": 24,
+          "n_scenes": 20,
+          "p_hat": 0.0,
+          "q_hat": 0.026909722222222224,
+          "D_hat": 0.0
+        },
+        "PTZ": {
+          "N": 10,
+          "n_scenes": 4,
+          "p_hat": 0.04375,
+          "q_hat": 0.0625,
+          "D_hat": 0.00625
+        },
+        "badWeather": {
+          "N": 15,
+          "n_scenes": 4,
+          "p_hat": 0.0,
+          "q_hat": 0.0,
+          "D_hat": 0.0
+        },
+        "baseline": {
+          "N": 2,
+          "n_scenes": 1,
+          "p_hat": 0.0,
+          "q_hat": 0.0,
+          "D_hat": 0.0
+        },
+        "cameraJitter": {
+          "N": 16,
+          "n_scenes": 2,
+          "p_hat": 0.01953125,
+          "q_hat": 0.0013020833333333333,
+          "D_hat": 0.01953125
+        },
+        "dynamicBackground": {
+          "N": 19,
+          "n_scenes": 6,
+          "p_hat": 0.0,
+          "q_hat": 0.01644736842105263,
+          "D_hat": 0.0
+        },
+        "intermittentObjectMotion": {
+          "N": 4,
+          "n_scenes": 3,
+          "p_hat": 0.0,
+          "q_hat": 0.0,
+          "D_hat": 0.0
+        },
+        "lowFramerate": {
+          "N": 5,
+          "n_scenes": 4,
+          "p_hat": 0.2,
+          "q_hat": 0.21666666666666665,
+          "D_hat": 0.004166666666666667
+        },
+        "nightVideos": {
+          "N": 25,
+          "n_scenes": 6,
+          "p_hat": 0.3625,
+          "q_hat": 0.02083333333333333,
+          "D_hat": 0.34333333333333327
+        },
+        "shadow": {
+          "N": 37,
+          "n_scenes": 6,
+          "p_hat": 0.0,
+          "q_hat": 0.0045045045045045045,
+          "D_hat": 0.0
+        },
+        "thermal": {
+          "N": 7,
+          "n_scenes": 4,
+          "p_hat": 0.0,
+          "q_hat": 0.005952380952380952,
+          "D_hat": 0.0
+        },
+        "turbulence": {
+          "N": 12,
+          "n_scenes": 4,
+          "p_hat": 0.6197916666666666,
+          "q_hat": 0.39409722222222227,
+          "D_hat": 0.2465277777777778
+        }
+      },
+      "heterogeneity_K1": {
+        "variant0": {
+          "pooled": 0.07392996108949416,
+          "Q": 108.31410265203746,
+          "df": 63,
+          "I2": 0.418358288925778,
+          "perm_p": 0.007699230076992301
+        },
+        "variant1": {
+          "pooled": 0.06614785992217899,
+          "Q": 104.34782406679247,
+          "df": 63,
+          "I2": 0.3962499883114568,
+          "perm_p": 0.0188981101889811
+        },
+        "variant2": {
+          "pooled": 0.07782101167315175,
+          "Q": 113.06224096888468,
+          "df": 63,
+          "I2": 0.44278479304741597,
+          "perm_p": 0.0029997000299970002
+        }
+      },
+      "per_scene": [
+        {
+          "video": "I_IL_01",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "I_MC_01",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "I_OC_01",
+          "dataset": "LASIESTA",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "I_OC_02",
+          "dataset": "LASIESTA",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "I_SI_02",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "I_SM_01",
+          "dataset": "LASIESTA",
+          "n_events": 3,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.7075982261787133
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_CL_02",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_RA_02",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_01",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_02",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_03",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_04",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_05",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_06",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_07",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_08",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_09",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_10",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_11",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_12",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "backdoor",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "blizzard",
+          "dataset": "CDnet2014",
+          "n_events": 3,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.7075982261787133
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "boats",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "boulevard",
+          "dataset": "CDnet2014",
+          "n_events": 8,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.3694166475528192
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "bridgeEntry",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.15625
+        },
+        {
+          "video": "bungalows",
+          "dataset": "CDnet2014",
+          "n_events": 13,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.24705263800047095
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "busStation",
+          "dataset": "CDnet2014",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "busyBoulvard",
+          "dataset": "CDnet2014",
+          "n_events": 16,
+          "D_K1": 0.625,
+          "cp95_K1": [
+            0.35434609430207814,
+            0.8480163249188779
+          ],
+          "p_K1": 0.625,
+          "q_K1": 0.0,
+          "D_OP": 0.96875
+        },
+        {
+          "video": "canoe",
+          "dataset": "CDnet2014",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "continuousPan",
+          "dataset": "CDnet2014",
+          "n_events": 9,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.3362671168799428
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.037037037037037035,
+          "D_OP": 0.0625
+        },
+        {
+          "video": "copyMachine",
+          "dataset": "CDnet2014",
+          "n_events": 4,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.6023646356164746
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "corridor",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "cubicle",
+          "dataset": "CDnet2014",
+          "n_events": 12,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.26464846939705117
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "fall",
+          "dataset": "CDnet2014",
+          "n_events": 12,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.26464846939705117
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "fluidHighway",
+          "dataset": "CDnet2014",
+          "n_events": 4,
+          "D_K1": 0.25,
+          "cp95_K1": [
+            0.006309463209709866,
+            0.8058795503167565
+          ],
+          "p_K1": 0.25,
+          "q_K1": 0.0,
+          "D_OP": 0.265625
+        },
+        {
+          "video": "fountain01",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "fountain02",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "intermittentPan",
+          "dataset": "CDnet2014",
+          "n_events": 8,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.3694166475528192
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "lakeSide",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "library",
+          "dataset": "CDnet2014",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "overpass",
+          "dataset": "CDnet2014",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "park",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "parking",
+          "dataset": "CDnet2014",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "pedestrians",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "peopleInShade",
+          "dataset": "CDnet2014",
+          "n_events": 5,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.5218237501049814
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "port_0_17fps",
+          "dataset": "CDnet2014",
+          "n_events": 5,
+          "D_K1": 0.3333333333333333,
+          "cp95_K1": [
+            0.03124263480243739,
+            0.812712918439862
+          ],
+          "p_K1": 0.8,
+          "q_K1": 0.5999999999999999,
+          "D_OP": 0.020833333333333332
+        },
+        {
+          "video": "skating",
+          "dataset": "CDnet2014",
+          "n_events": 6,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.4592581264399005
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "snowFall",
+          "dataset": "CDnet2014",
+          "n_events": 3,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.7075982261787133
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "streetCornerAtNight",
+          "dataset": "CDnet2014",
+          "n_events": 11,
+          "D_K1": 0.09090909090909091,
+          "cp95_K1": [
+            0.0022989722138142673,
+            0.4127799169883827
+          ],
+          "p_K1": 0.09090909090909091,
+          "q_K1": 0.0,
+          "D_OP": 0.2333333333333333
+        },
+        {
+          "video": "streetLight",
+          "dataset": "CDnet2014",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "traffic",
+          "dataset": "CDnet2014",
+          "n_events": 13,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.24705263800047095
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0390625
+        },
+        {
+          "video": "tramCrossroad_1fps",
+          "dataset": "CDnet2014",
+          "n_events": 11,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.2849141529181544
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "tramStation",
+          "dataset": "CDnet2014",
+          "n_events": 3,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.7075982261787133
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "tunnelExit_0_35fps",
+          "dataset": "CDnet2014",
+          "n_events": 34,
+          "D_K1": 0.029411764705882353,
+          "cp95_K1": [
+            0.0007443642346902604,
+            0.15326766956031765
+          ],
+          "p_K1": 0.029411764705882353,
+          "q_K1": 0.0784313725490196,
+          "D_OP": 0.0
+        },
+        {
+          "video": "turbulence0",
+          "dataset": "CDnet2014",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "turbulence1",
+          "dataset": "CDnet2014",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.125
+        },
+        {
+          "video": "turbulence2",
+          "dataset": "CDnet2014",
+          "n_events": 4,
+          "D_K1": 0.3333333333333333,
+          "cp95_K1": [
+            0.019151681764399207,
+            0.8553100177370578
+          ],
+          "p_K1": 0.5,
+          "q_K1": 0.49999999999999994,
+          "D_OP": 0.057291666666666664
+        },
+        {
+          "video": "turbulence3",
+          "dataset": "CDnet2014",
+          "n_events": 6,
+          "D_K1": 0.27777777777777773,
+          "cp95_K1": [
+            0.025771559731698652,
+            0.7356916980315945
+          ],
+          "p_K1": 0.3333333333333333,
+          "q_K1": 0.05555555555555555,
+          "D_OP": 0.43402777777777773
+        },
+        {
+          "video": "turnpike_0_5fps",
+          "dataset": "CDnet2014",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "twoPositionPTZCam",
+          "dataset": "CDnet2014",
+          "n_events": 7,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.4096163972250034
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "wetSnow",
+          "dataset": "CDnet2014",
+          "n_events": 3,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.7075982261787133
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "winterDriveway",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "winterStreet",
+          "dataset": "CDnet2014",
+          "n_events": 3,
+          "D_K1": 0.3333333333333333,
+          "cp95_K1": [
+            0.008403758659612636,
+            0.9057006759497539
+          ],
+          "p_K1": 0.3333333333333333,
+          "q_K1": 0.0,
+          "D_OP": 0.3333333333333333
+        },
+        {
+          "video": "zoomInZoomOut",
+          "dataset": "CDnet2014",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        }
+      ],
+      "sprite_variance_K1": {
+        "frac_events_variants_disagree": 0.019455252918287938
+      }
+    },
+    "orig": {
+      "n_events": 329,
+      "n_scenes": 64,
+      "K1": {
+        "variant_mean": {
+          "N": 329,
+          "m_scenes": 64,
+          "X_expected": 34.0,
+          "D_hat": 0.1033434650455927,
+          "cp95": [
+            0.07263622622237978,
+            0.14141209302580113
+          ],
+          "c4a_fleet_U_expected": 0.13519742020077452,
+          "X_draw": 35,
+          "c4a_fleet_U_draw": 0.1385662088259655,
+          "J_possible": 12,
+          "J_draw": 12,
+          "c4a_pop_U_possible": 0.286017608800191,
+          "c4a_pop_U_draw": 0.286017608800191,
+          "p_hat": 0.23100303951367782,
+          "q_hat": 0.15602836879432622,
+          "disagreement": 0.1317122593718338
+        },
+        "per_variant": {
+          "0": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 34.0,
+            "D_hat": 0.1033434650455927,
+            "cp95": [
+              0.07263622622237978,
+              0.14141209302580113
+            ],
+            "c4a_fleet_U_expected": 0.13519742020077452,
+            "X_draw": 34,
+            "c4a_fleet_U_draw": 0.13519742020077452,
+            "J_possible": 12,
+            "J_draw": 12,
+            "c4a_pop_U_possible": 0.286017608800191,
+            "c4a_pop_U_draw": 0.286017608800191,
+            "p_hat": 0.23100303951367782,
+            "q_hat": 0.14893617021276595,
+            "disagreement": 0.12462006079027356
+          },
+          "1": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 32.0,
+            "D_hat": 0.0972644376899696,
+            "cp95": [
+              0.06748359838089003,
+              0.13453048767321604
+            ],
+            "c4a_fleet_U_expected": 0.12843799655553467,
+            "X_draw": 32,
+            "c4a_fleet_U_draw": 0.12843799655553467,
+            "J_possible": 12,
+            "J_draw": 12,
+            "c4a_pop_U_possible": 0.286017608800191,
+            "c4a_pop_U_draw": 0.286017608800191,
+            "p_hat": 0.23100303951367782,
+            "q_hat": 0.16717325227963525,
+            "disagreement": 0.13069908814589665
+          },
+          "2": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 36.0,
+            "D_hat": 0.1094224924012158,
+            "cp95": [
+              0.0778242928738187,
+              0.1482595220410536
+            ],
+            "c4a_fleet_U_expected": 0.14192807433869087,
+            "X_draw": 36,
+            "c4a_fleet_U_draw": 0.14192807433869087,
+            "J_possible": 12,
+            "J_draw": 12,
+            "c4a_pop_U_possible": 0.286017608800191,
+            "c4a_pop_U_draw": 0.286017608800191,
+            "p_hat": 0.23100303951367782,
+            "q_hat": 0.1519756838905775,
+            "disagreement": 0.1398176291793313
+          }
+        }
+      },
+      "K2": {
+        "variant_mean": {
+          "N": 329,
+          "m_scenes": 64,
+          "X_expected": 33.83333333333333,
+          "D_hat": 0.1028368794326241,
+          "cp95": [
+            0.07220544854593655,
+            0.14083996723483908
+          ],
+          "c4a_fleet_U_expected": 0.13463526406047194,
+          "X_draw": 29,
+          "c4a_fleet_U_draw": 0.11823964790898465,
+          "J_possible": 13,
+          "J_draw": 10,
+          "c4a_pop_U_possible": 0.30342149275883645,
+          "c4a_pop_U_draw": 0.25061145507501076,
+          "p_hat": 0.2750759878419453,
+          "q_hat": 0.1965552178318136,
+          "disagreement": 0.12715298885511653
+        },
+        "per_variant": {
+          "0": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 33.5,
+            "D_hat": 0.10182370820668693,
+            "cp95": [
+              0.0713446372867442,
+              0.13969499821807319
+            ],
+            "c4a_fleet_U_expected": 0.13351034783998877,
+            "X_draw": 34,
+            "c4a_fleet_U_draw": 0.13519742020077452,
+            "J_possible": 12,
+            "J_draw": 11,
+            "c4a_pop_U_possible": 0.286017608800191,
+            "c4a_pop_U_draw": 0.26842062072547407,
+            "p_hat": 0.2750759878419453,
+            "q_hat": 0.196048632218845,
+            "disagreement": 0.12462006079027356
+          },
+          "1": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 33.5,
+            "D_hat": 0.10182370820668693,
+            "cp95": [
+              0.0713446372867442,
+              0.13969499821807319
+            ],
+            "c4a_fleet_U_expected": 0.13351034783998877,
+            "X_draw": 36,
+            "c4a_fleet_U_draw": 0.14192807433869087,
+            "J_possible": 13,
+            "J_draw": 12,
+            "c4a_pop_U_possible": 0.30342149275883645,
+            "c4a_pop_U_draw": 0.286017608800191,
+            "p_hat": 0.2750759878419453,
+            "q_hat": 0.20212765957446807,
+            "disagreement": 0.13069908814589665
+          },
+          "2": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 34.5,
+            "D_hat": 0.10486322188449848,
+            "cp95": [
+              0.07393002810308809,
+              0.14312705361845293
+            ],
+            "c4a_fleet_U_expected": 0.13688269599165462,
+            "X_draw": 32,
+            "c4a_fleet_U_draw": 0.12843799655553467,
+            "J_possible": 13,
+            "J_draw": 10,
+            "c4a_pop_U_possible": 0.30342149275883645,
+            "c4a_pop_U_draw": 0.25061145507501076,
+            "p_hat": 0.2750759878419453,
+            "q_hat": 0.19148936170212766,
+            "disagreement": 0.12613981762917933
+          }
+        }
+      },
+      "K3": {
+        "variant_mean": {
+          "N": 329,
+          "m_scenes": 64,
+          "X_expected": 32.11111111111111,
+          "D_hat": 0.09760216143194865,
+          "cp95": [
+            0.06776887679974616,
+            0.13491374144693433
+          ],
+          "c4a_fleet_U_expected": 0.12881431342826524,
+          "X_draw": 32,
+          "c4a_fleet_U_draw": 0.12843799655553467,
+          "J_possible": 14,
+          "J_draw": 10,
+          "c4a_pop_U_possible": 0.32064788409458544,
+          "c4a_pop_U_draw": 0.25061145507501076,
+          "p_hat": 0.2968591691995947,
+          "q_hat": 0.22424856467409657,
+          "disagreement": 0.12259371833839917
+        },
+        "per_variant": {
+          "0": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 31.666666666666664,
+            "D_hat": 0.09625126646403241,
+            "cp95": [
+              0.06662847642539156,
+              0.1333800401976963
+            ],
+            "c4a_fleet_U_expected": 0.12730846826670594,
+            "X_draw": 32,
+            "c4a_fleet_U_draw": 0.12843799655553467,
+            "J_possible": 13,
+            "J_draw": 10,
+            "c4a_pop_U_possible": 0.30342149275883645,
+            "c4a_pop_U_draw": 0.25061145507501076,
+            "p_hat": 0.29685916919959476,
+            "q_hat": 0.22391084093211755,
+            "disagreement": 0.11955420466058762
+          },
+          "1": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 31.999999999999996,
+            "D_hat": 0.09726443768996959,
+            "cp95": [
+              0.06748359838089005,
+              0.13453048767321604
+            ],
+            "c4a_fleet_U_expected": 0.12843799655553467,
+            "X_draw": 34,
+            "c4a_fleet_U_draw": 0.13519742020077452,
+            "J_possible": 14,
+            "J_draw": 9,
+            "c4a_pop_U_possible": 0.32064788409458544,
+            "c4a_pop_U_draw": 0.2325664460703016,
+            "p_hat": 0.29685916919959476,
+            "q_hat": 0.22796352583586627,
+            "disagreement": 0.12563323201621074
+          },
+          "2": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 32.666666666666664,
+            "D_hat": 0.09929078014184396,
+            "cp95": [
+              0.06919702746596974,
+              0.1368283179361348
+            ],
+            "c4a_fleet_U_expected": 0.1306944730134193,
+            "X_draw": 30,
+            "c4a_fleet_U_draw": 0.12164744131333992,
+            "J_possible": 14,
+            "J_draw": 10,
+            "c4a_pop_U_possible": 0.32064788409458544,
+            "c4a_pop_U_draw": 0.25061145507501076,
+            "p_hat": 0.29685916919959476,
+            "q_hat": 0.220871327254306,
+            "disagreement": 0.12259371833839917
+          }
+        }
+      },
+      "K4": {
+        "variant_mean": {
+          "N": 329,
+          "m_scenes": 64,
+          "X_expected": 32.75,
+          "D_hat": 0.09954407294832827,
+          "cp95": [
+            0.06941150025461673,
+            0.1371152635605494
+          ],
+          "c4a_fleet_U_expected": 0.13097629418858317,
+          "X_draw": 35,
+          "c4a_fleet_U_draw": 0.1385662088259655,
+          "J_possible": 15,
+          "J_draw": 10,
+          "c4a_pop_U_possible": 0.33770972390668996,
+          "c4a_pop_U_draw": 0.25061145507501076,
+          "p_hat": 0.3168693009118541,
+          "q_hat": 0.24062816616008106,
+          "disagreement": 0.12284701114488347
+        },
+        "per_variant": {
+          "0": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 32.25,
+            "D_hat": 0.0980243161094225,
+            "cp95": [
+              0.068125640642703,
+              0.1353926491146439
+            ],
+            "c4a_fleet_U_expected": 0.12928457519674796,
+            "X_draw": 35,
+            "c4a_fleet_U_draw": 0.1385662088259655,
+            "J_possible": 14,
+            "J_draw": 13,
+            "c4a_pop_U_possible": 0.32064788409458544,
+            "c4a_pop_U_draw": 0.30342149275883645,
+            "p_hat": 0.3168693009118541,
+            "q_hat": 0.24316109422492402,
+            "disagreement": 0.12234042553191489
+          },
+          "1": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 33.0,
+            "D_hat": 0.10030395136778116,
+            "cp95": [
+              0.07005530547728842,
+              0.13797572787873852
+            ],
+            "c4a_fleet_U_expected": 0.13182144407809035,
+            "X_draw": 29,
+            "c4a_fleet_U_draw": 0.11823964790898465,
+            "J_possible": 15,
+            "J_draw": 10,
+            "c4a_pop_U_possible": 0.33770972390668996,
+            "c4a_pop_U_draw": 0.25061145507501076,
+            "p_hat": 0.3168693009118541,
+            "q_hat": 0.24240121580547114,
+            "disagreement": 0.12613981762917933
+          },
+          "2": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 33.0,
+            "D_hat": 0.10030395136778116,
+            "cp95": [
+              0.07005530547728842,
+              0.13797572787873852
+            ],
+            "c4a_fleet_U_expected": 0.13182144407809035,
+            "X_draw": 31,
+            "c4a_fleet_U_draw": 0.12504677212927515,
+            "J_possible": 15,
+            "J_draw": 12,
+            "c4a_pop_U_possible": 0.33770972390668996,
+            "c4a_pop_U_draw": 0.286017608800191,
+            "p_hat": 0.3168693009118541,
+            "q_hat": 0.23632218844984804,
+            "disagreement": 0.12006079027355623
+          }
+        }
+      },
+      "K6": {
+        "variant_mean": {
+          "N": 329,
+          "m_scenes": 64,
+          "X_expected": 31.444444444444446,
+          "D_hat": 0.0955758189800743,
+          "cp95": [
+            0.06605899515519548,
+            0.13261249818706639
+          ],
+          "c4a_fleet_U_expected": 0.126554963604069,
+          "X_draw": 33,
+          "c4a_fleet_U_draw": 0.13182144407809035,
+          "J_possible": 15,
+          "J_draw": 9,
+          "c4a_pop_U_possible": 0.33770972390668996,
+          "c4a_pop_U_draw": 0.2325664460703016,
+          "p_hat": 0.34397163120567376,
+          "q_hat": 0.2723741979061128,
+          "disagreement": 0.11955420466058762
+        },
+        "per_variant": {
+          "0": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 31.333333333333336,
+            "D_hat": 0.09523809523809525,
+            "cp95": [
+              0.06577443624071774,
+              0.1322285524807863
+            ],
+            "c4a_fleet_U_expected": 0.1261780641886144,
+            "X_draw": 30,
+            "c4a_fleet_U_draw": 0.12164744131333992,
+            "J_possible": 14,
+            "J_draw": 10,
+            "c4a_pop_U_possible": 0.32064788409458544,
+            "c4a_pop_U_draw": 0.25061145507501076,
+            "p_hat": 0.34397163120567376,
+            "q_hat": 0.27355623100303955,
+            "disagreement": 0.12006079027355623
+          },
+          "1": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 31.666666666666668,
+            "D_hat": 0.09625126646403243,
+            "cp95": [
+              0.06662847642539153,
+              0.13338004019769625
+            ],
+            "c4a_fleet_U_expected": 0.12730846826670592,
+            "X_draw": 36,
+            "c4a_fleet_U_draw": 0.14192807433869087,
+            "J_possible": 15,
+            "J_draw": 13,
+            "c4a_pop_U_possible": 0.33770972390668996,
+            "c4a_pop_U_draw": 0.30342149275883645,
+            "p_hat": 0.34397163120567376,
+            "q_hat": 0.2730496453900709,
+            "disagreement": 0.12158054711246201
+          },
+          "2": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 31.333333333333336,
+            "D_hat": 0.09523809523809525,
+            "cp95": [
+              0.06577443624071774,
+              0.1322285524807863
+            ],
+            "c4a_fleet_U_expected": 0.1261780641886144,
+            "X_draw": 35,
+            "c4a_fleet_U_draw": 0.1385662088259655,
+            "J_possible": 15,
+            "J_draw": 9,
+            "c4a_pop_U_possible": 0.33770972390668996,
+            "c4a_pop_U_draw": 0.2325664460703016,
+            "p_hat": 0.34397163120567376,
+            "q_hat": 0.270516717325228,
+            "disagreement": 0.11702127659574468
+          }
+        }
+      },
+      "K8": {
+        "variant_mean": {
+          "N": 329,
+          "m_scenes": 64,
+          "X_expected": 31.375,
+          "D_hat": 0.09536474164133739,
+          "cp95": [
+            0.065881131577536,
+            0.1323725458242513
+          ],
+          "c4a_fleet_U_expected": 0.12631941300681593,
+          "X_draw": 30,
+          "c4a_fleet_U_draw": 0.12164744131333992,
+          "J_possible": 15,
+          "J_draw": 10,
+          "c4a_pop_U_possible": 0.33770972390668996,
+          "c4a_pop_U_draw": 0.25061145507501076,
+          "p_hat": 0.36854103343465044,
+          "q_hat": 0.2966058763931105,
+          "disagreement": 0.11879432624113474
+        },
+        "per_variant": {
+          "0": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 31.375,
+            "D_hat": 0.09536474164133739,
+            "cp95": [
+              0.065881131577536,
+              0.1323725458242513
+            ],
+            "c4a_fleet_U_expected": 0.12631941300681593,
+            "X_draw": 32,
+            "c4a_fleet_U_draw": 0.12843799655553467,
+            "J_possible": 15,
+            "J_draw": 10,
+            "c4a_pop_U_possible": 0.33770972390668996,
+            "c4a_pop_U_draw": 0.25061145507501076,
+            "p_hat": 0.36854103343465044,
+            "q_hat": 0.29711246200607905,
+            "disagreement": 0.11930091185410334
+          },
+          "1": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 31.625,
+            "D_hat": 0.09612462006079027,
+            "cp95": [
+              0.06652166192836068,
+              0.13323616141426933
+            ],
+            "c4a_fleet_U_expected": 0.12716721589871335,
+            "X_draw": 27,
+            "c4a_fleet_U_draw": 0.11139709560689463,
+            "J_possible": 15,
+            "J_draw": 10,
+            "c4a_pop_U_possible": 0.33770972390668996,
+            "c4a_pop_U_draw": 0.25061145507501076,
+            "p_hat": 0.36854103343465044,
+            "q_hat": 0.29749240121580545,
+            "disagreement": 0.12120060790273557
+          },
+          "2": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 31.125,
+            "D_hat": 0.0946048632218845,
+            "cp95": [
+              0.06524121734600612,
+              0.13150833800094056
+            ],
+            "c4a_fleet_U_expected": 0.1254711114988219,
+            "X_draw": 32,
+            "c4a_fleet_U_draw": 0.12843799655553467,
+            "J_possible": 15,
+            "J_draw": 10,
+            "c4a_pop_U_possible": 0.33770972390668996,
+            "c4a_pop_U_draw": 0.25061145507501076,
+            "p_hat": 0.36854103343465044,
+            "q_hat": 0.29521276595744683,
+            "disagreement": 0.11588145896656535
+          }
+        }
+      },
+      "K12": {
+        "variant_mean": {
+          "N": 329,
+          "m_scenes": 64,
+          "X_expected": 31.416666666666664,
+          "D_hat": 0.09549138804457953,
+          "cp95": [
+            0.06598784402848501,
+            0.13251652271705727
+          ],
+          "c4a_fleet_U_expected": 0.1264607479747954,
+          "X_draw": 34,
+          "c4a_fleet_U_draw": 0.13519742020077452,
+          "J_possible": 18,
+          "J_draw": 10,
+          "c4a_pop_U_possible": 0.38800823220505226,
+          "c4a_pop_U_draw": 0.25061145507501076,
+          "p_hat": 0.4009625126646403,
+          "q_hat": 0.32978723404255317,
+          "disagreement": 0.11980749746707192
+        },
+        "per_variant": {
+          "0": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 31.583333333333332,
+            "D_hat": 0.09599797365754813,
+            "cp95": [
+              0.06641486436347158,
+              0.13309226634961116
+            ],
+            "c4a_fleet_U_expected": 0.1270259498233598,
+            "X_draw": 30,
+            "c4a_fleet_U_draw": 0.12164744131333992,
+            "J_possible": 18,
+            "J_draw": 8,
+            "c4a_pop_U_possible": 0.38800823220505226,
+            "c4a_pop_U_draw": 0.2142556703086208,
+            "p_hat": 0.4009625126646403,
+            "q_hat": 0.331306990881459,
+            "disagreement": 0.12234042553191489
+          },
+          "1": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 31.166666666666664,
+            "D_hat": 0.09473150962512664,
+            "cp95": [
+              0.06534782664991022,
+              0.1316524140278646
+            ],
+            "c4a_fleet_U_expected": 0.12561252993086033,
+            "X_draw": 35,
+            "c4a_fleet_U_draw": 0.1385662088259655,
+            "J_possible": 18,
+            "J_draw": 12,
+            "c4a_pop_U_possible": 0.38800823220505226,
+            "c4a_pop_U_draw": 0.286017608800191,
+            "p_hat": 0.4009625126646403,
+            "q_hat": 0.3290273556231003,
+            "disagreement": 0.1175278622087133
+          },
+          "2": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 31.5,
+            "D_hat": 0.09574468085106383,
+            "cp95": [
+              0.0662013201505515,
+              0.13280442726445824
+            ],
+            "c4a_fleet_U_expected": 0.12674337645601347,
+            "X_draw": 27,
+            "c4a_fleet_U_draw": 0.11139709560689463,
+            "J_possible": 18,
+            "J_draw": 7,
+            "c4a_pop_U_possible": 0.38800823220505226,
+            "c4a_pop_U_draw": 0.1956403996025778,
+            "p_hat": 0.4009625126646403,
+            "q_hat": 0.3290273556231003,
+            "disagreement": 0.11955420466058765
+          }
+        }
+      },
+      "K16": {
+        "variant_mean": {
+          "N": 329,
+          "m_scenes": 64,
+          "X_expected": 30.083333333333332,
+          "D_hat": 0.0914387031408308,
+          "cp95": [
+            0.0625816901300574,
+            0.12790095760312625
+          ],
+          "c4a_fleet_U_expected": 0.12193103700429045,
+          "X_draw": 33,
+          "c4a_fleet_U_draw": 0.13182144407809035,
+          "J_possible": 19,
+          "J_draw": 13,
+          "c4a_pop_U_possible": 0.40450493006037,
+          "c4a_pop_U_draw": 0.30342149275883645,
+          "p_hat": 0.42059270516717323,
+          "q_hat": 0.3533434650455927,
+          "disagreement": 0.11562816616008105
+        },
+        "per_variant": {
+          "0": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 30.25,
+            "D_hat": 0.0919452887537994,
+            "cp95": [
+              0.06300646717906237,
+              0.1284788559033007
+            ],
+            "c4a_fleet_U_expected": 0.12249805298649082,
+            "X_draw": 37,
+            "c4a_fleet_U_draw": 0.14528326343815742,
+            "J_possible": 19,
+            "J_draw": 12,
+            "c4a_pop_U_possible": 0.40450493006037,
+            "c4a_pop_U_draw": 0.286017608800191,
+            "p_hat": 0.42059270516717323,
+            "q_hat": 0.35543313069908816,
+            "disagreement": 0.11873100303951367
+          },
+          "1": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 29.625,
+            "D_hat": 0.09004559270516717,
+            "cp95": [
+              0.0614150543183095,
+              0.12631029724881362
+            ],
+            "c4a_fleet_U_expected": 0.12037053054497371,
+            "X_draw": 29,
+            "c4a_fleet_U_draw": 0.11823964790898465,
+            "J_possible": 19,
+            "J_draw": 9,
+            "c4a_pop_U_possible": 0.40450493006037,
+            "c4a_pop_U_draw": 0.2325664460703016,
+            "p_hat": 0.42059270516717323,
+            "q_hat": 0.35277355623100304,
+            "disagreement": 0.11227203647416413
+          },
+          "2": {
+            "N": 329,
+            "m_scenes": 64,
+            "X_expected": 30.375,
+            "D_hat": 0.09232522796352584,
+            "cp95": [
+              0.06332523886951014,
+              0.1289120983398371
+            ],
+            "c4a_fleet_U_expected": 0.12292316233027059,
+            "X_draw": 38,
+            "c4a_fleet_U_draw": 0.14863200675318866,
+            "J_possible": 19,
+            "J_draw": 9,
+            "c4a_pop_U_possible": 0.40450493006037,
+            "c4a_pop_U_draw": 0.2325664460703016,
+            "p_hat": 0.42059270516717323,
+            "q_hat": 0.3518237082066869,
+            "disagreement": 0.11588145896656535
+          }
+        }
+      },
+      "operating_point": {
+        "n_events": 180,
+        "N": 180,
+        "m_scenes": 64,
+        "X_expected": 12.166666666666666,
+        "D_hat": 0.06759259259259259,
+        "cp95": [
+          0.035596936650034036,
+          0.11469122498493096
+        ],
+        "c4a_fleet_U_expected": 0.10688048616685382,
+        "X_draw": 13,
+        "c4a_fleet_U_draw": 0.11237306380981082,
+        "J_possible": 12,
+        "J_draw": 6,
+        "c4a_pop_U_possible": 0.286017608800191,
+        "c4a_pop_U_draw": 0.17666902232407403,
+        "p_hat": 0.1125,
+        "q_hat": 0.056134259259259266,
+        "disagreement": 0.07881944444444444,
+        "per_variant": {
+          "0": {
+            "N": 180,
+            "m_scenes": 64,
+            "X_expected": 12.1875,
+            "D_hat": 0.06770833333333333,
+            "cp95": [
+              0.035681769186478036,
+              0.11483287060596495
+            ],
+            "c4a_fleet_U_expected": 0.10701824975491345,
+            "X_draw": 13,
+            "c4a_fleet_U_draw": 0.11237306380981082,
+            "J_possible": 11,
+            "J_draw": 7,
+            "c4a_pop_U_possible": 0.26842062072547407,
+            "c4a_pop_U_draw": 0.1956403996025778,
+            "p_hat": 0.1125,
+            "q_hat": 0.05416666666666667,
+            "disagreement": 0.07708333333333334
+          },
+          "1": {
+            "N": 180,
+            "m_scenes": 64,
+            "X_expected": 11.8125,
+            "D_hat": 0.065625,
+            "cp95": [
+              0.03415958967220776,
+              0.11227890016950591
+            ],
+            "c4a_fleet_U_expected": 0.10453483044871026,
+            "X_draw": 12,
+            "c4a_fleet_U_draw": 0.1057775186886912,
+            "J_possible": 10,
+            "J_draw": 6,
+            "c4a_pop_U_possible": 0.25061145507501076,
+            "c4a_pop_U_draw": 0.17666902232407403,
+            "p_hat": 0.1125,
+            "q_hat": 0.05486111111111111,
+            "disagreement": 0.07361111111111111
+          },
+          "2": {
+            "N": 180,
+            "m_scenes": 64,
+            "X_expected": 12.5,
+            "D_hat": 0.06944444444444445,
+            "cp95": [
+              0.03695792870067925,
+              0.11695422635740443
+            ],
+            "c4a_fleet_U_expected": 0.10908189145146777,
+            "X_draw": 11,
+            "c4a_fleet_U_draw": 0.09912620798193905,
+            "J_possible": 12,
+            "J_draw": 5,
+            "c4a_pop_U_possible": 0.286017608800191,
+            "c4a_pop_U_draw": 0.15727012750712213,
+            "p_hat": 0.1125,
+            "q_hat": 0.059375,
+            "disagreement": 0.08576388888888889
+          }
+        }
+      },
+      "operating_point_by_kind": {
+        "person": {
+          "N": 74,
+          "p_hat": 0.06503378378378379,
+          "q_hat": 0.07488738738738739,
+          "D_hat": 0.0033783783783783786,
+          "U_fleet": 0.0458086426852411
+        },
+        "vehicle": {
+          "N": 106,
+          "p_hat": 0.14563679245283018,
+          "q_hat": 0.04304245283018868,
+          "D_hat": 0.11242138364779876,
+          "U_fleet": 0.17604501644589418
+        }
+      },
+      "operating_point_by_category": {
+        "LASIESTA": {
+          "N": 24,
+          "n_scenes": 20,
+          "p_hat": 0.0,
+          "q_hat": 0.026909722222222224,
+          "D_hat": 0.0
+        },
+        "PTZ": {
+          "N": 10,
+          "n_scenes": 4,
+          "p_hat": 0.04375,
+          "q_hat": 0.0625,
+          "D_hat": 0.00625
+        },
+        "badWeather": {
+          "N": 15,
+          "n_scenes": 4,
+          "p_hat": 0.0,
+          "q_hat": 0.0,
+          "D_hat": 0.0
+        },
+        "baseline": {
+          "N": 2,
+          "n_scenes": 1,
+          "p_hat": 0.0,
+          "q_hat": 0.0,
+          "D_hat": 0.0
+        },
+        "cameraJitter": {
+          "N": 16,
+          "n_scenes": 2,
+          "p_hat": 0.01953125,
+          "q_hat": 0.0013020833333333333,
+          "D_hat": 0.01953125
+        },
+        "dynamicBackground": {
+          "N": 19,
+          "n_scenes": 6,
+          "p_hat": 0.0,
+          "q_hat": 0.01644736842105263,
+          "D_hat": 0.0
+        },
+        "intermittentObjectMotion": {
+          "N": 6,
+          "n_scenes": 3,
+          "p_hat": 0.0,
+          "q_hat": 0.03125,
+          "D_hat": 0.0
+        },
+        "lowFramerate": {
+          "N": 5,
+          "n_scenes": 4,
+          "p_hat": 0.2,
+          "q_hat": 0.21666666666666665,
+          "D_hat": 0.004166666666666667
+        },
+        "nightVideos": {
+          "N": 25,
+          "n_scenes": 6,
+          "p_hat": 0.3625,
+          "q_hat": 0.02083333333333333,
+          "D_hat": 0.34333333333333327
+        },
+        "shadow": {
+          "N": 37,
+          "n_scenes": 6,
+          "p_hat": 0.0,
+          "q_hat": 0.0045045045045045045,
+          "D_hat": 0.0
+        },
+        "thermal": {
+          "N": 7,
+          "n_scenes": 4,
+          "p_hat": 0.0,
+          "q_hat": 0.005952380952380952,
+          "D_hat": 0.0
+        },
+        "turbulence": {
+          "N": 14,
+          "n_scenes": 4,
+          "p_hat": 0.6741071428571429,
+          "q_hat": 0.4642857142857143,
+          "D_hat": 0.22767857142857142
+        }
+      },
+      "heterogeneity_K1": {
+        "variant0": {
+          "pooled": 0.1033434650455927,
+          "Q": 98.12885711006581,
+          "df": 63,
+          "I2": 0.35798701976793307,
+          "perm_p": 0.015398460153984602
+        },
+        "variant1": {
+          "pooled": 0.0972644376899696,
+          "Q": 93.89301208059341,
+          "df": 63,
+          "I2": 0.329023549208074,
+          "perm_p": 0.028497150284971504
+        },
+        "variant2": {
+          "pooled": 0.1094224924012158,
+          "Q": 90.35476375217853,
+          "df": 63,
+          "I2": 0.3027484397746431,
+          "perm_p": 0.0334966503349665
+        }
+      },
+      "per_scene": [
+        {
+          "video": "I_IL_01",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "I_MC_01",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "I_OC_01",
+          "dataset": "LASIESTA",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "I_OC_02",
+          "dataset": "LASIESTA",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "I_SI_02",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "I_SM_01",
+          "dataset": "LASIESTA",
+          "n_events": 3,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.7075982261787133
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_CL_02",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_RA_02",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_01",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_02",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_03",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_04",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_05",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_06",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_07",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_08",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_09",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_10",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_11",
+          "dataset": "LASIESTA",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "O_SM_12",
+          "dataset": "LASIESTA",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.5,
+          "q_K1": 0.5,
+          "D_OP": 0.0
+        },
+        {
+          "video": "backdoor",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "blizzard",
+          "dataset": "CDnet2014",
+          "n_events": 3,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.7075982261787133
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "boats",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "boulevard",
+          "dataset": "CDnet2014",
+          "n_events": 8,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.3694166475528192
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "bridgeEntry",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.15625
+        },
+        {
+          "video": "bungalows",
+          "dataset": "CDnet2014",
+          "n_events": 13,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.24705263800047095
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "busStation",
+          "dataset": "CDnet2014",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "busyBoulvard",
+          "dataset": "CDnet2014",
+          "n_events": 16,
+          "D_K1": 0.625,
+          "cp95_K1": [
+            0.35434609430207814,
+            0.8480163249188779
+          ],
+          "p_K1": 0.625,
+          "q_K1": 0.0,
+          "D_OP": 0.96875
+        },
+        {
+          "video": "canoe",
+          "dataset": "CDnet2014",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "continuousPan",
+          "dataset": "CDnet2014",
+          "n_events": 9,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.3362671168799428
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.037037037037037035,
+          "D_OP": 0.0625
+        },
+        {
+          "video": "copyMachine",
+          "dataset": "CDnet2014",
+          "n_events": 4,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.6023646356164746
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "corridor",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "cubicle",
+          "dataset": "CDnet2014",
+          "n_events": 13,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.24705263800047095
+          ],
+          "p_K1": 0.07692307692307693,
+          "q_K1": 0.07692307692307693,
+          "D_OP": 0.0
+        },
+        {
+          "video": "fall",
+          "dataset": "CDnet2014",
+          "n_events": 12,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.26464846939705117
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "fluidHighway",
+          "dataset": "CDnet2014",
+          "n_events": 4,
+          "D_K1": 0.25,
+          "cp95_K1": [
+            0.006309463209709866,
+            0.8058795503167565
+          ],
+          "p_K1": 0.25,
+          "q_K1": 0.0,
+          "D_OP": 0.265625
+        },
+        {
+          "video": "fountain01",
+          "dataset": "CDnet2014",
+          "n_events": 3,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.7075982261787133
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "fountain02",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "intermittentPan",
+          "dataset": "CDnet2014",
+          "n_events": 14,
+          "D_K1": 0.35714285714285715,
+          "cp95_K1": [
+            0.1275984298591596,
+            0.6486198893840083
+          ],
+          "p_K1": 0.35714285714285715,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "lakeSide",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "library",
+          "dataset": "CDnet2014",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "overpass",
+          "dataset": "CDnet2014",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "park",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "parking",
+          "dataset": "CDnet2014",
+          "n_events": 6,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.4592581264399005
+          ],
+          "p_K1": 0.5,
+          "q_K1": 0.5,
+          "D_OP": 0.0
+        },
+        {
+          "video": "pedestrians",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "peopleInShade",
+          "dataset": "CDnet2014",
+          "n_events": 5,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.5218237501049814
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "port_0_17fps",
+          "dataset": "CDnet2014",
+          "n_events": 22,
+          "D_K1": 0.1212121212121212,
+          "cp95_K1": [
+            0.022453220212407924,
+            0.33043668193162423
+          ],
+          "p_K1": 0.7727272727272727,
+          "q_K1": 0.8333333333333333,
+          "D_OP": 0.020833333333333332
+        },
+        {
+          "video": "skating",
+          "dataset": "CDnet2014",
+          "n_events": 6,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.4592581264399005
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "snowFall",
+          "dataset": "CDnet2014",
+          "n_events": 3,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.7075982261787133
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "streetCornerAtNight",
+          "dataset": "CDnet2014",
+          "n_events": 11,
+          "D_K1": 0.09090909090909091,
+          "cp95_K1": [
+            0.0022989722138142673,
+            0.4127799169883827
+          ],
+          "p_K1": 0.09090909090909091,
+          "q_K1": 0.0,
+          "D_OP": 0.2333333333333333
+        },
+        {
+          "video": "streetLight",
+          "dataset": "CDnet2014",
+          "n_events": 38,
+          "D_K1": 0.16666666666666666,
+          "cp95_K1": [
+            0.06585010543435718,
+            0.3228731083125366
+          ],
+          "p_K1": 0.7105263157894737,
+          "q_K1": 0.5701754385964911,
+          "D_OP": 0.0
+        },
+        {
+          "video": "traffic",
+          "dataset": "CDnet2014",
+          "n_events": 14,
+          "D_K1": 0.07142857142857142,
+          "cp95_K1": [
+            0.0018067806591253865,
+            0.3386844899318212
+          ],
+          "p_K1": 0.07142857142857142,
+          "q_K1": 0.0,
+          "D_OP": 0.0390625
+        },
+        {
+          "video": "tramCrossroad_1fps",
+          "dataset": "CDnet2014",
+          "n_events": 11,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.2849141529181544
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "tramStation",
+          "dataset": "CDnet2014",
+          "n_events": 3,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.7075982261787133
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "tunnelExit_0_35fps",
+          "dataset": "CDnet2014",
+          "n_events": 34,
+          "D_K1": 0.029411764705882353,
+          "cp95_K1": [
+            0.0007443642346902604,
+            0.15326766956031765
+          ],
+          "p_K1": 0.029411764705882353,
+          "q_K1": 0.0784313725490196,
+          "D_OP": 0.0
+        },
+        {
+          "video": "turbulence0",
+          "dataset": "CDnet2014",
+          "n_events": 4,
+          "D_K1": 0.5,
+          "cp95_K1": [
+            0.06758598648854294,
+            0.932414013511457
+          ],
+          "p_K1": 0.75,
+          "q_K1": 0.25,
+          "D_OP": 0.0763888888888889
+        },
+        {
+          "video": "turbulence1",
+          "dataset": "CDnet2014",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.125
+        },
+        {
+          "video": "turbulence2",
+          "dataset": "CDnet2014",
+          "n_events": 4,
+          "D_K1": 0.3333333333333333,
+          "cp95_K1": [
+            0.019151681764399207,
+            0.8553100177370578
+          ],
+          "p_K1": 0.5,
+          "q_K1": 0.49999999999999994,
+          "D_OP": 0.057291666666666664
+        },
+        {
+          "video": "turbulence3",
+          "dataset": "CDnet2014",
+          "n_events": 6,
+          "D_K1": 0.27777777777777773,
+          "cp95_K1": [
+            0.025771559731698652,
+            0.7356916980315945
+          ],
+          "p_K1": 0.3333333333333333,
+          "q_K1": 0.05555555555555555,
+          "D_OP": 0.43402777777777773
+        },
+        {
+          "video": "turnpike_0_5fps",
+          "dataset": "CDnet2014",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "twoPositionPTZCam",
+          "dataset": "CDnet2014",
+          "n_events": 7,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.4096163972250034
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "wetSnow",
+          "dataset": "CDnet2014",
+          "n_events": 3,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.7075982261787133
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "winterDriveway",
+          "dataset": "CDnet2014",
+          "n_events": 2,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.841886116991581
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        },
+        {
+          "video": "winterStreet",
+          "dataset": "CDnet2014",
+          "n_events": 3,
+          "D_K1": 0.3333333333333333,
+          "cp95_K1": [
+            0.008403758659612636,
+            0.9057006759497539
+          ],
+          "p_K1": 0.3333333333333333,
+          "q_K1": 0.0,
+          "D_OP": 0.3333333333333333
+        },
+        {
+          "video": "zoomInZoomOut",
+          "dataset": "CDnet2014",
+          "n_events": 1,
+          "D_K1": 0.0,
+          "cp95_K1": [
+            0.0,
+            0.975
+          ],
+          "p_K1": 0.0,
+          "q_K1": 0.0,
+          "D_OP": 0.0
+        }
+      ],
+      "sprite_variance_K1": {
+        "frac_events_variants_disagree": 0.0182370820668693
+      }
+    }
+  },
+  "confidence": {
+    "per_scene": [
+      {
+        "video": "I_IL_01",
+        "kind": "person",
+        "twin_score_median": 0.8941,
+        "real_score_median": 0.9341,
+        "twin_hit_rate": 0.8744186046511628,
+        "real_hit_rate": 0.9313725490196079,
+        "area_ratio_median": 0.3580225193525686,
+        "w_ratio_median": 1.0740740740740742,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "I_MC_01",
+        "kind": "person",
+        "twin_score_median": 0.8383499999999999,
+        "real_score_median": 0.93665,
+        "twin_hit_rate": 0.7786885245901639,
+        "real_hit_rate": 0.96875,
+        "area_ratio_median": 0.27762493407833166,
+        "w_ratio_median": 1.0961538461538463,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "I_OC_01",
+        "kind": "person",
+        "twin_score_median": 0.62395,
+        "real_score_median": 0.92085,
+        "twin_hit_rate": 0.4316546762589928,
+        "real_hit_rate": 0.7913669064748201,
+        "area_ratio_median": 0.2582703213610586,
+        "w_ratio_median": 1.0196078431372548,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "I_OC_02",
+        "kind": "person",
+        "twin_score_median": 0.6888000000000001,
+        "real_score_median": 0.9027499999999999,
+        "twin_hit_rate": 0.4481132075471698,
+        "real_hit_rate": 0.9583333333333334,
+        "area_ratio_median": 0.36974782632153147,
+        "w_ratio_median": 1.0933333333333333,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "I_SI_02",
+        "kind": "person",
+        "twin_score_median": 0.7838,
+        "real_score_median": 0.92345,
+        "twin_hit_rate": 0.8064516129032258,
+        "real_hit_rate": 0.9611650485436893,
+        "area_ratio_median": 0.28374913733609386,
+        "w_ratio_median": 1.1,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "I_SM_01",
+        "kind": "person",
+        "twin_score_median": 0.8971,
+        "real_score_median": 0.93215,
+        "twin_hit_rate": 0.845691382765531,
+        "real_hit_rate": 0.9655172413793104,
+        "area_ratio_median": 0.4126819126819127,
+        "w_ratio_median": 1.0869565217391304,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "O_CL_02",
+        "kind": "person",
+        "twin_score_median": 0.72525,
+        "real_score_median": 0.9212,
+        "twin_hit_rate": 0.8910256410256411,
+        "real_hit_rate": 0.975609756097561,
+        "area_ratio_median": 0.2756965728615213,
+        "w_ratio_median": 1.0863354037267081,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "O_RA_02",
+        "kind": "person",
+        "twin_score_median": 0.9016,
+        "real_score_median": 0.9452499999999999,
+        "twin_hit_rate": 0.812206572769953,
+        "real_hit_rate": 0.9896907216494846,
+        "area_ratio_median": 0.2469213370193516,
+        "w_ratio_median": 1.0547945205479452,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "O_SM_01",
+        "kind": "person",
+        "twin_score_median": 0.90115,
+        "real_score_median": 0.93065,
+        "twin_hit_rate": 0.9137055837563451,
+        "real_hit_rate": 0.972972972972973,
+        "area_ratio_median": 0.30345528455284554,
+        "w_ratio_median": 0.9863013698630136,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "O_SM_02",
+        "kind": "person",
+        "twin_score_median": 0.849,
+        "real_score_median": 0.9255,
+        "twin_hit_rate": 0.9010989010989011,
+        "real_hit_rate": 0.98,
+        "area_ratio_median": 0.3338703902613677,
+        "w_ratio_median": 1.0606060606060606,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "O_SM_03",
+        "kind": "person",
+        "twin_score_median": 0.8501,
+        "real_score_median": 0.9233,
+        "twin_hit_rate": 0.8502202643171806,
+        "real_hit_rate": 0.9801980198019802,
+        "area_ratio_median": 0.34136363636363637,
+        "w_ratio_median": 1.05,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "O_SM_04",
+        "kind": "person",
+        "twin_score_median": 0.7982,
+        "real_score_median": 0.9237,
+        "twin_hit_rate": 0.8037037037037037,
+        "real_hit_rate": 0.9304347826086956,
+        "area_ratio_median": 0.35147977507834816,
+        "w_ratio_median": 1.0,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "O_SM_05",
+        "kind": "person",
+        "twin_score_median": 0.80315,
+        "real_score_median": 0.92475,
+        "twin_hit_rate": 0.8533333333333334,
+        "real_hit_rate": 0.9183673469387755,
+        "area_ratio_median": 0.33784164553395324,
+        "w_ratio_median": 0.9803921568627451,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "O_SM_06",
+        "kind": "person",
+        "twin_score_median": 0.78335,
+        "real_score_median": 0.92225,
+        "twin_hit_rate": 0.8127208480565371,
+        "real_hit_rate": 0.9310344827586207,
+        "area_ratio_median": 0.33966861598440545,
+        "w_ratio_median": 0.9642857142857143,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "O_SM_07",
+        "kind": "person",
+        "twin_score_median": 0.7013,
+        "real_score_median": 0.9286,
+        "twin_hit_rate": 0.7193460490463215,
+        "real_hit_rate": 0.9477124183006536,
+        "area_ratio_median": 0.21754523996852873,
+        "w_ratio_median": 1.0952380952380953,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "O_SM_08",
+        "kind": "person",
+        "twin_score_median": 0.7272,
+        "real_score_median": 0.9262,
+        "twin_hit_rate": 0.8151515151515152,
+        "real_hit_rate": 0.9523809523809523,
+        "area_ratio_median": 0.33339864158829674,
+        "w_ratio_median": 1.037037037037037,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "O_SM_09",
+        "kind": "person",
+        "twin_score_median": 0.7874,
+        "real_score_median": 0.9196,
+        "twin_hit_rate": 0.8361344537815126,
+        "real_hit_rate": 0.9183673469387755,
+        "area_ratio_median": 0.29048892714340346,
+        "w_ratio_median": 1.088235294117647,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "O_SM_10",
+        "kind": "person",
+        "twin_score_median": 0.7426,
+        "real_score_median": 0.9286,
+        "twin_hit_rate": 0.7848970251716247,
+        "real_hit_rate": 0.9637305699481865,
+        "area_ratio_median": 0.2602797202797203,
+        "w_ratio_median": 1.0909090909090908,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "O_SM_11",
+        "kind": "person",
+        "twin_score_median": 0.7381,
+        "real_score_median": 0.9286,
+        "twin_hit_rate": 0.8075801749271136,
+        "real_hit_rate": 0.96045197740113,
+        "area_ratio_median": 0.31405940594059406,
+        "w_ratio_median": 1.0,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "O_SM_12",
+        "kind": "person",
+        "twin_score_median": 0.77135,
+        "real_score_median": 0.9247,
+        "twin_hit_rate": 0.8184818481848185,
+        "real_hit_rate": 0.9712230215827338,
+        "area_ratio_median": 0.2797805642633229,
+        "w_ratio_median": 1.0740740740740742,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "backdoor",
+        "kind": "person",
+        "twin_score_median": 0.8354,
+        "real_score_median": 0.92065,
+        "twin_hit_rate": 0.7655601659751037,
+        "real_hit_rate": 0.9581749049429658,
+        "area_ratio_median": 0.2572016398740308,
+        "w_ratio_median": 1.0952380952380953,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "blizzard",
+        "kind": "vehicle",
+        "twin_score_median": 0.7531,
+        "real_score_median": 0.7115,
+        "twin_hit_rate": 0.6740395809080326,
+        "real_hit_rate": 0.9108695652173913,
+        "area_ratio_median": 0.5507246376811594,
+        "w_ratio_median": 0.9035087719298246,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "boats",
+        "kind": "vehicle",
+        "twin_score_median": 0.47940000000000005,
+        "real_score_median": 0.7223,
+        "twin_hit_rate": 0.7039473684210527,
+        "real_hit_rate": 0.9161490683229814,
+        "area_ratio_median": 0.56234245636239,
+        "w_ratio_median": 0.967032967032967,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "boulevard",
+        "kind": "vehicle",
+        "twin_score_median": 0.8314,
+        "real_score_median": 0.767,
+        "twin_hit_rate": 0.9419026870007262,
+        "real_hit_rate": 0.9204339963833634,
+        "area_ratio_median": 0.59258337481334,
+        "w_ratio_median": 0.968421052631579,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "bridgeEntry",
+        "kind": "vehicle",
+        "twin_score_median": 0.6606,
+        "real_score_median": 0.2634,
+        "twin_hit_rate": 0.952,
+        "real_hit_rate": 0.017241379310344827,
+        "area_ratio_median": 0.6327985739750446,
+        "w_ratio_median": 1.0263157894736843,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "bungalows",
+        "kind": "vehicle",
+        "twin_score_median": 0.8438,
+        "real_score_median": 0.9111,
+        "twin_hit_rate": 0.9075382803297998,
+        "real_hit_rate": 0.9672413793103448,
+        "area_ratio_median": 0.6030406588867924,
+        "w_ratio_median": 1.0,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "busStation",
+        "kind": "person",
+        "twin_score_median": 0.6653,
+        "real_score_median": 0.8879,
+        "twin_hit_rate": 0.9233870967741935,
+        "real_hit_rate": 0.9888888888888889,
+        "area_ratio_median": 0.3160939623374102,
+        "w_ratio_median": 1.1,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "busyBoulvard",
+        "kind": "vehicle",
+        "twin_score_median": 0.8051,
+        "real_score_median": 0.32545,
+        "twin_hit_rate": 0.9683441558441559,
+        "real_hit_rate": 0.018691588785046728,
+        "area_ratio_median": 0.5564722846909879,
+        "w_ratio_median": 0.9917181069958848,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "canoe",
+        "kind": "vehicle",
+        "twin_score_median": 0.5561,
+        "real_score_median": 0.8283,
+        "twin_hit_rate": 0.8035714285714286,
+        "real_hit_rate": 0.9669421487603306,
+        "area_ratio_median": 0.5995851521624718,
+        "w_ratio_median": 1.0975609756097562,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "continuousPan",
+        "kind": "vehicle",
+        "twin_score_median": 0.8118,
+        "real_score_median": 0.7936,
+        "twin_hit_rate": 0.5527426160337553,
+        "real_hit_rate": 0.569620253164557,
+        "area_ratio_median": 0.6944444444444444,
+        "w_ratio_median": 0.9840637450199203,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "copyMachine",
+        "kind": "person",
+        "twin_score_median": 0.9165,
+        "real_score_median": 0.9297,
+        "twin_hit_rate": 0.7860647693817469,
+        "real_hit_rate": 0.9031476997578692,
+        "area_ratio_median": 0.34297691039032435,
+        "w_ratio_median": 0.9,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "corridor",
+        "kind": "person",
+        "twin_score_median": 0.7123,
+        "real_score_median": 0.84485,
+        "twin_hit_rate": 0.6907216494845361,
+        "real_hit_rate": 0.8366533864541833,
+        "area_ratio_median": 0.41327723235156616,
+        "w_ratio_median": 0.9,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "cubicle",
+        "kind": "person",
+        "twin_score_median": 0.7764,
+        "real_score_median": 0.9145,
+        "twin_hit_rate": 0.7889876880984952,
+        "real_hit_rate": 0.9192245557350566,
+        "area_ratio_median": 0.3440065681444992,
+        "w_ratio_median": 1.0555555555555556,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "fall",
+        "kind": "vehicle",
+        "twin_score_median": 0.8647,
+        "real_score_median": 0.8463,
+        "twin_hit_rate": 0.8488023952095808,
+        "real_hit_rate": 0.9555873925501432,
+        "area_ratio_median": 0.557604157580207,
+        "w_ratio_median": 0.948297369945201,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "fluidHighway",
+        "kind": "vehicle",
+        "twin_score_median": 0.78135,
+        "real_score_median": 0.43825000000000003,
+        "twin_hit_rate": 0.954248366013072,
+        "real_hit_rate": 0.3508771929824561,
+        "area_ratio_median": 0.6472763347763348,
+        "w_ratio_median": 0.9843825665859565,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "fountain01",
+        "kind": "vehicle",
+        "twin_score_median": 0.7544,
+        "real_score_median": 0.78805,
+        "twin_hit_rate": 0.8328981723237598,
+        "real_hit_rate": 0.9594594594594594,
+        "area_ratio_median": 0.61328125,
+        "w_ratio_median": 0.9375,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "fountain02",
+        "kind": "vehicle",
+        "twin_score_median": 0.7979,
+        "real_score_median": 0.5055000000000001,
+        "twin_hit_rate": 0.6635294117647059,
+        "real_hit_rate": 0.7015706806282722,
+        "area_ratio_median": 0.5906976744186047,
+        "w_ratio_median": 1.048780487804878,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "intermittentPan",
+        "kind": "vehicle",
+        "twin_score_median": 0.60395,
+        "real_score_median": 0.7624,
+        "twin_hit_rate": 0.7393658159319412,
+        "real_hit_rate": 0.6966824644549763,
+        "area_ratio_median": 0.5810276679841897,
+        "w_ratio_median": 1.0,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "lakeSide",
+        "kind": "person",
+        "twin_score_median": 0.41555,
+        "real_score_median": 0.45175,
+        "twin_hit_rate": 0.1692420897718911,
+        "real_hit_rate": 0.1797752808988764,
+        "area_ratio_median": 0.42822966507177035,
+        "w_ratio_median": 0.8987341772151899,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "library",
+        "kind": "person",
+        "twin_score_median": 0.8305,
+        "real_score_median": 0.6828,
+        "twin_hit_rate": 0.831858407079646,
+        "real_hit_rate": 0.908256880733945,
+        "area_ratio_median": 0.28581072935503316,
+        "w_ratio_median": 0.9183333333333333,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "overpass",
+        "kind": "person",
+        "twin_score_median": 0.9236,
+        "real_score_median": 0.9527,
+        "twin_hit_rate": 0.8791208791208791,
+        "real_hit_rate": 0.9324324324324325,
+        "area_ratio_median": 0.2994202935918592,
+        "w_ratio_median": 1.0833333333333333,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "park",
+        "kind": "person",
+        "twin_score_median": 0.75165,
+        "real_score_median": 0.7949,
+        "twin_hit_rate": 0.8185483870967742,
+        "real_hit_rate": 0.7463414634146341,
+        "area_ratio_median": 0.29289321789321787,
+        "w_ratio_median": 1.0,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "parking",
+        "kind": "vehicle",
+        "twin_score_median": 0.57645,
+        "real_score_median": 0.7047000000000001,
+        "twin_hit_rate": 0.7159090909090909,
+        "real_hit_rate": 0.9090909090909091,
+        "area_ratio_median": 0.6031746031746031,
+        "w_ratio_median": 1.0,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "pedestrians",
+        "kind": "person",
+        "twin_score_median": 0.779,
+        "real_score_median": 0.87625,
+        "twin_hit_rate": 0.8578052550231839,
+        "real_hit_rate": 0.9725490196078431,
+        "area_ratio_median": 0.3814151229881567,
+        "w_ratio_median": 1.037037037037037,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "peopleInShade",
+        "kind": "person",
+        "twin_score_median": 0.9033,
+        "real_score_median": 0.9042,
+        "twin_hit_rate": 0.8982869379014989,
+        "real_hit_rate": 0.9553072625698324,
+        "area_ratio_median": 0.34166906625954474,
+        "w_ratio_median": 0.9019607843137255,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "port_0_17fps",
+        "kind": "person",
+        "twin_score_median": 0.3433,
+        "real_score_median": 0.3304,
+        "twin_hit_rate": 0.0180623973727422,
+        "real_hit_rate": 0.024630541871921183,
+        "area_ratio_median": 0.3273809523809524,
+        "w_ratio_median": 0.9090909090909091,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "skating",
+        "kind": "person",
+        "twin_score_median": 0.91555,
+        "real_score_median": 0.91405,
+        "twin_hit_rate": 0.7719897523484202,
+        "real_hit_rate": 0.9282296650717703,
+        "area_ratio_median": 0.3668518518518519,
+        "w_ratio_median": 0.9014084507042254,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "snowFall",
+        "kind": "vehicle",
+        "twin_score_median": 0.7219,
+        "real_score_median": 0.92135,
+        "twin_hit_rate": 0.8688,
+        "real_hit_rate": 0.451063829787234,
+        "area_ratio_median": 0.6137592968221771,
+        "w_ratio_median": 0.9285714285714286,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "streetCornerAtNight",
+        "kind": "vehicle",
+        "twin_score_median": 0.5962,
+        "real_score_median": 0.5749,
+        "twin_hit_rate": 0.5815850815850816,
+        "real_hit_rate": 0.3113948919449902,
+        "area_ratio_median": 0.6357758620689655,
+        "w_ratio_median": 0.9807621161672215,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "streetLight",
+        "kind": "vehicle",
+        "twin_score_median": 0.5172,
+        "real_score_median": 0.6173,
+        "twin_hit_rate": 0.3583208395802099,
+        "real_hit_rate": 0.31390134529147984,
+        "area_ratio_median": 1.0,
+        "w_ratio_median": 1.0,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "traffic",
+        "kind": "vehicle",
+        "twin_score_median": 0.8394,
+        "real_score_median": 0.6705,
+        "twin_hit_rate": 0.8694203864090606,
+        "real_hit_rate": 0.6144814090019569,
+        "area_ratio_median": 0.6045751633986928,
+        "w_ratio_median": 0.96875,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "tramCrossroad_1fps",
+        "kind": "vehicle",
+        "twin_score_median": 0.6397,
+        "real_score_median": 0.70655,
+        "twin_hit_rate": 0.8423423423423423,
+        "real_hit_rate": 0.7972972972972973,
+        "area_ratio_median": 0.5882708665603402,
+        "w_ratio_median": 1.0,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "tramStation",
+        "kind": "vehicle",
+        "twin_score_median": 0.66315,
+        "real_score_median": 0.46599999999999997,
+        "twin_hit_rate": 0.8178137651821862,
+        "real_hit_rate": 0.4745762711864407,
+        "area_ratio_median": 0.5269984406661601,
+        "w_ratio_median": 0.9069767441860465,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "tunnelExit_0_35fps",
+        "kind": "vehicle",
+        "twin_score_median": 0.544,
+        "real_score_median": 0.5925,
+        "twin_hit_rate": 0.6283905967450272,
+        "real_hit_rate": 0.7935656836461126,
+        "area_ratio_median": 0.7166666666666667,
+        "w_ratio_median": 1.031024531024531,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "turbulence0",
+        "kind": "vehicle",
+        "twin_score_median": 0.42145,
+        "real_score_median": 0.43165,
+        "twin_hit_rate": 0.05086342229199372,
+        "real_hit_rate": 0.25165562913907286,
+        "area_ratio_median": 0.67,
+        "w_ratio_median": 0.9852941176470589,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "turbulence1",
+        "kind": "vehicle",
+        "twin_score_median": 0.4074,
+        "real_score_median": 0.326,
+        "twin_hit_rate": 0.3134568896051571,
+        "real_hit_rate": 0.01126126126126126,
+        "area_ratio_median": 0.5990740740740741,
+        "w_ratio_median": 1.0,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "turbulence2",
+        "kind": "person",
+        "twin_score_median": 0.34804999999999997,
+        "real_score_median": 0.3645,
+        "twin_hit_rate": 0.007442849548112706,
+        "real_hit_rate": 0.004784688995215311,
+        "area_ratio_median": 0.3125,
+        "w_ratio_median": 0.9032258064516129,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "turbulence3",
+        "kind": "vehicle",
+        "twin_score_median": 0.7394,
+        "real_score_median": 0.471,
+        "twin_hit_rate": 0.5976,
+        "real_hit_rate": 0.16666666666666666,
+        "area_ratio_median": 0.5805546081653992,
+        "w_ratio_median": 0.9695110615356014,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "turnpike_0_5fps",
+        "kind": "vehicle",
+        "twin_score_median": 0.4507,
+        "real_score_median": 0.6661,
+        "twin_hit_rate": 0.5044843049327354,
+        "real_hit_rate": 0.86,
+        "area_ratio_median": 0.587106045881556,
+        "w_ratio_median": 1.0161458333333333,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "twoPositionPTZCam",
+        "kind": "vehicle",
+        "twin_score_median": 0.6872,
+        "real_score_median": 0.7092,
+        "twin_hit_rate": 0.907243816254417,
+        "real_hit_rate": 0.8458149779735683,
+        "area_ratio_median": 0.6406747631525902,
+        "w_ratio_median": 0.9633928571428572,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "wetSnow",
+        "kind": "vehicle",
+        "twin_score_median": 0.6632,
+        "real_score_median": 0.5793999999999999,
+        "twin_hit_rate": 0.5855940130963517,
+        "real_hit_rate": 0.35799522673031026,
+        "area_ratio_median": 0.6388888888888888,
+        "w_ratio_median": 0.9047619047619048,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "winterDriveway",
+        "kind": "person",
+        "twin_score_median": 0.8216,
+        "real_score_median": 0.8885,
+        "twin_hit_rate": 0.9775641025641025,
+        "real_hit_rate": 0.975,
+        "area_ratio_median": 0.591728583916084,
+        "w_ratio_median": 1.0972222222222223,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "winterStreet",
+        "kind": "vehicle",
+        "twin_score_median": 0.79345,
+        "real_score_median": 0.6383,
+        "twin_hit_rate": 0.9567198177676538,
+        "real_hit_rate": 0.2392638036809816,
+        "area_ratio_median": 0.5485294117647059,
+        "w_ratio_median": 0.9696969696969697,
+        "plate_source": "longest_empty_run"
+      },
+      {
+        "video": "zoomInZoomOut",
+        "kind": "person",
+        "twin_score_median": 0.4382,
+        "real_score_median": 0.7317,
+        "twin_hit_rate": 0.23386243386243386,
+        "real_hit_rate": 0.9555555555555556,
+        "area_ratio_median": 0.39141414141414144,
+        "w_ratio_median": 1.0909090909090908,
+        "plate_source": "longest_empty_run"
+      }
+    ],
+    "twin_score_median_pooled": 0.7645,
+    "real_score_median_pooled": 0.8467,
+    "twin_hit_rate_pooled": 0.6356492302732328,
+    "real_hit_rate_pooled": 0.6384263218795593,
+    "criterion": "twin median matched-box confidence >= 0.6",
+    "pass_": true,
+    "by_kind": {
+      "person": {
+        "twin": 0.7982,
+        "real": 0.9116,
+        "twin_hit": 0.5979517383851259
+      },
+      "vehicle": {
+        "twin": 0.73415,
+        "real": 0.71075,
+        "twin_hit": 0.6675596234698813
+      }
+    },
+    "geometry": {
+      "area_ratio_median": 0.5239485981308412,
+      "w_ratio_median": 0.9558823529411765,
+      "h_ratio_exact": true,
+      "frac_width_within_10pct_strict": 0.6372209236721206,
+      "frac_width_within_10pct_plus_1px": 1.0,
+      "frac_width_at_clip_bound": 0.7842750060449746,
+      "note": "box area ratio = width ratio (height exact); 'at clip bound' = sprite aspect differs from the GT box by >= 10% and was clamped"
+    },
+    "geometry_by_kind": {
+      "person": {
+        "area_ratio_median": 0.34807972775887214,
+        "w_ratio_median": 0.9166666666666666,
+        "h_ratio_exact": true,
+        "frac_width_within_10pct_strict": 0.5789196079293217,
+        "frac_width_within_10pct_plus_1px": 1.0,
+        "frac_width_at_clip_bound": 0.8888840050986769,
+        "note": "box area ratio = width ratio (height exact); 'at clip bound' = sprite aspect differs from the GT box by >= 10% and was clamped"
+      },
+      "vehicle": {
+        "area_ratio_median": 0.6153846153846154,
+        "w_ratio_median": 0.9866666666666667,
+        "h_ratio_exact": true,
+        "frac_width_within_10pct_strict": 0.6865721620716598,
+        "frac_width_within_10pct_plus_1px": 1.0,
+        "frac_width_at_clip_bound": 0.6957249693046099,
+        "note": "box area ratio = width ratio (height exact); 'at clip bound' = sprite aspect differs from the GT box by >= 10% and was clamped"
+      }
+    }
+  }
+}

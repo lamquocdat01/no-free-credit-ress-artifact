@@ -1,0 +1,1976 @@
+{
+  "meta": {
+    "min_bg_run": 25,
+    "criterion": "GT-empty run >= 25 frames (true order) and >= 1 Mode-G* event (gap1)",
+    "tiers": "PTZ excluded (static-background twin); nightVideos = night tier; turbulence = turbulence tier; rest = main"
+  },
+  "scenes": [
+    {
+      "dataset": "CDnet2014",
+      "category": "PTZ",
+      "video": "continuousPan",
+      "longest_gt_empty_run": 688,
+      "n_events_gap1": 9,
+      "n_events_a256": 9,
+      "tier": "excluded_PTZ",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "PTZ",
+      "video": "intermittentPan",
+      "longest_gt_empty_run": 1151,
+      "n_events_gap1": 14,
+      "n_events_a256": 8,
+      "tier": "excluded_PTZ",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "PTZ",
+      "video": "twoPositionPTZCam",
+      "longest_gt_empty_run": 751,
+      "n_events_gap1": 7,
+      "n_events_a256": 7,
+      "tier": "excluded_PTZ",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "PTZ",
+      "video": "zoomInZoomOut",
+      "longest_gt_empty_run": 316,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "excluded_PTZ",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "badWeather",
+      "video": "blizzard",
+      "longest_gt_empty_run": 3411,
+      "n_events_gap1": 3,
+      "n_events_a256": 3,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "badWeather",
+      "video": "skating",
+      "longest_gt_empty_run": 1551,
+      "n_events_gap1": 6,
+      "n_events_a256": 6,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "badWeather",
+      "video": "snowFall",
+      "longest_gt_empty_run": 3519,
+      "n_events_gap1": 3,
+      "n_events_a256": 3,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "badWeather",
+      "video": "wetSnow",
+      "longest_gt_empty_run": 1501,
+      "n_events_gap1": 3,
+      "n_events_a256": 3,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "baseline",
+      "video": "pedestrians",
+      "longest_gt_empty_run": 117,
+      "n_events_gap1": 2,
+      "n_events_a256": 2,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "cameraJitter",
+      "video": "boulevard",
+      "longest_gt_empty_run": 408,
+      "n_events_gap1": 8,
+      "n_events_a256": 8,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "cameraJitter",
+      "video": "traffic",
+      "longest_gt_empty_run": 52,
+      "n_events_gap1": 14,
+      "n_events_a256": 13,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "dynamicBackground",
+      "video": "boats",
+      "longest_gt_empty_run": 4907,
+      "n_events_gap1": 2,
+      "n_events_a256": 2,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "dynamicBackground",
+      "video": "canoe",
+      "longest_gt_empty_run": 103,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "dynamicBackground",
+      "video": "fall",
+      "longest_gt_empty_run": 465,
+      "n_events_gap1": 12,
+      "n_events_a256": 12,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "dynamicBackground",
+      "video": "fountain01",
+      "longest_gt_empty_run": 325,
+      "n_events_gap1": 3,
+      "n_events_a256": 2,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "dynamicBackground",
+      "video": "fountain02",
+      "longest_gt_empty_run": 441,
+      "n_events_gap1": 2,
+      "n_events_a256": 2,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "dynamicBackground",
+      "video": "overpass",
+      "longest_gt_empty_run": 1332,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "intermittentObjectMotion",
+      "video": "parking",
+      "longest_gt_empty_run": 387,
+      "n_events_gap1": 6,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "intermittentObjectMotion",
+      "video": "streetLight",
+      "longest_gt_empty_run": 364,
+      "n_events_gap1": 38,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "intermittentObjectMotion",
+      "video": "winterDriveway",
+      "longest_gt_empty_run": 387,
+      "n_events_gap1": 2,
+      "n_events_a256": 2,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "lowFramerate",
+      "video": "port_0_17fps",
+      "longest_gt_empty_run": 1002,
+      "n_events_gap1": 22,
+      "n_events_a256": 5,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "lowFramerate",
+      "video": "tramCrossroad_1fps",
+      "longest_gt_empty_run": 251,
+      "n_events_gap1": 11,
+      "n_events_a256": 11,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "lowFramerate",
+      "video": "tunnelExit_0_35fps",
+      "longest_gt_empty_run": 1001,
+      "n_events_gap1": 34,
+      "n_events_a256": 34,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "lowFramerate",
+      "video": "turnpike_0_5fps",
+      "longest_gt_empty_run": 351,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "nightVideos",
+      "video": "bridgeEntry",
+      "longest_gt_empty_run": 751,
+      "n_events_gap1": 2,
+      "n_events_a256": 2,
+      "tier": "night",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "nightVideos",
+      "video": "busyBoulvard",
+      "longest_gt_empty_run": 1016,
+      "n_events_gap1": 16,
+      "n_events_a256": 16,
+      "tier": "night",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "nightVideos",
+      "video": "fluidHighway",
+      "longest_gt_empty_run": 483,
+      "n_events_gap1": 4,
+      "n_events_a256": 4,
+      "tier": "night",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "nightVideos",
+      "video": "streetCornerAtNight",
+      "longest_gt_empty_run": 2201,
+      "n_events_gap1": 11,
+      "n_events_a256": 11,
+      "tier": "night",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "nightVideos",
+      "video": "tramStation",
+      "longest_gt_empty_run": 1251,
+      "n_events_gap1": 3,
+      "n_events_a256": 3,
+      "tier": "night",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "nightVideos",
+      "video": "winterStreet",
+      "longest_gt_empty_run": 446,
+      "n_events_gap1": 3,
+      "n_events_a256": 3,
+      "tier": "night",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "shadow",
+      "video": "backdoor",
+      "longest_gt_empty_run": 960,
+      "n_events_gap1": 2,
+      "n_events_a256": 2,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "shadow",
+      "video": "bungalows",
+      "longest_gt_empty_run": 140,
+      "n_events_gap1": 13,
+      "n_events_a256": 13,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "shadow",
+      "video": "busStation",
+      "longest_gt_empty_run": 106,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "shadow",
+      "video": "copyMachine",
+      "longest_gt_empty_run": 36,
+      "n_events_gap1": 4,
+      "n_events_a256": 4,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "shadow",
+      "video": "cubicle",
+      "longest_gt_empty_run": 1290,
+      "n_events_gap1": 13,
+      "n_events_a256": 12,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "shadow",
+      "video": "peopleInShade",
+      "longest_gt_empty_run": 80,
+      "n_events_gap1": 5,
+      "n_events_a256": 5,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "thermal",
+      "video": "corridor",
+      "longest_gt_empty_run": 247,
+      "n_events_gap1": 2,
+      "n_events_a256": 2,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "thermal",
+      "video": "lakeSide",
+      "longest_gt_empty_run": 83,
+      "n_events_gap1": 2,
+      "n_events_a256": 2,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "thermal",
+      "video": "library",
+      "longest_gt_empty_run": 416,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "thermal",
+      "video": "park",
+      "longest_gt_empty_run": 31,
+      "n_events_gap1": 2,
+      "n_events_a256": 2,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "turbulence",
+      "video": "turbulence0",
+      "longest_gt_empty_run": 2001,
+      "n_events_gap1": 4,
+      "n_events_a256": 1,
+      "tier": "turbulence",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "turbulence",
+      "video": "turbulence1",
+      "longest_gt_empty_run": 1401,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "turbulence",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "turbulence",
+      "video": "turbulence2",
+      "longest_gt_empty_run": 2001,
+      "n_events_gap1": 4,
+      "n_events_a256": 4,
+      "tier": "turbulence",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "turbulence",
+      "video": "turbulence3",
+      "longest_gt_empty_run": 703,
+      "n_events_gap1": 6,
+      "n_events_a256": 6,
+      "tier": "turbulence",
+      "longest_detector_silent_run_true_order": NaN
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_BS_01",
+      "longest_gt_empty_run": 92,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 101.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_BS_02",
+      "longest_gt_empty_run": 113,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 114.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_CA_01",
+      "longest_gt_empty_run": 82,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 0.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_CA_02",
+      "longest_gt_empty_run": 176,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 0.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_IL_01",
+      "longest_gt_empty_run": 102,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 98.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_IL_02",
+      "longest_gt_empty_run": 136,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 0.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_MB_01",
+      "longest_gt_empty_run": 94,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 0.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_MB_02",
+      "longest_gt_empty_run": 80,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 48.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_MC_01",
+      "longest_gt_empty_run": 140,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 106.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_MC_02",
+      "longest_gt_empty_run": 146,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 0.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_OC_01",
+      "longest_gt_empty_run": 88,
+      "n_events_gap1": 2,
+      "n_events_a256": 2,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 93.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_OC_02",
+      "longest_gt_empty_run": 84,
+      "n_events_gap1": 2,
+      "n_events_a256": 2,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 87.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SI_01",
+      "longest_gt_empty_run": 75,
+      "n_events_gap1": 3,
+      "n_events_a256": 3,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 2.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SI_02",
+      "longest_gt_empty_run": 75,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 80.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_01",
+      "longest_gt_empty_run": 50,
+      "n_events_gap1": 3,
+      "n_events_a256": 3,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 52.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_02",
+      "longest_gt_empty_run": 50,
+      "n_events_gap1": 2,
+      "n_events_a256": 2,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 52.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_03",
+      "longest_gt_empty_run": 50,
+      "n_events_gap1": 2,
+      "n_events_a256": 2,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 52.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_04",
+      "longest_gt_empty_run": 73,
+      "n_events_gap1": 3,
+      "n_events_a256": 3,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 2.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_05",
+      "longest_gt_empty_run": 73,
+      "n_events_gap1": 3,
+      "n_events_a256": 3,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 4.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_06",
+      "longest_gt_empty_run": 73,
+      "n_events_gap1": 3,
+      "n_events_a256": 3,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 6.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_07",
+      "longest_gt_empty_run": 73,
+      "n_events_gap1": 3,
+      "n_events_a256": 3,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 6.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_08",
+      "longest_gt_empty_run": 72,
+      "n_events_gap1": 3,
+      "n_events_a256": 3,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 9.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_09",
+      "longest_gt_empty_run": 73,
+      "n_events_gap1": 3,
+      "n_events_a256": 3,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 10.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_10",
+      "longest_gt_empty_run": 73,
+      "n_events_gap1": 3,
+      "n_events_a256": 3,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 8.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_11",
+      "longest_gt_empty_run": 73,
+      "n_events_gap1": 3,
+      "n_events_a256": 3,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 8.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_12",
+      "longest_gt_empty_run": 72,
+      "n_events_gap1": 3,
+      "n_events_a256": 3,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 9.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_CL_01",
+      "longest_gt_empty_run": 143,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 0.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_CL_02",
+      "longest_gt_empty_run": 94,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 95.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_MC_01",
+      "longest_gt_empty_run": 158,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 0.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_MC_02",
+      "longest_gt_empty_run": 74,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 0.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_RA_01",
+      "longest_gt_empty_run": 619,
+      "n_events_gap1": 2,
+      "n_events_a256": 2,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 0.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_RA_02",
+      "longest_gt_empty_run": 174,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 175.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_01",
+      "longest_gt_empty_run": 71,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 41.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_02",
+      "longest_gt_empty_run": 71,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 41.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_03",
+      "longest_gt_empty_run": 71,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 41.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_04",
+      "longest_gt_empty_run": 101,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 109.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_05",
+      "longest_gt_empty_run": 102,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 110.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_06",
+      "longest_gt_empty_run": 101,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 109.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_07",
+      "longest_gt_empty_run": 102,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 110.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_08",
+      "longest_gt_empty_run": 101,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 109.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_09",
+      "longest_gt_empty_run": 101,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 109.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_10",
+      "longest_gt_empty_run": 101,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 109.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_11",
+      "longest_gt_empty_run": 101,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 108.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_12",
+      "longest_gt_empty_run": 101,
+      "n_events_gap1": 2,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 108.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SN_01",
+      "longest_gt_empty_run": 320,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 0.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SN_02",
+      "longest_gt_empty_run": 403,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 0.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SU_01",
+      "longest_gt_empty_run": 99,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 0.0
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SU_02",
+      "longest_gt_empty_run": 65,
+      "n_events_gap1": 1,
+      "n_events_a256": 1,
+      "tier": "main",
+      "longest_detector_silent_run_true_order": 0.0
+    }
+  ],
+  "by_tier": {
+    "excluded_PTZ": [
+      "continuousPan",
+      "intermittentPan",
+      "twoPositionPTZCam",
+      "zoomInZoomOut"
+    ],
+    "main": [
+      "I_BS_01",
+      "I_BS_02",
+      "I_CA_01",
+      "I_CA_02",
+      "I_IL_01",
+      "I_IL_02",
+      "I_MB_01",
+      "I_MB_02",
+      "I_MC_01",
+      "I_MC_02",
+      "I_OC_01",
+      "I_OC_02",
+      "I_SI_01",
+      "I_SI_02",
+      "I_SM_01",
+      "I_SM_02",
+      "I_SM_03",
+      "I_SM_04",
+      "I_SM_05",
+      "I_SM_06",
+      "I_SM_07",
+      "I_SM_08",
+      "I_SM_09",
+      "I_SM_10",
+      "I_SM_11",
+      "I_SM_12",
+      "O_CL_01",
+      "O_CL_02",
+      "O_MC_01",
+      "O_MC_02",
+      "O_RA_01",
+      "O_RA_02",
+      "O_SM_01",
+      "O_SM_02",
+      "O_SM_03",
+      "O_SM_04",
+      "O_SM_05",
+      "O_SM_06",
+      "O_SM_07",
+      "O_SM_08",
+      "O_SM_09",
+      "O_SM_10",
+      "O_SM_11",
+      "O_SM_12",
+      "O_SN_01",
+      "O_SN_02",
+      "O_SU_01",
+      "O_SU_02",
+      "backdoor",
+      "blizzard",
+      "boats",
+      "boulevard",
+      "bungalows",
+      "busStation",
+      "canoe",
+      "copyMachine",
+      "corridor",
+      "cubicle",
+      "fall",
+      "fountain01",
+      "fountain02",
+      "lakeSide",
+      "library",
+      "overpass",
+      "park",
+      "parking",
+      "pedestrians",
+      "peopleInShade",
+      "port_0_17fps",
+      "skating",
+      "snowFall",
+      "streetLight",
+      "traffic",
+      "tramCrossroad_1fps",
+      "tunnelExit_0_35fps",
+      "turnpike_0_5fps",
+      "wetSnow",
+      "winterDriveway"
+    ],
+    "night": [
+      "bridgeEntry",
+      "busyBoulvard",
+      "fluidHighway",
+      "streetCornerAtNight",
+      "tramStation",
+      "winterStreet"
+    ],
+    "turbulence": [
+      "turbulence0",
+      "turbulence1",
+      "turbulence2",
+      "turbulence3"
+    ]
+  },
+  "n_by_tier": {
+    "excluded_PTZ": 4,
+    "main": 78,
+    "night": 6,
+    "turbulence": 4
+  },
+  "comparison_with_P1b_lists": {
+    "cdnet_same": true,
+    "cdnet_added": [],
+    "cdnet_removed": [],
+    "lasiesta_P1b_list": [
+      "I_IL_01",
+      "I_MC_01",
+      "I_OC_01",
+      "I_OC_02",
+      "I_SI_02",
+      "I_SM_01",
+      "O_CL_02",
+      "O_RA_02",
+      "O_SM_01",
+      "O_SM_02",
+      "O_SM_03",
+      "O_SM_04",
+      "O_SM_05",
+      "O_SM_06",
+      "O_SM_07",
+      "O_SM_08",
+      "O_SM_09",
+      "O_SM_10",
+      "O_SM_11",
+      "O_SM_12"
+    ],
+    "lasiesta_gt_empty_list": [
+      "I_BS_01",
+      "I_BS_02",
+      "I_CA_01",
+      "I_CA_02",
+      "I_IL_01",
+      "I_IL_02",
+      "I_MB_01",
+      "I_MB_02",
+      "I_MC_01",
+      "I_MC_02",
+      "I_OC_01",
+      "I_OC_02",
+      "I_SI_01",
+      "I_SI_02",
+      "I_SM_01",
+      "I_SM_02",
+      "I_SM_03",
+      "I_SM_04",
+      "I_SM_05",
+      "I_SM_06",
+      "I_SM_07",
+      "I_SM_08",
+      "I_SM_09",
+      "I_SM_10",
+      "I_SM_11",
+      "I_SM_12",
+      "O_CL_01",
+      "O_CL_02",
+      "O_MC_01",
+      "O_MC_02",
+      "O_RA_01",
+      "O_RA_02",
+      "O_SM_01",
+      "O_SM_02",
+      "O_SM_03",
+      "O_SM_04",
+      "O_SM_05",
+      "O_SM_06",
+      "O_SM_07",
+      "O_SM_08",
+      "O_SM_09",
+      "O_SM_10",
+      "O_SM_11",
+      "O_SM_12",
+      "O_SN_01",
+      "O_SN_02",
+      "O_SU_01",
+      "O_SU_02"
+    ],
+    "lasiesta_same": false,
+    "note": "P1b LASIESTA list came from a detector-silent run computed in the text-sorted (scrambled) order; #17 now uses the GT-empty criterion (same as CDnet) in true order"
+  },
+  "cdnet_all": [
+    {
+      "dataset": "CDnet2014",
+      "category": "PTZ",
+      "video": "continuousPan",
+      "longest_gt_empty_run": 688,
+      "n_events_gap1": 9,
+      "n_events_a256": 9
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "PTZ",
+      "video": "intermittentPan",
+      "longest_gt_empty_run": 1151,
+      "n_events_gap1": 14,
+      "n_events_a256": 8
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "PTZ",
+      "video": "twoPositionPTZCam",
+      "longest_gt_empty_run": 751,
+      "n_events_gap1": 7,
+      "n_events_a256": 7
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "PTZ",
+      "video": "zoomInZoomOut",
+      "longest_gt_empty_run": 316,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "badWeather",
+      "video": "blizzard",
+      "longest_gt_empty_run": 3411,
+      "n_events_gap1": 3,
+      "n_events_a256": 3
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "badWeather",
+      "video": "skating",
+      "longest_gt_empty_run": 1551,
+      "n_events_gap1": 6,
+      "n_events_a256": 6
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "badWeather",
+      "video": "snowFall",
+      "longest_gt_empty_run": 3519,
+      "n_events_gap1": 3,
+      "n_events_a256": 3
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "badWeather",
+      "video": "wetSnow",
+      "longest_gt_empty_run": 1501,
+      "n_events_gap1": 3,
+      "n_events_a256": 3
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "baseline",
+      "video": "PETS2006",
+      "longest_gt_empty_run": 0,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "baseline",
+      "video": "highway",
+      "longest_gt_empty_run": 0,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "baseline",
+      "video": "office",
+      "longest_gt_empty_run": 12,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "baseline",
+      "video": "pedestrians",
+      "longest_gt_empty_run": 117,
+      "n_events_gap1": 2,
+      "n_events_a256": 2
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "cameraJitter",
+      "video": "badminton",
+      "longest_gt_empty_run": 0,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "cameraJitter",
+      "video": "boulevard",
+      "longest_gt_empty_run": 408,
+      "n_events_gap1": 8,
+      "n_events_a256": 8
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "cameraJitter",
+      "video": "sidewalk",
+      "longest_gt_empty_run": 0,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "cameraJitter",
+      "video": "traffic",
+      "longest_gt_empty_run": 52,
+      "n_events_gap1": 14,
+      "n_events_a256": 13
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "dynamicBackground",
+      "video": "boats",
+      "longest_gt_empty_run": 4907,
+      "n_events_gap1": 2,
+      "n_events_a256": 2
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "dynamicBackground",
+      "video": "canoe",
+      "longest_gt_empty_run": 103,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "dynamicBackground",
+      "video": "fall",
+      "longest_gt_empty_run": 465,
+      "n_events_gap1": 12,
+      "n_events_a256": 12
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "dynamicBackground",
+      "video": "fountain01",
+      "longest_gt_empty_run": 325,
+      "n_events_gap1": 3,
+      "n_events_a256": 2
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "dynamicBackground",
+      "video": "fountain02",
+      "longest_gt_empty_run": 441,
+      "n_events_gap1": 2,
+      "n_events_a256": 2
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "dynamicBackground",
+      "video": "overpass",
+      "longest_gt_empty_run": 1332,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "intermittentObjectMotion",
+      "video": "abandonedBox",
+      "longest_gt_empty_run": 0,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "intermittentObjectMotion",
+      "video": "parking",
+      "longest_gt_empty_run": 387,
+      "n_events_gap1": 6,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "intermittentObjectMotion",
+      "video": "sofa",
+      "longest_gt_empty_run": 4,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "intermittentObjectMotion",
+      "video": "streetLight",
+      "longest_gt_empty_run": 364,
+      "n_events_gap1": 38,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "intermittentObjectMotion",
+      "video": "tramstop",
+      "longest_gt_empty_run": 0,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "intermittentObjectMotion",
+      "video": "winterDriveway",
+      "longest_gt_empty_run": 387,
+      "n_events_gap1": 2,
+      "n_events_a256": 2
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "lowFramerate",
+      "video": "port_0_17fps",
+      "longest_gt_empty_run": 1002,
+      "n_events_gap1": 22,
+      "n_events_a256": 5
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "lowFramerate",
+      "video": "tramCrossroad_1fps",
+      "longest_gt_empty_run": 251,
+      "n_events_gap1": 11,
+      "n_events_a256": 11
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "lowFramerate",
+      "video": "tunnelExit_0_35fps",
+      "longest_gt_empty_run": 1001,
+      "n_events_gap1": 34,
+      "n_events_a256": 34
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "lowFramerate",
+      "video": "turnpike_0_5fps",
+      "longest_gt_empty_run": 351,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "nightVideos",
+      "video": "bridgeEntry",
+      "longest_gt_empty_run": 751,
+      "n_events_gap1": 2,
+      "n_events_a256": 2
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "nightVideos",
+      "video": "busyBoulvard",
+      "longest_gt_empty_run": 1016,
+      "n_events_gap1": 16,
+      "n_events_a256": 16
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "nightVideos",
+      "video": "fluidHighway",
+      "longest_gt_empty_run": 483,
+      "n_events_gap1": 4,
+      "n_events_a256": 4
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "nightVideos",
+      "video": "streetCornerAtNight",
+      "longest_gt_empty_run": 2201,
+      "n_events_gap1": 11,
+      "n_events_a256": 11
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "nightVideos",
+      "video": "tramStation",
+      "longest_gt_empty_run": 1251,
+      "n_events_gap1": 3,
+      "n_events_a256": 3
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "nightVideos",
+      "video": "winterStreet",
+      "longest_gt_empty_run": 446,
+      "n_events_gap1": 3,
+      "n_events_a256": 3
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "shadow",
+      "video": "backdoor",
+      "longest_gt_empty_run": 960,
+      "n_events_gap1": 2,
+      "n_events_a256": 2
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "shadow",
+      "video": "bungalows",
+      "longest_gt_empty_run": 140,
+      "n_events_gap1": 13,
+      "n_events_a256": 13
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "shadow",
+      "video": "busStation",
+      "longest_gt_empty_run": 106,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "shadow",
+      "video": "copyMachine",
+      "longest_gt_empty_run": 36,
+      "n_events_gap1": 4,
+      "n_events_a256": 4
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "shadow",
+      "video": "cubicle",
+      "longest_gt_empty_run": 1290,
+      "n_events_gap1": 13,
+      "n_events_a256": 12
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "shadow",
+      "video": "peopleInShade",
+      "longest_gt_empty_run": 80,
+      "n_events_gap1": 5,
+      "n_events_a256": 5
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "thermal",
+      "video": "corridor",
+      "longest_gt_empty_run": 247,
+      "n_events_gap1": 2,
+      "n_events_a256": 2
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "thermal",
+      "video": "diningRoom",
+      "longest_gt_empty_run": 19,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "thermal",
+      "video": "lakeSide",
+      "longest_gt_empty_run": 83,
+      "n_events_gap1": 2,
+      "n_events_a256": 2
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "thermal",
+      "video": "library",
+      "longest_gt_empty_run": 416,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "thermal",
+      "video": "park",
+      "longest_gt_empty_run": 31,
+      "n_events_gap1": 2,
+      "n_events_a256": 2
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "turbulence",
+      "video": "turbulence0",
+      "longest_gt_empty_run": 2001,
+      "n_events_gap1": 4,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "turbulence",
+      "video": "turbulence1",
+      "longest_gt_empty_run": 1401,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "turbulence",
+      "video": "turbulence2",
+      "longest_gt_empty_run": 2001,
+      "n_events_gap1": 4,
+      "n_events_a256": 4
+    },
+    {
+      "dataset": "CDnet2014",
+      "category": "turbulence",
+      "video": "turbulence3",
+      "longest_gt_empty_run": 703,
+      "n_events_gap1": 6,
+      "n_events_a256": 6
+    }
+  ],
+  "lasiesta_all": [
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_BS_01",
+      "longest_gt_empty_run": 92,
+      "longest_detector_silent_run_true_order": 101,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_BS_02",
+      "longest_gt_empty_run": 113,
+      "longest_detector_silent_run_true_order": 114,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_CA_01",
+      "longest_gt_empty_run": 82,
+      "longest_detector_silent_run_true_order": 0,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_CA_02",
+      "longest_gt_empty_run": 176,
+      "longest_detector_silent_run_true_order": 0,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_IL_01",
+      "longest_gt_empty_run": 102,
+      "longest_detector_silent_run_true_order": 98,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_IL_02",
+      "longest_gt_empty_run": 136,
+      "longest_detector_silent_run_true_order": 0,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_MB_01",
+      "longest_gt_empty_run": 94,
+      "longest_detector_silent_run_true_order": 0,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_MB_02",
+      "longest_gt_empty_run": 80,
+      "longest_detector_silent_run_true_order": 48,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_MC_01",
+      "longest_gt_empty_run": 140,
+      "longest_detector_silent_run_true_order": 106,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_MC_02",
+      "longest_gt_empty_run": 146,
+      "longest_detector_silent_run_true_order": 0,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_OC_01",
+      "longest_gt_empty_run": 88,
+      "longest_detector_silent_run_true_order": 93,
+      "n_events_gap1": 2,
+      "n_events_a256": 2
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_OC_02",
+      "longest_gt_empty_run": 84,
+      "longest_detector_silent_run_true_order": 87,
+      "n_events_gap1": 2,
+      "n_events_a256": 2
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SI_01",
+      "longest_gt_empty_run": 75,
+      "longest_detector_silent_run_true_order": 2,
+      "n_events_gap1": 3,
+      "n_events_a256": 3
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SI_02",
+      "longest_gt_empty_run": 75,
+      "longest_detector_silent_run_true_order": 80,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_01",
+      "longest_gt_empty_run": 50,
+      "longest_detector_silent_run_true_order": 52,
+      "n_events_gap1": 3,
+      "n_events_a256": 3
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_02",
+      "longest_gt_empty_run": 50,
+      "longest_detector_silent_run_true_order": 52,
+      "n_events_gap1": 2,
+      "n_events_a256": 2
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_03",
+      "longest_gt_empty_run": 50,
+      "longest_detector_silent_run_true_order": 52,
+      "n_events_gap1": 2,
+      "n_events_a256": 2
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_04",
+      "longest_gt_empty_run": 73,
+      "longest_detector_silent_run_true_order": 2,
+      "n_events_gap1": 3,
+      "n_events_a256": 3
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_05",
+      "longest_gt_empty_run": 73,
+      "longest_detector_silent_run_true_order": 4,
+      "n_events_gap1": 3,
+      "n_events_a256": 3
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_06",
+      "longest_gt_empty_run": 73,
+      "longest_detector_silent_run_true_order": 6,
+      "n_events_gap1": 3,
+      "n_events_a256": 3
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_07",
+      "longest_gt_empty_run": 73,
+      "longest_detector_silent_run_true_order": 6,
+      "n_events_gap1": 3,
+      "n_events_a256": 3
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_08",
+      "longest_gt_empty_run": 72,
+      "longest_detector_silent_run_true_order": 9,
+      "n_events_gap1": 3,
+      "n_events_a256": 3
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_09",
+      "longest_gt_empty_run": 73,
+      "longest_detector_silent_run_true_order": 10,
+      "n_events_gap1": 3,
+      "n_events_a256": 3
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_10",
+      "longest_gt_empty_run": 73,
+      "longest_detector_silent_run_true_order": 8,
+      "n_events_gap1": 3,
+      "n_events_a256": 3
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_11",
+      "longest_gt_empty_run": 73,
+      "longest_detector_silent_run_true_order": 8,
+      "n_events_gap1": 3,
+      "n_events_a256": 3
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "I_SM_12",
+      "longest_gt_empty_run": 72,
+      "longest_detector_silent_run_true_order": 9,
+      "n_events_gap1": 3,
+      "n_events_a256": 3
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_CL_01",
+      "longest_gt_empty_run": 143,
+      "longest_detector_silent_run_true_order": 0,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_CL_02",
+      "longest_gt_empty_run": 94,
+      "longest_detector_silent_run_true_order": 95,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_MC_01",
+      "longest_gt_empty_run": 158,
+      "longest_detector_silent_run_true_order": 0,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_MC_02",
+      "longest_gt_empty_run": 74,
+      "longest_detector_silent_run_true_order": 0,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_RA_01",
+      "longest_gt_empty_run": 619,
+      "longest_detector_silent_run_true_order": 0,
+      "n_events_gap1": 2,
+      "n_events_a256": 2
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_RA_02",
+      "longest_gt_empty_run": 174,
+      "longest_detector_silent_run_true_order": 175,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_01",
+      "longest_gt_empty_run": 71,
+      "longest_detector_silent_run_true_order": 41,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_02",
+      "longest_gt_empty_run": 71,
+      "longest_detector_silent_run_true_order": 41,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_03",
+      "longest_gt_empty_run": 71,
+      "longest_detector_silent_run_true_order": 41,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_04",
+      "longest_gt_empty_run": 101,
+      "longest_detector_silent_run_true_order": 109,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_05",
+      "longest_gt_empty_run": 102,
+      "longest_detector_silent_run_true_order": 110,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_06",
+      "longest_gt_empty_run": 101,
+      "longest_detector_silent_run_true_order": 109,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_07",
+      "longest_gt_empty_run": 102,
+      "longest_detector_silent_run_true_order": 110,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_08",
+      "longest_gt_empty_run": 101,
+      "longest_detector_silent_run_true_order": 109,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_09",
+      "longest_gt_empty_run": 101,
+      "longest_detector_silent_run_true_order": 109,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_10",
+      "longest_gt_empty_run": 101,
+      "longest_detector_silent_run_true_order": 109,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_11",
+      "longest_gt_empty_run": 101,
+      "longest_detector_silent_run_true_order": 108,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SM_12",
+      "longest_gt_empty_run": 101,
+      "longest_detector_silent_run_true_order": 108,
+      "n_events_gap1": 2,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SN_01",
+      "longest_gt_empty_run": 320,
+      "longest_detector_silent_run_true_order": 0,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SN_02",
+      "longest_gt_empty_run": 403,
+      "longest_detector_silent_run_true_order": 0,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SU_01",
+      "longest_gt_empty_run": 99,
+      "longest_detector_silent_run_true_order": 0,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    },
+    {
+      "dataset": "LASIESTA",
+      "category": "LASIESTA",
+      "video": "O_SU_02",
+      "longest_gt_empty_run": 65,
+      "longest_detector_silent_run_true_order": 0,
+      "n_events_gap1": 1,
+      "n_events_a256": 1
+    }
+  ]
+}

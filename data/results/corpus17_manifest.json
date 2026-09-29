@@ -1,0 +1,93 @@
+{
+  "description": "#17 corpus — built only from the raw sources below; every number of the paper is read from results/ of #17",
+  "detector": {
+    "path": "assets\\models\\yolo26s-seg.pt",
+    "sha256": "3da1d83e31caec96f9300eb4064f4f62882c133c7c264d63dfe61a7c197837a4",
+    "size_bytes": 23467933,
+    "model": "yolo26s-seg"
+  },
+  "raw_detection_dumps": {
+    "BMC": {
+      "path": "$THS_DATASETS\\_derived\\detections_cpu_yolo26s\\BMC",
+      "n_files": 20,
+      "sha256_tree": "176ace7937e71ce8629ce76e19fe4af3d3fc6b09ff4825349277a85a421f3abe"
+    },
+    "CDnet2014": {
+      "path": "$THS_DATASETS\\_derived\\detections_cpu_yolo26s\\CDnet2014",
+      "n_files": 53,
+      "sha256_tree": "472724c446d8d41b8d09fc30a9ed08588eff45bd1e1cbe82c47d3b52d7c04f79"
+    },
+    "LASIESTA": {
+      "path": "$THS_DATASETS\\_derived\\detections_cpu_yolo26s\\LASIESTA",
+      "n_files": 48,
+      "sha256_tree": "aa870f4367557a81bcd7c22b068fd3f16f8c3f34eaf0362c350ca3ed8b83bae6"
+    }
+  },
+  "raw_ground_truth": {
+    "CDnet2014": {
+      "path": "$THS_DATASETS\\CDnet2014\\archive\\dataset",
+      "n_files": 159332,
+      "sha256_tree": "a76a70e8174659d82a6d8271fdbbebe1fe5efb88a43c6eddb4ea64ee2999ae8b"
+    },
+    "LASIESTA": {
+      "path": "$THS_DATASETS\\LASIESTA",
+      "n_files": 18425,
+      "sha256_tree": "edc87a6ba067333e4de732d7b6f0d64e994c45009a56913f7d85a0c03940ade9"
+    },
+    "BMC_synth": {
+      "path": "$THS_DATASETS\\BMC",
+      "n_files": 29992,
+      "sha256_tree": "68630c623d52e4651ef9e3098e0722a408a4168c7870c0a13ab17cd1dd53fcdb"
+    }
+  },
+  "frame_order": "true temporal order (CDnet/BMC: index+1; LASIESTA: number in file name — text order is NOT temporal)",
+  "definitions": {
+    "mode_T": "maximal run of frames with >= 1 detector box",
+    "mode_Gstar": "GT event, gaps <= 1 merged; HIT = box covers >= 50% of largest GT object or IoU >= 0.3",
+    "A256": "largest GT object >= 256 px at the event's largest frame (primary)",
+    "orig": "any GT pixel (sensitivity)"
+  },
+  "counts": {
+    "mode_T": {
+      "BMC": 261,
+      "CDnet2014": 2516,
+      "LASIESTA": 393
+    },
+    "mode_T_total": 3170,
+    "mode_T_real_videos": 101,
+    "mode_T_real_videos_reaching": {
+      ">=59": 16,
+      ">=118": 8,
+      ">=177": 3
+    },
+    "mode_Gstar_CDnet": {
+      "orig": 313,
+      "a256": 242,
+      "videos": 53
+    },
+    "mode_Gstar_LASIESTA": {
+      "orig": 76,
+      "a256": 75
+    },
+    "mode_Gstar_BMC_synth": {
+      "orig": 31,
+      "a256": 30
+    },
+    "calibration_scenes": {
+      "excluded_PTZ": 4,
+      "main": 78,
+      "night": 6,
+      "turbulence": 4
+    }
+  },
+  "consistency_with_B0": {
+    "same_count": true,
+    "identical_durations": true
+  },
+  "files": {
+    "events_T": "results/corpus17_events_T.csv",
+    "events_Gstar_CDnet": "results/miss_matrix_Gstar.csv",
+    "events_Gstar_ext": "results/miss_matrix_Gstar_ext.csv",
+    "scenes": "results/p1_background17.json"
+  }
+}

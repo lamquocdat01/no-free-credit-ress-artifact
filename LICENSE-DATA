@@ -1,0 +1,16 @@
+Data licence
+
+The contents of data/results/, data/numbers.tex, data/proofs_numbers.tex, figs/ and manuscript/ are
+Copyright (c) 2026 Lam Quoc Dat and are licensed under the Creative Commons Attribution 4.0 International
+licence (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/legalcode
+
+You may share and adapt them for any purpose, provided you give appropriate credit (cite the archived release,
+see CITATION.cff), provide a link to the licence, and indicate if changes were made.
+
+data/sprites/person/ contains images generated with MPFB 2 from its CC0 bundled assets; they are dedicated to the
+public domain under CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/).
+
+Not included and not licensed here: frames or ground truth of CDnet 2014, LASIESTA or BMC; Virtual KITTI 2 data or
+sprites derived from it (CC BY-NC-SA 3.0, Naver Corporation); detector weights; per-frame detection dumps.
+The result tables contain event-level and frame-level statistics derived from the public benchmarks; obtain the
+benchmarks themselves from their publishers.

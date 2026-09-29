@@ -1,0 +1,2064 @@
+{
+  "meta": {
+    "op": "OP* (eps 20%, delta 5%, d_min 32, K 16), definition A>=256, variant mean",
+    "G2": "U <= eps/2 = 10% (fleet and pop)",
+    "preregistration": "notes/P1b2_preregistration.md"
+  },
+  "main": {
+    "n_scenes": 78,
+    "n_events_OP": 180,
+    "X_expected": 0.3125,
+    "D_hat": 0.001736111111111111,
+    "cp95": [
+      2.911766279533613e-08,
+      0.02372392798865274
+    ],
+    "c4a_fleet_U": 0.01969239629836835,
+    "J": 1,
+    "c4a_pop_U": 0.059378492060127144,
+    "per_scene": [
+      {
+        "video": "I_BS_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_BS_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_CA_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_CA_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_IL_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_IL_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_MB_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_MB_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_MC_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_MC_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_OC_01",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "I_OC_02",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "I_SI_01",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SI_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_SM_01",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SM_02",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "I_SM_03",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "I_SM_04",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SM_05",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SM_06",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SM_07",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SM_08",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SM_09",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SM_10",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SM_11",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SM_12",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "O_CL_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_CL_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_MC_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_MC_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_RA_01",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "O_RA_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_03",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_04",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_05",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_06",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_07",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_08",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_09",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_10",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_11",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_12",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SN_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SN_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SU_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SU_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "backdoor",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "blizzard",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "boats",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "boulevard",
+        "n_OP": 8,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.3694166475528192
+        ]
+      },
+      {
+        "video": "bungalows",
+        "n_OP": 13,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.24705263800047095
+        ]
+      },
+      {
+        "video": "busStation",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "canoe",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "copyMachine",
+        "n_OP": 4,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.6023646356164746
+        ]
+      },
+      {
+        "video": "corridor",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "cubicle",
+        "n_OP": 12,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.26464846939705117
+        ]
+      },
+      {
+        "video": "fall",
+        "n_OP": 11,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.2849141529181544
+        ]
+      },
+      {
+        "video": "fountain01",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "fountain02",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "lakeSide",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "library",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "overpass",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "park",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "parking",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "pedestrians",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "peopleInShade",
+        "n_OP": 5,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.5218237501049814
+        ]
+      },
+      {
+        "video": "port_0_17fps",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "skating",
+        "n_OP": 6,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.4592581264399005
+        ]
+      },
+      {
+        "video": "snowFall",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "streetLight",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "traffic",
+        "n_OP": 8,
+        "D_OP": 0.0390625,
+        "cp95_OP": [
+          6.290174791219987e-07,
+          0.423785055220263
+        ]
+      },
+      {
+        "video": "tramCrossroad_1fps",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "tunnelExit_0_35fps",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "turnpike_0_5fps",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "wetSnow",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "winterDriveway",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      }
+    ],
+    "median_scene_D": 0.0,
+    "median_scene_cp_upper": 0.975,
+    "twin_conf_scene_median": 0.82665,
+    "real_conf_scene_median": 0.9211,
+    "G2": {
+      "fleet_ok": true,
+      "pop_ok": true
+    },
+    "c0_geometry": {
+      "area_ratio_median": 0.46223155929038284,
+      "w_ratio_median": 0.9866666666666667,
+      "h_ratio_exact": true,
+      "frac_width_within_10pct_strict": 0.6850377731582417,
+      "frac_width_within_10pct_plus_1px": 1.0,
+      "frac_width_at_clip_bound": 0.7029356588754246,
+      "note": "box area ratio = width ratio (height exact); 'at clip bound' = sprite aspect differs from the GT box by >= 10% and was clamped"
+    },
+    "c0_geometry_by_kind": {
+      "person": {
+        "area_ratio_median": 0.357188703465982,
+        "w_ratio_median": 0.9620253164556962,
+        "h_ratio_exact": true,
+        "frac_width_within_10pct_strict": 0.6852640375661586,
+        "frac_width_within_10pct_plus_1px": 1.0,
+        "frac_width_at_clip_bound": 0.6896414501173942,
+        "note": "box area ratio = width ratio (height exact); 'at clip bound' = sprite aspect differs from the GT box by >= 10% and was clamped"
+      },
+      "vehicle": {
+        "area_ratio_median": 0.6354679802955665,
+        "w_ratio_median": 1.0,
+        "h_ratio_exact": true,
+        "frac_width_within_10pct_strict": 0.6846406370049591,
+        "frac_width_within_10pct_plus_1px": 1.0,
+        "frac_width_at_clip_bound": 0.7262694698610044,
+        "note": "box area ratio = width ratio (height exact); 'at clip bound' = sprite aspect differs from the GT box by >= 10% and was clamped"
+      }
+    },
+    "D_p1b_daytime_same_categories": 0.0025839793281653744,
+    "delta_vs_p1b_pts": -0.08478682170542634,
+    "day_ok_plus_0_5pt": true,
+    "by_category": {
+      "LASIESTA": {
+        "N": 75,
+        "n_scenes": 48,
+        "p_hat": 0.0,
+        "q_hat": 0.004166666666666667,
+        "D_hat": 0.0
+      },
+      "badWeather": {
+        "N": 15,
+        "n_scenes": 4,
+        "p_hat": 0.0,
+        "q_hat": 0.0,
+        "D_hat": 0.0
+      },
+      "baseline": {
+        "N": 2,
+        "n_scenes": 1,
+        "p_hat": 0.0,
+        "q_hat": 0.0,
+        "D_hat": 0.0
+      },
+      "cameraJitter": {
+        "N": 16,
+        "n_scenes": 2,
+        "p_hat": 0.01953125,
+        "q_hat": 0.0026041666666666665,
+        "D_hat": 0.01953125
+      },
+      "dynamicBackground": {
+        "N": 19,
+        "n_scenes": 6,
+        "p_hat": 0.0,
+        "q_hat": 0.009868421052631578,
+        "D_hat": 0.0
+      },
+      "intermittentObjectMotion": {
+        "N": 4,
+        "n_scenes": 3,
+        "p_hat": 0.0,
+        "q_hat": 0.0,
+        "D_hat": 0.0
+      },
+      "lowFramerate": {
+        "N": 5,
+        "n_scenes": 4,
+        "p_hat": 0.2,
+        "q_hat": 0.24166666666666664,
+        "D_hat": 0.0
+      },
+      "shadow": {
+        "N": 37,
+        "n_scenes": 6,
+        "p_hat": 0.0,
+        "q_hat": 0.0016891891891891893,
+        "D_hat": 0.0
+      },
+      "thermal": {
+        "N": 7,
+        "n_scenes": 4,
+        "p_hat": 0.0,
+        "q_hat": 0.0,
+        "D_hat": 0.0
+      }
+    },
+    "by_kind": {
+      "person": {
+        "N": 114,
+        "p_hat": 0.008771929824561403,
+        "q_hat": 0.01206140350877193,
+        "D_hat": 0.0,
+        "U_fleet": 0.02593608201362844
+      },
+      "vehicle": {
+        "N": 66,
+        "p_hat": 0.004734848484848485,
+        "q_hat": 0.006628787878787879,
+        "D_hat": 0.004734848484848485,
+        "U_fleet": 0.052875513988310904
+      }
+    }
+  },
+  "night": {
+    "final_profile": "b",
+    "steps_on_tuning": [
+      {
+        "profile": "a",
+        "decision": "DROP",
+        "D_hat_op": 0.4715909090909091,
+        "vs": 0.4715909090909091,
+        "twin_conf": 0.7552,
+        "real_conf": 0.51225
+      },
+      {
+        "profile": "b",
+        "decision": "KEEP",
+        "D_hat_op": 0.4696969696969697,
+        "vs": 0.4715909090909091,
+        "twin_conf": 0.6142,
+        "real_conf": 0.5571999999999999
+      }
+    ],
+    "steps_not_run": [
+      "c"
+    ],
+    "decision_20260928": "tuning stopped; remaining steps dropped (anh Dat, 28-09-2026)",
+    "base_tuning_D": 0.4715909090909091,
+    "tuning_final": {
+      "n_scenes": 4,
+      "n_events_OP": 11,
+      "X_expected": 5.166666666666667,
+      "D_hat": 0.4696969696969697,
+      "cp95": [
+        0.17799402481599638,
+        0.7777982229683328
+      ],
+      "c4a_fleet_U": 0.7411737843102423,
+      "J": 3,
+      "c4a_pop_U": 0.9872585449014338,
+      "per_scene": [
+        {
+          "video": "bridgeEntry",
+          "n_OP": 2,
+          "D_OP": 0.15625,
+          "cp95_OP": [
+            2.2256520726190463e-06,
+            0.9092244942106045
+          ]
+        },
+        {
+          "video": "busyBoulvard",
+          "n_OP": 4,
+          "D_OP": 0.96875,
+          "cp95_OP": [
+            0.3662668067118427,
+            0.9999999999999788
+          ]
+        },
+        {
+          "video": "tramStation",
+          "n_OP": 2,
+          "D_OP": 0.0,
+          "cp95_OP": [
+            0.0,
+            0.841886116991581
+          ]
+        },
+        {
+          "video": "winterStreet",
+          "n_OP": 3,
+          "D_OP": 0.3263888888888889,
+          "cp95_OP": [
+            0.007668420628010919,
+            0.9028238174639898
+          ]
+        }
+      ],
+      "median_scene_D": 0.24131944444444445,
+      "median_scene_cp_upper": 0.9060241558372971,
+      "twin_conf_scene_median": 0.660875,
+      "real_conf_scene_median": 0.456225,
+      "G2": {
+        "fleet_ok": false,
+        "pop_ok": false
+      }
+    },
+    "tuning_base": {
+      "n_scenes": 4,
+      "n_events_OP": 11,
+      "X_expected": 5.1875,
+      "D_hat": 0.4715909090909091,
+      "cp95": [
+        0.17932279238901463,
+        0.779232070097647
+      ],
+      "c4a_fleet_U": 0.7427133918890368,
+      "J": 3,
+      "c4a_pop_U": 0.9872585449014338,
+      "per_scene": [
+        {
+          "video": "bridgeEntry",
+          "n_OP": 2,
+          "D_OP": 0.15625,
+          "cp95_OP": [
+            2.2256520726190463e-06,
+            0.9092244942106045
+          ]
+        },
+        {
+          "video": "busyBoulvard",
+          "n_OP": 4,
+          "D_OP": 0.96875,
+          "cp95_OP": [
+            0.3662668067118427,
+            0.9999999999999788
+          ]
+        },
+        {
+          "video": "tramStation",
+          "n_OP": 2,
+          "D_OP": 0.0,
+          "cp95_OP": [
+            0.0,
+            0.841886116991581
+          ]
+        },
+        {
+          "video": "winterStreet",
+          "n_OP": 3,
+          "D_OP": 0.3333333333333333,
+          "cp95_OP": [
+            0.008403758659612636,
+            0.9057006759497539
+          ]
+        }
+      ],
+      "median_scene_D": 0.24479166666666666,
+      "median_scene_cp_upper": 0.9074625850801792,
+      "twin_conf_scene_median": 0.7283,
+      "real_conf_scene_median": 0.43025,
+      "G2": {
+        "fleet_ok": false,
+        "pop_ok": false
+      }
+    },
+    "held_out": {
+      "n_scenes": 2,
+      "n_events_OP": 14,
+      "X_expected": 3.0416666666666665,
+      "D_hat": 0.21726190476190474,
+      "cp95": [
+        0.04798363741786442,
+        0.5111430098771702
+      ],
+      "c4a_fleet_U": 0.46886183261559644,
+      "J": 2,
+      "c4a_pop_U": 1.0,
+      "per_scene": [
+        {
+          "video": "fluidHighway",
+          "n_OP": 4,
+          "D_OP": 0.265625,
+          "cp95_OP": [
+            0.008128557345659232,
+            0.8157322488785449
+          ]
+        },
+        {
+          "video": "streetCornerAtNight",
+          "n_OP": 10,
+          "D_OP": 0.19791666666666666,
+          "cp95_OP": [
+            0.02451950973595856,
+            0.5539500169267919
+          ]
+        }
+      ],
+      "median_scene_D": 0.23177083333333331,
+      "median_scene_cp_upper": 0.6848411329026685,
+      "twin_conf_scene_median": 0.6161,
+      "real_conf_scene_median": 0.49805,
+      "G2": {
+        "fleet_ok": false,
+        "pop_ok": false
+      }
+    },
+    "held_out_base": null,
+    "all_final": {
+      "n_scenes": 6,
+      "n_events_OP": 25,
+      "X_expected": 8.208333333333334,
+      "D_hat": 0.32833333333333337,
+      "cp95": [
+        0.15567748012454097,
+        0.5433971039150551
+      ],
+      "c4a_fleet_U": 0.512126681975404,
+      "J": 5,
+      "c4a_pop_U": 0.9914875553891529,
+      "per_scene": [
+        {
+          "video": "fluidHighway",
+          "n_OP": 4,
+          "D_OP": 0.265625,
+          "cp95_OP": [
+            0.008128557345659232,
+            0.8157322488785449
+          ]
+        },
+        {
+          "video": "streetCornerAtNight",
+          "n_OP": 10,
+          "D_OP": 0.19791666666666666,
+          "cp95_OP": [
+            0.02451950973595856,
+            0.5539500169267919
+          ]
+        },
+        {
+          "video": "bridgeEntry",
+          "n_OP": 2,
+          "D_OP": 0.15625,
+          "cp95_OP": [
+            2.2256520726190463e-06,
+            0.9092244942106045
+          ]
+        },
+        {
+          "video": "busyBoulvard",
+          "n_OP": 4,
+          "D_OP": 0.96875,
+          "cp95_OP": [
+            0.3662668067118427,
+            0.9999999999999788
+          ]
+        },
+        {
+          "video": "tramStation",
+          "n_OP": 2,
+          "D_OP": 0.0,
+          "cp95_OP": [
+            0.0,
+            0.841886116991581
+          ]
+        },
+        {
+          "video": "winterStreet",
+          "n_OP": 3,
+          "D_OP": 0.3263888888888889,
+          "cp95_OP": [
+            0.007668420628010919,
+            0.9028238174639898
+          ]
+        }
+      ],
+      "median_scene_D": 0.23177083333333331,
+      "median_scene_cp_upper": 0.8723549672277854,
+      "twin_conf_scene_median": 0.660875,
+      "real_conf_scene_median": 0.492225,
+      "G2": {
+        "fleet_ok": false,
+        "pop_ok": false
+      }
+    },
+    "all_base": null,
+    "criterion_median_heldout_D_le_5pct": false,
+    "n_events_OP_lt_10": false,
+    "status": "measured tier, outside the main domain"
+  },
+  "turbulence": {
+    "final_profile": "",
+    "steps_on_tuning": [
+      {
+        "profile": "t1",
+        "decision": "DROP",
+        "D_hat_op": 0.0625,
+        "vs": 0.0625,
+        "twin_conf": 0.42895000000000005,
+        "real_conf": 0.4223
+      }
+    ],
+    "steps_not_run": [
+      "t2"
+    ],
+    "decision_20260928": "tuning stopped; remaining steps dropped (anh Dat, 28-09-2026)",
+    "base_tuning_D": 0.0625,
+    "tuning_final": {
+      "n_scenes": 2,
+      "n_events_OP": 2,
+      "X_expected": 0.125,
+      "D_hat": 0.0625,
+      "cp95": [
+        3.846949681310035e-14,
+        0.8717023276236906
+      ],
+      "c4a_fleet_U": 0.813789035393201,
+      "J": 1,
+      "c4a_pop_U": 0.9746794344808963,
+      "per_scene": [
+        {
+          "video": "turbulence0",
+          "n_OP": 1,
+          "D_OP": 0.0,
+          "cp95_OP": [
+            0.0,
+            0.975
+          ]
+        },
+        {
+          "video": "turbulence1",
+          "n_OP": 1,
+          "D_OP": 0.125,
+          "cp95_OP": [
+            6.446831132555247e-14,
+            0.9869382719239963
+          ]
+        }
+      ],
+      "median_scene_D": 0.0625,
+      "median_scene_cp_upper": 0.9809691359619981,
+      "twin_conf_scene_median": 0.40255,
+      "real_conf_scene_median": 0.404375,
+      "G2": {
+        "fleet_ok": false,
+        "pop_ok": false
+      }
+    },
+    "tuning_base": {
+      "n_scenes": 2,
+      "n_events_OP": 2,
+      "X_expected": 0.125,
+      "D_hat": 0.0625,
+      "cp95": [
+        3.846949681310035e-14,
+        0.8717023276236906
+      ],
+      "c4a_fleet_U": 0.813789035393201,
+      "J": 1,
+      "c4a_pop_U": 0.9746794344808963,
+      "per_scene": [
+        {
+          "video": "turbulence0",
+          "n_OP": 1,
+          "D_OP": 0.0,
+          "cp95_OP": [
+            0.0,
+            0.975
+          ]
+        },
+        {
+          "video": "turbulence1",
+          "n_OP": 1,
+          "D_OP": 0.125,
+          "cp95_OP": [
+            6.446831132555247e-14,
+            0.9869382719239963
+          ]
+        }
+      ],
+      "median_scene_D": 0.0625,
+      "median_scene_cp_upper": 0.9809691359619981,
+      "twin_conf_scene_median": 0.40255,
+      "real_conf_scene_median": 0.404375,
+      "G2": {
+        "fleet_ok": false,
+        "pop_ok": false
+      }
+    },
+    "held_out": null,
+    "held_out_base": null,
+    "all_final": {
+      "n_scenes": 2,
+      "n_events_OP": 2,
+      "X_expected": 0.125,
+      "D_hat": 0.0625,
+      "cp95": [
+        3.846949681310035e-14,
+        0.8717023276236906
+      ],
+      "c4a_fleet_U": 0.813789035393201,
+      "J": 1,
+      "c4a_pop_U": 0.9746794344808963,
+      "per_scene": [
+        {
+          "video": "turbulence0",
+          "n_OP": 1,
+          "D_OP": 0.0,
+          "cp95_OP": [
+            0.0,
+            0.975
+          ]
+        },
+        {
+          "video": "turbulence1",
+          "n_OP": 1,
+          "D_OP": 0.125,
+          "cp95_OP": [
+            6.446831132555247e-14,
+            0.9869382719239963
+          ]
+        }
+      ],
+      "median_scene_D": 0.0625,
+      "median_scene_cp_upper": 0.9809691359619981,
+      "twin_conf_scene_median": 0.40255,
+      "real_conf_scene_median": 0.404375,
+      "G2": {
+        "fleet_ok": false,
+        "pop_ok": false
+      }
+    },
+    "all_base": null,
+    "criterion_median_heldout_D_le_5pct": null,
+    "n_events_OP_lt_10": true,
+    "status": "n < 10 at OP*: not certifiable (tier reported for its measured D only)"
+  },
+  "all_tiers_final": {
+    "n_scenes": 86,
+    "n_events_OP": 207,
+    "X_expected": 8.645833333333334,
+    "D_hat": 0.041767310789049925,
+    "cp95": [
+      0.01891162153201348,
+      0.07874237466148266
+    ],
+    "c4a_fleet_U": 0.07252915926678655,
+    "J": 7,
+    "c4a_pop_U": 0.1474492749152694,
+    "per_scene": [
+      {
+        "video": "I_BS_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_BS_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_CA_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_CA_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_IL_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_IL_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_MB_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_MB_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_MC_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_MC_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_OC_01",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "I_OC_02",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "I_SI_01",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SI_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "I_SM_01",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SM_02",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "I_SM_03",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "I_SM_04",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SM_05",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SM_06",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SM_07",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SM_08",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SM_09",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SM_10",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SM_11",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "I_SM_12",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "O_CL_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_CL_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_MC_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_MC_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_RA_01",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "O_RA_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_03",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_04",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_05",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_06",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_07",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_08",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_09",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_10",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_11",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SM_12",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SN_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SN_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SU_01",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "O_SU_02",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "backdoor",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "blizzard",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "boats",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "boulevard",
+        "n_OP": 8,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.3694166475528192
+        ]
+      },
+      {
+        "video": "bungalows",
+        "n_OP": 13,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.24705263800047095
+        ]
+      },
+      {
+        "video": "busStation",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "canoe",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "copyMachine",
+        "n_OP": 4,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.6023646356164746
+        ]
+      },
+      {
+        "video": "corridor",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "cubicle",
+        "n_OP": 12,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.26464846939705117
+        ]
+      },
+      {
+        "video": "fall",
+        "n_OP": 11,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.2849141529181544
+        ]
+      },
+      {
+        "video": "fountain01",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "fountain02",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "lakeSide",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "library",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "overpass",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "park",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "parking",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "pedestrians",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "peopleInShade",
+        "n_OP": 5,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.5218237501049814
+        ]
+      },
+      {
+        "video": "port_0_17fps",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "skating",
+        "n_OP": 6,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.4592581264399005
+        ]
+      },
+      {
+        "video": "snowFall",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "streetLight",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "traffic",
+        "n_OP": 8,
+        "D_OP": 0.0390625,
+        "cp95_OP": [
+          6.290174791219987e-07,
+          0.423785055220263
+        ]
+      },
+      {
+        "video": "tramCrossroad_1fps",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "tunnelExit_0_35fps",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "turnpike_0_5fps",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "wetSnow",
+        "n_OP": 3,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.7075982261787133
+        ]
+      },
+      {
+        "video": "winterDriveway",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "fluidHighway",
+        "n_OP": 4,
+        "D_OP": 0.265625,
+        "cp95_OP": [
+          0.008128557345659232,
+          0.8157322488785449
+        ]
+      },
+      {
+        "video": "streetCornerAtNight",
+        "n_OP": 10,
+        "D_OP": 0.19791666666666666,
+        "cp95_OP": [
+          0.02451950973595856,
+          0.5539500169267919
+        ]
+      },
+      {
+        "video": "bridgeEntry",
+        "n_OP": 2,
+        "D_OP": 0.15625,
+        "cp95_OP": [
+          2.2256520726190463e-06,
+          0.9092244942106045
+        ]
+      },
+      {
+        "video": "busyBoulvard",
+        "n_OP": 4,
+        "D_OP": 0.96875,
+        "cp95_OP": [
+          0.3662668067118427,
+          0.9999999999999788
+        ]
+      },
+      {
+        "video": "tramStation",
+        "n_OP": 2,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.841886116991581
+        ]
+      },
+      {
+        "video": "winterStreet",
+        "n_OP": 3,
+        "D_OP": 0.3263888888888889,
+        "cp95_OP": [
+          0.007668420628010919,
+          0.9028238174639898
+        ]
+      },
+      {
+        "video": "turbulence0",
+        "n_OP": 1,
+        "D_OP": 0.0,
+        "cp95_OP": [
+          0.0,
+          0.975
+        ]
+      },
+      {
+        "video": "turbulence1",
+        "n_OP": 1,
+        "D_OP": 0.125,
+        "cp95_OP": [
+          6.446831132555247e-14,
+          0.9869382719239963
+        ]
+      }
+    ],
+    "median_scene_D": 0.0,
+    "median_scene_cp_upper": 0.975,
+    "twin_conf_scene_median": 0.81525,
+    "real_conf_scene_median": 0.9140999999999999,
+    "G2": {
+      "fleet_ok": true,
+      "pop_ok": false
+    }
+  },
+  "all_tiers_final_note": "main (C0) + night (held-out profile b + tuning profile b) + turbulence (tuning base only)",
+  "criterion": {
+    "night": false,
+    "turbulence": null,
+    "day": true,
+    "tunable": false,
+    "note": "decision 28-09-2026: night and turbulence tuning stopped -> both declared OUTSIDE the main domain regardless of the criterion; turbulence has no held-out run (None)"
+  }
+}

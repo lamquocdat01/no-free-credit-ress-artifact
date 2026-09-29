@@ -1,0 +1,1077 @@
+{
+  "meta": {
+    "doc": "\"right because empty?\": 2x2 real miss / catch x twin miss / catch (expected event counts under the\n     uniform phase, majority twin) per tier and per scene at OP*, OP-A, OP-C; recall of the twin on real misses.\n     Misses are split into STRUCTURAL (the event has no frame in the sampled residue class: duration < K) and\n     APPEARANCE (frames exist, the detector fails on all of them). Only appearance misses test the twin.\n     Grid search of the nearest operating point (larger K / smaller d_min) with >= 20 real miss events."
+  },
+  "by_op": {
+    "OP*": {
+      "op": {
+        "eps": 0.2,
+        "d_min": 32,
+        "K": 16
+      },
+      "main": {
+        "N_events": 180,
+        "m_scenes": 78,
+        "unit": "expected event counts under a uniform random sampling phase; twin = majority of 3 sprite variants",
+        "cells": {
+          "real_miss & twin_miss": 1.0,
+          "real_miss & twin_catch (D)": 0.3125,
+          "real_catch & twin_catch": 178.125,
+          "real_catch & twin_miss (pessimistic)": 0.5625
+        },
+        "p_hat": 0.007291666666666667,
+        "q_hat": 0.008680555555555556,
+        "D_hat": 0.001736111111111111,
+        "reverse_hat": 0.003125,
+        "real_miss_events_expected": 1.3125,
+        "real_miss_events_any_phase": 4,
+        "twin_recall_on_real_miss": 0.7619047619047619,
+        "appearance": {
+          "real_miss_expected": 1.3125,
+          "real_miss_any_phase": 4,
+          "twin_miss": 1.0,
+          "twin_catch": 0.3125,
+          "twin_recall": 0.7619047619047619,
+          "note": "real miss at a phase whose residue class contains >= 1 event frame (detector failure)",
+          "events_real_miss_any_phase": 4,
+          "events_twin_also_miss_at_some_missed_phase": 1,
+          "events_twin_miss_at_every_missed_phase": 1,
+          "scenes_with_real_miss": 2,
+          "scenes_where_twin_sees_a_real_miss": 1
+        },
+        "structural_real_miss_expected": 0.0
+      },
+      "night": {
+        "N_events": 25,
+        "m_scenes": 6,
+        "unit": "expected event counts under a uniform random sampling phase; twin = majority of 3 sprite variants",
+        "cells": {
+          "real_miss & twin_miss": 0.75,
+          "real_miss & twin_catch (D)": 8.3125,
+          "real_catch & twin_catch": 15.5,
+          "real_catch & twin_miss (pessimistic)": 0.4375
+        },
+        "p_hat": 0.3625,
+        "q_hat": 0.0475,
+        "D_hat": 0.3325,
+        "reverse_hat": 0.0175,
+        "real_miss_events_expected": 9.0625,
+        "real_miss_events_any_phase": 13,
+        "twin_recall_on_real_miss": 0.08275862068965517,
+        "appearance": {
+          "real_miss_expected": 9.0625,
+          "real_miss_any_phase": 13,
+          "twin_miss": 0.75,
+          "twin_catch": 8.3125,
+          "twin_recall": 0.08275862068965517,
+          "note": "real miss at a phase whose residue class contains >= 1 event frame (detector failure)",
+          "events_real_miss_any_phase": 13,
+          "events_twin_also_miss_at_some_missed_phase": 3,
+          "events_twin_miss_at_every_missed_phase": 1,
+          "scenes_with_real_miss": 5,
+          "scenes_where_twin_sees_a_real_miss": 1
+        },
+        "structural_real_miss_expected": 0.0
+      },
+      "turbulence": {
+        "N_events": 2,
+        "m_scenes": 2,
+        "unit": "expected event counts under a uniform random sampling phase; twin = majority of 3 sprite variants",
+        "cells": {
+          "real_miss & twin_miss": 0.0,
+          "real_miss & twin_catch (D)": 0.125,
+          "real_catch & twin_catch": 1.875,
+          "real_catch & twin_miss (pessimistic)": 0.0
+        },
+        "p_hat": 0.0625,
+        "q_hat": 0.0,
+        "D_hat": 0.0625,
+        "reverse_hat": 0.0,
+        "real_miss_events_expected": 0.125,
+        "real_miss_events_any_phase": 1,
+        "twin_recall_on_real_miss": 0.0,
+        "appearance": {
+          "real_miss_expected": 0.125,
+          "real_miss_any_phase": 1,
+          "twin_miss": 0.0,
+          "twin_catch": 0.125,
+          "twin_recall": 0.0,
+          "note": "real miss at a phase whose residue class contains >= 1 event frame (detector failure)",
+          "events_real_miss_any_phase": 1,
+          "events_twin_also_miss_at_some_missed_phase": 0,
+          "events_twin_miss_at_every_missed_phase": 0,
+          "scenes_with_real_miss": 1,
+          "scenes_where_twin_sees_a_real_miss": 0
+        },
+        "structural_real_miss_expected": 0.0
+      },
+      "all_tiers": {
+        "N_events": 207,
+        "m_scenes": 86,
+        "unit": "expected event counts under a uniform random sampling phase; twin = majority of 3 sprite variants",
+        "cells": {
+          "real_miss & twin_miss": 1.75,
+          "real_miss & twin_catch (D)": 8.75,
+          "real_catch & twin_catch": 195.5,
+          "real_catch & twin_miss (pessimistic)": 1.0
+        },
+        "p_hat": 0.050724637681159424,
+        "q_hat": 0.013285024154589372,
+        "D_hat": 0.042270531400966184,
+        "reverse_hat": 0.004830917874396135,
+        "real_miss_events_expected": 10.5,
+        "real_miss_events_any_phase": 18,
+        "twin_recall_on_real_miss": 0.16666666666666666,
+        "appearance": {
+          "real_miss_expected": 10.5,
+          "real_miss_any_phase": 18,
+          "twin_miss": 1.75,
+          "twin_catch": 8.75,
+          "twin_recall": 0.16666666666666666,
+          "note": "real miss at a phase whose residue class contains >= 1 event frame (detector failure)",
+          "events_real_miss_any_phase": 18,
+          "events_twin_also_miss_at_some_missed_phase": 4,
+          "events_twin_miss_at_every_missed_phase": 2,
+          "scenes_with_real_miss": 8,
+          "scenes_where_twin_sees_a_real_miss": 2
+        },
+        "structural_real_miss_expected": 0.0
+      }
+    },
+    "OP-A": {
+      "op": {
+        "eps": 0.2,
+        "d_min": 32,
+        "K": 8
+      },
+      "main": {
+        "N_events": 180,
+        "m_scenes": 78,
+        "unit": "expected event counts under a uniform random sampling phase; twin = majority of 3 sprite variants",
+        "cells": {
+          "real_miss & twin_miss": 1.0,
+          "real_miss & twin_catch (D)": 0.0,
+          "real_catch & twin_catch": 178.875,
+          "real_catch & twin_miss (pessimistic)": 0.125
+        },
+        "p_hat": 0.005555555555555556,
+        "q_hat": 0.00625,
+        "D_hat": 0.0,
+        "reverse_hat": 0.0006944444444444445,
+        "real_miss_events_expected": 1.0,
+        "real_miss_events_any_phase": 1,
+        "twin_recall_on_real_miss": 1.0,
+        "appearance": {
+          "real_miss_expected": 1.0,
+          "real_miss_any_phase": 1,
+          "twin_miss": 1.0,
+          "twin_catch": 0.0,
+          "twin_recall": 1.0,
+          "note": "real miss at a phase whose residue class contains >= 1 event frame (detector failure)",
+          "events_real_miss_any_phase": 1,
+          "events_twin_also_miss_at_some_missed_phase": 1,
+          "events_twin_miss_at_every_missed_phase": 1,
+          "scenes_with_real_miss": 1,
+          "scenes_where_twin_sees_a_real_miss": 1
+        },
+        "structural_real_miss_expected": 0.0
+      },
+      "night": {
+        "N_events": 25,
+        "m_scenes": 6,
+        "unit": "expected event counts under a uniform random sampling phase; twin = majority of 3 sprite variants",
+        "cells": {
+          "real_miss & twin_miss": 0.125,
+          "real_miss & twin_catch (D)": 7.875,
+          "real_catch & twin_catch": 16.875,
+          "real_catch & twin_miss (pessimistic)": 0.125
+        },
+        "p_hat": 0.32,
+        "q_hat": 0.01,
+        "D_hat": 0.315,
+        "reverse_hat": 0.005,
+        "real_miss_events_expected": 8.0,
+        "real_miss_events_any_phase": 9,
+        "twin_recall_on_real_miss": 0.015625,
+        "appearance": {
+          "real_miss_expected": 8.0,
+          "real_miss_any_phase": 9,
+          "twin_miss": 0.125,
+          "twin_catch": 7.875,
+          "twin_recall": 0.015625,
+          "note": "real miss at a phase whose residue class contains >= 1 event frame (detector failure)",
+          "events_real_miss_any_phase": 9,
+          "events_twin_also_miss_at_some_missed_phase": 1,
+          "events_twin_miss_at_every_missed_phase": 0,
+          "scenes_with_real_miss": 4,
+          "scenes_where_twin_sees_a_real_miss": 1
+        },
+        "structural_real_miss_expected": 0.0
+      },
+      "turbulence": {
+        "N_events": 2,
+        "m_scenes": 2,
+        "unit": "expected event counts under a uniform random sampling phase; twin = majority of 3 sprite variants",
+        "cells": {
+          "real_miss & twin_miss": 0.0,
+          "real_miss & twin_catch (D)": 0.0,
+          "real_catch & twin_catch": 2.0,
+          "real_catch & twin_miss (pessimistic)": 0.0
+        },
+        "p_hat": 0.0,
+        "q_hat": 0.0,
+        "D_hat": 0.0,
+        "reverse_hat": 0.0,
+        "real_miss_events_expected": 0.0,
+        "real_miss_events_any_phase": 0,
+        "twin_recall_on_real_miss": null,
+        "appearance": {
+          "real_miss_expected": 0.0,
+          "real_miss_any_phase": 0,
+          "twin_miss": 0.0,
+          "twin_catch": 0.0,
+          "twin_recall": null,
+          "note": "real miss at a phase whose residue class contains >= 1 event frame (detector failure)",
+          "events_real_miss_any_phase": 0,
+          "events_twin_also_miss_at_some_missed_phase": 0,
+          "events_twin_miss_at_every_missed_phase": 0,
+          "scenes_with_real_miss": 0,
+          "scenes_where_twin_sees_a_real_miss": 0
+        },
+        "structural_real_miss_expected": 0.0
+      },
+      "all_tiers": {
+        "N_events": 207,
+        "m_scenes": 86,
+        "unit": "expected event counts under a uniform random sampling phase; twin = majority of 3 sprite variants",
+        "cells": {
+          "real_miss & twin_miss": 1.125,
+          "real_miss & twin_catch (D)": 7.875,
+          "real_catch & twin_catch": 197.75,
+          "real_catch & twin_miss (pessimistic)": 0.25
+        },
+        "p_hat": 0.043478260869565216,
+        "q_hat": 0.006642512077294686,
+        "D_hat": 0.03804347826086957,
+        "reverse_hat": 0.0012077294685990338,
+        "real_miss_events_expected": 9.0,
+        "real_miss_events_any_phase": 10,
+        "twin_recall_on_real_miss": 0.125,
+        "appearance": {
+          "real_miss_expected": 9.0,
+          "real_miss_any_phase": 10,
+          "twin_miss": 1.125,
+          "twin_catch": 7.875,
+          "twin_recall": 0.125,
+          "note": "real miss at a phase whose residue class contains >= 1 event frame (detector failure)",
+          "events_real_miss_any_phase": 10,
+          "events_twin_also_miss_at_some_missed_phase": 2,
+          "events_twin_miss_at_every_missed_phase": 1,
+          "scenes_with_real_miss": 5,
+          "scenes_where_twin_sees_a_real_miss": 2
+        },
+        "structural_real_miss_expected": 0.0
+      }
+    },
+    "OP-C": {
+      "op": {
+        "eps": 0.1,
+        "d_min": 32,
+        "K": 1
+      },
+      "main": {
+        "N_events": 180,
+        "m_scenes": 78,
+        "unit": "expected event counts under a uniform random sampling phase; twin = majority of 3 sprite variants",
+        "cells": {
+          "real_miss & twin_miss": 1.0,
+          "real_miss & twin_catch (D)": 0.0,
+          "real_catch & twin_catch": 179.0,
+          "real_catch & twin_miss (pessimistic)": 0.0
+        },
+        "p_hat": 0.005555555555555556,
+        "q_hat": 0.005555555555555556,
+        "D_hat": 0.0,
+        "reverse_hat": 0.0,
+        "real_miss_events_expected": 1.0,
+        "real_miss_events_any_phase": 1,
+        "twin_recall_on_real_miss": 1.0,
+        "appearance": {
+          "real_miss_expected": 1.0,
+          "real_miss_any_phase": 1,
+          "twin_miss": 1.0,
+          "twin_catch": 0.0,
+          "twin_recall": 1.0,
+          "note": "real miss at a phase whose residue class contains >= 1 event frame (detector failure)",
+          "events_real_miss_any_phase": 1,
+          "events_twin_also_miss_at_some_missed_phase": 1,
+          "events_twin_miss_at_every_missed_phase": 1,
+          "scenes_with_real_miss": 1,
+          "scenes_where_twin_sees_a_real_miss": 1
+        },
+        "structural_real_miss_expected": 0.0
+      },
+      "night": {
+        "N_events": 25,
+        "m_scenes": 6,
+        "unit": "expected event counts under a uniform random sampling phase; twin = majority of 3 sprite variants",
+        "cells": {
+          "real_miss & twin_miss": 0.0,
+          "real_miss & twin_catch (D)": 6.0,
+          "real_catch & twin_catch": 19.0,
+          "real_catch & twin_miss (pessimistic)": 0.0
+        },
+        "p_hat": 0.24,
+        "q_hat": 0.0,
+        "D_hat": 0.24,
+        "reverse_hat": 0.0,
+        "real_miss_events_expected": 6.0,
+        "real_miss_events_any_phase": 6,
+        "twin_recall_on_real_miss": 0.0,
+        "appearance": {
+          "real_miss_expected": 6.0,
+          "real_miss_any_phase": 6,
+          "twin_miss": 0.0,
+          "twin_catch": 6.0,
+          "twin_recall": 0.0,
+          "note": "real miss at a phase whose residue class contains >= 1 event frame (detector failure)",
+          "events_real_miss_any_phase": 6,
+          "events_twin_also_miss_at_some_missed_phase": 0,
+          "events_twin_miss_at_every_missed_phase": 0,
+          "scenes_with_real_miss": 4,
+          "scenes_where_twin_sees_a_real_miss": 0
+        },
+        "structural_real_miss_expected": 0.0
+      },
+      "turbulence": {
+        "N_events": 2,
+        "m_scenes": 2,
+        "unit": "expected event counts under a uniform random sampling phase; twin = majority of 3 sprite variants",
+        "cells": {
+          "real_miss & twin_miss": 0.0,
+          "real_miss & twin_catch (D)": 0.0,
+          "real_catch & twin_catch": 2.0,
+          "real_catch & twin_miss (pessimistic)": 0.0
+        },
+        "p_hat": 0.0,
+        "q_hat": 0.0,
+        "D_hat": 0.0,
+        "reverse_hat": 0.0,
+        "real_miss_events_expected": 0.0,
+        "real_miss_events_any_phase": 0,
+        "twin_recall_on_real_miss": null,
+        "appearance": {
+          "real_miss_expected": 0.0,
+          "real_miss_any_phase": 0,
+          "twin_miss": 0.0,
+          "twin_catch": 0.0,
+          "twin_recall": null,
+          "note": "real miss at a phase whose residue class contains >= 1 event frame (detector failure)",
+          "events_real_miss_any_phase": 0,
+          "events_twin_also_miss_at_some_missed_phase": 0,
+          "events_twin_miss_at_every_missed_phase": 0,
+          "scenes_with_real_miss": 0,
+          "scenes_where_twin_sees_a_real_miss": 0
+        },
+        "structural_real_miss_expected": 0.0
+      },
+      "all_tiers": {
+        "N_events": 207,
+        "m_scenes": 86,
+        "unit": "expected event counts under a uniform random sampling phase; twin = majority of 3 sprite variants",
+        "cells": {
+          "real_miss & twin_miss": 1.0,
+          "real_miss & twin_catch (D)": 6.0,
+          "real_catch & twin_catch": 200.0,
+          "real_catch & twin_miss (pessimistic)": 0.0
+        },
+        "p_hat": 0.033816425120772944,
+        "q_hat": 0.004830917874396135,
+        "D_hat": 0.028985507246376812,
+        "reverse_hat": 0.0,
+        "real_miss_events_expected": 7.0,
+        "real_miss_events_any_phase": 7,
+        "twin_recall_on_real_miss": 0.14285714285714285,
+        "appearance": {
+          "real_miss_expected": 7.0,
+          "real_miss_any_phase": 7,
+          "twin_miss": 1.0,
+          "twin_catch": 6.0,
+          "twin_recall": 0.14285714285714285,
+          "note": "real miss at a phase whose residue class contains >= 1 event frame (detector failure)",
+          "events_real_miss_any_phase": 7,
+          "events_twin_also_miss_at_some_missed_phase": 1,
+          "events_twin_miss_at_every_missed_phase": 1,
+          "scenes_with_real_miss": 5,
+          "scenes_where_twin_sees_a_real_miss": 1
+        },
+        "structural_real_miss_expected": 0.0
+      }
+    }
+  },
+  "grid_main": {
+    "rows": [
+      {
+        "d_min": 32,
+        "K": 8,
+        "N": 180,
+        "real_miss_exp": 1.0,
+        "real_miss_app_exp": 1.0,
+        "real_miss_app_any": 1,
+        "twin_recall": 1.0,
+        "twin_recall_app": 1.0,
+        "D_hat": 0.0,
+        "U_fleet_worst": 0.016505228195662736,
+        "J": 0,
+        "U_pop": 0.03767863420096847
+      },
+      {
+        "d_min": 32,
+        "K": 16,
+        "N": 180,
+        "real_miss_exp": 1.3125,
+        "real_miss_app_exp": 1.3125,
+        "real_miss_app_any": 4,
+        "twin_recall": 0.7619047619047619,
+        "twin_recall_app": 0.7619047619047619,
+        "D_hat": 0.001736111111111111,
+        "U_fleet_worst": 0.04251002239935215,
+        "J": 1,
+        "U_pop": 0.059378492060127144
+      },
+      {
+        "d_min": 32,
+        "K": 24,
+        "N": 180,
+        "real_miss_exp": 2.5833333333333335,
+        "real_miss_app_exp": 2.5833333333333335,
+        "real_miss_app_any": 9,
+        "twin_recall": 0.4677419354838709,
+        "twin_recall_app": 0.4677419354838709,
+        "D_hat": 0.00763888888888889,
+        "U_fleet_worst": 0.0787617865773369,
+        "J": 4,
+        "U_pop": 0.11351736195607218
+      },
+      {
+        "d_min": 32,
+        "K": 48,
+        "N": 180,
+        "real_miss_exp": 10.479166666666666,
+        "real_miss_app_exp": 5.166666666666666,
+        "real_miss_app_any": 35,
+        "twin_recall": 0.7037773359840954,
+        "twin_recall_app": 0.3991935483870968,
+        "D_hat": 0.01724537037037037,
+        "U_fleet_worst": 0.20699948355916017,
+        "J": 12,
+        "U_pop": 0.2373159634331561
+      },
+      {
+        "d_min": 24,
+        "K": 8,
+        "N": 189,
+        "real_miss_exp": 1.375,
+        "real_miss_app_exp": 1.375,
+        "real_miss_app_any": 4,
+        "twin_recall": 0.8181818181818182,
+        "twin_recall_app": 0.8181818181818182,
+        "D_hat": 0.0013227513227513227,
+        "U_fleet_worst": 0.032934525479464315,
+        "J": 2,
+        "U_pop": 0.07852108907382152
+      },
+      {
+        "d_min": 24,
+        "K": 16,
+        "N": 189,
+        "real_miss_exp": 2.75,
+        "real_miss_app_exp": 2.75,
+        "real_miss_app_any": 10,
+        "twin_recall": 0.5227272727272727,
+        "twin_recall_app": 0.5227272727272727,
+        "D_hat": 0.006944444444444444,
+        "U_fleet_worst": 0.08162380990030016,
+        "J": 3,
+        "U_pop": 0.09641275320690612
+      },
+      {
+        "d_min": 24,
+        "K": 24,
+        "N": 189,
+        "real_miss_exp": 5.041666666666667,
+        "real_miss_app_exp": 5.041666666666667,
+        "real_miss_app_any": 17,
+        "twin_recall": 0.40495867768595045,
+        "twin_recall_app": 0.40495867768595045,
+        "D_hat": 0.015873015873015872,
+        "U_fleet_worst": 0.1257390905915402,
+        "J": 4,
+        "U_pop": 0.11351736195607218
+      },
+      {
+        "d_min": 24,
+        "K": 48,
+        "N": 189,
+        "real_miss_exp": 15.979166666666668,
+        "real_miss_app_exp": 6.833333333333334,
+        "real_miss_app_any": 44,
+        "twin_recall": 0.7470664928292047,
+        "twin_recall_app": 0.4085365853658537,
+        "D_hat": 0.021384479717813053,
+        "U_fleet_worst": 0.24364565855158157,
+        "J": 12,
+        "U_pop": 0.2373159634331561
+      },
+      {
+        "d_min": 16,
+        "K": 8,
+        "N": 200,
+        "real_miss_exp": 3.625,
+        "real_miss_app_exp": 3.625,
+        "real_miss_app_any": 9,
+        "twin_recall": 0.8620689655172413,
+        "twin_recall_app": 0.8620689655172413,
+        "D_hat": 0.0025,
+        "U_fleet_worst": 0.04518041499471879,
+        "J": 2,
+        "U_pop": 0.07852108907382152
+      },
+      {
+        "d_min": 16,
+        "K": 16,
+        "N": 200,
+        "real_miss_exp": 6.75,
+        "real_miss_app_exp": 6.75,
+        "real_miss_app_any": 20,
+        "twin_recall": 0.7129629629629629,
+        "twin_recall_app": 0.7129629629629629,
+        "D_hat": 0.0096875,
+        "U_fleet_worst": 0.09540141772987731,
+        "J": 3,
+        "U_pop": 0.09641275320690612
+      },
+      {
+        "d_min": 16,
+        "K": 24,
+        "N": 200,
+        "real_miss_exp": 10.833333333333334,
+        "real_miss_app_exp": 8.833333333333332,
+        "real_miss_app_any": 28,
+        "twin_recall": 0.6576923076923077,
+        "twin_recall_app": 0.5801886792452831,
+        "D_hat": 0.018541666666666668,
+        "U_fleet_worst": 0.14198925159094505,
+        "J": 4,
+        "U_pop": 0.11351736195607218
+      },
+      {
+        "d_min": 16,
+        "K": 48,
+        "N": 200,
+        "real_miss_exp": 24.375,
+        "real_miss_app_exp": 8.729166666666666,
+        "real_miss_app_any": 55,
+        "twin_recall": 0.8196581196581197,
+        "twin_recall_app": 0.4964200477326969,
+        "D_hat": 0.021979166666666664,
+        "U_fleet_worst": 0.2522495320082148,
+        "J": 12,
+        "U_pop": 0.2373159634331561
+      },
+      {
+        "d_min": 12,
+        "K": 8,
+        "N": 201,
+        "real_miss_exp": 4.625,
+        "real_miss_app_exp": 4.625,
+        "real_miss_app_any": 10,
+        "twin_recall": 0.8918918918918919,
+        "twin_recall_app": 0.8918918918918919,
+        "D_hat": 0.0024875621890547263,
+        "U_fleet_worst": 0.04495853143981711,
+        "J": 2,
+        "U_pop": 0.07852108907382152
+      },
+      {
+        "d_min": 12,
+        "K": 16,
+        "N": 201,
+        "real_miss_exp": 7.75,
+        "real_miss_app_exp": 7.6875,
+        "real_miss_app_any": 21,
+        "twin_recall": 0.75,
+        "twin_recall_app": 0.7479674796747967,
+        "D_hat": 0.009639303482587064,
+        "U_fleet_worst": 0.09493576602591085,
+        "J": 3,
+        "U_pop": 0.09641275320690612
+      },
+      {
+        "d_min": 12,
+        "K": 24,
+        "N": 201,
+        "real_miss_exp": 11.833333333333332,
+        "real_miss_app_exp": 9.458333333333332,
+        "real_miss_app_any": 29,
+        "twin_recall": 0.6866197183098592,
+        "twin_recall_app": 0.6079295154185023,
+        "D_hat": 0.018449419568822553,
+        "U_fleet_worst": 0.1412994309423902,
+        "J": 4,
+        "U_pop": 0.11351736195607218
+      },
+      {
+        "d_min": 12,
+        "K": 48,
+        "N": 201,
+        "real_miss_exp": 25.375,
+        "real_miss_app_exp": 9.041666666666668,
+        "real_miss_app_any": 56,
+        "twin_recall": 0.8267651888341544,
+        "twin_recall_app": 0.5138248847926268,
+        "D_hat": 0.0218698175787728,
+        "U_fleet_worst": 0.25103599646320435,
+        "J": 12,
+        "U_pop": 0.2373159634331561
+      },
+      {
+        "d_min": 8,
+        "K": 8,
+        "N": 206,
+        "real_miss_exp": 5.625,
+        "real_miss_app_exp": 5.625,
+        "real_miss_app_any": 13,
+        "twin_recall": 0.8444444444444444,
+        "twin_recall_app": 0.8444444444444444,
+        "D_hat": 0.00424757281553398,
+        "U_fleet_worst": 0.06287555009574436,
+        "J": 3,
+        "U_pop": 0.09641275320690612
+      },
+      {
+        "d_min": 8,
+        "K": 16,
+        "N": 206,
+        "real_miss_exp": 10.5625,
+        "real_miss_app_exp": 8.375,
+        "real_miss_app_any": 25,
+        "twin_recall": 0.7928994082840237,
+        "twin_recall_app": 0.7388059701492538,
+        "D_hat": 0.010618932038834952,
+        "U_fleet_worst": 0.10990975505778257,
+        "J": 3,
+        "U_pop": 0.09641275320690612
+      },
+      {
+        "d_min": 8,
+        "K": 24,
+        "N": 206,
+        "real_miss_exp": 15.375,
+        "real_miss_app_exp": 9.916666666666666,
+        "real_miss_app_any": 33,
+        "twin_recall": 0.7479674796747967,
+        "twin_recall_app": 0.6092436974789915,
+        "D_hat": 0.018810679611650484,
+        "U_fleet_worst": 0.15445942251276745,
+        "J": 4,
+        "U_pop": 0.11351736195607218
+      },
+      {
+        "d_min": 8,
+        "K": 48,
+        "N": 206,
+        "real_miss_exp": 29.645833333333336,
+        "real_miss_app_exp": 9.270833333333334,
+        "real_miss_app_any": 60,
+        "twin_recall": 0.8489107519325368,
+        "twin_recall_app": 0.5168539325842697,
+        "D_hat": 0.021743527508090613,
+        "U_fleet_worst": 0.2607656724530387,
+        "J": 12,
+        "U_pop": 0.2373159634331561
+      },
+      {
+        "d_min": 4,
+        "K": 8,
+        "N": 218,
+        "real_miss_exp": 12.625,
+        "real_miss_app_exp": 8.375,
+        "real_miss_app_any": 22,
+        "twin_recall": 0.900990099009901,
+        "twin_recall_app": 0.8507462686567164,
+        "D_hat": 0.005733944954128441,
+        "U_fleet_worst": 0.07093530191071765,
+        "J": 3,
+        "U_pop": 0.09641275320690612
+      },
+      {
+        "d_min": 4,
+        "K": 16,
+        "N": 218,
+        "real_miss_exp": 20.0625,
+        "real_miss_app_exp": 9.75,
+        "real_miss_app_any": 34,
+        "twin_recall": 0.881619937694704,
+        "twin_recall_app": 0.7564102564102564,
+        "D_hat": 0.010894495412844037,
+        "U_fleet_worst": 0.11467654935145376,
+        "J": 3,
+        "U_pop": 0.09641275320690612
+      },
+      {
+        "d_min": 4,
+        "K": 24,
+        "N": 218,
+        "real_miss_exp": 25.708333333333336,
+        "real_miss_app_exp": 10.833333333333332,
+        "real_miss_app_any": 42,
+        "twin_recall": 0.8444084278768234,
+        "twin_recall_app": 0.6307692307692309,
+        "D_hat": 0.01834862385321101,
+        "U_fleet_worst": 0.15647699802640175,
+        "J": 4,
+        "U_pop": 0.11351736195607218
+      },
+      {
+        "d_min": 4,
+        "K": 48,
+        "N": 218,
+        "real_miss_exp": 40.8125,
+        "real_miss_app_exp": 9.729166666666666,
+        "real_miss_app_any": 69,
+        "twin_recall": 0.8887187340479837,
+        "twin_recall_app": 0.5331905781584583,
+        "D_hat": 0.020833333333333336,
+        "U_fleet_worst": 0.2566914168942236,
+        "J": 12,
+        "U_pop": 0.2373159634331561
+      },
+      {
+        "d_min": 1,
+        "K": 8,
+        "N": 232,
+        "real_miss_exp": 23.75,
+        "real_miss_app_exp": 8.75,
+        "real_miss_app_any": 25,
+        "twin_recall": 0.9315789473684211,
+        "twin_recall_app": 0.8142857142857143,
+        "D_hat": 0.007004310344827586,
+        "U_fleet_worst": 0.08245829728524502,
+        "J": 3,
+        "U_pop": 0.09641275320690612
+      },
+      {
+        "d_min": 1,
+        "K": 16,
+        "N": 232,
+        "real_miss_exp": 32.625,
+        "real_miss_app_exp": 9.9375,
+        "real_miss_app_any": 37,
+        "twin_recall": 0.921455938697318,
+        "twin_recall_app": 0.7421383647798742,
+        "D_hat": 0.011045258620689655,
+        "U_fleet_worst": 0.12280256742174017,
+        "J": 3,
+        "U_pop": 0.09641275320690612
+      },
+      {
+        "d_min": 1,
+        "K": 24,
+        "N": 232,
+        "real_miss_exp": 38.75,
+        "real_miss_app_exp": 10.958333333333332,
+        "real_miss_app_any": 45,
+        "twin_recall": 0.8935483870967742,
+        "twin_recall_app": 0.623574144486692,
+        "D_hat": 0.017780172413793104,
+        "U_fleet_worst": 0.16171101066403315,
+        "J": 4,
+        "U_pop": 0.11351736195607218
+      },
+      {
+        "d_min": 1,
+        "K": 48,
+        "N": 232,
+        "real_miss_exp": 54.333333333333336,
+        "real_miss_app_exp": 9.791666666666666,
+        "real_miss_app_any": 72,
+        "twin_recall": 0.9152607361963191,
+        "twin_recall_app": 0.5297872340425531,
+        "D_hat": 0.019845545977011495,
+        "U_fleet_worst": 0.2555047129820916,
+        "J": 12,
+        "U_pop": 0.2373159634331561
+      }
+    ],
+    "criterion": ">= 20 real APPEARANCE-miss events in the main domain, counted as events missed at >= 1 phase (the expected count never reaches 20 on this grid: max 10.96)"
+  },
+  "per_scene_OPstar": [
+    {
+      "video": "I_OC_01",
+      "rm": 0.0,
+      "x": 0.0,
+      "rm_tm": 0.0,
+      "rc_tm": 0.0625,
+      "rm_app": 0.0
+    },
+    {
+      "video": "I_OC_02",
+      "rm": 0.0,
+      "x": 0.0,
+      "rm_tm": 0.0,
+      "rc_tm": 0.3125,
+      "rm_app": 0.0
+    },
+    {
+      "video": "port_0_17fps",
+      "rm": 1.0,
+      "x": 0.0,
+      "rm_tm": 1.0,
+      "rc_tm": 0.0,
+      "rm_app": 1.0
+    },
+    {
+      "video": "traffic",
+      "rm": 0.3125,
+      "x": 0.3125,
+      "rm_tm": 0.0,
+      "rc_tm": 0.0,
+      "rm_app": 0.3125
+    },
+    {
+      "video": "tunnelExit_0_35fps",
+      "rm": 0.0,
+      "x": 0.0,
+      "rm_tm": 0.0,
+      "rc_tm": 0.1875,
+      "rm_app": 0.0
+    }
+  ],
+  "nearest_challenged": {
+    "along_K_at_dmin32": {
+      "d_min": 32,
+      "K": 48,
+      "N": 180,
+      "real_miss_exp": 10.479166666666666,
+      "real_miss_app_exp": 5.166666666666666,
+      "real_miss_app_any": 35,
+      "twin_recall": 0.7037773359840954,
+      "twin_recall_app": 0.3991935483870968,
+      "D_hat": 0.01724537037037037,
+      "U_fleet_worst": 0.20699948355916017,
+      "J": 12,
+      "U_pop": 0.2373159634331561
+    },
+    "along_dmin_at_K16": {
+      "d_min": 16,
+      "K": 16,
+      "N": 200,
+      "real_miss_exp": 6.75,
+      "real_miss_app_exp": 6.75,
+      "real_miss_app_any": 20,
+      "twin_recall": 0.7129629629629629,
+      "twin_recall_app": 0.7129629629629629,
+      "D_hat": 0.0096875,
+      "U_fleet_worst": 0.09540141772987731,
+      "J": 3,
+      "U_pop": 0.09641275320690612
+    },
+    "any": [
+      {
+        "d_min": 32,
+        "K": 48,
+        "N": 180,
+        "real_miss_exp": 10.479166666666666,
+        "real_miss_app_exp": 5.166666666666666,
+        "real_miss_app_any": 35,
+        "twin_recall": 0.7037773359840954,
+        "twin_recall_app": 0.3991935483870968,
+        "D_hat": 0.01724537037037037,
+        "U_fleet_worst": 0.20699948355916017,
+        "J": 12,
+        "U_pop": 0.2373159634331561
+      },
+      {
+        "d_min": 16,
+        "K": 16,
+        "N": 200,
+        "real_miss_exp": 6.75,
+        "real_miss_app_exp": 6.75,
+        "real_miss_app_any": 20,
+        "twin_recall": 0.7129629629629629,
+        "twin_recall_app": 0.7129629629629629,
+        "D_hat": 0.0096875,
+        "U_fleet_worst": 0.09540141772987731,
+        "J": 3,
+        "U_pop": 0.09641275320690612
+      },
+      {
+        "d_min": 24,
+        "K": 48,
+        "N": 189,
+        "real_miss_exp": 15.979166666666668,
+        "real_miss_app_exp": 6.833333333333334,
+        "real_miss_app_any": 44,
+        "twin_recall": 0.7470664928292047,
+        "twin_recall_app": 0.4085365853658537,
+        "D_hat": 0.021384479717813053,
+        "U_fleet_worst": 0.24364565855158157,
+        "J": 12,
+        "U_pop": 0.2373159634331561
+      }
+    ]
+  },
+  "challenged_along_K": {
+    "op": {
+      "d_min": 32,
+      "K": 48
+    },
+    "main": {
+      "N_events": 180,
+      "m_scenes": 78,
+      "unit": "expected event counts under a uniform random sampling phase; twin = majority of 3 sprite variants",
+      "cells": {
+        "real_miss & twin_miss": 7.375,
+        "real_miss & twin_catch (D)": 3.1041666666666665,
+        "real_catch & twin_catch": 165.97916666666669,
+        "real_catch & twin_miss (pessimistic)": 3.5416666666666665
+      },
+      "p_hat": 0.05821759259259259,
+      "q_hat": 0.060648148148148145,
+      "D_hat": 0.01724537037037037,
+      "reverse_hat": 0.019675925925925927,
+      "real_miss_events_expected": 10.479166666666666,
+      "real_miss_events_any_phase": 38,
+      "twin_recall_on_real_miss": 0.7037773359840954,
+      "appearance": {
+        "real_miss_expected": 5.166666666666666,
+        "real_miss_any_phase": 35,
+        "twin_miss": 2.0625,
+        "twin_catch": 3.1041666666666665,
+        "twin_recall": 0.3991935483870968,
+        "note": "real miss at a phase whose residue class contains >= 1 event frame (detector failure)",
+        "events_real_miss_any_phase": 35,
+        "events_twin_also_miss_at_some_missed_phase": 20,
+        "events_twin_miss_at_every_missed_phase": 7,
+        "scenes_with_real_miss": 14,
+        "scenes_where_twin_sees_a_real_miss": 9
+      },
+      "structural_real_miss_expected": 5.3125
+    },
+    "main_cert": {
+      "N_events": 180,
+      "m_scenes": 78,
+      "D_expected": {
+        "num": 3.1041666666666665,
+        "den": 180,
+        "unit": "expected discordant events (uniform phase, majority twin) / events",
+        "value": 0.01724537037037037,
+        "U_fleet": 0.04331679863017234
+      },
+      "D_worst_phase": {
+        "num": 28,
+        "den": 180,
+        "unit": "events discordant at >= 1 phase (majority twin) / events",
+        "value": 0.15555555555555556,
+        "U_fleet": 0.20699948355916017
+      },
+      "D_old_variant_mean": {
+        "num": 3.048611111111111,
+        "den": 180,
+        "unit": "expected discordant events, mean over 3 variants / events (= printed P1b' number)",
+        "value": 0.016936728395061728,
+        "U_fleet": 0.04288694550707029
+      },
+      "J": {
+        "num": 12,
+        "den": 78,
+        "unit": "scenes with >= 1 worst-phase discordant event / scenes",
+        "U_pop": 0.2373159634331561
+      },
+      "G2": {
+        "fleet_ok": false,
+        "pop_ok": false
+      }
+    }
+  },
+  "challenged_along_dmin": {
+    "op": {
+      "d_min": 16,
+      "K": 16
+    },
+    "main": {
+      "N_events": 200,
+      "m_scenes": 78,
+      "unit": "expected event counts under a uniform random sampling phase; twin = majority of 3 sprite variants",
+      "cells": {
+        "real_miss & twin_miss": 4.8125,
+        "real_miss & twin_catch (D)": 1.9375,
+        "real_catch & twin_catch": 189.625,
+        "real_catch & twin_miss (pessimistic)": 3.625
+      },
+      "p_hat": 0.03375,
+      "q_hat": 0.0421875,
+      "D_hat": 0.0096875,
+      "reverse_hat": 0.018125,
+      "real_miss_events_expected": 6.75,
+      "real_miss_events_any_phase": 20,
+      "twin_recall_on_real_miss": 0.7129629629629629,
+      "appearance": {
+        "real_miss_expected": 6.75,
+        "real_miss_any_phase": 20,
+        "twin_miss": 4.8125,
+        "twin_catch": 1.9375,
+        "twin_recall": 0.7129629629629629,
+        "note": "real miss at a phase whose residue class contains >= 1 event frame (detector failure)",
+        "events_real_miss_any_phase": 20,
+        "events_twin_also_miss_at_some_missed_phase": 13,
+        "events_twin_miss_at_every_missed_phase": 8,
+        "scenes_with_real_miss": 4,
+        "scenes_where_twin_sees_a_real_miss": 3
+      },
+      "structural_real_miss_expected": 0.0
+    },
+    "main_cert": {
+      "N_events": 200,
+      "m_scenes": 78,
+      "D_expected": {
+        "num": 1.9375,
+        "den": 200,
+        "unit": "expected discordant events (uniform phase, majority twin) / events",
+        "value": 0.0096875,
+        "U_fleet": 0.030681546726968288
+      },
+      "D_worst_phase": {
+        "num": 12,
+        "den": 200,
+        "unit": "events discordant at >= 1 phase (majority twin) / events",
+        "value": 0.06,
+        "U_fleet": 0.09540141772987731
+      },
+      "D_old_variant_mean": {
+        "num": 1.9791666666666667,
+        "den": 200,
+        "unit": "expected discordant events, mean over 3 variants / events (= printed P1b' number)",
+        "value": 0.009895833333333333,
+        "U_fleet": 0.030989116718353842
+      },
+      "J": {
+        "num": 3,
+        "den": 78,
+        "unit": "scenes with >= 1 worst-phase discordant event / scenes",
+        "U_pop": 0.09641275320690612
+      },
+      "G2": {
+        "fleet_ok": true,
+        "pop_ok": true
+      }
+    }
+  },
+  "verdict": {
+    "real_miss_events_main_OPstar": 1.3125,
+    "real_miss_events_main_OPstar_appearance": 1.3125,
+    "challenged": false,
+    "text": "chứng chỉ miền chính chưa được thử thách ở OP*"
+  }
+}

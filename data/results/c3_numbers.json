@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "eps": 0.05,
+    "delta": 0.05,
+    "n0": 59,
+    "rule": "n = ceil(ln(delta/2)/ln(1-(eps-q_U))); p <= q + D, q <= q_U, delta split in half"
+  },
+  "rows": [
+    {
+      "q_U": 0.0,
+      "target_D": 0.05,
+      "level": 0.025,
+      "n_real": 72,
+      "expected": 72,
+      "match": true,
+      "vs_n0": 13,
+      "false_cert_at_boundary": 0.024894280619189402
+    },
+    {
+      "q_U": 0.01,
+      "target_D": 0.04,
+      "level": 0.025,
+      "n_real": 91,
+      "expected": 91,
+      "match": true,
+      "vs_n0": 32,
+      "false_cert_at_boundary": 0.024360276117225157
+    },
+    {
+      "q_U": 0.02,
+      "target_D": 0.030000000000000002,
+      "level": 0.025,
+      "n_real": 122,
+      "expected": 122,
+      "match": true,
+      "vs_n0": 63,
+      "false_cert_at_boundary": 0.024330530620027623
+    }
+  ],
+  "all_match": true
+}

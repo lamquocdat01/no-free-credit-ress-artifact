@@ -1,0 +1,8 @@
+{
+ "generated": "minimal detector record for code/detector_guard.py (artifact release)",
+ "raw_datasets": {
+  "detector_P1_YOLO_Only": {
+   "note": "yolo26s-seg.pt, Ultralytics, conf 0.25 iou 0.7 imgsz 640, all 80 COCO classes, 23,467,933 B, sha256 3da1d83e31caec96f9300eb4064f4f62882c133c7c264d63dfe61a7c197837a4"
+  }
+ }
+}

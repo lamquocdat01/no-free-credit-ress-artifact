@@ -1,0 +1,563 @@
+{
+  "meta": {
+    "doc": "P1c E0 — three opening conditions, recomputed from the existing twin/real per-frame tables (no detector run).\n\nE0.1 units. Every tier number of twin_tiers.json is re-derived with numerator / denominator / unit stated.\n     The printed D-hat (m2_discordance.py) is  X / N  with N = #events (d >= d_min) and\n     X = sum_e mean_v |R_twin,v(K) \\ R_real(K)| / K  = EXPECTED number of discordant events under a uniform\n     random sampling phase, averaged over the 3 sprite variants (fractional numerator).\n     Canonical unit fixed here = EVENT. Twin decision at phase phi = majority of the 3 sprite variants\n     (twin catches if >= r of 3 variants catch; r = 2 canonical, r = 1 and r = 3 sensitivity).\n       expected form : x_e = P_phi(real miss AND twin catch_r)          (exact C3 quantity, fractional count)\n       worst-phase   : w_e = max_phi 1[real miss AND twin catch_r]      (integer, conservative: x_e <= w_e)\n     C4a-fleet U = U_CP(sum, N) (one-sided, delta 5%); C4a-pop U = U_CP(J, m), J = #scenes with some w_e = 1.\n     Event waterfall P1b (257 / 64) -> P1b' (207 / 86), one number per step.",
+    "seed": 42,
+    "canonical_unit": "EVENT; twin catch = >= 2 of 3 sprite variants; phase uniform (expected form) and worst phase (integer, conservative)"
+  },
+  "printed_numbers_explained": {
+    "main": {
+      "D_hat": {
+        "value": 0.001736111111111111,
+        "num": 0.3125,
+        "den": 180,
+        "unit": "events (d >= 32); numerator = sum over events of mean over 3 sprite variants of the fraction of the K=16 phases with real miss AND twin catch (expected count, fractional)"
+      },
+      "c4a_fleet_U": {
+        "value": 0.01969239629836835,
+        "formula": "U_CP(X_expected, N) one-sided delta 5%, fractional X"
+      },
+      "J": {
+        "value": 1,
+        "den": 78,
+        "unit": "scenes with some event having D_e > 0 in ANY variant (1/3 rule)"
+      },
+      "c4a_pop_U": {
+        "value": 0.059378492060127144,
+        "formula": "U_CP(J, m)"
+      }
+    },
+    "night": {
+      "D_hat": {
+        "value": 0.32833333333333337,
+        "num": 8.208333333333334,
+        "den": 25,
+        "unit": "events (d >= 32); numerator = sum over events of mean over 3 sprite variants of the fraction of the K=16 phases with real miss AND twin catch (expected count, fractional)"
+      },
+      "c4a_fleet_U": {
+        "value": 0.512126681975404,
+        "formula": "U_CP(X_expected, N) one-sided delta 5%, fractional X"
+      },
+      "J": {
+        "value": 5,
+        "den": 6,
+        "unit": "scenes with some event having D_e > 0 in ANY variant (1/3 rule)"
+      },
+      "c4a_pop_U": {
+        "value": 0.9914875553891529,
+        "formula": "U_CP(J, m)"
+      }
+    },
+    "turbulence": {
+      "D_hat": {
+        "value": 0.0625,
+        "num": 0.125,
+        "den": 2,
+        "unit": "events (d >= 32); numerator = sum over events of mean over 3 sprite variants of the fraction of the K=16 phases with real miss AND twin catch (expected count, fractional)"
+      },
+      "c4a_fleet_U": {
+        "value": 0.813789035393201,
+        "formula": "U_CP(X_expected, N) one-sided delta 5%, fractional X"
+      },
+      "J": {
+        "value": 1,
+        "den": 2,
+        "unit": "scenes with some event having D_e > 0 in ANY variant (1/3 rule)"
+      },
+      "c4a_pop_U": {
+        "value": 0.9746794344808963,
+        "formula": "U_CP(J, m)"
+      }
+    }
+  },
+  "recomputed": {
+    "main": {
+      "rule_2of3": {
+        "N_events": 180,
+        "m_scenes": 78,
+        "D_expected": {
+          "num": 0.3125,
+          "den": 180,
+          "unit": "expected discordant events (uniform phase, majority twin) / events",
+          "value": 0.001736111111111111,
+          "U_fleet": 0.01969239629836835
+        },
+        "D_worst_phase": {
+          "num": 3,
+          "den": 180,
+          "unit": "events discordant at >= 1 phase (majority twin) / events",
+          "value": 0.016666666666666666,
+          "U_fleet": 0.04251002239935215
+        },
+        "D_old_variant_mean": {
+          "num": 0.3125,
+          "den": 180,
+          "unit": "expected discordant events, mean over 3 variants / events (= printed P1b' number)",
+          "value": 0.001736111111111111,
+          "U_fleet": 0.01969239629836835
+        },
+        "J": {
+          "num": 1,
+          "den": 78,
+          "unit": "scenes with >= 1 worst-phase discordant event / scenes",
+          "U_pop": 0.059378492060127144
+        },
+        "G2": {
+          "fleet_ok": true,
+          "pop_ok": true
+        }
+      },
+      "rule_1of3": {
+        "N_events": 180,
+        "m_scenes": 78,
+        "D_expected": {
+          "num": 0.3125,
+          "den": 180,
+          "unit": "expected discordant events (uniform phase, majority twin) / events",
+          "value": 0.001736111111111111,
+          "U_fleet": 0.01969239629836835
+        },
+        "D_worst_phase": {
+          "num": 3,
+          "den": 180,
+          "unit": "events discordant at >= 1 phase (majority twin) / events",
+          "value": 0.016666666666666666,
+          "U_fleet": 0.04251002239935215
+        },
+        "D_old_variant_mean": {
+          "num": 0.3125,
+          "den": 180,
+          "unit": "expected discordant events, mean over 3 variants / events (= printed P1b' number)",
+          "value": 0.001736111111111111,
+          "U_fleet": 0.01969239629836835
+        },
+        "J": {
+          "num": 1,
+          "den": 78,
+          "unit": "scenes with >= 1 worst-phase discordant event / scenes",
+          "U_pop": 0.059378492060127144
+        },
+        "G2": {
+          "fleet_ok": true,
+          "pop_ok": true
+        }
+      },
+      "rule_3of3": {
+        "N_events": 180,
+        "m_scenes": 78,
+        "D_expected": {
+          "num": 0.3125,
+          "den": 180,
+          "unit": "expected discordant events (uniform phase, majority twin) / events",
+          "value": 0.001736111111111111,
+          "U_fleet": 0.01969239629836835
+        },
+        "D_worst_phase": {
+          "num": 3,
+          "den": 180,
+          "unit": "events discordant at >= 1 phase (majority twin) / events",
+          "value": 0.016666666666666666,
+          "U_fleet": 0.04251002239935215
+        },
+        "D_old_variant_mean": {
+          "num": 0.3125,
+          "den": 180,
+          "unit": "expected discordant events, mean over 3 variants / events (= printed P1b' number)",
+          "value": 0.001736111111111111,
+          "U_fleet": 0.01969239629836835
+        },
+        "J": {
+          "num": 1,
+          "den": 78,
+          "unit": "scenes with >= 1 worst-phase discordant event / scenes",
+          "U_pop": 0.059378492060127144
+        },
+        "G2": {
+          "fleet_ok": true,
+          "pop_ok": true
+        }
+      }
+    },
+    "night": {
+      "rule_2of3": {
+        "N_events": 25,
+        "m_scenes": 6,
+        "D_expected": {
+          "num": 8.3125,
+          "den": 25,
+          "unit": "expected discordant events (uniform phase, majority twin) / events",
+          "value": 0.3325,
+          "U_fleet": 0.5163509747666983
+        },
+        "D_worst_phase": {
+          "num": 12,
+          "den": 25,
+          "unit": "events discordant at >= 1 phase (majority twin) / events",
+          "value": 0.48,
+          "U_fleet": 0.6586113365709256
+        },
+        "D_old_variant_mean": {
+          "num": 8.208333333333332,
+          "den": 25,
+          "unit": "expected discordant events, mean over 3 variants / events (= printed P1b' number)",
+          "value": 0.3283333333333333,
+          "U_fleet": 0.5121266819754038
+        },
+        "J": {
+          "num": 5,
+          "den": 6,
+          "unit": "scenes with >= 1 worst-phase discordant event / scenes",
+          "U_pop": 0.9914875553891529
+        },
+        "G2": {
+          "fleet_ok": false,
+          "pop_ok": false
+        }
+      },
+      "rule_1of3": {
+        "N_events": 25,
+        "m_scenes": 6,
+        "D_expected": {
+          "num": 8.75,
+          "den": 25,
+          "unit": "expected discordant events (uniform phase, majority twin) / events",
+          "value": 0.35,
+          "U_fleet": 0.5339624725971548
+        },
+        "D_worst_phase": {
+          "num": 13,
+          "den": 25,
+          "unit": "events discordant at >= 1 phase (majority twin) / events",
+          "value": 0.52,
+          "U_fleet": 0.6948703203488411
+        },
+        "D_old_variant_mean": {
+          "num": 8.208333333333332,
+          "den": 25,
+          "unit": "expected discordant events, mean over 3 variants / events (= printed P1b' number)",
+          "value": 0.3283333333333333,
+          "U_fleet": 0.5121266819754038
+        },
+        "J": {
+          "num": 5,
+          "den": 6,
+          "unit": "scenes with >= 1 worst-phase discordant event / scenes",
+          "U_pop": 0.9914875553891529
+        },
+        "G2": {
+          "fleet_ok": false,
+          "pop_ok": false
+        }
+      },
+      "rule_3of3": {
+        "N_events": 25,
+        "m_scenes": 6,
+        "D_expected": {
+          "num": 7.5625,
+          "den": 25,
+          "unit": "expected discordant events (uniform phase, majority twin) / events",
+          "value": 0.3025,
+          "U_fleet": 0.4856609714095279
+        },
+        "D_worst_phase": {
+          "num": 12,
+          "den": 25,
+          "unit": "events discordant at >= 1 phase (majority twin) / events",
+          "value": 0.48,
+          "U_fleet": 0.6586113365709256
+        },
+        "D_old_variant_mean": {
+          "num": 8.208333333333332,
+          "den": 25,
+          "unit": "expected discordant events, mean over 3 variants / events (= printed P1b' number)",
+          "value": 0.3283333333333333,
+          "U_fleet": 0.5121266819754038
+        },
+        "J": {
+          "num": 5,
+          "den": 6,
+          "unit": "scenes with >= 1 worst-phase discordant event / scenes",
+          "U_pop": 0.9914875553891529
+        },
+        "G2": {
+          "fleet_ok": false,
+          "pop_ok": false
+        }
+      }
+    },
+    "turbulence": {
+      "rule_2of3": {
+        "N_events": 2,
+        "m_scenes": 2,
+        "D_expected": {
+          "num": 0.125,
+          "den": 2,
+          "unit": "expected discordant events (uniform phase, majority twin) / events",
+          "value": 0.0625,
+          "U_fleet": 0.813789035393201
+        },
+        "D_worst_phase": {
+          "num": 1,
+          "den": 2,
+          "unit": "events discordant at >= 1 phase (majority twin) / events",
+          "value": 0.5,
+          "U_fleet": 0.9746794344808963
+        },
+        "D_old_variant_mean": {
+          "num": 0.125,
+          "den": 2,
+          "unit": "expected discordant events, mean over 3 variants / events (= printed P1b' number)",
+          "value": 0.0625,
+          "U_fleet": 0.813789035393201
+        },
+        "J": {
+          "num": 1,
+          "den": 2,
+          "unit": "scenes with >= 1 worst-phase discordant event / scenes",
+          "U_pop": 0.9746794344808963
+        },
+        "G2": {
+          "fleet_ok": false,
+          "pop_ok": false
+        }
+      },
+      "rule_1of3": {
+        "N_events": 2,
+        "m_scenes": 2,
+        "D_expected": {
+          "num": 0.125,
+          "den": 2,
+          "unit": "expected discordant events (uniform phase, majority twin) / events",
+          "value": 0.0625,
+          "U_fleet": 0.813789035393201
+        },
+        "D_worst_phase": {
+          "num": 1,
+          "den": 2,
+          "unit": "events discordant at >= 1 phase (majority twin) / events",
+          "value": 0.5,
+          "U_fleet": 0.9746794344808963
+        },
+        "D_old_variant_mean": {
+          "num": 0.125,
+          "den": 2,
+          "unit": "expected discordant events, mean over 3 variants / events (= printed P1b' number)",
+          "value": 0.0625,
+          "U_fleet": 0.813789035393201
+        },
+        "J": {
+          "num": 1,
+          "den": 2,
+          "unit": "scenes with >= 1 worst-phase discordant event / scenes",
+          "U_pop": 0.9746794344808963
+        },
+        "G2": {
+          "fleet_ok": false,
+          "pop_ok": false
+        }
+      },
+      "rule_3of3": {
+        "N_events": 2,
+        "m_scenes": 2,
+        "D_expected": {
+          "num": 0.125,
+          "den": 2,
+          "unit": "expected discordant events (uniform phase, majority twin) / events",
+          "value": 0.0625,
+          "U_fleet": 0.813789035393201
+        },
+        "D_worst_phase": {
+          "num": 1,
+          "den": 2,
+          "unit": "events discordant at >= 1 phase (majority twin) / events",
+          "value": 0.5,
+          "U_fleet": 0.9746794344808963
+        },
+        "D_old_variant_mean": {
+          "num": 0.125,
+          "den": 2,
+          "unit": "expected discordant events, mean over 3 variants / events (= printed P1b' number)",
+          "value": 0.0625,
+          "U_fleet": 0.813789035393201
+        },
+        "J": {
+          "num": 1,
+          "den": 2,
+          "unit": "scenes with >= 1 worst-phase discordant event / scenes",
+          "U_pop": 0.9746794344808963
+        },
+        "G2": {
+          "fleet_ok": false,
+          "pop_ok": false
+        }
+      }
+    },
+    "all_tiers": {
+      "rule_2of3": {
+        "N_events": 207,
+        "m_scenes": 86,
+        "D_expected": {
+          "num": 8.75,
+          "den": 207,
+          "unit": "expected discordant events (uniform phase, majority twin) / events",
+          "value": 0.042270531400966184,
+          "U_fleet": 0.0731517869564399
+        },
+        "D_worst_phase": {
+          "num": 16,
+          "den": 207,
+          "unit": "events discordant at >= 1 phase (majority twin) / events",
+          "value": 0.07729468599033816,
+          "U_fleet": 0.11503180116769232
+        },
+        "D_old_variant_mean": {
+          "num": 8.645833333333334,
+          "den": 207,
+          "unit": "expected discordant events, mean over 3 variants / events (= printed P1b' number)",
+          "value": 0.041767310789049925,
+          "U_fleet": 0.07252915926678655
+        },
+        "J": {
+          "num": 7,
+          "den": 86,
+          "unit": "scenes with >= 1 worst-phase discordant event / scenes",
+          "U_pop": 0.1474492749152694
+        },
+        "G2": {
+          "fleet_ok": false,
+          "pop_ok": false
+        }
+      },
+      "rule_1of3": {
+        "N_events": 207,
+        "m_scenes": 86,
+        "D_expected": {
+          "num": 9.1875,
+          "den": 207,
+          "unit": "expected discordant events (uniform phase, majority twin) / events",
+          "value": 0.044384057971014496,
+          "U_fleet": 0.0757583805078125
+        },
+        "D_worst_phase": {
+          "num": 17,
+          "den": 207,
+          "unit": "events discordant at >= 1 phase (majority twin) / events",
+          "value": 0.0821256038647343,
+          "U_fleet": 0.120641399356814
+        },
+        "D_old_variant_mean": {
+          "num": 8.645833333333334,
+          "den": 207,
+          "unit": "expected discordant events, mean over 3 variants / events (= printed P1b' number)",
+          "value": 0.041767310789049925,
+          "U_fleet": 0.07252915926678655
+        },
+        "J": {
+          "num": 7,
+          "den": 86,
+          "unit": "scenes with >= 1 worst-phase discordant event / scenes",
+          "U_pop": 0.1474492749152694
+        },
+        "G2": {
+          "fleet_ok": false,
+          "pop_ok": false
+        }
+      },
+      "rule_3of3": {
+        "N_events": 207,
+        "m_scenes": 86,
+        "D_expected": {
+          "num": 8.0,
+          "den": 207,
+          "unit": "expected discordant events (uniform phase, majority twin) / events",
+          "value": 0.03864734299516908,
+          "U_fleet": 0.06865053551754215
+        },
+        "D_worst_phase": {
+          "num": 16,
+          "den": 207,
+          "unit": "events discordant at >= 1 phase (majority twin) / events",
+          "value": 0.07729468599033816,
+          "U_fleet": 0.11503180116769232
+        },
+        "D_old_variant_mean": {
+          "num": 8.645833333333334,
+          "den": 207,
+          "unit": "expected discordant events, mean over 3 variants / events (= printed P1b' number)",
+          "value": 0.041767310789049925,
+          "U_fleet": 0.07252915926678655
+        },
+        "J": {
+          "num": 7,
+          "den": 86,
+          "unit": "scenes with >= 1 worst-phase discordant event / scenes",
+          "U_pop": 0.1474492749152694
+        },
+        "G2": {
+          "fleet_ok": false,
+          "pop_ok": false
+        }
+      }
+    }
+  },
+  "check_reproduces_printed_main_D": true,
+  "erratum": {
+    "main": {
+      "printed": {
+        "D_hat": 0.001736111111111111,
+        "U_fleet": 0.01969239629836835,
+        "J": 1,
+        "U_pop": 0.059378492060127144
+      },
+      "canonical": {
+        "D_expected": 0.001736111111111111,
+        "U_fleet_expected": 0.01969239629836835,
+        "D_worst": 0.016666666666666666,
+        "U_fleet_worst": 0.04251002239935215,
+        "J": 1,
+        "U_pop": 0.059378492060127144
+      }
+    },
+    "discordant_events_main": [
+      {
+        "video": "traffic",
+        "event_id": 5,
+        "duration": 58,
+        "kind": "vehicle",
+        "phases_discordant": 2,
+        "phases_real_miss": 2,
+        "per_variant_phases": [
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "video": "traffic",
+        "event_id": 6,
+        "duration": 33,
+        "kind": "vehicle",
+        "phases_discordant": 1,
+        "phases_real_miss": 1,
+        "per_variant_phases": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "video": "traffic",
+        "event_id": 11,
+        "duration": 32,
+        "kind": "vehicle",
+        "phases_discordant": 2,
+        "phases_real_miss": 2,
+        "per_variant_phases": [
+          2,
+          2,
+          2
+        ]
+      }
+    ],
+    "note": "0.17% is a per-EVENT rate with a fractional numerator: 0.3125 EXPECTED discordant events / 180 events (expectation over the 16 sampling phases and the 3 sprite variants). The majority rule does not change it (the 3 variants agree on these events). In integer form (event discordant at >= 1 phase) the numerator is the count in D_worst_phase; the certificate is then computed on that integer count."
+  }
+}

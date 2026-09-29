@@ -1,0 +1,113 @@
+{
+  "meta": {
+    "doc": "P3 W2 — sensitivity of the static-domain certificate to the event definition (planned in the outline, §6.6).\nSame data, same method as E0.1 / M3 (event unit, majority twin, worst-phase integer counts); only the event filter\nchanges: primary = largest object >= 256 px ('a256'), original = every ground-truth event ('orig').\nOutput: results/sens_event_definition.json"
+  },
+  "definitions": {
+    "a256": {
+      "n_events_all_durations": 232,
+      "points": {
+        "OP*": {
+          "N": 180,
+          "m": 78,
+          "disc_worst": 3,
+          "U_fleet": 0.04251002239935215,
+          "J": 1,
+          "U_pop": 0.059378492060127144,
+          "p_hat": 0.007291666666666667,
+          "real_miss_events": 4,
+          "loso_viol": 1,
+          "loso_false_cert": 0
+        },
+        "OP-A": {
+          "N": 180,
+          "m": 78,
+          "disc_worst": 0,
+          "U_fleet": 0.016505228195662736,
+          "J": 0,
+          "U_pop": 0.03767863420096847,
+          "p_hat": 0.005555555555555556,
+          "real_miss_events": 1,
+          "loso_viol": 0,
+          "loso_false_cert": 0
+        },
+        "OP-C": {
+          "N": 180,
+          "m": 78,
+          "disc_worst": 0,
+          "U_fleet": 0.016505228195662736,
+          "J": 0,
+          "U_pop": 0.03767863420096847,
+          "p_hat": 0.005555555555555556,
+          "real_miss_events": 1,
+          "loso_viol": 0,
+          "loso_false_cert": 0
+        },
+        "challenge_16_16": {
+          "N": 200,
+          "m": 78,
+          "disc_worst": 12,
+          "U_fleet": 0.09540141772987731,
+          "J": 3,
+          "U_pop": 0.09641275320690612,
+          "p_hat": 0.03375,
+          "real_miss_events": 20,
+          "loso_viol": 2,
+          "loso_false_cert": 0
+        }
+      }
+    },
+    "orig": {
+      "n_events_all_durations": 295,
+      "points": {
+        "OP*": {
+          "N": 182,
+          "m": 78,
+          "disc_worst": 3,
+          "U_fleet": 0.04204899751181139,
+          "J": 1,
+          "U_pop": 0.059378492060127144,
+          "p_hat": 0.007211538461538462,
+          "real_miss_events": 4,
+          "loso_viol": 1,
+          "loso_false_cert": 0
+        },
+        "OP-A": {
+          "N": 182,
+          "m": 78,
+          "disc_worst": 0,
+          "U_fleet": 0.016325340743411465,
+          "J": 0,
+          "U_pop": 0.03767863420096847,
+          "p_hat": 0.005494505494505495,
+          "real_miss_events": 1,
+          "loso_viol": 0,
+          "loso_false_cert": 0
+        },
+        "OP-C": {
+          "N": 182,
+          "m": 78,
+          "disc_worst": 0,
+          "U_fleet": 0.016325340743411465,
+          "J": 0,
+          "U_pop": 0.03767863420096847,
+          "p_hat": 0.005494505494505495,
+          "real_miss_events": 1,
+          "loso_viol": 0,
+          "loso_false_cert": 0
+        },
+        "challenge_16_16": {
+          "N": 205,
+          "m": 78,
+          "disc_worst": 13,
+          "U_fleet": 0.0989322877206189,
+          "J": 4,
+          "U_pop": 0.11351736195607218,
+          "p_hat": 0.04725609756097561,
+          "real_miss_events": 23,
+          "loso_viol": 0,
+          "loso_false_cert": 0
+        }
+      }
+    }
+  }
+}
