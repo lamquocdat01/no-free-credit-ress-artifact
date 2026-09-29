@@ -106,6 +106,7 @@ def main():
         body = (after_doc(MS / "main.tex") + rd(MS / "body.tex") + rd(MS / "abstract.tex")
                 + "".join(rd(f) for f in RESS) + after_doc(MS / "main_ress.tex") + rd(MS / "tab_gap.tex"))
         body = re.sub(r"%.*", "", body)
+        body = re.sub(r"Software:.*?Core i7-1185G7\.", " ", body, flags=re.S)  # version strings, not numbers
         body = re.sub(r"\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}", " ", body, flags=re.S)  # layout
         body = re.sub(r"[pL]\{[0-9.]+\\(columnwidth|textwidth)\}|width=[0-9.]+\\(columnwidth|textwidth)|\\multicolumn\{\d+\}",
                       " ", body)  # layout
@@ -115,7 +116,7 @@ def main():
         typed = re.findall(r"(?<![A-Za-z\\])\d+(?:\.\d+)?", body)
         ALLOW = {"0", "1", "2", "3", "4", "5", "6", "7.5", "8", "10", "12", "15", "16", "20", "24", "25", "32", "44", "48",
                  "50", "59", "60", "80", "95", "100", "150", "256", "640", "0.25", "0.3", "2014", "2026", "0009", "0004",
-                 "5432", "9343", "22", "3.0", "42", "000"}  # 3.0: licence version; 42: seed; 000: 10{,}000
+                 "5432", "9343", "22", "3.0", "42", "000", "2025"}  # 3.0: licence version; 42: seed; 000: 10{,}000
         bad = sorted({t for t in typed if t not in ALLOW})
         if bad:
             fails.append(f"digits typed in the manuscript outside the allow-list: {bad}")

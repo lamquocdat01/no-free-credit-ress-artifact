@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "doc": "P4-final F1 — two additional computations from the existing per-frame tables (no detector, no new twin).\n\n1. Worst-phase twin miss. For every event, real miss / twin miss / discordance are taken at the WORST sampling phase:\n   p_w = 1[the real event is missed at >= 1 phase], q_w = 1[the twin (majority of 3 variants) misses at >= 1 phase],\n   D_w = 1[real miss and twin catch at the same phase, for >= 1 phase] (the D convention of E0.1).\n   Per event, p_w <= q_w + D_w (if the real event is missed at phase phi, the twin either misses or catches at phi), so the\n   bound holds for any fixed deployment phase. Recomputed at OP* and (16,16): tier table (p_w, q_w, D_w, fleet and\n   population bounds) and the exchange rate (direct plan at the pooled worst-phase p, twin route with worst-phase q).",
+    "seed": 42,
+    "delta": 0.05
+  },
+  "points": {
+    "OP*": {
+      "op": {
+        "d_min": 32,
+        "K": 16,
+        "eps": 0.2
+      },
+      "tiers": {
+        "main": {
+          "N": 180,
+          "m": 78,
+          "p_w": 0.022222222222222223,
+          "q_w": 0.022222222222222223,
+          "D_w": 3,
+          "D_w_rate": 0.016666666666666666,
+          "U_fleet": 0.04251002239935215,
+          "J": 1,
+          "U_pop": 0.059378492060127144,
+          "p_phase_avg": 0.007291666666666667,
+          "q_phase_avg": 0.008680555555555556,
+          "check_p_le_q_plus_D": true
+        },
+        "night": {
+          "N": 25,
+          "m": 6,
+          "p_w": 0.52,
+          "q_w": 0.16,
+          "D_w": 12,
+          "D_w_rate": 0.48,
+          "U_fleet": 0.6586113365709256,
+          "J": 5,
+          "U_pop": 0.9914875553891529,
+          "p_phase_avg": 0.3625,
+          "q_phase_avg": 0.0475,
+          "check_p_le_q_plus_D": true
+        },
+        "turbulence": {
+          "N": 2,
+          "m": 2,
+          "p_w": 0.5,
+          "q_w": 0.0,
+          "D_w": 1,
+          "D_w_rate": 0.5,
+          "U_fleet": 0.9746794344808963,
+          "J": 1,
+          "U_pop": 0.9746794344808963,
+          "p_phase_avg": 0.0625,
+          "q_phase_avg": 0.0,
+          "check_p_le_q_plus_D": true
+        },
+        "all_tiers": {
+          "N": 207,
+          "m": 86,
+          "p_w": 0.08695652173913043,
+          "q_w": 0.03864734299516908,
+          "D_w": 16,
+          "D_w_rate": 0.07729468599033816,
+          "U_fleet": 0.11503180116769232,
+          "J": 7,
+          "U_pop": 0.1474492749152694,
+          "p_phase_avg": 0.050724637681159424,
+          "q_phase_avg": 0.013285024154589372,
+          "check_p_le_q_plus_D": true
+        }
+      },
+      "exchange_main": {
+        "p_main_worst": 0.022222222222222223,
+        "n_direct": 22,
+        "cameras_accepted": 74,
+        "m": 78,
+        "saved_median": 22.0,
+        "saved_iqr": [
+          22.0,
+          22.0
+        ],
+        "false_accept": 1,
+        "n_twin_needed_median": 27.0,
+        "note": "twin route with worst-phase q (q known), transfer term U_CP(J_-s, m-1) at delta/2"
+      }
+    },
+    "challenge_16_16": {
+      "op": {
+        "d_min": 16,
+        "K": 16,
+        "eps": 0.2
+      },
+      "tiers": {
+        "main": {
+          "N": 200,
+          "m": 78,
+          "p_w": 0.1,
+          "q_w": 0.085,
+          "D_w": 12,
+          "D_w_rate": 0.06,
+          "U_fleet": 0.09540141772987731,
+          "J": 3,
+          "U_pop": 0.09641275320690612,
+          "p_phase_avg": 0.03375,
+          "q_phase_avg": 0.0421875,
+          "check_p_le_q_plus_D": true
+        },
+        "night": {
+          "N": 36,
+          "m": 6,
+          "p_w": 0.6388888888888888,
+          "q_w": 0.3055555555555556,
+          "D_w": 21,
+          "D_w_rate": 0.5833333333333334,
+          "U_fleet": 0.7228049682564415,
+          "J": 5,
+          "U_pop": 0.9914875553891529,
+          "p_phase_avg": 0.4965277777777778,
+          "q_phase_avg": 0.0798611111111111,
+          "check_p_le_q_plus_D": true
+        },
+        "turbulence": {
+          "N": 2,
+          "m": 2,
+          "p_w": 0.5,
+          "q_w": 0.0,
+          "D_w": 1,
+          "D_w_rate": 0.5,
+          "U_fleet": 0.9746794344808963,
+          "J": 1,
+          "U_pop": 0.9746794344808963,
+          "p_phase_avg": 0.0625,
+          "q_phase_avg": 0.0,
+          "check_p_le_q_plus_D": true
+        },
+        "all_tiers": {
+          "N": 238,
+          "m": 86,
+          "p_w": 0.18487394957983194,
+          "q_w": 0.11764705882352941,
+          "D_w": 34,
+          "D_w_rate": 0.14285714285714285,
+          "U_fleet": 0.1856023817314199,
+          "J": 9,
+          "U_pop": 0.17551250356223522,
+          "p_phase_avg": 0.10399159663865547,
+          "q_phase_avg": 0.047531512605042014,
+          "check_p_le_q_plus_D": true
+        }
+      },
+      "exchange_main": {
+        "p_main_worst": 0.1,
+        "n_direct": 82,
+        "cameras_accepted": 73,
+        "m": 78,
+        "saved_median": 82.0,
+        "saved_iqr": [
+          82.0,
+          82.0
+        ],
+        "false_accept": 1,
+        "n_twin_needed_median": 39.0,
+        "note": "twin route with worst-phase q (q known), transfer term U_CP(J_-s, m-1) at delta/2"
+      }
+    }
+  }
+}

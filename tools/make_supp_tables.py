@@ -141,6 +141,36 @@ def main():
                "(100{,}000 runs), $\\delta'=7.5/10/15/20\\%$.", "llrrll",
                ["point", "simulator", "$N_{\\mathrm{sim}}$", "pass", "credit (events)", "false cert.\\ at $p=\\varepsilon$"], rows, small=False)
                + r"\endgroup")
+    # P4-final F1: worst-phase convention and site-level bound
+    wp = J("worst_phase.json")["points"]
+    rows = []
+    for pt, lab in (("OP*", "OP$^\\ast$"), ("challenge_16_16", "$(16,16)$ post hoc")):
+        for t in ("main", "night", "turbulence", "all_tiers"):
+            r = wp[pt]["tiers"][t]
+            rows.append((lab, t.replace("_", " "), r["N"], P(r["p_phase_avg"]), P(r["p_w"]), P(r["q_phase_avg"]), P(r["q_w"]),
+                         r["D_w"], P(r["U_fleet"], 2), f"{r['J']}/{r['m']}", P(r["U_pop"], 2)))
+            lab = ""
+    out.append(r"\begingroup\footnotesize\setlength{\tabcolsep}{2pt}" + "\n" + tab("tab:worstphase", "Worst-phase convention (valid for any fixed deployment phase): real and twin miss rates averaged "
+                   "over phases and at the worst phase, discordant events, fleet and population bounds.", "llrrrrrrrrr",
+                   ["point", "tier", "$N$", "$\\hat p$ avg", "$\\hat p$ worst", "$\\hat q$ avg", "$\\hat q$ worst", "disc.",
+                    "$U(X,N)$", "$J/m$", "$U(J,m)$"], rows, small=False) + r"\endgroup")
+    rows = []
+    for pt, lab in (("OP*", "OP$^\\ast$"), ("challenge_16_16", "$(16,16)$ post hoc")):
+        x = wp[pt]["exchange_main"]
+        rows.append((lab, P(x["p_main_worst"]), x["n_direct"], x["cameras_accepted"], F(x["saved_median"], 0),
+                     x["false_accept"], F(x["n_twin_needed_median"], 0)))
+    out.append(tab("tab:worstx", "Exchange rate under the worst-phase convention (78 static cameras; twin run to convergence).",
+                   "lrrrrrr", ["point", "$\\hat p$ worst", "$n_{\\mathrm{dir}}$", "accepted", "saved", "false acc.", "twin runs"], rows))
+    sb = J("site_bound.json")["points"]
+    for pt, lab, key in (("OP*", "OP$^\\ast$", "OP"), ("challenge_16_16", "$(16,16)$ post hoc", "CH")):
+        r = sb[pt]["main"]
+        lo = {x["site"]: x for x in r["loso"]}
+        rows = [(x["site"].replace("_", "\\_").replace("CDnet:", "CDnet ").replace("LASIESTA:", "LASIESTA "), x["scenes"], x["n"],
+                 int(x["disc"]), P(lo[x["site"]]["U_minus"]), "yes" if lo[x["site"]]["viol"] else "no") for x in r["sites"]]
+        out.append(tab(f"tab:site{key}", f"Site-level population bound at {lab}: {r['m_site']} sites, $J_{{\\mathrm{{site}}}}={r['J_site']}$, "
+                       f"$U(J_{{\\mathrm{{site}}}},m_{{\\mathrm{{site}}}})={P(r['U_pop_site'])}$; per site: scenes, events, discordant events, "
+                       "bound without the site, leave-one-site-out violation.", "lrrrrl",
+                       ["site", "scenes", "events", "disc.", "$U_{-\\mathrm{site}}$", "violation"], rows))
     (ROOT / "manuscript" / "supp_tables.tex").write_text("\n".join(out), encoding="utf-8")
     print("[write] supp_tables.tex", len(out) - 1, "tables")
 

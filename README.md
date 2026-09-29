@@ -17,7 +17,7 @@ detector applied to public video benchmarks and to synthetic twins of their even
 | `data/numbers.tex`, `data/proofs_numbers.tex` | every number printed in the manuscript, one macro each, generated from `data/results/` | CC BY 4.0 |
 | `data/sprites/person/` | synthetic person sprites generated with MPFB 2 from its CC0 assets | CC0 (as generated) |
 | `figs/` | figures of the manuscript | CC BY 4.0 |
-| `manuscript/` | LaTeX sources of the manuscript (added after the data tag) | CC BY 4.0 |
+| `manuscript/` | LaTeX sources and PDFs of the manuscript and supplement (added after the data tag); build with `pdflatex` + `bibtex` from `manuscript/` | CC BY 4.0 |
 
 ## Reproduce the numbers, tables and figures (no detector, minutes on a laptop)
 
@@ -30,16 +30,19 @@ python tools/make_main_tables.py    # -> manuscript/tab_*.tex (grid, must-fail, 
 python tools/make_supp_tables.py    # -> manuscript/supp_tables.tex (supplementary tables S1-S13)
 python tools/make_figs.py           # -> manuscript/figs/fig_tiers, fig_leak, fig_loso, fig_sprites
 python code/w0_exchange_rate_v2.py  # -> figs/fig_exchange_rate (and data/results/exchange_rate_v2.json)
+python code/f1_worst_phase_site.py  # -> data/results/worst_phase.json, site_bound.json (worst-phase and site checks)
 ```
 
 | Manuscript item | Source file(s) in `data/results/` | Generator |
 |---|---|---|
-| Table 2 (Result 2 credits), Table 3 | `c2_mc.json`, `c2_empirical.json` | `make_numbers.py` |
+| Table 3 (Result 2 credits and two-tier plan) | `c2_mc.json`, `c2_empirical.json` | `make_numbers.py` |
 | Result 3–4 numbers, Table 4 (per-camera requirement) | `c3_numbers.json`, `c4_power.json`, `validity_audit.json` | `make_numbers.py`, `make_main_tables.py` |
 | Certificates by tier (table + figure) | `e0_units.json` | `make_numbers.py`, `make_figs.py` |
 | Exchange rate (table, grid, figure) | `exchange_rate.json`, `exchange_rate_v2.json` | `make_main_tables.py`, `w0_exchange_rate_v2.py` |
 | Real vs twin outcomes, LOSO, must-fail | `e0_confusion.json`, `validity_audit.json`, `must_fail_v2.json` | `make_main_tables.py`, `make_figs.py` |
 | Event-definition sensitivity | `sens_event_definition.json` | `make_main_tables.py` |
+| Tier table and exchange table, worst-phase columns/rows; Table S14–S15 | `worst_phase.json` (from `code/f1_worst_phase_site.py`) | `make_numbers.py`, `make_supp_tables.py` |
+| Site-level population bound (Section 6, Tables S16–S17) | `site_bound.json` (from `code/f1_worst_phase_site.py`) | `make_numbers.py`, `make_supp_tables.py` |
 | Twin fidelity | `e0_geometry_sensitivity.json`, `twin_discordance_c0_main.json` | `make_main_tables.py` |
 | Supplementary tables | all of the above + `e0_event_waterfall.json`, `iw_ablation_v2.json`, `c5a_monotone.json` | `make_supp_tables.py` |
 
@@ -67,4 +70,5 @@ Set `THS_DATASETS` to the folder that holds the datasets (default `./datasets`).
 
 ## Citation
 
-See `CITATION.cff`. Archived release: tag `ress-v1.0` (Zenodo DOI in the release notes and in the manuscript).
+See `CITATION.cff`. Release: tag `ress-v1.0` (data + code); the manuscript sources are added in the next commit
+and cite the tagged commit hash (`data/results/repo_release.json`).

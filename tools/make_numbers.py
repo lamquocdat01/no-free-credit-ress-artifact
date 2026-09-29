@@ -195,6 +195,7 @@ def build():
         add(f"Pmain{name}", pct(c["p_hat"], 2), f"{key} main p-hat")
         add(f"Dexp{name}", f(c["cells"]["real_miss & twin_catch (D)"], 2), f"{key} expected discordant events")
     extra(add)
+    extra_f1(add)
     return M
 
 
@@ -220,6 +221,15 @@ def extra(M_add):
     M_add("TurbUpop", pct(u["J"]["U_pop"], 1), "turbulence U_pop")
     for j, w in ((0, "zero"), (1, "one"), (2, "two"), (3, "three")):
         M_add(f"UpopJ{w}", pct(ucp(j, 78), 1), f"U_CP({j},78), formula (worked example)")
+    for dp, tag in ((0.075, "A"), (0.10, "B"), (0.15, "C"), (0.20, "D")):
+        n1, n2 = math.ceil(math.log(dp) / math.log(0.95)), math.ceil(math.log(0.05) / math.log(0.95))
+        pis = (0.05 - 0.95 ** n2) / (0.95 ** n1 - 0.95 ** n2)
+        M_add(f"PiStar{tag}", pct(pis, 1), f"Result 2 threshold pi* on the simulator pass probability, delta'={dp}, eps=delta=5%")
+    exm = J("exchange_rate_v2.json")["marked"]["OP*"]["q_known"]
+    pacc = exm["cameras_saving"] / 78
+    uh = ucp(J("e0_units.json")["recomputed"]["main"]["rule_2of3"]["J"]["num"], 78, 0.025)
+    M_add("PAccept", pct(pacc, 1), "share of static cameras accepted by the twin route at OP* (cameras saving / 78)")
+    M_add("AcceptInflation", f"{100 * uh * (1 / pacc - 1):.1f}", "U_{delta/2}(J,78) (1/P(accept) - 1), percentage points")
     for j, w in ((0, "zero"), (1, "one"), (2, "two"), (3, "three")):
         M_add(f"UhalfJ{w}", pct(ucp(j, 78, 0.025), 1), f"U_CP({j},78) at delta/2 (decision level)")
     budget = 0.05 - ucp(0, 78, 0.025)
@@ -257,6 +267,37 @@ def extra(M_add):
         M_add(f"Tcamfin{name}", s["q_finite"]["cameras_saving"], f"{key} cameras saving, twin as built")
         M_add(f"Truns{name}", f"{s1['q_known']['n_twin_events_needed_median']:.0f}", f"{key} twin runs needed per camera")
         M_add(f"Tcpu{name}", f(s["q_known"]["cpu_hours_per_saved_event"]["median"], 3), f"{key} CPU-h per saved event")
+
+
+def extra_f1(M_add):
+    """P4-final F1: worst-phase convention and site-level bound; repository release hash."""
+    wp = J("worst_phase.json")["points"]
+    for pt, tagp in (("OP*", "S"), ("challenge_16_16", "C")):
+        for t, tt in (("main", "Main"), ("night", "Night"), ("turbulence", "Turb"), ("all_tiers", "All")):
+            r = wp[pt]["tiers"][t]
+            M_add(f"WP{tagp}p{tt}", pct(r["p_w"], 1), f"worst-phase real miss rate, {t}, {pt} (events missed at >= 1 phase / N={r['N']})")
+            M_add(f"WP{tagp}q{tt}", pct(r["q_w"], 1), f"worst-phase twin miss rate (majority), {t}, {pt}")
+            M_add(f"PA{tagp}p{tt}", pct(r["p_phase_avg"], 1), f"phase-averaged real miss rate, {t}, {pt}")
+            M_add(f"PA{tagp}q{tt}", pct(r["q_phase_avg"], 1), f"phase-averaged twin miss rate (majority), {t}, {pt}")
+        x = wp[pt]["exchange_main"]
+        M_add(f"WX{tagp}p", pct(x["p_main_worst"], 1), f"pooled worst-phase real miss rate, main, {pt}")
+        M_add(f"WX{tagp}nd", x["n_direct"], f"direct plan at the worst-phase p, {pt}")
+        M_add(f"WX{tagp}acc", x["cameras_accepted"], f"cameras accepted with worst-phase q (of 78), {pt}")
+        M_add(f"WX{tagp}saved", f"{x['saved_median']:.0f}", f"median real events saved per camera, worst-phase, {pt}")
+        M_add(f"WX{tagp}fa", x["false_accept"], f"accepted cameras with worst-phase p_s > eps, {pt}")
+        M_add(f"WX{tagp}runs", f"{x['n_twin_needed_median']:.0f}", f"twin runs needed per camera (median), worst-phase q, {pt}")
+    sb = J("site_bound.json")["points"]
+    for pt, tagp in (("OP*", "S"), ("challenge_16_16", "C")):
+        r = sb[pt]["main"]
+        M_add(f"Site{tagp}m", r["m_site"], f"sites (CDnet categories + LASIESTA groups), {pt}")
+        M_add(f"Site{tagp}J", r["J_site"], f"sites with a discordant event, {pt}")
+        M_add(f"Site{tagp}U", pct(r["U_pop_site"], 1), f"site-level population bound U_CP(J_site, m_site), {pt}")
+        M_add(f"Site{tagp}loso", r["loso_site_violations"], f"leave-one-site-out violations, {pt}")
+    rel = R / "repo_release.json"
+    if rel.exists():
+        rr = J("repo_release.json")
+        M_add("RepoTag", rr["tag"], "artifact release tag")
+        M_add("RepoHashShort", rr["commit"][:12], "commit A (tagged) short hash")
 
 
 if __name__ == "__main__":

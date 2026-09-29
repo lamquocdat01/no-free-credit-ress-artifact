@@ -100,8 +100,8 @@ def c4b():
          r"\caption{Data needed for the per-camera form of Result 4(c) with no discordance ($J=0$): minimum number of scenes "
          r"$m_{\min}$, events per scene $n$ at $m=m_{\min}$ and at $m=2m_{\min}$, total events, and the asymptotic floor "
          r"$\ln(1/\delta)/(\gamma t)$.}",
-         r"\label{tab:c4b}", r"\scriptsize", r"\setlength{\tabcolsep}{3pt}", r"\begin{tabular}{@{}rrrrrr@{}}", r"\toprule",
-         r"$t$ & $\gamma$ & $m_{\min}$ & $n$ ($m_{\min}$) & $n$, total ($2m_{\min}$) & floor \\", r"\midrule"]
+         r"\label{tab:c4b}", r"\scriptsize", r"\setlength{\tabcolsep}{3pt}", r"\begin{tabular}{@{}rrrrrrr@{}}", r"\toprule",
+         r"$t$ & $\gamma$ & $m_{\min}$ & $n$ at $m_{\min}$ & $n$ at $2m_{\min}$ & total at $2m_{\min}$ & floor \\", r"\midrule"]
     for t in (0.025, 0.05, 0.10):
         for g in (0.05, 0.10):
             r = c[f"t{t}_gamma{g}"]

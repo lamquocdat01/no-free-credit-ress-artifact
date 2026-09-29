@@ -70,6 +70,10 @@ DOIS = {
     "fisch2024stratppi": "10.52202/079017-3541",
     "angelopoulos2023gentle": "10.1561/2200000101",
     "degrancey2022conformaldet": "10.1007/978-3-031-14862-0_23",
+    "morita2008ess": "10.1111/j.1541-0420.2007.00888.x",
+    "ibrahim2000power": "10.1214/ss/1009212673",
+    "hobbs2011commensurate": "10.1111/j.1541-0420.2011.01564.x",
+    "bishop2017profiles": "10.1016/j.ress.2016.08.019",
     "yang2023purse": "10.1109/CVPR52729.2023.00864",
     "mei2025pwc": "10.1177/02783649251378151",
     "yuan2026conformal": "10.1016/j.ress.2026.112417",
@@ -83,7 +87,7 @@ MANUAL = r"""
   author = {Rachel Luo and Heng Yang and Michael Watson and Apoorva Sharma and Sushant Veer and Edward Schmerling and Marco Pavone},
   title = {{Sim2Val}: Leveraging Correlation Across Test Platforms for Variance-Reduced Metric Estimation},
   year = {2025},
-  howpublished = {Conference on Robot Learning (CoRL) 2025; preprint arXiv:2506.20553},
+  howpublished = {Conference on Robot Learning (CoRL) 2025; cited as arXiv preprint arXiv:2506.20553},
   note = {doi: \href{https://doi.org/10.48550/arXiv.2506.20553}{10.48550/arXiv.2506.20553}}
 }
 @misc{zhu2026scape,
