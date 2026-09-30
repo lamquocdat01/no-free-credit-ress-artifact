@@ -47,7 +47,8 @@ def mustfail():
     L = [r"\begin{table}[t]", r"\centering",
          r"\caption{Must-fail scenarios. Top: temporal ($d_{\min}=1$, $K=48$), static scenes with $p_s>\varepsilon$, real "
          r"misses split into detector and temporal misses; all refused in every Monte-Carlo run. Middle: night scenes at "
-         r"OP$^\ast$ (every miss is a detector miss), and whether each is falsely certified when judged alone. Bottom: "
+         r"OP$^\ast$ (every miss is a detector miss), and whether each is falsely certified when judged alone (phase-averaged); "
+         r"then the same for the camera-jitter scenes. Bottom: "
          r"population bound when $k$ night scenes leak into the calibration set (median over subsets; withdrawn = share of "
          r"subsets with a bound above $\varepsilon/2$).}",
          r"\label{tab:mustfail}", r"\scriptsize", r"\setlength{\tabcolsep}{3pt}", r"\begin{tabular}{@{}lrrrrrr@{}}", r"\toprule",
@@ -60,6 +61,10 @@ def mustfail():
           r"scene & $n$ & $p_s$ & $q_s$ & $D_s$ & disc. & false cert. \\", r"\midrule"]
     for t in m2["night_table"]:
         fc = "yes" if m2["night_with_main_only_calibration"][t["video"]]["false_cert"] else "no"
+        L.append(f"{t['video']} & {t['n']} & {P(t['p_s'])} & {P(t['q_s'])} & {P(t['D_s'])} & {t['worst_phase_discordant']} & {fc} \\\\")
+    L += [r"\midrule", r"\multicolumn{7}{@{}l}{\emph{3: detector (camera jitter)}} \\", r"\midrule"]
+    for t in m2["jitter_table"]:
+        fc = "yes" if m2["jitter_with_main_only_calibration"][t["video"]]["false_cert"] else "no"
         L.append(f"{t['video']} & {t['n']} & {P(t['p_s'])} & {P(t['q_s'])} & {P(t['D_s'])} & {t['worst_phase_discordant']} & {fc} \\\\")
     L += [r"\midrule", r"$k$ leaked & 0 & 1 & 2 & 3 & 4 & 6 \\", r"\midrule"]
     cur = {c["k"]: c for c in m2["curve"]}
@@ -143,7 +148,7 @@ def confusion2x2():
 
 def fidelity():
     geo = J("e0_geometry_sensitivity.json")["frame_level"]["by_kind_aspect"]
-    conf = J("twin_discordance_c0_main.json")["confidence"]["by_kind"]
+    conf = J("twin_discordance_c0_main_main76.json")["confidence"]["by_kind"]
     L = [r"\begin{table}[t]", r"\centering",
          r"\caption{Twin fidelity on the same frames (static domain): hit rates by object kind and sprite aspect error before "
          r"the width clamp, and median detector confidence on hits. Negative differences make the twin pessimistic.}",
@@ -171,6 +176,8 @@ def loso_table():
         for s in va[key]["loso"]["violating_scenes"]:
             L.append(f"{lab} & {s['video'].replace('_', chr(92) + '_')} & {s['n']} & {P(s['D_s'])} & {P(s['p_s'])} & {P(s['q_s'])} & "
                      f"{P(s['U_pop_minus'])} & {'yes' if s['viol_C3'] else 'no'} \\\\")
+        if not va[key]["loso"]["violating_scenes"]:
+            L.append(f"{lab} & none & & & & & & \\\\")
     L += [r"\bottomrule", r"\end{tabular}", r"\end{table}"]
     (M / "tab_loso.tex").write_text("\n".join(L) + "\n", encoding="utf-8")
 

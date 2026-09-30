@@ -37,9 +37,11 @@ def save(fig, name):
 
 def f3(plt):
     u = J("e0_units.json")["recomputed"]
-    rows = [("main (78 scenes)", u["main"]["rule_2of3"]), ("night (6)", u["night"]["rule_2of3"]),
-            ("turbulence (2)", u["turbulence"]["rule_2of3"]), ("all tiers (86)", u["all_tiers"]["rule_2of3"])]
-    fig, ax = plt.subplots(figsize=(3.5, 2.2))
+    lab = lambda t, name: f"{name} ({u[t]['rule_2of3']['J']['den']}" + (" scenes)" if t == "main" else ")")  # noqa: E731
+    rows = [(lab("main", "static"), u["main"]["rule_2of3"]), (lab("jitter", "camera jitter"), u["jitter"]["rule_2of3"]),
+            (lab("night", "night"), u["night"]["rule_2of3"]), (lab("turbulence", "turbulence"), u["turbulence"]["rule_2of3"]),
+            (lab("all_tiers", "all tiers"), u["all_tiers"]["rule_2of3"])]
+    fig, ax = plt.subplots(figsize=(3.5, 2.5))
     for i, (lab, r) in enumerate(rows):
         y = len(rows) - 1 - i
         d = r["D_worst_phase"]["value"]
@@ -48,7 +50,7 @@ def f3(plt):
         ax.plot([r["J"]["num"] / r["J"]["den"], r["J"]["U_pop"]], [y - 0.12] * 2, color=C2, lw=2, solid_capstyle="round")
         ax.plot([r["J"]["num"] / r["J"]["den"]], [y - 0.12], "|", color=C2, ms=7)
     ax.axvline(0.10, color=INK2, lw=0.8, ls="--")
-    ax.text(0.105, 2.45, r"$\varepsilon/2$", fontsize=7, color=INK2)
+    ax.text(0.105, len(rows) - 1.55, r"$\varepsilon/2$", fontsize=7, color=INK2)
     ax.set_yticks(range(len(rows)))
     ax.set_yticklabels([r[0] for r in rows][::-1])
     ax.set_xscale("symlog", linthresh=0.05)

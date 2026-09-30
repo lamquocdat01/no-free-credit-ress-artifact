@@ -75,7 +75,8 @@
     },
     "calibration_scenes": {
       "excluded_PTZ": 4,
-      "main": 78,
+      "jitter": 2,
+      "main": 76,
       "night": 6,
       "turbulence": 4
     }

@@ -13,7 +13,13 @@ Definitions
   A256    : primary event definition: largest GT object reaches >= 256 px at the event's largest frame.
 Calibration scenes (twin): a GT-empty run >= 25 frames (background plate) and >= 1 Mode-G* event.
 Tiers: PTZ (excluded: the twin assumes a static background), nightVideos (night tier), turbulence (tier),
-       everything else = main domain (static camera, daytime / non-night).
+       cameraJitter (jitter tier), everything else = main domain (static camera, daytime / non-night).
+       Post-F1 correction (30-09-2026, v1.1): cameraJitter was in the main domain in v1.0. It is split off as its own
+       tier, like PTZ, using only CDnet's own category label (a shaking camera violates the static-background
+       assumption of the twin in the same way as PTZ). Decided after F1 had shown the only worst-phase false
+       acceptance (traffic) and one of the two LOSO violations (traffic) in this category -> a post-hoc change,
+       disclosed as such. Calibration scenes of the category: boulevard, traffic (badminton, sidewalk have no
+       GT-empty background run >= 25 frames and were never calibration scenes).
 Outputs: results/corpus17_events_T.csv, results/p1_background17.json, results/corpus17_manifest.json
 """
 from __future__ import annotations
@@ -108,6 +114,8 @@ def tier(cat):
         return "night"
     if cat == "turbulence":
         return "turbulence"
+    if cat == "cameraJitter":            # post-F1 correction (v1.1), see module docstring
+        return "jitter"
     return "main"
 
 
@@ -144,7 +152,8 @@ def main():
                         "#17 now uses the GT-empty criterion (same as CDnet) in true order")
     scenes = pd.concat([cd_cal, la_cal], ignore_index=True)
     bg = dict(meta=dict(min_bg_run=MIN_BG_RUN, criterion="GT-empty run >= 25 frames (true order) and >= 1 Mode-G* event (gap1)",
-                        tiers="PTZ excluded (static-background twin); nightVideos = night tier; turbulence = turbulence tier; rest = main"),
+                        tiers="PTZ excluded (static-background twin); nightVideos = night tier; turbulence = turbulence tier; "
+                             "cameraJitter = jitter tier (post-F1 correction v1.1, CDnet category label); rest = main"),
               scenes=scenes.to_dict("records"),
               by_tier={t: sorted(g.video) for t, g in scenes.groupby("tier")},
               n_by_tier={t: int(len(g)) for t, g in scenes.groupby("tier")},

@@ -63,12 +63,25 @@ Set `THS_DATASETS` to the folder that holds the datasets (default `./datasets`).
   (`raw_detection_dumps`), together with the hashes of the raw ground-truth trees.
 * **Corpus:** `python code/corpus17.py` rebuilds the event corpus from the dumps and ground truth.
 * **Twins:** `python code/twin/build_twin.py full` (per scene, resumable). **Resource rule:** at most 3 workers; start only
-  with at least 4 GB of free RAM and stop the run if free RAM stays below 2 GB. Building the twins of the 78 static scenes
-  took about 18 CPU-hours on a laptop CPU.
+  with at least 4 GB of free RAM and stop the run if free RAM stays below 2 GB. Building the twins of the 78 scenes of the C0 run (76 static + 2 camera-jitter
+  scenes) took about 18 CPU-hours on a laptop CPU.
 * **Analyses:** `code/e0_checks.py`, `code/m3_validity_audit.py`, `code/m4_exchange_rate.py`, `code/c2_c5a_empirical.py`,
-  `code/w0_must_fail_v2.py`, `code/w0_exchange_rate_v2.py`, `code/w2_event_definition.py` (seed 42 everywhere).
+  `code/w0_must_fail_v2.py`, `code/w0_exchange_rate_v2.py`, `code/w2_event_definition.py`, `code/f1_worst_phase_site.py`
+  (seed 42 everywhere).
 
 ## Citation
 
-See `CITATION.cff`. Release: tag `ress-v1.0` (data + code); the manuscript sources are added in the next commit
+See `CITATION.cff`. Release: tag `ress-v1.1` (data + code); the manuscript sources are added in the next commit
 and cite the tagged commit hash (`data/results/repo_release.json`).
+
+## Versions
+
+* `ress-v1.1` (2026-09-30) — **domain correction after the F1 checks.** The CDnet 2014 category `cameraJitter` is split
+  off the static (main) domain into its own tier, like pan-tilt-zoom, using only CDnet's own category label (a shaking
+  camera violates the twin's static-background assumption). Its calibration scenes are `boulevard` and `traffic`
+  (`badminton` and `sidewalk` have no empty-background run and were never calibration scenes), so the static domain has
+  76 scenes instead of 78. This change was made after the worst-phase and site-level checks of v1.0 had shown the only
+  worst-phase false acceptance (`traffic`) in this category; it is a post-hoc change and is disclosed as such in the
+  manuscript. No detector or twin was re-run: the jitter tier uses the same C0 twin run. All tier tables, exchange
+  rates, leave-one-scene-out, worst-phase and site-level results are recomputed for the new static domain.
+* `ress-v1.0` (2026-09-30) — first release (static domain of 78 scenes including `cameraJitter`).

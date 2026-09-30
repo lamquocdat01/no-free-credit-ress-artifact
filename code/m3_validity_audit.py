@@ -1,4 +1,4 @@
-"""P1c M3 — validity audit of the twin certificate on the main domain (78 scenes), at OP* (d_min 32, K 16) and at the
+"""P1c M3 — validity audit of the twin certificate on the main domain (76 scenes in v1.1; 78 in v1.0), at OP* (d_min 32, K 16) and at the
 post-hoc challenge point (d_min 16, K 16) chosen in E0.2 (the nearest point with >= 20 real-miss events).
 
 Unit (E0.1): event; twin catch = >= 2 of 3 sprite variants; a sampling phase uniform in {0..K-1} per event.
@@ -10,9 +10,9 @@ Certification rule for a NEW camera s (C3 + C4a-pop): certify "p_s <= eps" iff q
 U_pop = U_CP(J, m) at delta (J = #calibration scenes with >= 1 discordant event) and q_s is the twin miss rate of the
 camera (twin runs are cheap: q treated as known; the finite-twin variant splits delta, see M4).
 
-(1) LOSO: for each scene s, J_{-s} from the other 77 scenes (worst-phase integer J, conservative);
+(1) LOSO: for each scene s, J_{-s} from the other m - 1 scenes (worst-phase integer J, conservative);
     violation_D = D_s > U_pop(-s); violation_C3 = p_s > q_s + U_pop(-s); false certificate = certified AND p_s > eps.
-(2) MC false certification (10,000 runs, seed 42): population model = the 78 scenes. Each run: m = 78 calibration
+(2) MC false certification (10,000 runs, seed 42): population model = the m main scenes. Each run: m calibration
     scenes drawn with replacement, each shows a discordance with prob beta_s (random phases) -> J -> U_pop;
     a new camera drawn uniformly and independently; false certificate = certified AND p_s > eps.
     Also the theorem target of C4a-pop: P(U_pop < mu), mu = population mean of D_s  (must be <= delta).
@@ -138,7 +138,7 @@ def fleet_check(ev, rng, label):
     return {label: out}
 
 
-def pop_theorem_check(m=78, n_mc=N_MC_THM):
+def pop_theorem_check(m, n_mc=N_MC_THM):
     """C4a-pop / C4b at their tight case (separate generator, seed 42): D_S in {0,1} with P(D_S = 1) = mu and n_s = 1
     -> J ~ Bin(m, mu) exactly; P(U(J, m) < mu) must be <= delta. C4b: D_S in {0, t'} (t' > t) with mass pi, n_s = n;
     P(U(J, m)/h_t < pi) must be <= delta."""
@@ -201,7 +201,7 @@ def main():
                       for k, v in out["points"].items()}
     out["summary"]["must_fail_all_refuse_ge_95pct"] = bool(mf and all(v["refuse_ge_95pct"] for v in mf))
     out["summary"]["c4a_fleet_all_valid"] = bool(all(r.get("valid", True) for d in out["c4a_fleet"].values() for r in d.values()))
-    out["pop_theorem_check"] = pop_theorem_check()
+    out["pop_theorem_check"] = pop_theorem_check(out["points"]["OP*"]["m_scenes"])
     out["summary"]["c4a_pop_tight_max_fail"] = out["pop_theorem_check"]["c4a_pop_max_fail"]
     out["summary"]["c4b_max_fail"] = out["pop_theorem_check"]["c4b_max_fail"]
     dump(out, "validity_audit.json")

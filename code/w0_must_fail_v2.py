@@ -3,7 +3,7 @@
 Scenario 1 (P1c, validity_audit.json) used K = 48, where most real misses are STRUCTURAL (event shorter than K: no
 sampled frame at all) and the twin reproduces them by construction. Scenario 2 keeps the operating point (OP* and the
 post-hoc point (16,16)) and adds k of the 6 CDnet night scenes (twin profile b: held-out fluidHighway,
-streetCornerAtNight + tuning scenes) to the 78 main scenes as if they belonged to the main domain, k = 0..6, all
+streetCornerAtNight + tuning scenes) to the main scenes (76 in v1.1) as if they belonged to the main domain, k = 0..6, all
 C(6, k) subsets. Unit = event, twin catch = >= 2/3 variants, worst-phase integer counts (E0.1).
 Per subset: C4a-fleet U = U_CP(X_w, N), C4a-pop U = U_CP(J, m), the fleet decision (U <= eps/2, the G2 rule) and the
 per-camera rule (certify camera s iff q_s + U_pop(-s) <= eps, U_pop(-s) from the other calibration scenes).
@@ -70,6 +70,7 @@ def evaluate(S, eps, night, leaked):
 def main():
     rows_m = event_rows("c0_main", "main")
     rows_n = [r for tag in ("nheld_b", "ntune_b") for r in event_rows(tag, "night")]
+    rows_j = event_rows("c0_main", "jitter")        # v1.1: cameraJitter tier (boulevard, traffic)
     out = dict(meta=dict(doc=__doc__.split("Output")[0].strip(), seed=SEED, delta=DELTA), points={})
     for name, op in POINTS.items():
         evm = event_table(rows_m, op["d_min"], op["K"])
@@ -104,6 +105,17 @@ def main():
         rec["night_with_main_only_calibration"] = {v: pc0[v] for v in night}
         rec["night_false_cert_main_only"] = int(sum(pc0[v]["false_cert"] for v in night))
         rec["night_p_gt_eps"] = int(sum(pc0[v]["p_s"] > eps for v in night))
+        # v1.1: the same dangerous case for the jitter cameras (main-only calibration, phase-averaged p_s, q_s)
+        evj = event_table(rows_j, op["d_min"], op["K"])
+        Sj = pd.concat([scene_table(evm), scene_table(evj)])
+        jit = sorted(evj.video.unique())
+        pcj = per_camera(Sj, eps, ~Sj.index.isin(jit))
+        rec["jitter_with_main_only_calibration"] = {v: pcj[v] for v in jit}
+        rec["jitter_false_cert_main_only"] = int(sum(pcj[v]["false_cert"] for v in jit))
+        rec["jitter_p_gt_eps"] = int(sum(pcj[v]["p_s"] > eps for v in jit))
+        rec["jitter_table"] = [dict(video=v, n=int(Sj.loc[v, "n"]), p_s=float(Sj.loc[v, "p"]), p_detector=float(Sj.loc[v, "p_app"]),
+                                    p_temporal=float(Sj.loc[v, "p_struct"]), q_s=float(Sj.loc[v, "q"]), D_s=float(Sj.loc[v, "D"]),
+                                    worst_phase_discordant=int((evj[evj.video == v].w > 0).sum())) for v in jit]
         out["points"][name] = rec
     dump(out, "must_fail_v2.json")
     for name, rec in out["points"].items():
@@ -116,6 +128,8 @@ def main():
                   "false", c["leaked_false_cert_total"], "main false max", c["main_false_cert_max"])
         print("  night judged with main-only calibration: false cert", rec["night_false_cert_main_only"], "of", len(rec["night_scenes"]),
               "(p>eps:", rec["night_p_gt_eps"], ")")
+        print("  jitter judged with main-only calibration: false cert", rec["jitter_false_cert_main_only"], "of",
+              len(rec["jitter_with_main_only_calibration"]), "(p>eps:", rec["jitter_p_gt_eps"], ")")
 
 
 if __name__ == "__main__":

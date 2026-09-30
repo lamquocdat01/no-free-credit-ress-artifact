@@ -37,7 +37,11 @@ from common import RESULTS, SEED, dump  # noqa: E402
 KS = [1, 2, 3, 4, 6, 8, 12, 16, 24, 48]          # divisors of 48: exact under the twin's mod-48 early stop
 OPS = {"OP*": dict(eps=0.20, d_min=32, K=16), "OP-A": dict(eps=0.20, d_min=32, K=8),
        "OP-C": dict(eps=0.10, d_min=32, K=1)}
-TIER_TAGS = {"main": ["c0_main"], "night": ["nheld_b", "ntune_b"], "turbulence": ["ttune_base"]}
+# v1.1 (post-F1 correction, 30-09-2026): the C0 run covered the 78 scenes of the v1.0 main domain; its 2 cameraJitter
+# scenes (boulevard, traffic) now form the jitter tier. event_rows keeps only the videos of the requested tier
+# (results/p1_background17.json by_tier), so "main" = 76 scenes and "jitter" = 2 scenes of the same run.
+TIER_TAGS = {"main": ["c0_main"], "jitter": ["c0_main"], "night": ["nheld_b", "ntune_b"], "turbulence": ["ttune_base"]}
+CHALLENGE = (16, 16)       # post-hoc point fixed in v1.0 (E0.2); kept fixed in v1.1, not re-searched
 
 # Camera group for E0.3 (judgement from the dataset descriptions / first frame; no metadata exists):
 # 'elevated' = looks down on the scene from a pole / building / bridge; 'level' = roughly eye/body height.
@@ -64,10 +68,16 @@ def real_hit_frames(E, BW):
     return out
 
 
+def tier_videos(tier):
+    return set(json.load(open(RESULTS / "p1_background17.json", encoding="utf-8"))["by_tier"][tier])
+
+
 def event_rows(tag, tier, definition="a256"):
     """One row per (event); arrays per K of shape (K,) for real hit and (3, K) for twin hit by phase.
+    Only the videos of `tier` (p1_background17.json by_tier) are kept.
     definition: 'a256' (primary: largest object >= 256 px) or 'orig' (all GT events, sensitivity)."""
     T = pd.read_parquet(RESULTS / f"gstar_frames_twin_{tag}.parquet")
+    T = T[T.video.isin(tier_videos(tier))]
     E = pd.read_csv(RESULTS / "miss_matrix_Gstar_a256.csv")
     if definition == "a256":
         T = T[T.def_a256]
@@ -202,13 +212,15 @@ def waterfall(tiers_rows):
     n, m = cnt(in_cd | (A.dataset == "LASIESTA") & A.video.map(tier).eq("main"))
     steps.append(dict(step="LASIESTA list 20 -> 48 scenes (GT-empty criterion, true order)", events=n, scenes=m,
                       source="p1_background17.json lasiesta_gt_empty_list"))
-    keep = A.video.map(tier).isin(["main", "night", "turbulence"])
+    keep = A.video.map(tier).isin(["main", "jitter", "night", "turbulence"])
     n, m = cnt(keep)
     steps.append(dict(step="PTZ excluded (4 scenes)", events=n, scenes=m, source="p1_background17.json by_tier"))
     run = set(r["video"] for rows in tiers_rows.values() for r in rows)
     n, m = cnt(keep & A.video.isin(run))
     steps.append(dict(step="scenes actually run in P1b' (turbulence held-out turbulence2/3 not run, decision 28-09)",
                       events=n, scenes=m, source="twin runs c0_main + nheld_b + ntune_b + ttune_base"))
+    n, m = cnt(A.video.map(tier).eq("jitter"), d_min=32)
+    jitter_OP = dict(events=n, scenes=m)
     n, m = cnt(keep & A.video.isin(run), d_min=32)
     steps.append(dict(step="OP* event definition: duration >= d_min 32 frames", events=n, scenes=m,
                       source="= twin_tiers.json all_tiers_final.n_events_OP"))
@@ -216,7 +228,7 @@ def waterfall(tiers_rows):
     note = ("The two headline numbers are in DIFFERENT units: 257 = all A>=256 events of any duration (P1b), "
             "207 = A>=256 events with duration >= 32 (P1b' OP*). On the same basis P1b had "
             f"{p1b['by_definition']['a256']['operating_point']['N']} OP* events / 64 scenes.")
-    return dict(steps=steps, main_domain_OP=dict(events=n_main, scenes=m_main), note=note,
+    return dict(steps=steps, main_domain_OP=dict(events=n_main, scenes=m_main), jitter_tier_OP=jitter_OP, note=note,
                 p1b_OP_events=p1b["by_definition"]["a256"]["operating_point"]["N"])
 
 
@@ -268,8 +280,8 @@ def main():
                            canonical_unit="EVENT; twin catch = >= 2 of 3 sprite variants; phase uniform (expected form) "
                                           "and worst phase (integer, conservative)"),
                  printed_numbers_explained={}, recomputed={})
-    for t in ("main", "night", "turbulence"):
-        o = old["main"] if t == "main" else old[t]["all_final"]
+    for t in ("night", "turbulence"):                     # v1.0 "main" (78 scenes) no longer exists as a tier
+        o = old[t]["all_final"]
         units["printed_numbers_explained"][t] = dict(
             D_hat=dict(value=o["D_hat"], num=o["X_expected"], den=o["n_events_OP"],
                        unit="events (d >= 32); numerator = sum over events of mean over 3 sprite variants of the "
@@ -288,10 +300,12 @@ def main():
                 disc_ev.append(dict(video=r["video"], event_id=r["event_id"], duration=r["duration"], kind=r["kind"],
                                     phases_discordant=int((rm & tc).sum()), phases_real_miss=int(rm.sum()),
                                     per_variant_phases=[int((rm & r["th16"][v]).sum()) for v in range(3)]))
-    ok = abs(units["recomputed"]["main"]["rule_1of3"]["D_old_variant_mean"]["value"] - old["main"]["D_hat"]) < 1e-12
+    v10 = summary(ev_metrics(tiers_rows["main"] + tiers_rows["jitter"], 32, 16, 1))
+    ok = abs(v10["D_old_variant_mean"]["value"] - old["main"]["D_hat"]) < 1e-12
     units["check_reproduces_printed_main_D"] = bool(ok)
+    units["check_reproduces_printed_main_D_note"] = "v1.0 main (78) = v1.1 main (76) + jitter (2)"
     units["erratum"] = dict(
-        main=dict(printed=dict(D_hat=old["main"]["D_hat"], U_fleet=old["main"]["c4a_fleet_U"], J=old["main"]["J"],
+        main=dict(printed_v10_78_scenes=dict(D_hat=old["main"]["D_hat"], U_fleet=old["main"]["c4a_fleet_U"], J=old["main"]["J"],
                                U_pop=old["main"]["c4a_pop_U"]),
                   canonical=dict(D_expected=mm["D_expected"]["value"], U_fleet_expected=mm["D_expected"]["U_fleet"],
                                  D_worst=mm["D_worst_phase"]["value"], U_fleet_worst=mm["D_worst_phase"]["U_fleet"],
@@ -330,6 +344,9 @@ def main():
         along_K_at_dmin32=near_K.to_dict("records")[0] if len(near_K) else None,
         along_dmin_at_K16=near_d.to_dict("records")[0] if len(near_d) else None,
         any=hit.sort_values(["real_miss_app_exp"]).head(3).to_dict("records"))
+    conf["nearest_challenged"]["v11_note"] = ("challenged_along_dmin is FIXED at the v1.0 post-hoc point (16,16); "
+                                              "the search result above is reported only")
+    near_d = G[(G.d_min == CHALLENGE[0]) & (G.K == CHALLENGE[1])]
     for label, rec in (("along_K", near_K), ("along_dmin", near_d)):
         if len(rec):
             d, K = int(rec.d_min.iloc[0]), int(rec.K.iloc[0])

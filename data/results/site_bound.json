@@ -1,6 +1,6 @@
 {
   "meta": {
-    "doc": "Site-level population bound: Scenes are grouped into sites, a coarser unit of correlation than the scene:\n   CDnet 2014 = challenge category; LASIESTA = sequence group (name prefix, e.g. I_SM, O_SM). J_site = sites with at least\n   one discordant (worst-phase) event; U_pop-site = U_CP(J_site, m_site); leave-one-site-out audit.",
+    "doc": "Site-level population bound: Scenes are grouped into sites, a coarser unit of correlation than the scene:\n   CDnet 2014 = challenge category; LASIESTA = sequence group (name prefix, e.g. I_SM, O_SM). J_site = sites with at least\n   one discordant (worst-phase) event; U_pop-site = U_CP(J_site, m_site); leave-one-site-out audit.\n3. (v1.1, post-F1 correction) cameraJitter is its own tier (code/corpus17.py). The cameras of the out-of-domain tiers\n   (jitter, night) are also judged by the twin route calibrated on the MAIN scenes only (worst-phase q, transfer term\n   U_CP(J_main, m_main) at delta/2): false acceptance = accepted and p_w > eps (named failure modes).",
     "delta": 0.05
   },
   "points": {
@@ -11,12 +11,12 @@
         "eps": 0.2
       },
       "main": {
-        "m_site": 22,
-        "J_site": 1,
-        "U_pop_site": 0.19812213163688158,
-        "m_scene": 78,
-        "J_scene": 1,
-        "loso_site_violations": 1,
+        "m_site": 21,
+        "J_site": 0,
+        "U_pop_site": 0.13294591102652337,
+        "m_scene": 76,
+        "J_scene": 0,
+        "loso_site_violations": 0,
         "sites": [
           {
             "site": "CDnet:badWeather",
@@ -31,13 +31,6 @@
             "scenes": 1,
             "disc": 0.0,
             "D_site": 0.0
-          },
-          {
-            "site": "CDnet:cameraJitter",
-            "n": 16,
-            "scenes": 2,
-            "disc": 3.0,
-            "D_site": 0.1875
           },
           {
             "site": "CDnet:dynamicBackground",
@@ -179,7 +172,7 @@
             "n": 15,
             "scenes": 4,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -187,23 +180,15 @@
             "n": 2,
             "scenes": 1,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
-          },
-          {
-            "site": "CDnet:cameraJitter",
-            "n": 16,
-            "scenes": 2,
-            "D_site": 0.1875,
-            "U_minus": 0.13294591102652337,
-            "viol": true
           },
           {
             "site": "CDnet:dynamicBackground",
             "n": 19,
             "scenes": 6,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -211,7 +196,7 @@
             "n": 4,
             "scenes": 3,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -219,7 +204,7 @@
             "n": 5,
             "scenes": 4,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -227,7 +212,7 @@
             "n": 37,
             "scenes": 6,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -235,7 +220,7 @@
             "n": 7,
             "scenes": 4,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -243,7 +228,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -251,7 +236,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -259,7 +244,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -267,7 +252,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -275,7 +260,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -283,7 +268,7 @@
             "n": 4,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -291,7 +276,7 @@
             "n": 4,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -299,7 +284,7 @@
             "n": 34,
             "scenes": 12,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -307,7 +292,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -315,7 +300,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -323,7 +308,7 @@
             "n": 3,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -331,7 +316,7 @@
             "n": 12,
             "scenes": 12,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -339,7 +324,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           },
           {
@@ -347,7 +332,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": false
           }
         ]
@@ -360,12 +345,12 @@
         "eps": 0.2
       },
       "main": {
-        "m_site": 22,
-        "J_site": 2,
-        "U_pop_site": 0.25946653222843713,
-        "m_scene": 78,
-        "J_scene": 3,
-        "loso_site_violations": 2,
+        "m_site": 21,
+        "J_site": 1,
+        "U_pop_site": 0.20672537900807,
+        "m_scene": 76,
+        "J_scene": 2,
+        "loso_site_violations": 1,
         "sites": [
           {
             "site": "CDnet:badWeather",
@@ -380,13 +365,6 @@
             "scenes": 1,
             "disc": 0.0,
             "D_site": 0.0
-          },
-          {
-            "site": "CDnet:cameraJitter",
-            "n": 21,
-            "scenes": 2,
-            "disc": 7.0,
-            "D_site": 0.3333333333333333
           },
           {
             "site": "CDnet:dynamicBackground",
@@ -528,7 +506,7 @@
             "n": 15,
             "scenes": 4,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           },
           {
@@ -536,23 +514,15 @@
             "n": 2,
             "scenes": 1,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
-          },
-          {
-            "site": "CDnet:cameraJitter",
-            "n": 21,
-            "scenes": 2,
-            "D_site": 0.3333333333333333,
-            "U_minus": 0.20672537900807,
-            "viol": true
           },
           {
             "site": "CDnet:dynamicBackground",
             "n": 20,
             "scenes": 6,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           },
           {
@@ -560,7 +530,7 @@
             "n": 4,
             "scenes": 3,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           },
           {
@@ -568,7 +538,7 @@
             "n": 19,
             "scenes": 4,
             "D_site": 0.2631578947368421,
-            "U_minus": 0.20672537900807,
+            "U_minus": 0.13910834066826516,
             "viol": true
           },
           {
@@ -576,7 +546,7 @@
             "n": 37,
             "scenes": 6,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           },
           {
@@ -584,7 +554,7 @@
             "n": 7,
             "scenes": 4,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           },
           {
@@ -592,7 +562,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           },
           {
@@ -600,7 +570,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           },
           {
@@ -608,7 +578,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           },
           {
@@ -616,7 +586,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           },
           {
@@ -624,7 +594,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           },
           {
@@ -632,7 +602,7 @@
             "n": 4,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           },
           {
@@ -640,7 +610,7 @@
             "n": 4,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           },
           {
@@ -648,7 +618,7 @@
             "n": 34,
             "scenes": 12,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           },
           {
@@ -656,7 +626,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           },
           {
@@ -664,7 +634,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           },
           {
@@ -672,7 +642,7 @@
             "n": 3,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           },
           {
@@ -680,7 +650,7 @@
             "n": 12,
             "scenes": 12,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           },
           {
@@ -688,7 +658,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           },
           {
@@ -696,7 +666,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.2705516993045314,
+            "U_minus": 0.21610616420684728,
             "viol": false
           }
         ]

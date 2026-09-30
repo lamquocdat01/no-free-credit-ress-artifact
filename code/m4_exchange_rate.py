@@ -2,12 +2,12 @@
 d_min x K, using the MAIN-DOMAIN real miss rate (not the 11.3% of OP*, which was pooled over all CDnet incl. night /
 turbulence / PTZ; E0.2).
 
-Per grid point (eps = 20%; 10% as sensitivity), main domain (78 scenes, A>=256, unit = event, majority twin):
+Per grid point (eps = 20%; 10% as sensitivity), main domain (76 scenes in v1.1, 78 in v1.0; A>=256, unit = event, majority twin):
   p_main      = mean_e P_phi(real miss)  (all main events with duration >= d_min)
   n_direct    = smallest n with P(one-sided CP upper bound on p <= eps) >= 80% at p = p_main (a2_operating_points)
   n0(eps)     = zero-failure success run (14 at eps 20%, 29 at 10%); references n0(5%,5%) = 59 and 112 (old OP* figure)
   twin route  (C3 + C4a-pop, delta split in half): certify with ZERO real events iff q_U,s + U_pop,-s <= eps, where
-              U_pop,-s = U_CP(J_-s, 77) at delta/2 (J from the OTHER scenes, worst-phase integer) and
+              U_pop,-s = U_CP(J_-s, m - 1) at delta/2 (J from the OTHER scenes, worst-phase integer) and
               q_U,s = (a) q_s itself ("twin runs are cheap": q known), or (b) U_CP at delta/2 on the twin events we have
               (3 sprite variants x the scene's events, fractional expected miss count) - the finite-twin reading.
               If the twin route fails the camera falls back to the direct route (saving 0).
@@ -152,6 +152,8 @@ def point(rows, d_min, K, eps, frames, cost):
 def main():
     rows = event_rows("c0_main", "main")
     frames, cost = video_frames(), twin_cost()
+    main_v = {r["video"] for r in rows}
+    cost = {v: c for v, c in cost.items() if v in main_v}          # v1.1: twin cost of the main-domain scenes only
     grid, marked = [], {}
     for eps in (0.20, 0.10):
         for d in D_GRID:

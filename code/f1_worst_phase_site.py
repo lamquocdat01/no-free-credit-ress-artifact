@@ -9,6 +9,9 @@
 2. Site-level population bound. Scenes are grouped into sites, a coarser unit of correlation than the scene:
    CDnet 2014 = challenge category; LASIESTA = sequence group (name prefix, e.g. I_SM, O_SM). J_site = sites with at least
    one discordant (worst-phase) event; U_pop-site = U_CP(J_site, m_site); leave-one-site-out audit.
+3. (v1.1, post-F1 correction) cameraJitter is its own tier (code/corpus17.py). The cameras of the out-of-domain tiers
+   (jitter, night) are also judged by the twin route calibrated on the MAIN scenes only (worst-phase q, transfer term
+   U_CP(J_main, m_main) at delta/2): false acceptance = accepted and p_w > eps (named failure modes).
 Outputs: results/worst_phase.json, results/site_bound.json
 """
 from __future__ import annotations
@@ -30,7 +33,7 @@ from m4_exchange_rate import n_twin_needed  # noqa: E402
 
 DELTA = 0.05
 POINTS = {"OP*": (32, 16, 0.20), "challenge_16_16": (16, 16, 0.20)}
-TIERS = {"main": ["c0_main"], "night": ["nheld_b", "ntune_b"], "turbulence": ["ttune_base"]}
+TIERS = {"main": ["c0_main"], "jitter": ["c0_main"], "night": ["nheld_b", "ntune_b"], "turbulence": ["ttune_base"]}
 
 
 def worst_table(rows, d_min, K):
@@ -74,6 +77,19 @@ def exchange(ev, eps):
                 note="twin route with worst-phase q (q known), transfer term U_CP(J_-s, m-1) at delta/2")
 
 
+def out_of_domain(ev_main, ev_ood, eps):
+    """Out-of-domain cameras judged with a main-only calibration (twin route, worst-phase q, q known)."""
+    Sm = ev_main.groupby("video").D_w.max()
+    J, m = int((Sm > 0).sum()), len(Sm)
+    U = float(ucp(J, m, DELTA / 2))
+    S = ev_ood.groupby("video").agg(n=("p_w", "size"), p_w=("p_w", "mean"), q_w=("q_w", "mean"), w=("D_w", "max"))
+    rec = [dict(video=v, n=int(r.n), p_w=float(r.p_w), q_w=float(r.q_w), D_w_any=bool(r.w > 0), U_half=U,
+                accepted=bool(r.q_w + U <= eps), false_accept=bool(r.q_w + U <= eps and r.p_w > eps)) for v, r in S.iterrows()]
+    return dict(J_main=J, m_main=m, U_half=U, cameras=len(rec), accepted=int(sum(r["accepted"] for r in rec)),
+                p_w_gt_eps=int(sum(r["p_w"] > eps for r in rec)), false_accept=int(sum(r["false_accept"] for r in rec)),
+                per_camera=rec)
+
+
 def site_of(row):
     return f"CDnet:{row['category']}" if not str(row["video"])[:2] in ("I_", "O_") else f"LASIESTA:{str(row['video'])[:4]}"
 
@@ -106,7 +122,9 @@ def main():
         allev = pd.concat(evs.values(), ignore_index=True)
         wp["points"][name] = dict(op=dict(d_min=d, K=K, eps=eps),
                                   tiers={**{t: tier_record(e) for t, e in evs.items()}, "all_tiers": tier_record(allev)},
-                                  exchange_main=exchange(evs["main"], eps))
+                                  exchange_main=exchange(evs["main"], eps),
+                                  ood_with_main_calibration={t: out_of_domain(evs["main"], evs[t], eps)
+                                                             for t in ("jitter", "night")})
         sb["points"][name] = dict(op=dict(d_min=d, K=K, eps=eps), main=site_bound(evs["main"]))
     dump(wp, "worst_phase.json")
     dump(sb, "site_bound.json")
@@ -118,6 +136,7 @@ def main():
               "J", t["J"], "Up", round(t["U_pop"], 4), "check", t["check_p_le_q_plus_D"])
         print("   exchange", {k: v for k, v in x.items() if k != "note"})
         print("   site m", s["m_site"], "J", s["J_site"], "U", round(s["U_pop_site"], 4), "loso viol", s["loso_site_violations"])
+        print("   ood", {t: {k: v for k, v in o.items() if k != "per_camera"} for t, o in wp["points"][name]["ood_with_main_calibration"].items()})
         print("   night", {k: (round(v, 3) if isinstance(v, float) else v) for k, v in wp["points"][name]["tiers"]["night"].items()})
 
 

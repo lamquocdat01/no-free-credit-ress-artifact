@@ -2,7 +2,7 @@
   "meta": {
     "min_bg_run": 25,
     "criterion": "GT-empty run >= 25 frames (true order) and >= 1 Mode-G* event (gap1)",
-    "tiers": "PTZ excluded (static-background twin); nightVideos = night tier; turbulence = turbulence tier; rest = main"
+    "tiers": "PTZ excluded (static-background twin); nightVideos = night tier; turbulence = turbulence tier; cameraJitter = jitter tier (post-F1 correction v1.1, CDnet category label); rest = main"
   },
   "scenes": [
     {
@@ -102,7 +102,7 @@
       "longest_gt_empty_run": 408,
       "n_events_gap1": 8,
       "n_events_a256": 8,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": NaN
     },
     {
@@ -112,7 +112,7 @@
       "longest_gt_empty_run": 52,
       "n_events_gap1": 14,
       "n_events_a256": 13,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": NaN
     },
     {
@@ -933,6 +933,10 @@
       "twoPositionPTZCam",
       "zoomInZoomOut"
     ],
+    "jitter": [
+      "boulevard",
+      "traffic"
+    ],
     "main": [
       "I_BS_01",
       "I_BS_02",
@@ -985,7 +989,6 @@
       "backdoor",
       "blizzard",
       "boats",
-      "boulevard",
       "bungalows",
       "busStation",
       "canoe",
@@ -1006,7 +1009,6 @@
       "skating",
       "snowFall",
       "streetLight",
-      "traffic",
       "tramCrossroad_1fps",
       "tunnelExit_0_35fps",
       "turnpike_0_5fps",
@@ -1030,7 +1032,8 @@
   },
   "n_by_tier": {
     "excluded_PTZ": 4,
-    "main": 78,
+    "jitter": 2,
+    "main": 76,
     "night": 6,
     "turbulence": 4
   },

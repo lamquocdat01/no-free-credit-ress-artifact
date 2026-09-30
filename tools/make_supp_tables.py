@@ -57,7 +57,7 @@ def main():
                    [(lab, s["events"], s["scenes"]) for lab, s in zip(STEP_LABELS, wf["steps"])]))
     u = J("e0_units.json")["recomputed"]
     rows = []
-    for t in ("main", "night", "turbulence", "all_tiers"):
+    for t in ("main", "jitter", "night", "turbulence", "all_tiers"):
         for r in ("rule_1of3", "rule_2of3", "rule_3of3"):
             s = u[t][r]
             rows.append((t.replace("_", " "), r[5] + "/3", s["N_events"], s["D_worst_phase"]["num"], F(s["D_expected"]["num"]),
@@ -72,7 +72,7 @@ def main():
              F(r["q_known"]["events_saved_per_camera"]["median"], 0), r["q_known"]["cameras_saving"],
              r["q_finite"]["cameras_saving"], F(r["q_known"]["cpu_hours_per_saved_event"]["median"], 3))
             for r in ex if r["eps"] == 0.20]
-    out.append(r"\begingroup\footnotesize" + "\n" + longtab("tab:grid", "Full operating-point grid at $\\varepsilon=20\\%$ (78 static "
+    out.append(r"\begingroup\footnotesize" + "\n" + longtab("tab:grid", "Full operating-point grid at $\\varepsilon=20\\%$ (" + str(ex[0]["q_known"]["m"]) + " static "
                "cameras): static-domain real miss rate, events for direct certification, median events saved per camera "
                "(twin run to convergence), cameras saving (converged / as built), CPU-hours per saved event.", "rrrrrrrr",
                ["$d_{\\min}$", "$K$", "$\\hat p$", "$n_{\\mathrm{dir}}$", "saved", "cams", "as built", "CPU-h"], rows)
@@ -105,6 +105,8 @@ def main():
             rows.append((k.replace("challenge_16_16", "(16,16)").replace("OP*", "OP$^\\ast$"), s["video"].replace("_", "\\_"), s["n"],
                          P(s["D_s"]), P(s["p_s"]), P(s["q_s"]), P(s["U_pop_minus"]), "yes" if s["viol_C3"] else "no",
                          "yes" if s["false_cert"] else "no"))
+    if not rows:
+        rows = [("--", "none", "", "", "", "", "", "", "")]
     out.append(tab("tab:loso", "Leave-one-scene-out: scenes whose discordance exceeds the bound computed without them.", "llrrrrrrr",
                    ["point", "scene", "$n$", "$D_s$", "$p_s$", "$q_s$", "$U_{-s}$", "$p_s>q_s+U$", "false cert."], rows))
     iw = J("iw_ablation_v2.json")
@@ -145,7 +147,7 @@ def main():
     wp = J("worst_phase.json")["points"]
     rows = []
     for pt, lab in (("OP*", "OP$^\\ast$"), ("challenge_16_16", "$(16,16)$ post hoc")):
-        for t in ("main", "night", "turbulence", "all_tiers"):
+        for t in ("main", "jitter", "night", "turbulence", "all_tiers"):
             r = wp[pt]["tiers"][t]
             rows.append((lab, t.replace("_", " "), r["N"], P(r["p_phase_avg"]), P(r["p_w"]), P(r["q_phase_avg"]), P(r["q_w"]),
                          r["D_w"], P(r["U_fleet"], 2), f"{r['J']}/{r['m']}", P(r["U_pop"], 2)))
@@ -159,8 +161,22 @@ def main():
         x = wp[pt]["exchange_main"]
         rows.append((lab, P(x["p_main_worst"]), x["n_direct"], x["cameras_accepted"], F(x["saved_median"], 0),
                      x["false_accept"], F(x["n_twin_needed_median"], 0)))
-    out.append(tab("tab:worstx", "Exchange rate under the worst-phase convention (78 static cameras; twin run to convergence).",
+    out.append(tab("tab:worstx", f"Exchange rate under the worst-phase convention ({wp['OP*']['exchange_main']['m']} static cameras; "
+                   "twin run to convergence).",
                    "lrrrrrr", ["point", "$\\hat p$ worst", "$n_{\\mathrm{dir}}$", "accepted", "saved", "false acc.", "twin runs"], rows))
+    rows = []
+    for pt, lab in (("OP*", "OP$^\\ast$"), ("challenge_16_16", "$(16,16)$ post hoc")):
+        for t in ("jitter", "night"):
+            o = wp[pt]["ood_with_main_calibration"][t]
+            for c in o["per_camera"]:
+                rows.append((lab, t, c["video"].replace("_", "\\_"), c["n"], P(c["p_w"]), P(c["q_w"]), P(c["U_half"]),
+                             "yes" if c["accepted"] else "no", "yes" if c["false_accept"] else "no"))
+                lab = ""
+    out.append(r"\begingroup\footnotesize\setlength{\tabcolsep}{2pt}" + "\n" + tab("tab:ood", "Out-of-domain cameras (camera jitter, "
+               "night) judged by the twin route calibrated on the static scenes only (worst-phase convention, transfer term "
+               "$U_{\\delta/2}(J,m)$ of the static scenes): accepted, and falsely accepted ($p_w>\\varepsilon$).", "lllrrrrll",
+               ["point", "tier", "camera", "$n$", "$p_w$", "$q_w$", "$U_{\\delta/2}$", "accepted", "false acc."], rows, small=False)
+               + r"\endgroup")
     sb = J("site_bound.json")["points"]
     for pt, lab, key in (("OP*", "OP$^\\ast$", "OP"), ("challenge_16_16", "$(16,16)$ post hoc", "CH")):
         r = sb[pt]["main"]

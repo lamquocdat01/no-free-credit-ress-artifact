@@ -1,6 +1,6 @@
 """P3 W0.2 — exchange rate in EVENTS (primary) + CPU cost per saved event; waiting time only as a formula.
 
-Built on m4_exchange_rate.point (same rule, same data: 78 main scenes, main-domain p-hat, eps = 20% grid, OP-C at
+Built on m4_exchange_rate.point (same rule, same data: main scenes (76 in v1.1), main-domain p-hat, eps = 20% grid, OP-C at
 10%). Per grid point (d_min x K) and camera s:
   n_saved_s        = n_direct - n_real_twin,s   (real events saved; 0 when the twin route fails)
                      (a) q known (twin run long enough), (b) finite twin as built (3 variants x the scene's events)
@@ -48,7 +48,7 @@ def summarise(g, recs):
             wh = [s / r["lambda_per_hour"][f] for r, s in zip(recs, sv)]
             wf[f] = dict(median=q(wh, 50), iqr=[q(wh, 25), q(wh, 75)])
         out[tag] = dict(events_saved_per_camera=dict(median=q(sv, 50), iqr=[q(sv, 25), q(sv, 75)], mean=float(np.mean(sv)),
-                                                     unit="real events per camera (78 cameras)"),
+                                                     unit="real events per camera (main-domain cameras)"),
                         cameras_saving=int(sum(s > 0 for s in sv)), m=len(recs),
                         share_cameras_saving_ge_50pct=(float(np.mean([s >= 0.5 * nd for s in sv])) if nd else None),
                         cpu_hours_per_saved_event=dict(median=q(cph, 50), iqr=[q(cph, 25), q(cph, 75)], n_cameras=len(cph)),

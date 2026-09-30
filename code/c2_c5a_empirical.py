@@ -11,7 +11,7 @@ events Bernoulli(p)): (i) P(sim passes), realised credit = c * P(pass) (in event
 rate is what C1/C2 price); (iii) power at the main-domain p (event unit, phase-uniform).
 Operating points: eps = 5% (the C2 table) at (d_min 32, K 1) and eps = 20% at OP* (d_min 32, K 16).
 Pools: S0 = BMC-synth Mode G* events (frame level, 31 events; all d >= 32 except one) and Mode T (261 events);
-S1 = twin of the 78 main scenes (majority of 3 variants).
+S1 = twin of the main scenes (76 in v1.1) (majority of 3 variants).
 
 C5a. On the twin, shorten every event to its first ceil((1-x) d) frames, x in {0, 10, 25, 50}%; twin miss q (and the
 real p) at each K must be non-decreasing in x (per event: residue sets shrink; pooled: mean of per-event
@@ -32,7 +32,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from c4_power import ucp  # noqa: E402
 from common import RESULTS, SEED, dump, n0  # noqa: E402
-from e0_checks import cells, event_rows, real_hit_frames  # noqa: E402
+from e0_checks import cells, event_rows, real_hit_frames, tier_videos  # noqa: E402
 from m3_validity_audit import event_table  # noqa: E402
 
 N_MC = 100_000
@@ -86,7 +86,7 @@ def c2(rows, rng):
 
 def c5a(rows):
     T = pd.read_parquet(RESULTS / "gstar_frames_twin_c0_main.parquet")
-    T = T[T.def_a256]
+    T = T[T.def_a256 & T.video.isin(tier_videos("main"))]
     E = pd.read_csv(RESULTS / "miss_matrix_Gstar_a256.csv")
     E = E[E.def_a256 & E.video.isin(T.video.unique())]
     RH = real_hit_frames(E, {})

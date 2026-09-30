@@ -6,7 +6,7 @@ authors:
     given-names: "Quoc Dat"
     orcid: "https://orcid.org/0009-0004-5432-9343"
     affiliation: "School of Business and Technology (FSB), FPT University, Ho Chi Minh City, Vietnam"
-version: "ress-v1.0"
+version: "ress-v1.1"
 date-released: "2026-09-30"
 license: "MIT AND CC-BY-4.0"
 repository-code: "https://github.com/lamquocdat01/no-free-credit-ress-artifact"

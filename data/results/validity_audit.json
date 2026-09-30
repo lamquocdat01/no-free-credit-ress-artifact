@@ -1,6 +1,6 @@
 {
   "meta": {
-    "doc": "P1c M3 — validity audit of the twin certificate on the main domain (78 scenes), at OP* (d_min 32, K 16) and at the\npost-hoc challenge point (d_min 16, K 16) chosen in E0.2 (the nearest point with >= 20 real-miss events).\n\nUnit (E0.1): event; twin catch = >= 2 of 3 sprite variants; a sampling phase uniform in {0..K-1} per event.\nPer event e: x_e = P_phi(real miss AND twin catch), p_e = P_phi(real miss), q_e = P_phi(twin miss).\nPer scene s: D_s = mean_e x_e, p_s = mean_e p_e, q_s = mean_e q_e (exact over the scene's events: the scene's\nfinite event pool is its \"truth\"); beta_s = 1 - prod_e (1 - x_e) = P(scene shows >= 1 discordance at a random draw).\n\nCertification rule for a NEW camera s (C3 + C4a-pop): certify \"p_s <= eps\" iff q_s + U_pop <= eps, where\nU_pop = U_CP(J, m) at delta (J = #calibration scenes with >= 1 discordant event) and q_s is the twin miss rate of the\ncamera (twin runs are cheap: q treated as known; the finite-twin variant splits delta, see M4).\n\n(1) LOSO: for each scene s, J_{-s} from the other 77 scenes (worst-phase integer J, conservative);\n    violation_D = D_s > U_pop(-s); violation_C3 = p_s > q_s + U_pop(-s); false certificate = certified AND p_s > eps.\n(2) MC false certification (10,000 runs, seed 42): population model = the 78 scenes. Each run: m = 78 calibration\n    scenes drawn with replacement, each shows a discordance with prob beta_s (random phases) -> J -> U_pop;\n    a new camera drawn uniformly and independently; false certificate = certified AND p_s > eps.\n    Also the theorem target of C4a-pop: P(U_pop < mu), mu = population mean of D_s  (must be <= delta).\n    PLAN asked for \"truth\" videos with >= 59 real events: no main-domain scene has that many A>=256 G* events with a\n    twin (max 13 at OP*, 34 at d_min 1) -> the truth is the exact finite pool of each scene (deviation, reported).\n(3) Must-fail: operating point(s) where p_s > eps in >= 3 main scenes; the rule must refuse those cameras in >= 95% of\n    MC runs. Misses split into structural (duration < K) and appearance.\n(4) C4a-fleet under the MEASURED heterogeneous discordance: event-level Bernoulli(x_e) (and the scene-level D_s with the\n    real n_s): exact Poisson-binomial failure P(U(X, N) < Dbar) by DP + MC 100,000 (seed 42); also the same pattern\n    scaled to Dbar = 2%, 5% (stress).",
+    "doc": "P1c M3 — validity audit of the twin certificate on the main domain (76 scenes in v1.1; 78 in v1.0), at OP* (d_min 32, K 16) and at the\npost-hoc challenge point (d_min 16, K 16) chosen in E0.2 (the nearest point with >= 20 real-miss events).\n\nUnit (E0.1): event; twin catch = >= 2 of 3 sprite variants; a sampling phase uniform in {0..K-1} per event.\nPer event e: x_e = P_phi(real miss AND twin catch), p_e = P_phi(real miss), q_e = P_phi(twin miss).\nPer scene s: D_s = mean_e x_e, p_s = mean_e p_e, q_s = mean_e q_e (exact over the scene's events: the scene's\nfinite event pool is its \"truth\"); beta_s = 1 - prod_e (1 - x_e) = P(scene shows >= 1 discordance at a random draw).\n\nCertification rule for a NEW camera s (C3 + C4a-pop): certify \"p_s <= eps\" iff q_s + U_pop <= eps, where\nU_pop = U_CP(J, m) at delta (J = #calibration scenes with >= 1 discordant event) and q_s is the twin miss rate of the\ncamera (twin runs are cheap: q treated as known; the finite-twin variant splits delta, see M4).\n\n(1) LOSO: for each scene s, J_{-s} from the other m - 1 scenes (worst-phase integer J, conservative);\n    violation_D = D_s > U_pop(-s); violation_C3 = p_s > q_s + U_pop(-s); false certificate = certified AND p_s > eps.\n(2) MC false certification (10,000 runs, seed 42): population model = the m main scenes. Each run: m calibration\n    scenes drawn with replacement, each shows a discordance with prob beta_s (random phases) -> J -> U_pop;\n    a new camera drawn uniformly and independently; false certificate = certified AND p_s > eps.\n    Also the theorem target of C4a-pop: P(U_pop < mu), mu = population mean of D_s  (must be <= delta).\n    PLAN asked for \"truth\" videos with >= 59 real events: no main-domain scene has that many A>=256 G* events with a\n    twin (max 13 at OP*, 34 at d_min 1) -> the truth is the exact finite pool of each scene (deviation, reported).\n(3) Must-fail: operating point(s) where p_s > eps in >= 3 main scenes; the rule must refuse those cameras in >= 95% of\n    MC runs. Misses split into structural (duration < K) and appearance.\n(4) C4a-fleet under the MEASURED heterogeneous discordance: event-level Bernoulli(x_e) (and the scene-level D_s with the\n    real n_s): exact Poisson-binomial failure P(U(X, N) < Dbar) by DP + MC 100,000 (seed 42); also the same pattern\n    scaled to Dbar = 2%, 5% (stress).",
     "delta": 0.05,
     "n_mc": 10000,
     "n_mc_theorem": 100000,
@@ -14,71 +14,49 @@
         "d_min": 32,
         "K": 16
       },
-      "N_events": 180,
-      "m_scenes": 78,
+      "N_events": 164,
+      "m_scenes": 76,
       "max_events_per_scene": 13,
-      "scenes_with_D_pos": [
-        {
-          "video": "traffic",
-          "n": 8,
-          "D": 0.0390625,
-          "p": 0.0390625,
-          "q": 0.0
-        }
-      ],
+      "scenes_with_D_pos": [],
       "loso": {
-        "m": 78,
-        "J_all": 1,
-        "U_pop_all": 0.059378492060127144,
+        "m": 76,
+        "J_all": 0,
+        "U_pop_all": 0.0386507667257255,
         "violation_rate_D": {
-          "num": 1,
-          "den": 78,
-          "value": 0.01282051282051282
+          "num": 0,
+          "den": 76,
+          "value": 0.0
         },
         "violation_rate_C3": {
-          "num": 1,
-          "den": 78,
-          "value": 0.01282051282051282
+          "num": 0,
+          "den": 76,
+          "value": 0.0
         },
         "certified": {
-          "num": 76,
-          "den": 78
+          "num": 75,
+          "den": 76
         },
         "false_certificates": {
           "num": 0,
-          "den": 78,
+          "den": 76,
           "value": 0.0
         },
         "scenes_p_gt_eps": 1,
         "pass_le_delta": true,
-        "violating_scenes": [
-          {
-            "video": "traffic",
-            "n": 8,
-            "D_s": 0.0390625,
-            "p_s": 0.0390625,
-            "q_s": 0.0,
-            "J_minus": 0,
-            "U_pop_minus": 0.038158510711545454,
-            "viol_D": true,
-            "viol_C3": true,
-            "certified": true,
-            "false_cert": false
-          }
-        ]
+        "violating_scenes": []
       },
       "mc": {
         "n_mc": 10000,
-        "mu_pop_D": 0.000500801282051282,
-        "U_pop_median": 0.03767863420096847,
+        "mu_pop_D": 0.0,
+        "U_pop_median": 0.0386507667257255,
         "P_U_lt_mu": 0.0,
         "P_U_lt_mu_se": 1e-08,
-        "certify_rate": 0.9825,
+        "certify_rate": 0.9865,
         "false_cert_rate": 0.0,
         "false_cert_se": 1e-08,
         "false_cert_given_p_gt_eps": 0.0,
         "refuse_rate_given_p_gt_eps": 1.0,
-        "share_new_with_p_gt_eps": 0.014
+        "share_new_with_p_gt_eps": 0.0135
       },
       "positive_conditional_claim_kept": true
     },
@@ -89,17 +67,10 @@
         "K": 16,
         "note": "post-hoc: chosen after E0.2 as the nearest point with >= 20 real-miss events"
       },
-      "N_events": 200,
-      "m_scenes": 78,
+      "N_events": 179,
+      "m_scenes": 76,
       "max_events_per_scene": 13,
       "scenes_with_D_pos": [
-        {
-          "video": "traffic",
-          "n": 13,
-          "D": 0.09615384615384616,
-          "p": 0.09615384615384616,
-          "q": 0.0
-        },
         {
           "video": "tramCrossroad_1fps",
           "n": 4,
@@ -116,54 +87,41 @@
         }
       ],
       "loso": {
-        "m": 78,
-        "J_all": 3,
-        "U_pop_all": 0.09641275320690612,
+        "m": 76,
+        "J_all": 2,
+        "U_pop_all": 0.08052895143025197,
         "violation_rate_D": {
-          "num": 2,
-          "den": 78,
-          "value": 0.02564102564102564
+          "num": 1,
+          "den": 76,
+          "value": 0.013157894736842105
         },
         "violation_rate_C3": {
           "num": 1,
-          "den": 78,
-          "value": 0.01282051282051282
+          "den": 76,
+          "value": 0.013157894736842105
         },
         "certified": {
-          "num": 75,
-          "den": 78
+          "num": 73,
+          "den": 76
         },
         "false_certificates": {
           "num": 0,
-          "den": 78,
+          "den": 76,
           "value": 0.0
         },
         "scenes_p_gt_eps": 1,
         "pass_le_delta": true,
         "violating_scenes": [
           {
-            "video": "traffic",
-            "n": 13,
-            "D_s": 0.09615384615384616,
-            "p_s": 0.09615384615384616,
-            "q_s": 0.0,
-            "J_minus": 2,
-            "U_pop_minus": 0.07951235212777794,
-            "viol_D": true,
-            "viol_C3": true,
-            "certified": true,
-            "false_cert": false
-          },
-          {
             "video": "tramCrossroad_1fps",
             "n": 4,
             "D_s": 0.09375,
             "p_s": 0.125,
             "q_s": 0.0625,
-            "J_minus": 2,
-            "U_pop_minus": 0.07951235212777794,
+            "J_minus": 1,
+            "U_pop_minus": 0.06169454289942646,
             "viol_D": true,
-            "viol_C3": false,
+            "viol_C3": true,
             "certified": true,
             "false_cert": false
           }
@@ -171,16 +129,16 @@
       },
       "mc": {
         "n_mc": 10000,
-        "mu_pop_D": 0.002798883808499193,
-        "U_pop_median": 0.059378492060127144,
+        "mu_pop_D": 0.0016073564593301435,
+        "U_pop_median": 0.0386507667257255,
         "P_U_lt_mu": 0.0,
         "P_U_lt_mu_se": 1e-08,
-        "certify_rate": 0.964,
+        "certify_rate": 0.968,
         "false_cert_rate": 0.0,
         "false_cert_se": 1e-08,
         "false_cert_given_p_gt_eps": 0.0,
         "refuse_rate_given_p_gt_eps": 1.0,
-        "share_new_with_p_gt_eps": 0.0123
+        "share_new_with_p_gt_eps": 0.0129
       },
       "positive_conditional_claim_kept": true
     }
@@ -203,15 +161,6 @@
           "D": 0.0
         },
         {
-          "video": "traffic",
-          "n": 13,
-          "p": 0.5336538461538461,
-          "p_app": 0.24519230769230768,
-          "p_struct": 0.28846153846153844,
-          "q": 0.37179487179487175,
-          "D": 0.1842948717948718
-        },
-        {
           "video": "tramCrossroad_1fps",
           "n": 11,
           "p": 0.7765151515151515,
@@ -230,11 +179,11 @@
           "D": 0.012254901960784312
         }
       ],
-      "n_scenes_p_gt_eps": 4,
+      "n_scenes_p_gt_eps": 3,
       "mc_restricted_to_p_gt_eps": {
         "n_mc": 10000,
-        "mu_pop_D": 0.008317178778151628,
-        "U_pop_median": 0.09641275320690612,
+        "mu_pop_D": 0.005974057976766955,
+        "U_pop_median": 0.08052895143025197,
         "P_U_lt_mu": 0.0,
         "P_U_lt_mu_se": 1e-08,
         "certify_rate": 0.0,
@@ -245,34 +194,34 @@
         "share_new_with_p_gt_eps": 1.0
       },
       "loso": {
-        "m": 78,
-        "J_all": 12,
-        "U_pop_all": 0.2373159634331561,
+        "m": 76,
+        "J_all": 10,
+        "U_pop_all": 0.21296195608179203,
         "violation_rate_D": {
           "num": 0,
-          "den": 78,
+          "den": 76,
           "value": 0.0
         },
         "violation_rate_C3": {
           "num": 0,
-          "den": 78,
+          "den": 76,
           "value": 0.0
         },
         "certified": {
           "num": 0,
-          "den": 78
+          "den": 76
         },
         "false_certificates": {
           "num": 0,
-          "den": 78,
+          "den": 76,
           "value": 0.0
         },
-        "scenes_p_gt_eps": 4,
+        "scenes_p_gt_eps": 3,
         "pass_le_delta": true,
         "violating_scenes": []
       },
       "refuse_ge_95pct": true,
-      "scenes_p_app_gt_eps": 2
+      "scenes_p_app_gt_eps": 1
     },
     "d4_K48": {
       "op": {
@@ -289,15 +238,6 @@
           "p_struct": 0.5625,
           "q": 1.0,
           "D": 0.0
-        },
-        {
-          "video": "traffic",
-          "n": 13,
-          "p": 0.5336538461538461,
-          "p_app": 0.24519230769230768,
-          "p_struct": 0.28846153846153844,
-          "q": 0.37179487179487175,
-          "D": 0.1842948717948718
         },
         {
           "video": "tramCrossroad_1fps",
@@ -318,11 +258,11 @@
           "D": 0.016304347826086956
         }
       ],
-      "n_scenes_p_gt_eps": 4,
+      "n_scenes_p_gt_eps": 3,
       "mc_restricted_to_p_gt_eps": {
         "n_mc": 10000,
-        "mu_pop_D": 0.008536028511467474,
-        "U_pop_median": 0.09641275320690612,
+        "mu_pop_D": 0.006198666913591114,
+        "U_pop_median": 0.08052895143025197,
         "P_U_lt_mu": 0.0,
         "P_U_lt_mu_se": 1e-08,
         "certify_rate": 0.0,
@@ -333,34 +273,34 @@
         "share_new_with_p_gt_eps": 1.0
       },
       "loso": {
-        "m": 78,
-        "J_all": 12,
-        "U_pop_all": 0.2373159634331561,
+        "m": 76,
+        "J_all": 10,
+        "U_pop_all": 0.21296195608179203,
         "violation_rate_D": {
           "num": 0,
-          "den": 78,
+          "den": 76,
           "value": 0.0
         },
         "violation_rate_C3": {
           "num": 0,
-          "den": 78,
+          "den": 76,
           "value": 0.0
         },
         "certified": {
           "num": 0,
-          "den": 78
+          "den": 76
         },
         "false_certificates": {
           "num": 0,
-          "den": 78,
+          "den": 76,
           "value": 0.0
         },
-        "scenes_p_gt_eps": 4,
+        "scenes_p_gt_eps": 3,
         "pass_le_delta": true,
         "violating_scenes": []
       },
       "refuse_ge_95pct": true,
-      "scenes_p_app_gt_eps": 2
+      "scenes_p_app_gt_eps": 1
     },
     "d16_K48": {
       "op": {
@@ -377,15 +317,6 @@
           "p_struct": 0.4166666666666667,
           "q": 1.0,
           "D": 0.0
-        },
-        {
-          "video": "traffic",
-          "n": 13,
-          "p": 0.5336538461538461,
-          "p_app": 0.24519230769230768,
-          "p_struct": 0.28846153846153844,
-          "q": 0.37179487179487175,
-          "D": 0.1842948717948718
         },
         {
           "video": "tramCrossroad_1fps",
@@ -406,11 +337,11 @@
           "D": 0.026515151515151512
         }
       ],
-      "n_scenes_p_gt_eps": 4,
+      "n_scenes_p_gt_eps": 3,
       "mc_restricted_to_p_gt_eps": {
         "n_mc": 10000,
-        "mu_pop_D": 0.009167737533122148,
-        "U_pop_median": 0.09641275320690612,
+        "mu_pop_D": 0.006846999856868278,
+        "U_pop_median": 0.08052895143025197,
         "P_U_lt_mu": 0.0,
         "P_U_lt_mu_se": 1e-08,
         "certify_rate": 0.0,
@@ -421,77 +352,49 @@
         "share_new_with_p_gt_eps": 1.0
       },
       "loso": {
-        "m": 78,
-        "J_all": 12,
-        "U_pop_all": 0.2373159634331561,
+        "m": 76,
+        "J_all": 10,
+        "U_pop_all": 0.21296195608179203,
         "violation_rate_D": {
           "num": 0,
-          "den": 78,
+          "den": 76,
           "value": 0.0
         },
         "violation_rate_C3": {
           "num": 0,
-          "den": 78,
+          "den": 76,
           "value": 0.0
         },
         "certified": {
           "num": 0,
-          "den": 78
+          "den": 76
         },
         "false_certificates": {
           "num": 0,
-          "den": 78,
+          "den": 76,
           "value": 0.0
         },
-        "scenes_p_gt_eps": 4,
+        "scenes_p_gt_eps": 3,
         "pass_le_delta": true,
         "violating_scenes": []
       },
       "refuse_ge_95pct": true,
-      "scenes_p_app_gt_eps": 2
+      "scenes_p_app_gt_eps": 1
     }
   },
   "c4a_fleet": {
     "OP*": {
       "measured": {
-        "Dbar": 0.001736111111111111,
-        "N": 180,
-        "n_events_x_pos": 3,
-        "x_star": -1,
-        "exact_fail_poisson_binomial": 0.0,
-        "exact_fail_binomial_same_mean": 0.0,
-        "mc_fail": 0.0,
-        "mc_se": 3.162277660168379e-09,
-        "valid": true
-      },
-      "scaled_to_2pct": {
-        "Dbar": 0.015111111111111112,
-        "N": 180,
-        "n_events_x_pos": 3,
-        "x_star": -1,
-        "exact_fail_poisson_binomial": 0.0,
-        "exact_fail_binomial_same_mean": 0.0,
-        "mc_fail": 0.0,
-        "mc_se": 3.162277660168379e-09,
-        "valid": true
-      },
-      "scaled_to_5pct": {
-        "Dbar": 0.016666666666666666,
-        "N": 180,
-        "n_events_x_pos": 3,
-        "x_star": 0,
-        "exact_fail_poisson_binomial": 0.0,
-        "exact_fail_binomial_same_mean": 0.04854416402401586,
-        "mc_fail": 0.0,
-        "mc_se": 3.162277660168379e-09,
-        "valid": true
+        "Dbar": 0.0,
+        "N": 164,
+        "note": "Dbar = 0: failure impossible (U >= 0)"
       }
     },
     "challenge_16_16": {
       "measured": {
-        "Dbar": 0.0096875,
-        "N": 200,
-        "n_events_x_pos": 12,
+        "Dbar": 0.003840782122905028,
+        "N": 179,
+        "n_events_x_pos": 5,
         "x_star": -1,
         "exact_fail_poisson_binomial": 0.0,
         "exact_fail_binomial_same_mean": 0.0,
@@ -500,23 +403,23 @@
         "valid": true
       },
       "scaled_to_2pct": {
-        "Dbar": 0.019838709677419353,
-        "N": 200,
-        "n_events_x_pos": 12,
-        "x_star": 0,
+        "Dbar": 0.014677501269680041,
+        "N": 179,
+        "n_events_x_pos": 5,
+        "x_star": -1,
         "exact_fail_poisson_binomial": 0.0,
-        "exact_fail_binomial_same_mean": 0.01817646271010146,
+        "exact_fail_binomial_same_mean": 0.0,
         "mc_fail": 0.0,
         "mc_se": 3.162277660168379e-09,
         "valid": true
       },
       "scaled_to_5pct": {
-        "Dbar": 0.03435483870967743,
-        "N": 200,
-        "n_events_x_pos": 12,
-        "x_star": 2,
+        "Dbar": 0.02480954799390554,
+        "N": 179,
+        "n_events_x_pos": 5,
+        "x_star": 0,
         "exact_fail_poisson_binomial": 0.0,
-        "exact_fail_binomial_same_mean": 0.03061981649614287,
+        "exact_fail_binomial_same_mean": 0.011143198037213026,
         "mc_fail": 0.0,
         "mc_se": 3.162277660168379e-09,
         "valid": true
@@ -524,106 +427,106 @@
     },
     "d1_K48": {
       "measured": {
-        "Dbar": 0.019845545977011495,
-        "N": 232,
-        "n_events_x_pos": 48,
-        "x_star": 0,
-        "exact_fail_poisson_binomial": 0.005726225585613818,
-        "exact_fail_binomial_same_mean": 0.009557143889189454,
-        "mc_fail": 0.00599,
-        "mc_se": 0.00024401065345595055,
+        "Dbar": 0.010071090047393365,
+        "N": 211,
+        "n_events_x_pos": 33,
+        "x_star": -1,
+        "exact_fail_poisson_binomial": 0.0,
+        "exact_fail_binomial_same_mean": 0.0,
+        "mc_fail": 0.0,
+        "mc_se": 3.162277660168379e-09,
         "valid": true
       },
       "scaled_to_2pct": {
-        "Dbar": 0.019999999999999997,
-        "N": 232,
-        "n_events_x_pos": 48,
+        "Dbar": 0.02,
+        "N": 211,
+        "n_events_x_pos": 33,
         "x_star": 0,
-        "exact_fail_poisson_binomial": 0.005469124218453123,
-        "exact_fail_binomial_same_mean": 0.00921402869984784,
-        "mc_fail": 0.00538,
-        "mc_se": 0.0002313234877828017,
+        "exact_fail_poisson_binomial": 0.007171769771454378,
+        "exact_fail_binomial_same_mean": 0.014083220242514722,
+        "mc_fail": 0.00729,
+        "mc_se": 0.0002690140498189639,
         "valid": true
       },
       "scaled_to_5pct": {
-        "Dbar": 0.04888048057419254,
-        "N": 232,
-        "n_events_x_pos": 48,
-        "x_star": 5,
-        "exact_fail_poisson_binomial": 0.006611880504435445,
-        "exact_fail_binomial_same_mean": 0.027714461639313112,
-        "mc_fail": 0.0066,
-        "mc_se": 0.00025605546274196144,
+        "Dbar": 0.048204163181860424,
+        "N": 211,
+        "n_events_x_pos": 33,
+        "x_star": 4,
+        "exact_fail_poisson_binomial": 0.0009743913606168918,
+        "exact_fail_binomial_same_mean": 0.023671615497355178,
+        "mc_fail": 0.00099,
+        "mc_se": 9.944947963664766e-05,
         "valid": true
       }
     },
     "d4_K48": {
       "measured": {
-        "Dbar": 0.020833333333333336,
-        "N": 218,
-        "n_events_x_pos": 45,
-        "x_star": 0,
-        "exact_fail_poisson_binomial": 0.006099561175887842,
-        "exact_fail_binomial_same_mean": 0.010156481507498493,
-        "mc_fail": 0.00609,
-        "mc_se": 0.0002460266631891755,
+        "Dbar": 0.010469543147208122,
+        "N": 197,
+        "n_events_x_pos": 30,
+        "x_star": -1,
+        "exact_fail_poisson_binomial": 0.0,
+        "exact_fail_binomial_same_mean": 0.0,
+        "mc_fail": 0.0,
+        "mc_se": 3.162277660168379e-09,
         "valid": true
       },
       "scaled_to_2pct": {
         "Dbar": 0.019999999999999997,
-        "N": 218,
-        "n_events_x_pos": 45,
+        "N": 197,
+        "n_events_x_pos": 30,
         "x_star": 0,
-        "exact_fail_poisson_binomial": 0.0076897167893845075,
-        "exact_fail_binomial_same_mean": 0.012226003082864102,
-        "mc_fail": 0.00719,
-        "mc_se": 0.0002671760449591243,
+        "exact_fail_poisson_binomial": 0.010134509632741635,
+        "exact_fail_binomial_same_mean": 0.01868688493497775,
+        "mc_fail": 0.01035,
+        "mc_se": 0.000320044957779372,
         "valid": true
       },
       "scaled_to_5pct": {
-        "Dbar": 0.049082568807339445,
-        "N": 218,
-        "n_events_x_pos": 45,
-        "x_star": 5,
-        "exact_fail_poisson_binomial": 0.012604593542318153,
-        "exact_fail_binomial_same_mean": 0.04114891895702373,
-        "mc_fail": 0.01287,
-        "mc_se": 0.00035643180413649957,
+        "Dbar": 0.04853612264779778,
+        "N": 197,
+        "n_events_x_pos": 30,
+        "x_star": 4,
+        "exact_fail_poisson_binomial": 0.0024967550426713554,
+        "exact_fail_binomial_same_mean": 0.0354377148928047,
+        "mc_fail": 0.00238,
+        "mc_se": 0.0001540887925840163,
         "valid": true
       }
     },
     "d16_K48": {
       "measured": {
-        "Dbar": 0.021979166666666664,
-        "N": 200,
-        "n_events_x_pos": 40,
-        "x_star": 0,
-        "exact_fail_poisson_binomial": 0.007074496582944833,
-        "exact_fail_binomial_same_mean": 0.011738732443179665,
-        "mc_fail": 0.00737,
-        "mc_se": 0.0002704751947961217,
+        "Dbar": 0.010707635009310988,
+        "N": 179,
+        "n_events_x_pos": 25,
+        "x_star": -1,
+        "exact_fail_poisson_binomial": 0.0,
+        "exact_fail_binomial_same_mean": 0.0,
+        "mc_fail": 0.0,
+        "mc_se": 3.162277660168379e-09,
         "valid": true
       },
       "scaled_to_2pct": {
-        "Dbar": 0.020000000000000004,
-        "N": 200,
-        "n_events_x_pos": 40,
+        "Dbar": 0.019999999999999997,
+        "N": 179,
+        "n_events_x_pos": 25,
         "x_star": 0,
-        "exact_fail_poisson_binomial": 0.011707201348716337,
-        "exact_fail_binomial_same_mean": 0.01758794660572155,
-        "mc_fail": 0.01148,
-        "mc_se": 0.00033687103763903483,
+        "exact_fail_poisson_binomial": 0.015156316700401906,
+        "exact_fail_binomial_same_mean": 0.02688236967028948,
+        "mc_fail": 0.01506,
+        "mc_se": 0.0003851388892334816,
         "valid": true
       },
       "scaled_to_5pct": {
-        "Dbar": 0.04931279620853081,
-        "N": 200,
-        "n_events_x_pos": 40,
-        "x_star": 4,
-        "exact_fail_poisson_binomial": 0.007614532642308384,
-        "exact_fail_binomial_same_mean": 0.02902247175814017,
-        "mc_fail": 0.00835,
-        "mc_se": 0.00028775471325418806,
+        "Dbar": 0.0486731843575419,
+        "N": 179,
+        "n_events_x_pos": 25,
+        "x_star": 3,
+        "exact_fail_poisson_binomial": 0.000699450180728696,
+        "exact_fail_binomial_same_mean": 0.02348678132420304,
+        "mc_fail": 0.00064,
+        "mc_se": 7.997439590268876e-05,
         "valid": true
       }
     }
@@ -631,18 +534,18 @@
   "summary": {
     "OP*": {
       "loso_viol_D": {
-        "num": 1,
-        "den": 78,
-        "value": 0.01282051282051282
+        "num": 0,
+        "den": 76,
+        "value": 0.0
       },
       "loso_viol_C3": {
-        "num": 1,
-        "den": 78,
-        "value": 0.01282051282051282
+        "num": 0,
+        "den": 76,
+        "value": 0.0
       },
       "loso_false_cert": {
         "num": 0,
-        "den": 78,
+        "den": 76,
         "value": 0.0
       },
       "mc_false_cert": 0.0,
@@ -651,18 +554,18 @@
     },
     "challenge_16_16": {
       "loso_viol_D": {
-        "num": 2,
-        "den": 78,
-        "value": 0.02564102564102564
+        "num": 1,
+        "den": 76,
+        "value": 0.013157894736842105
       },
       "loso_viol_C3": {
         "num": 1,
-        "den": 78,
-        "value": 0.01282051282051282
+        "den": 76,
+        "value": 0.013157894736842105
       },
       "loso_false_cert": {
         "num": 0,
-        "den": 78,
+        "den": 76,
         "value": 0.0
       },
       "mc_false_cert": 0.0,
@@ -671,11 +574,11 @@
     },
     "must_fail_all_refuse_ge_95pct": true,
     "c4a_fleet_all_valid": true,
-    "c4a_pop_tight_max_fail": 0.04011,
-    "c4b_max_fail": 0.02863
+    "c4a_pop_tight_max_fail": 0.04652,
+    "c4b_max_fail": 0.03536
   },
   "pop_theorem_check": {
-    "m": 78,
+    "m": 76,
     "n_mc": 100000,
     "c4a_pop_tight": {
       "0.01": {
@@ -687,33 +590,33 @@
         "se": 3.162277660168379e-09
       },
       "0.05": {
-        "fail": 0.01768,
-        "se": 0.0004167423376620139
+        "fail": 0.01978,
+        "se": 0.00044032660151301333
       },
       "0.1": {
-        "fail": 0.04011,
-        "se": 0.0006204932545966958
+        "fail": 0.04652,
+        "se": 0.0006660021741706254
       },
       "0.2": {
-        "fail": 0.03635,
-        "se": 0.0005918502977949745
+        "fail": 0.04483,
+        "se": 0.0006543719974143148
       }
     },
-    "c4a_pop_max_fail": 0.04011,
+    "c4a_pop_max_fail": 0.04652,
     "c4b": {
       "t0.05_pi0.1_n20": {
         "h_t": 0.6415140775914581,
-        "fail": 0.00673
+        "fail": 0.00753
       },
       "t0.1_pi0.1_n10": {
         "h_t": 0.6513215599,
-        "fail": 0.00532
+        "fail": 0.00622
       },
       "t0.05_pi0.2_n30": {
         "h_t": 0.7853612360570628,
-        "fail": 0.02863
+        "fail": 0.03536
       }
     },
-    "c4b_max_fail": 0.02863
+    "c4b_max_fail": 0.03536
   }
 }

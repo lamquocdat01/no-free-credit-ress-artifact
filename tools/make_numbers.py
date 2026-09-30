@@ -66,6 +66,7 @@ def build():
     add("NightScenes", man["calibration_scenes"]["night"], "calibration_scenes.night")
     add("TurbScenes", man["calibration_scenes"]["turbulence"], "calibration_scenes.turbulence")
     add("PTZScenes", man["calibration_scenes"]["excluded_PTZ"], "calibration_scenes.excluded_PTZ")
+    add("JitterScenes", man["calibration_scenes"]["jitter"], "calibration_scenes.jitter (cameraJitter, post-F1 correction v1.1)")
     bg = J("p1_background17.json")["by_tier"]
     add("MainCDnet", sum(1 for v in bg["main"] if not v[:2] in ("I_", "O_")), "p1_background17.by_tier.main CDnet")
     add("MainLASIESTA", sum(1 for v in bg["main"] if v[:2] in ("I_", "O_")), "by_tier.main LASIESTA")
@@ -77,7 +78,7 @@ def build():
     add("MainDwPct", pct(mm["D_worst_phase"]["value"], 2), f"{mm['D_worst_phase']['num']}/{mm['N_events']}")
     add("MainDexp", f(mm["D_old_variant_mean"]["num"], 4), "expected discordant events (mean over phases and 3 variants)")
     add("MainDexpPct", pct(mm["D_old_variant_mean"]["value"], 2), f"{mm['D_old_variant_mean']['num']:.4f}/{mm['N_events']}")
-    add("MainUfleet", pct(mm["D_worst_phase"]["U_fleet"], 2), "U_CP(3,180)")
+    add("MainUfleet", pct(mm["D_worst_phase"]["U_fleet"], 2), f"U_CP({mm['D_worst_phase']['num']},{mm['N_events']})")
     add("MainJ", mm["J"]["num"], "scenes with a discordant event"); add("MainM", mm["J"]["den"], "scenes")
     add("MainUpop", pct(mm["J"]["U_pop"], 2), f"U_CP({mm['J']['num']},{mm['J']['den']})")
     add("NightN", nt["N_events"], "night events d>=32"); add("NightDw", nt["D_worst_phase"]["num"], "night worst-phase discordant")
@@ -86,6 +87,14 @@ def build():
     add("NightDexpMaj", f(nt["D_expected"]["num"], 2), "night expected discordant events, majority rule")
     add("NightUfleet", pct(nt["D_worst_phase"]["U_fleet"], 1), "night U_fleet worst"); add("NightJ", nt["J"]["num"], "night J")
     add("NightUpop", pct(nt["J"]["U_pop"], 1), "night U_pop")
+    jt = u["jitter"]["rule_2of3"]
+    add("JitN", jt["N_events"], "jitter events d>=32"); add("JitDw", jt["D_worst_phase"]["num"], "jitter worst-phase discordant")
+    add("JitUfleet", pct(jt["D_worst_phase"]["U_fleet"], 1), "jitter U_fleet worst"); add("JitJ", jt["J"]["num"], "jitter J")
+    add("JitM", jt["J"]["den"], "jitter scenes"); add("JitUpop", pct(jt["J"]["U_pop"], 1), "jitter U_pop")
+    mfj = J("must_fail_v2.json")["points"]
+    add("JitFC", mfj["OP*"]["jitter_false_cert_main_only"], "jitter cameras falsely certified, main-only calibration, phase-averaged (OP*)")
+    add("JitFCch", mfj["challenge_16_16"]["jitter_false_cert_main_only"], "same at (16,16)")
+    add("JitPgt", mfj["OP*"]["jitter_p_gt_eps"], "jitter cameras with phase-averaged p_s > eps (OP*)")
     tb = u["turbulence"]["rule_2of3"]
     add("TurbN", tb["N_events"], "turbulence events d>=32 (scenes run: 2)")
     add("AllN", at["N_events"], "all tiers N"); add("AllDw", at["D_worst_phase"]["num"], "all tiers worst-phase discordant")
@@ -114,10 +123,11 @@ def build():
 
     va = J("validity_audit.json")
     lo, lc = va["points"]["OP*"]["loso"], va["points"]["challenge_16_16"]["loso"]
-    add("LosoOP", lo["violation_rate_D"]["num"], "LOSO violations D_s > U_pop(-s), OP* (of 78)")
-    add("LosoCh", lc["violation_rate_D"]["num"], "LOSO violations, (16,16) (of 78)")
+    add("LosoOP", lo["violation_rate_D"]["num"], f"LOSO violations D_s > U_pop(-s), OP* (of {lo['m']})")
+    add("LosoCh", lc["violation_rate_D"]["num"], f"LOSO violations, (16,16) (of {lc['m']})")
+    add("LosoOPFC", lo["false_certificates"]["num"], "OP* LOSO false certificates")
     add("LosoChFC", lc["false_certificates"]["num"], "(16,16) LOSO false certificates")
-    add("ChUpop", pct(lc["U_pop_all"], 1), f"U_CP({lc['J_all']},78)"); add("ChJ", lc["J_all"], "(16,16) J")
+    add("ChUpop", pct(lc["U_pop_all"], 1), f"U_CP({lc['J_all']},{lc['m']})"); add("ChJ", lc["J_all"], "(16,16) J")
     add("McFC", pct(va["points"]["OP*"]["mc"]["false_cert_rate"], 1), "MC 10,000 false-cert rate OP*")
     add("McFCch", pct(va["points"]["challenge_16_16"]["mc"]["false_cert_rate"], 1), "MC false-cert rate (16,16)")
     mf = va["must_fail"]["d1_K48"]
@@ -145,7 +155,7 @@ def build():
     ex = J("exchange_rate_v2.json")["marked"]
     s = ex["OP*"]
     add("SavedOP", f"{s['q_known']['events_saved_per_camera']['median']:.0f}", "median real events saved per camera, OP*, q known")
-    add("SavedCamOP", s["q_known"]["cameras_saving"], "cameras saving (of 78)")
+    add("SavedCamOP", s["q_known"]["cameras_saving"], f"cameras saving (of {s['q_known']['m']})")
     add("SavedFinCamOP", s["q_finite"]["cameras_saving"], "cameras saving with the twin as built")
     add("SavedFinOP", f"{s['q_finite']['events_saved_per_camera']['median']:.0f}", "median saved, twin as built")
     ex1 = J("exchange_rate.json")["marked"]["OP*"]["q_known"]
@@ -156,7 +166,7 @@ def build():
     add("SavedOPC", f"{ex['OP-C']['q_known']['events_saved_per_camera']['median']:.0f}", "OP-C saved per camera")
     tc = J("exchange_rate.json")["twin_cost"]
     add("TwinCostScene", f(tc["cpu_hours_per_scene_median"], 2), "CPU-hours per scene, median (C0 build)")
-    add("TwinCostTotal", f(tc["cpu_hours_total"], 1), "CPU-hours, 78 scenes")
+    add("TwinCostTotal", f(tc["cpu_hours_total"], 1), f"CPU-hours, {tc['n_scenes']} main-domain scenes")
     g = [r for r in J("exchange_rate_v2.json")["grid"] if r["eps"] == 0.2]
     add("GridPts", len(g), "grid points eps=20%")
     add("GridFinMax", max(r["q_finite"]["cameras_saving"] for r in g), "max cameras saving with the twin as built, any grid point")
@@ -184,11 +194,11 @@ def build():
     add("ClampPairs", geo["paired_within_event"]["n_event_variants"], "event x variant pairs")
     c5 = J("c5a_monotone.json")["tables"]["d_min32"]["K16"]["q_by_x"]
     add("CfiveQzero", pct(c5["0.0"], 2), "q at x=0"); add("CfiveQfifty", pct(c5["0.5"], 2), "q at x=50%")
-    conf = J("twin_discordance_c0_main.json")["confidence"]
+    conf = J("twin_discordance_c0_main_main76.json")["confidence"]
     add("ConfTwin", f(conf["twin_score_median_pooled"]), "median detector confidence on twin hits")
     add("ConfReal", f(conf["real_score_median_pooled"]), "median detector confidence on real hits")
     # sensitivity: original event definition and OP-A / OP-C
-    orig = J("twin_discordance_c0_main.json")["by_definition"]["orig"]["operating_point"]
+    orig = J("twin_discordance_c0_main_main76.json")["by_definition"]["orig"]["operating_point"]
     add("OrigN", orig["N"], "original definition events at OP*"); add("OrigJ", orig["J_possible"], "original definition J")
     for name, key in (("OPA", "OP-A"), ("OPC", "OP-C")):
         c = cf["by_op"][key]["main"]
@@ -219,21 +229,22 @@ def extra(M_add):
     M_add("TurbUfleet", pct(u["D_worst_phase"]["U_fleet"], 1), "turbulence U_fleet")
     M_add("TurbJ", u["J"]["num"], "turbulence J"); M_add("TurbM", u["J"]["den"], "turbulence scenes run")
     M_add("TurbUpop", pct(u["J"]["U_pop"], 1), "turbulence U_pop")
+    m = J("corpus17_manifest.json")["counts"]["calibration_scenes"]["main"]
     for j, w in ((0, "zero"), (1, "one"), (2, "two"), (3, "three")):
-        M_add(f"UpopJ{w}", pct(ucp(j, 78), 1), f"U_CP({j},78), formula (worked example)")
+        M_add(f"UpopJ{w}", pct(ucp(j, m), 1), f"U_CP({j},{m}), formula (worked example)")
     for dp, tag in ((0.075, "A"), (0.10, "B"), (0.15, "C"), (0.20, "D")):
         n1, n2 = math.ceil(math.log(dp) / math.log(0.95)), math.ceil(math.log(0.05) / math.log(0.95))
         pis = (0.05 - 0.95 ** n2) / (0.95 ** n1 - 0.95 ** n2)
         M_add(f"PiStar{tag}", pct(pis, 1), f"Result 2 threshold pi* on the simulator pass probability, delta'={dp}, eps=delta=5%")
     exm = J("exchange_rate_v2.json")["marked"]["OP*"]["q_known"]
-    pacc = exm["cameras_saving"] / 78
-    uh = ucp(J("e0_units.json")["recomputed"]["main"]["rule_2of3"]["J"]["num"], 78, 0.025)
-    M_add("PAccept", pct(pacc, 1), "share of static cameras accepted by the twin route at OP* (cameras saving / 78)")
-    M_add("AcceptInflation", f"{100 * uh * (1 / pacc - 1):.1f}", "U_{delta/2}(J,78) (1/P(accept) - 1), percentage points")
+    pacc = exm["cameras_saving"] / m
+    uh = ucp(J("e0_units.json")["recomputed"]["main"]["rule_2of3"]["J"]["num"], m, 0.025)
+    M_add("PAccept", pct(pacc, 1), f"share of static cameras accepted by the twin route at OP* (cameras saving / {m})")
+    M_add("AcceptInflation", f"{100 * uh * (1 / pacc - 1):.1f}", f"U_delta/2(J,{m}) (1/P(accept) - 1), percentage points")
     for j, w in ((0, "zero"), (1, "one"), (2, "two"), (3, "three")):
-        M_add(f"UhalfJ{w}", pct(ucp(j, 78, 0.025), 1), f"U_CP({j},78) at delta/2 (decision level)")
-    budget = 0.05 - ucp(0, 78, 0.025)
-    M_add("FiveBudget", pct(budget, 1), "eps=5%: room left for q_U after U_{delta/2}(0,78)")
+        M_add(f"UhalfJ{w}", pct(ucp(j, m, 0.025), 1), f"U_CP({j},{m}) at delta/2 (decision level)")
+    budget = 0.05 - ucp(0, m, 0.025)
+    M_add("FiveBudget", pct(budget, 1), f"eps=5%: room left for q_U after U_delta/2(0,{m})")
     M_add("FiveRuns", math.ceil(math.log(0.025) / math.log(1 - budget)), "eps=5%: miss-free twin runs needed for q_U <= budget")
     c0 = J("e0_confusion.json")["by_op"]["OP*"]["main"]
     M_add("CalibPerCam", f(c0["N_events"] / c0["m_scenes"], 1), "annotated calibration events at OP* per static camera (N/m)")
@@ -263,7 +274,7 @@ def extra(M_add):
         M_add(f"Tp{name}", pct(s["p_main"], 2), f"{key} static-domain p-hat")
         M_add(f"Tnd{name}", s["n_direct"], f"{key} n_direct (80% power at p-hat)")
         M_add(f"Tsv{name}", f"{s['q_known']['events_saved_per_camera']['median']:.0f}", f"{key} saved per camera (median)")
-        M_add(f"Tcam{name}", s["q_known"]["cameras_saving"], f"{key} cameras saving (of 78)")
+        M_add(f"Tcam{name}", s["q_known"]["cameras_saving"], f"{key} cameras saving (of {s['q_known']['m']})")
         M_add(f"Tcamfin{name}", s["q_finite"]["cameras_saving"], f"{key} cameras saving, twin as built")
         M_add(f"Truns{name}", f"{s1['q_known']['n_twin_events_needed_median']:.0f}", f"{key} twin runs needed per camera")
         M_add(f"Tcpu{name}", f(s["q_known"]["cpu_hours_per_saved_event"]["median"], 3), f"{key} CPU-h per saved event")
@@ -273,7 +284,7 @@ def extra_f1(M_add):
     """P4-final F1: worst-phase convention and site-level bound; repository release hash."""
     wp = J("worst_phase.json")["points"]
     for pt, tagp in (("OP*", "S"), ("challenge_16_16", "C")):
-        for t, tt in (("main", "Main"), ("night", "Night"), ("turbulence", "Turb"), ("all_tiers", "All")):
+        for t, tt in (("main", "Main"), ("jitter", "Jit"), ("night", "Night"), ("turbulence", "Turb"), ("all_tiers", "All")):
             r = wp[pt]["tiers"][t]
             M_add(f"WP{tagp}p{tt}", pct(r["p_w"], 1), f"worst-phase real miss rate, {t}, {pt} (events missed at >= 1 phase / N={r['N']})")
             M_add(f"WP{tagp}q{tt}", pct(r["q_w"], 1), f"worst-phase twin miss rate (majority), {t}, {pt}")
@@ -282,10 +293,27 @@ def extra_f1(M_add):
         x = wp[pt]["exchange_main"]
         M_add(f"WX{tagp}p", pct(x["p_main_worst"], 1), f"pooled worst-phase real miss rate, main, {pt}")
         M_add(f"WX{tagp}nd", x["n_direct"], f"direct plan at the worst-phase p, {pt}")
-        M_add(f"WX{tagp}acc", x["cameras_accepted"], f"cameras accepted with worst-phase q (of 78), {pt}")
+        M_add(f"WX{tagp}acc", x["cameras_accepted"], f"cameras accepted with worst-phase q (of {x['m']}), {pt}")
         M_add(f"WX{tagp}saved", f"{x['saved_median']:.0f}", f"median real events saved per camera, worst-phase, {pt}")
         M_add(f"WX{tagp}fa", x["false_accept"], f"accepted cameras with worst-phase p_s > eps, {pt}")
         M_add(f"WX{tagp}runs", f"{x['n_twin_needed_median']:.0f}", f"twin runs needed per camera (median), worst-phase q, {pt}")
+        w = wp[pt]["tiers"]
+        M_add(f"WP{tagp}DwMain", w["main"]["D_w"], f"worst-phase discordant events, main, {pt} (of N={w['main']['N']})")
+        M_add(f"WP{tagp}NMain", w["main"]["N"], f"main events, {pt}")
+        M_add(f"WP{tagp}UfMain", pct(w["main"]["U_fleet"], 1), f"U_CP({w['main']['D_w']},{w['main']['N']}), main, {pt}")
+        M_add(f"WP{tagp}JMain", w["main"]["J"], f"main scenes with a worst-phase discordant event, {pt} (of {w['main']['m']})")
+        M_add(f"WP{tagp}UpMain", pct(w["main"]["U_pop"], 1), f"U_CP({w['main']['J']},{w['main']['m']}), main, {pt}")
+        M_add(f"WP{tagp}NJit", w["jitter"]["N"], f"jitter events, {pt}")
+        M_add(f"WP{tagp}DwJit", w["jitter"]["D_w"], f"jitter worst-phase discordant events, {pt}")
+        for t, tt in (("jitter", "Jit"), ("night", "Night")):
+            o = wp[pt]["ood_with_main_calibration"][t]
+            M_add(f"OOD{tagp}{tt}cams", o["cameras"], f"{t} cameras judged with a main-only calibration, {pt}")
+            M_add(f"OOD{tagp}{tt}acc", o["accepted"], f"{t} cameras accepted (worst-phase q_w + U_delta/2(J_main,m_main) <= eps), {pt}")
+            M_add(f"OOD{tagp}{tt}fa", o["false_accept"], f"{t} cameras falsely accepted (accepted and p_w > eps), {pt}")
+            M_add(f"OOD{tagp}{tt}pgt", o["p_w_gt_eps"], f"{t} cameras with p_w > eps, {pt}")
+        fa = [c for c in wp[pt]["ood_with_main_calibration"]["jitter"]["per_camera"] if c["false_accept"]]
+        if fa:
+            M_add(f"OOD{tagp}JitFApw", pct(fa[0]["p_w"], 1), f"p_w of the falsely accepted jitter camera {fa[0]['video']}, {pt}")
     sb = J("site_bound.json")["points"]
     for pt, tagp in (("OP*", "S"), ("challenge_16_16", "C")):
         r = sb[pt]["main"]
