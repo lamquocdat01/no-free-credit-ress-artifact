@@ -187,6 +187,23 @@ def main():
                        f"$U(J_{{\\mathrm{{site}}}},m_{{\\mathrm{{site}}}})={P(r['U_pop_site'])}$; per site: scenes, events, discordant events, "
                        "bound without the site, leave-one-site-out violation.", "lrrrrl",
                        ["site", "scenes", "events", "disc.", "$U_{-\\mathrm{site}}$", "violation"], rows))
+    vc = J("v10_v11_compare.json")
+    assert vc["v10_reproduced_all"] and vc["v10_disagreements"]["all_in_jitter"]
+    a, b, w = vc["v10_recomputed"], vc["v11"], vc["v10_disagreements"]
+    loc = ", ".join(s.replace("_", "\\_") for s in sorted(set(w["discordant_scenes"]) | set(w["loso_violating_scenes"])
+                                                            | set(w["false_accept_cameras"])))
+    rows = [("static scenes / events", f"{a['m']} / {a['N']}", f"{b['m']} / {b['N']}", "--"),
+            ("discordant events (worst phase), $U(X,N)$", f"{a['D_w']}, {P(a['U_fleet'], 2)}", f"{b['D_w']}, {P(b['U_fleet'], 2)}", loc),
+            ("discordant scenes $J/m$, $U(J,m)$", f"{a['J']}/{a['m']}, {P(a['U_pop'], 2)}", f"{b['J']}/{b['m']}, {P(b['U_pop'], 2)}", loc),
+            ("scenes above their LOSO bound", f"{a['loso_viol']}/{a['m']}", f"{b['loso_viol']}/{b['m']}", loc),
+            ("worst-phase exchange: $n_{\\mathrm{dir}}$; accepted; false acc.", f"{a['n_direct']}; {a['accepted']}/{a['m']}; {a['false_accept']}",
+             f"{b['n_direct']}; {b['accepted']}/{b['m']}; {b['false_accept']}", loc)]
+    out.append(tab("tab:v10v11", "Static domain at OP$^\\ast$ before and after the camera-jitter split: earlier version "
+                   f"({a['m']} scenes, camera-jitter scenes {' and '.join(vc['meta']['jitter_scenes'])} included) and this version "
+                   f"({b['m']} scenes). The earlier numbers are recomputed by the released code on the {b['m']} static plus "
+                   f"{a['m'] - b['m']} camera-jitter scenes and equal the published ones; the last column gives the scenes "
+                   "that carry the earlier disagreements.", "llll",
+                   ["quantity", "earlier", "this version", "located in"], rows))
     (ROOT / "manuscript" / "supp_tables.tex").write_text("\n".join(out), encoding="utf-8")
     print("[write] supp_tables.tex", len(out) - 1, "tables")
 

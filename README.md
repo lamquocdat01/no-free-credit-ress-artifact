@@ -31,6 +31,7 @@ python tools/make_supp_tables.py    # -> manuscript/supp_tables.tex (supplementa
 python tools/make_figs.py           # -> manuscript/figs/fig_tiers, fig_leak, fig_loso, fig_sprites
 python code/w0_exchange_rate_v2.py  # -> figs/fig_exchange_rate (and data/results/exchange_rate_v2.json)
 python code/f1_worst_phase_site.py  # -> data/results/worst_phase.json, site_bound.json (worst-phase and site checks)
+python tools/make_v10_compare.py    # -> data/results/v10_v11_compare.json (Table S19; needs the tags, i.e. a git clone)
 ```
 
 | Manuscript item | Source file(s) in `data/results/` | Generator |
@@ -42,7 +43,8 @@ python code/f1_worst_phase_site.py  # -> data/results/worst_phase.json, site_bou
 | Real vs twin outcomes, LOSO, must-fail | `e0_confusion.json`, `validity_audit.json`, `must_fail_v2.json` | `make_main_tables.py`, `make_figs.py` |
 | Event-definition sensitivity | `sens_event_definition.json` | `make_main_tables.py` |
 | Tier table and exchange table, worst-phase columns/rows; Table S14–S15 | `worst_phase.json` (from `code/f1_worst_phase_site.py`) | `make_numbers.py`, `make_supp_tables.py` |
-| Site-level population bound (Section 6, Tables S16–S17) | `site_bound.json` (from `code/f1_worst_phase_site.py`) | `make_numbers.py`, `make_supp_tables.py` |
+| Site-level population bound (Section 6, Tables S17–S18) | `site_bound.json` (from `code/f1_worst_phase_site.py`) | `make_numbers.py`, `make_supp_tables.py` |
+| Earlier (78-scene) vs current static domain (Section 6, Table S19) | `v10_v11_compare.json` (from `tools/make_v10_compare.py`; checks the earlier numbers against tag `ress-v1.0`) | `make_supp_tables.py` |
 | Twin fidelity | `e0_geometry_sensitivity.json`, `twin_discordance_c0_main.json` | `make_main_tables.py` |
 | Supplementary tables | all of the above + `e0_event_waterfall.json`, `iw_ablation_v2.json`, `c5a_monotone.json` | `make_supp_tables.py` |
 
