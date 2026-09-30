@@ -461,3 +461,21 @@ LASIESTA O\_SU & 2 & 2 & 0 & 21.6\% & no \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\begin{table}[H]
+\centering
+\caption{Static domain at OP$^\ast$ before and after the camera-jitter split: earlier version (78 scenes, camera-jitter scenes boulevard and traffic included) and this version (76 scenes). The earlier numbers are recomputed by the released code on the 76 static plus 2 camera-jitter scenes and equal the published ones; the last column gives the scenes that carry the earlier disagreements.}
+\label{tab:v10v11}
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+quantity & earlier & this version & located in \\
+\midrule
+static scenes / events & 78 / 180 & 76 / 164 & -- \\
+discordant events (worst phase), $U(X,N)$ & 3, 4.25\% & 0, 1.81\% & traffic \\
+discordant scenes $J/m$, $U(J,m)$ & 1/78, 5.94\% & 0/76, 3.87\% & traffic \\
+scenes above their LOSO bound & 1/78 & 0/76 & traffic \\
+worst-phase exchange: $n_{\mathrm{dir}}$; accepted; false acc. & 22; 74/78; 1 & 14; 72/76; 0 & traffic \\
+\bottomrule
+\end{tabular}
+\end{table}

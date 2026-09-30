@@ -253,7 +253,10 @@ needs \nWXSnd{} events, and a twin run to convergence accepts \nWXSacc{} of \nMa
 events each (Table~\ref{tab:exchange}); the number of accepted static cameras with a worst-phase real miss rate above
 $\varepsilon$ is \nWXSfa{} (\nWXCfa{} at $(16,16)$). In the earlier version of this study the camera-jitter scene
 \emph{traffic} was in the static domain and was such a false acceptance; it is now reported as a failure mode
-(Section~\ref{sec:audit}).
+(Section~\ref{sec:audit}). Every disagreement of the earlier static domain (discordant events and scenes, the
+leave-one-scene-out violation and the false acceptance) lies in the two camera-jitter scenes, in fact all in
+\emph{traffic}, and the released code reproduces the earlier numbers exactly when these scenes are put back (comparison
+table in the supplement).
 
 \emph{Sites.} Scenes filmed at the same site share background, viewpoint and illumination, so the scene may be too fine
 a unit of independence. Grouping the static scenes into \nSiteSm{} sites (CDnet challenge categories and LASIESTA
