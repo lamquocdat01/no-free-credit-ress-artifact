@@ -26,7 +26,7 @@ def grid():
     L = [r"\begin{table}[t]", r"\centering",
          r"\caption{Operating-point grid at $\varepsilon=20\%$ (condensed; full grid in the supplement). Each cell: "
          r"static-domain real miss rate $\hat p$ / real events for direct certification / median real events saved per "
-         r"camera by a twin run to convergence. The twin as built saves none at every cell. OP$^\ast$ is $(32,16)$.}",
+         r"camera by a twin run to convergence. The median saving of the twin as built is 0 at every cell. OP$^\ast$ is $(32,16)$.}",
          r"\label{tab:grid}", r"\scriptsize", r"\setlength{\tabcolsep}{3pt}", r"\begin{tabular}{@{}rccccc@{}}", r"\toprule",
          r"$d_{\min}\backslash K$ & 1 & 8 & 16 & 24 & 48 \\", r"\midrule"]
     for d in (32, 24, 16, 12, 8, 4, 1):

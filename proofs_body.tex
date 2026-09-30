@@ -1,0 +1,244 @@
+% body of the proofs; \input by proofs_v1.tex and manuscript/supplement.tex
+\section{Setting and notation}\label{sec:setting}
+
+\paragraph{Events and misses.} A camera (scene) $s$ produces events $i=1,2,\dots$ (a maximal run of frames containing
+the target object). The system samples frames periodically with period $K$ and an unknown phase
+$\varphi\in\{0,\dots,K-1\}$; a detector is run on the sampled frames. An event is \emph{missed} ($M=1$) when no
+sampled frame of the event is a hit (the detector finds the object). With $H\subseteq\mathbb{Z}$ the hit frames of
+the event and $\varphi$ uniform, $\PP(M=1\mid H)=1-|H \bmod K|/K$, where $H\bmod K$ is the set of residues of $H$.
+The miss rate of camera $s$ is $p_s=\PP(M=1)$ over its events and phases. Target: certify $p_s\le\varepsilon$ with
+confidence $1-\delta$.
+
+\paragraph{Clopper--Pearson bound.} For $x\in\{0,\dots,n\}$, $F_{n,p}(x)=\PP(\Bin(n,p)\le x)$ and
+$\UCP(x,n)=\UCP_\delta(x,n)$ is the one-sided $(1-\delta)$ upper Clopper--Pearson bound
+\cite{clopper1934}: the solution $u$ of $F_{n,u}(x)=\delta$ for $x<n$, and $1$ for $x=n$. Since $F_{n,p}(x)$ is
+strictly decreasing in $p$, $\UCP(x,n)<p \iff F_{n,p}(x)<\delta$, and $\UCP$ is non-decreasing in $x$. Validity:
+$\PP(\UCP(\Bin(n,p),n)<p)\le\delta$ for every $p$.
+
+\paragraph{Success run.} $n_0(\varepsilon,\delta)=\lceil \ln\delta/\ln(1-\varepsilon)\rceil$ is the smallest $n$ with
+$(1-\varepsilon)^n\le\delta$ (e.g.\ $n_0(5\%,5\%)=59$, $n_0(20\%,5\%)=14$).
+
+\paragraph{Simulator and twin.} Simulator data $Y$ have a law $Q$ on an arbitrary space. A \emph{twin} is a paired
+simulator: every real event $i$ has a synthetic counterpart with miss indicator $M'_i$ under the same sampling phase.
+$q=\PP(M'=1)$, and the \emph{discordance} is $D=\PP(M=1,M'=0)$ (real miss, twin catch).
+
+\section{C1: no free credit}
+
+A certification procedure is a (possibly randomised) test $\phi(X,Y)\in\{0,1\}$ with real data
+$X=(M_1,\dots,M_n)\sim\Bern(p)^{\otimes n}$ independent of simulator data $Y\sim Q$. It is \emph{valid at level
+$\delta$ on a class $\mathcal{P}$} of pairs $(p,Q)$ if $\sup_{(p,Q)\in\mathcal{P},\,p>\varepsilon}\PP_{p,Q}(\phi=1)\le\delta$.
+
+\begin{theorem}[C1]\label{thm:c1}
+Assume $\mathcal{P}$ places no restriction linking $Q$ and $p$: for every $Q$ there are $(0,Q)\in\mathcal{P}$ and
+$(p,Q)\in\mathcal{P}$ for all $p\in(\varepsilon,\varepsilon+\eta)$ for some $\eta>0$. If $\phi$ is valid at level
+$\delta$ on $\mathcal{P}$, then for every $Q$ and every simulator sample size,
+\[(1-\varepsilon)^n\,\PP_{0,Q}(\phi=1)\le\delta .\]
+In particular, certifying a perfect system ($p=0$) with probability one requires $n\ge n_0(\varepsilon,\delta)$ real
+events, whatever the amount of simulator data; power $1-\beta$ at $p=0$ requires
+$n\ge \ln(\delta/(1-\beta))/\ln(1-\varepsilon)$.
+\end{theorem}
+
+\begin{proof}
+Fix $Q$ and write $g(y)=\EE[\phi(0^n,y)]$ (expectation over the internal randomisation). Under $p=0$, $X=0^n$ almost
+surely, so $\PP_{0,Q}(\phi=1)=\EE_Q[g(Y)]$. Under $p>\varepsilon$, the event $\{X=0^n\}$ has probability $(1-p)^n$ and
+is independent of $Y$, hence $\PP_{p,Q}(\phi=1)\ge(1-p)^n\,\EE_Q[g(Y)]=(1-p)^n\PP_{0,Q}(\phi=1)$. Validity gives
+$(1-p)^n\PP_{0,Q}(\phi=1)\le\delta$ for all $p\in(\varepsilon,\varepsilon+\eta)$; letting $p\downarrow\varepsilon$
+proves the inequality. With $\PP_{0,Q}(\phi=1)=1$ it reads $(1-\varepsilon)^n\le\delta$, i.e.\ $n\ge n_0$; with
+$\PP_{0,Q}(\phi=1)\ge 1-\beta$ it gives the power bound.
+\end{proof}
+
+\begin{remark}
+The argument only uses that the simulator data have the same law under the two hypotheses and that the
+all-success real sample has positive probability under both. It is the success-run analogue of the observation that
+external data cannot increase power under strict type-I error control over all external-data laws
+\cite{koppschneider2020}.
+\emph{Check.} The zero-failure test with $n=59$ at $p=\varepsilon=5\%$: $(0.95)^{59}=\numConeClosed$ (MC
+$\numConeMC$, $10^5$ runs).
+\end{remark}
+
+\section{C2: the price of borrowing}
+
+Suppose one accepts a two-tier guarantee: level $\delta$ when the simulator is ``right'' and only level
+$\delta'>\delta$ in general.
+
+\begin{theorem}[C2, exact credit]\label{thm:c2}
+(i) \emph{Converse.} Under the assumption of Theorem~\ref{thm:c1}, any procedure valid at level $\delta'$ on
+$\mathcal{P}$ that certifies a perfect system with probability one uses $n\ge n_0(\varepsilon,\delta')$ real events.
+Hence the credit, the number of real events saved with respect to $n_0(\varepsilon,\delta)$, is at most
+\[c=n_0(\varepsilon,\delta)-n_0(\varepsilon,\delta').\]
+(ii) \emph{Attainment.} Let $T(Y)\in\{0,1\}$ be any simulator test (``the simulator passes'') and let $B$ be the
+procedure: if $T=1$ run the zero-failure test with $n_1=n_0(\varepsilon,\delta')$ real events, otherwise with
+$n_0=n_0(\varepsilon,\delta)$. Then $B$ is valid at level $\delta'$ on $\mathcal{P}$, saves exactly $c$ events
+whenever $T=1$, and is valid at level $\delta$ on the subclass
+\[\mathcal{P}_0=\Bigl\{(p,Q):\ p>\varepsilon\Rightarrow \PP_Q(T=1)\le\pi^\ast\Bigr\},\qquad
+\pi^\ast=\frac{\delta-(1-\varepsilon)^{n_0}}{(1-\varepsilon)^{n_1}-(1-\varepsilon)^{n_0}},\]
+i.e.\ where a simulator of a system that is truly worse than $\varepsilon$ rarely passes.
+(iii) \emph{Continuous lower bound.} $c\ \ge\ c^\ast=\bigl\lfloor \ln(\delta'/\delta)/(-\ln(1-\varepsilon))\bigr\rfloor$.
+\end{theorem}
+
+\begin{proof}
+(i) Theorem~\ref{thm:c1} at level $\delta'$ gives $(1-\varepsilon)^n\le\delta'$, whose smallest integer solution is
+$n_0(\varepsilon,\delta')$. (ii) For $p>\varepsilon$, with $\pi=\PP_Q(T=1)$ and $T$ independent of the real data,
+$\PP(B=1)=\pi(1-p)^{n_1}+(1-\pi)(1-p)^{n_0}\le(1-\varepsilon)^{n_1}\le\delta'$, and $\le\delta$ as soon as
+$\pi\le\pi^\ast$ (the expression is affine in $\pi$ and decreasing in $p$). (iii) Write $a=\ln\delta/\ln(1-\varepsilon)$,
+$a'=\ln\delta'/\ln(1-\varepsilon)$ and $r=a-a'=\ln(\delta'/\delta)/(-\ln(1-\varepsilon))$. Since $n_0(\delta)\ge a$ and
+$n_0(\delta')<a'+1$, $c>r-1$; $c$ being an integer, $c\ge\lfloor r\rfloor=c^\ast$.
+\end{proof}
+
+\begin{remark}[numbers and checks]
+At $\varepsilon=\delta=5\%$: $\delta'=7.5,10,15,20\%$ give $c=8,14,22,27$ ($-14\%,-24\%,-37\%,-46\%$ of 59).
+The exact form is maximal on all \numCtwoNgrid{} grid points ($(1-\varepsilon)^{n_0(\delta')}\le\delta'<(1-\varepsilon)^{n_0(\delta')-1}$:
+\numCtwoAllMax); MC ($10^5$ runs per point) matches the closed form within \numCtwoMaxDev{} percentage points.
+\emph{Empirical C2} (procedure $B$, $T$ = the one-sided CP bound of the simulator's miss rate $\le\varepsilon$,
+$10^5$ runs, $\varepsilon=5\%$, $d_{\min}=32$, $K=1$): with the paired twin of the \numPopM{} static scenes (\numCtwoTwinN{} events) the
+simulator passes in \numCtwoTwinPass{} of runs; realised credit $\numCtwoCredA/\numCtwoCredB/\numCtwoCredC/\numCtwoCredD$
+events and false certification at the worst case $p=\varepsilon$ equal to
+$\numCtwoFCA/\numCtwoFCB/\numCtwoFCC/\numCtwoFCD$ for $\delta'=7.5/10/15/20\%$ --- the credit is bought exactly with
+the extra error $\delta'-\delta$. The off-the-shelf synthetic benchmark (30 events of length $\ge 32$) never passes
+(\numCtwoBMCPass): too few synthetic events to bound its own miss rate below $5\%$.
+\end{remark}
+
+\section{C3: the twin lemma}
+
+\begin{lemma}[C3]\label{lem:c3}
+For any pairing $(M,M')$ of a real event and its twin, $p\le q+D$ with $D=\PP(M=1,M'=0)$. No assumption links the
+twin to reality.
+\end{lemma}
+
+\begin{proof}
+$p=\PP(M=1,M'=1)+\PP(M=1,M'=0)\le\PP(M'=1)+D=q+D$.
+\end{proof}
+
+\begin{corollary}[a per-camera twin does not save events]
+If $q\le q_U$ holds with confidence $1-\delta/2$ and $D\le\varepsilon-q_U$ is certified for the same camera by a
+zero-discordance success run at level $\delta/2$, the number of paired real events is
+$\lceil\ln(\delta/2)/\ln(1-(\varepsilon-q_U))\rceil$ $=\numCthreeA,\numCthreeB,\numCthreeC$ for $q_U=0,1,2\%$ at
+$\varepsilon=\delta=5\%$, all larger than $n_0=59$. The twin can only help when $D$ is calibrated once, on many
+scenes, and transferred (C4).
+\end{corollary}
+
+\begin{remark}[event unit]
+With a uniform phase, $x_i=\PP_\varphi(M_i=1,M'_i=0)=|R'_i\setminus R_i|/K$, where $R_i$, $R'_i$ are the residue
+sets of the real and twin hit frames of event $i$ (twin catch decided by the majority of three sprite variants).
+The \emph{worst-phase} indicator $W_i=\mathbf{1}\{R'_i\setminus R_i\neq\emptyset\}$ satisfies
+$\PP(M_i=1,M'_i=0\mid\text{event})=x_i\le W_i$. All certificates below are stated for Bernoulli indicators
+$Z_i$; they hold verbatim with $Z_i=W_i$ and then bound the (larger) worst-phase discordance rate. This integer
+form is the one used for the reported certificates.
+\end{remark}
+
+\section{fleet bound: event-weighted certificate for the calibrated fleet}
+
+\begin{lemma}[mean--median]\label{lem:mm}
+For $N\ge 2$ and $0<p<1-1/N$, $F_{N,p}(\lfloor Np\rfloor)>1/4$. Consequently, if $\delta\le 1/4$ and
+$F_{N,p}(x)<\delta$, then $x\le Np-1$.
+\end{lemma}
+
+\begin{proof}
+Greenberg and Mohri \cite{greenberg2014} prove $\PP(B\ge\EE B)>1/4$ for $B\sim\Bin(N,r)$ with $r>1/N$. Apply it to
+$B=N-\Bin(N,p)\sim\Bin(N,1-p)$ with $1-p>1/N$: $\PP(\Bin(N,p)\le Np)>1/4$, and $\{\Bin(N,p)\le Np\}=\{\Bin(N,p)\le\lfloor Np\rfloor\}$.
+For the consequence: $F_{N,p}$ is non-decreasing, so $F_{N,p}(x)<\delta\le1/4<F_{N,p}(\lfloor Np\rfloor)$ forces
+$x<\lfloor Np\rfloor$, i.e.\ $x\le\lfloor Np\rfloor-1\le Np-1$.
+\emph{Check:} $\inf F_{N,p}(\lfloor Np\rfloor)$ over $N=2..2000$ and a fine grid of $p$ is \numLemmaMin, approached at
+$N=2$, $p\to1/2$ (the constant $1/4$ is tight).
+\end{proof}
+
+\begin{theorem}[fleet bound]\label{thm:fleet}
+Let $Z_1,\dots,Z_N$ be independent, $Z_i\sim\Bern(d_i)$ with arbitrary $d_i\in[0,1]$ (heterogeneous across scenes and
+events), $X=\sum_iZ_i$ and $\bar d=\frac1N\sum_id_i$. If $\delta\le1/4$ and $\bar d<1-1/N$, then
+\[\PP\bigl(\UCP(X,N)<\bar d\bigr)\le\delta .\]
+With $d_i=D_{s(i)}$ (the discordance of the scene of event $i$), $\bar d=\bar D_w=\sum_sn_sD_s/N$, the
+event-weighted discordance of the calibrated cameras; combined with Lemma~\ref{lem:c3},
+$\bar p_w\le\bar q_w+\UCP(X,N)$ with probability at least $1-\delta$.
+\end{theorem}
+
+\begin{proof}
+If $\bar d=0$ there is nothing to prove. Otherwise let $x^\ast=\max\{x:F_{N,\bar d}(x)<\delta\}$ (if the set is empty
+the failure probability is $0$). By monotonicity of $\UCP$, $\{\UCP(X,N)<\bar d\}=\{X\le x^\ast\}$. By
+Lemma~\ref{lem:mm}, $x^\ast\le N\bar d-1$. Hoeffding's Theorem~4 \cite{hoeffding1956}: for a sum $S$ of independent
+Bernoulli variables with mean $N\bar d$ and $0\le b\le N\bar d-1$, $\PP(S\le b)\le F_{N,\bar d}(b)$. With $b=x^\ast$,
+$\PP(X\le x^\ast)\le F_{N,\bar d}(x^\ast)<\delta$.
+\end{proof}
+
+\begin{remark}[what it does not say; checks]
+The guarantee is conditional on the calibrated scenes and weighted by events: it does not bound any single camera
+and does not transfer to a new camera (if scenes are random, $X$ is over-dispersed; e.g.\ $D_s\in\{0,1\}$ gives
+$\PP(X=0)=(1-\mu)^m\gg(1-\mu)^N$).
+\emph{Checks.} Six synthetic heterogeneity patterns on a fixed configuration of 44 scenes with $N=304$ events (a
+calibration set from an earlier stage of the study, used only as a test bed for the theorem): exact
+Poisson--binomial failure $\le\numFleetPBmax$, MC ($10^5$) $\le\numFleetMCmax$. Measured discordance probabilities of
+the study (event level, main domain, five operating points, as measured and rescaled to mean $2\%$ and $5\%$;
+\numFleetMeasN{} cases): exact failure $\le\numFleetMeasPBmax$, MC $\le\numFleetMeasMCmax$, all $\le\delta=0.05$.
+\end{remark}
+
+\section{population bound: transfer to a new camera}
+
+\begin{proposition}[population bound]\label{prop:pop}
+Let scenes $S_1,\dots,S_m$ be i.i.d.\ from a scene population, each with $n_s\ge1$ paired events whose
+discordance indicators are independent $\Bern(D_{S_s})$ given the scene, $\mu=\EE[D_S]$, and
+$J=\#\{s:X_s\ge1\}$ with $X_s$ the number of discordant events in scene $s$. Then
+\[\PP\bigl(\UCP(J,m)<\mu\bigr)\le\delta .\]
+For a new camera drawn from the same population, $\EE[p_{\mathrm{new}}]\le\EE[q_{\mathrm{new}}]+\UCP(J,m)$ with
+probability $\ge1-\delta$ over the calibration, and $\PP(D_{\mathrm{new}}>t)\le\UCP(J,m)/t$ (Markov).
+\end{proposition}
+
+\begin{proof}
+Let $B_s=\mathbf 1\{X_s\ge1\}$. Given the scene, $\PP(B_s=1\mid S_s)=1-(1-D_{S_s})^{n_s}\ge D_{S_s}$ because
+$(1-D)^n\le 1-D$ for $n\ge1$. Hence $\beta_s:=\PP(B_s=1)\ge\mu$, and the $B_s$ are independent across scenes. By a
+coupling ($B_s=\mathbf 1\{V_s\le\beta_s\}\ge\mathbf 1\{V_s\le\mu\}$ with i.i.d.\ uniforms $V_s$), $J$ stochastically
+dominates $\Bin(m,\mu)$. Since $\UCP(\cdot,m)$ is non-decreasing,
+$\PP(\UCP(J,m)<\mu)\le\PP(\UCP(\Bin(m,\mu),m)<\mu)\le\delta$ by Clopper--Pearson validity. The corollary follows from
+Lemma~\ref{lem:c3} applied to the new camera and averaged over the population.
+\end{proof}
+
+\begin{remark}[price and checks]
+The resolution is set by the number of scenes: with $J=0$, $\UCP\le10\%$ needs $m\ge\numPopScenesTen$ and
+$\UCP\le5\%$ needs $m\ge\numPopScenesFive$. \emph{Checks.} The tight case $D_S\in\{0,1\}$, $n_s=1$, $m=\numPopM$ (then
+$J\sim\Bin(m,\mu)$ exactly), $\mu\in\{1,2,5,10,20\}\%$, $10^5$ runs: maximum failure \numPopFailMax. Leave-one-scene-out
+on the \numLosoViolDen{} static scenes at the primary operating point ($d_{\min}=32$, $K=16$): $D_s>\UCP(J_{-s},m-1)$ for
+\numLosoViolNum{} of \numLosoViolDen{} scenes (the proposition bounds the population mean, not each scene).
+\end{remark}
+
+\section{per-camera form: a per-camera (quantile) certificate and its data requirement}
+
+\begin{proposition}[per-camera form]\label{prop:c4b}
+Under the assumptions of Proposition~\ref{prop:pop} with $n_s\ge n_{\min}$ for all $s$, let $t\in(0,1)$,
+$\pi_t=\PP(D_S>t)$ and $h_t=1-(1-t)^{n_{\min}}$. Then
+\[\PP\bigl(\pi_t>\UCP(J,m)/h_t\bigr)\le\delta .\]
+Hence, with $\hat\gamma=\UCP(J,m)/h_t$, a new camera satisfies $p_{\mathrm{new}}\le q_{\mathrm{new}}+t$ except on a
+set of cameras of population mass at most $\hat\gamma$, with confidence $1-\delta$.
+\end{proposition}
+
+\begin{proof}
+$\PP(B_s=1)\ge\PP(D_S>t)\bigl(1-(1-t)^{n_s}\bigr)\ge\pi_th_t$. The coupling argument of Proposition~\ref{prop:pop}
+gives $J\succeq_{\mathrm{st}}\Bin(m,\pi_th_t)$, so $\PP(\UCP(J,m)<\pi_th_t)\le\delta$, which is the claim.
+\end{proof}
+
+\begin{remark}[data requirement; checks]
+With $J=0$, $\hat\gamma\le\gamma$ requires $m\ge m_{\min}$ with $1-\delta^{1/m_{\min}}\le\gamma$ ($m_{\min}=59$ for
+$\gamma=5\%$, $29$ for $\gamma=10\%$) and $n_{\min}\ge\ln\bigl(1-\UCP(0,m)/\gamma\bigr)/\ln(1-t)$ events in every scene;
+the total $m\,n_{\min}$ decreases to the floor $\approx\ln(1/\delta)/(\gamma t)$ as $m$ grows. \emph{Check:} two-point
+populations $D_S\in\{0,t'\}$, $t'>t$, $m=\numPopM$, $10^5$ runs: maximum failure \numCfourbFailMax.
+\end{remark}
+
+\section{C5a: a pessimistic-length twin is conservative under periodic sampling}
+
+\begin{proposition}[C5a]\label{prop:c5a}
+Let an event occupy frames $F=\{o,\dots,o+d-1\}$ and let the detector outcome on each frame be fixed (a deterministic
+function of the frame). For the truncated event $F_L=\{o,\dots,o+L-1\}$, $L\le d$, with hit set $H_L=H\cap F_L$, the
+miss probability under a uniform phase, $m(L)=1-|H_L\bmod K|/K$, is non-increasing in $L$. Consequently a twin built
+with a pessimistic (shorter) length $L$ has $q_L\ge q$ and discordance $D_L\le D$, so the C3 bound $q_L+D_L$ remains
+valid and the miss term is conservative.
+\end{proposition}
+
+\begin{proof}
+$L\le L'$ implies $H_L\subseteq H_{L'}$, hence $H_L\bmod K\subseteq H_{L'}\bmod K$ and $m(L)\ge m(L')$. A twin catch
+at phase $\varphi$ for the truncated twin implies a catch for the full twin, so
+$\{M=1,M'_L=0\}\subseteq\{M=1,M'=0\}$ and $D_L\le D$; Lemma~\ref{lem:c3} holds for any pairing.
+\end{proof}
+
+\begin{remark}[check]
+On the twin of the \numPopM{} static scenes, shortening every event by $x\in\{10,25,50\}\%$ gives non-decreasing $q$ for every
+event and every $K\in\{1,4,8,16,48\}$ (all monotone: \numCfiveAll); e.g.\ at $d_{\min}=32$, $K=16$, $q$ rises from
+\numCfiveQzero{} to \numCfiveQfifty{} at $x=50\%$.
+\end{remark}
+

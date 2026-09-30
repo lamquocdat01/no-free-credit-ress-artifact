@@ -1,0 +1,182 @@
+% RESS Sections 3-4: setting and the four results, stated in words; proofs in Appendix A (proofs_body.tex).
+\section{Demonstration setting}\label{sec:demo}
+
+\paragraph{Unit, demand and failure} The unit under test is a fixed camera $s$ with a fixed detector. The camera observes
+\emph{events}: maximal runs of frames that contain the target object. It samples frames with period $K$ and an unknown
+phase $\varphi$, and runs the detector on the sampled frames. An event is \emph{missed} ($M=1$) if no sampled frame is a
+hit; with $H$ the hit frames of an event and $\varphi$ uniform, $\PP(M=1)=1-|H\bmod K|/K$. The miss probability of camera
+$s$ is $p_s$, and the demonstration goal is the assurance claim $p_s\le\varepsilon$ at confidence $1-\delta$.
+$\UCP(x,n)$ denotes the one-sided $(1-\delta)$ Clopper--Pearson upper bound for $x$ failures in $n$ demands. We call an accepted assurance claim of this form a \emph{certificate}. In the language of acceptance sampling,
+$\delta$ is the consumer's risk; the producer's risk is reported as the power of a plan at the observed miss rate.
+All claims concern the miss probability averaged over the uniform sampling phase; a camera deployed with one fixed,
+unknown phase is covered only on average over phases.
+
+\paragraph{Simulated evidence and twins} A simulator produces data $Y\sim Q$. A \emph{paired twin} renders a synthetic
+counterpart of each real event and runs the same detector at the same sampling phase, giving $M'$. We write
+$q=\PP(M'=1)$ and $D=\PP(M=1,M'=0)$ (real miss, twin catch), the \emph{discordance}. Every rate in this paper is per
+event; with three sprite variants per event, the twin catches an event if at least two variants do, and an event counts
+as discordant if it is discordant at one or more sampling phases (worst phase; an integer count, conservative with
+respect to the phase-averaged rate, which we give in parentheses). Table~\ref{tab:notation} collects the notation.
+
+\paragraph{Random model} Scenes are drawn from a population; given a scene, events are drawn i.i.d.\ from the scene's
+event law and each receives an independent uniform phase; given the event and the phase, the real and twin outcomes are
+determined (fixed detector, fixed sprite seeds). Every per-event indicator below---real miss, twin miss, discordance at a
+random phase, and the worst-phase indicator---is therefore a Bernoulli variable, independent across events given the
+scene. In the audit, the ``truth'' of a scene is its empirical event law, resampled with replacement.
+
+\begin{table}[t]
+\centering
+\caption{Notation.}
+\label{tab:notation}
+\small
+\begin{tabular}{@{}L{0.26\textwidth}L{0.68\textwidth}@{}}
+\toprule
+symbol & meaning \\
+\midrule
+$\varepsilon,\ \delta$ & target miss probability; allowed probability of a false acceptance \\
+$n_0(\varepsilon,\delta)$ & zero-failure sample size $\lceil\ln\delta/\ln(1-\varepsilon)\rceil$ \\
+$K,\ \varphi,\ d_{\min}$ & sampling period, sampling phase, minimum event length (frames) \\
+$M,\ M'$ & real miss, twin miss of an event at the same phase \\
+$p_s,\ q_s,\ D_s$ & real miss probability, twin miss probability, discordance $\PP(M=1,M'=0)$ of camera $s$ \\
+$m,\ n_s,\ N$ & calibration scenes, paired events of scene $s$, $N=\sum_sn_s$ \\
+$X,\ J$ & discordant events; scenes with at least one discordant event \\
+$\UCP(x,n)$ & one-sided $(1-\delta)$ Clopper--Pearson upper bound \\
+fleet bound, population bound & $\UCP(X,N)$ and $\UCP(J,m)$ (Result~4) \\
+\OPs, OP-A, OP-C & operating points $(\varepsilon,d_{\min},K)=(20\%,32,16)$, $(20\%,32,8)$, $(10\%,32,1)$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =====================================================================================================
+\section{What simulated evidence can buy: four results}\label{sec:results-theory}
+
+The four results below are stated in words; \ref{app:proofs} gives the formal statements, the assumptions and the
+proofs, each with a numerical check.
+
+\paragraph{Result 1 (no free credit)}\label{res:c1} Suppose the simulated data are independent of the real demands and no
+assumption links the simulator to reality, so that for every simulator law $Q$ both a perfect unit ($p=0$) and a unit just
+worse than the target ($p\downarrow\varepsilon$) are possible. Then any acceptance procedure that is valid at confidence
+$1-\delta$ accepts a perfect unit with probability at most $\delta/(1-\varepsilon)^n$ when it uses $n$ real demands,
+whatever the simulator and however much simulation it uses. Accepting a perfect unit with certainty therefore still
+needs $n\ge n_0(\varepsilon,\delta)$ real demands. The reason is that the simulated data have the same law under both
+hypotheses, while an all-success real sample is possible under both. This makes precise, for the success-run test, the principle that external evidence cannot shorten a test whose validity must hold for every external law~\cite{koppschneider2020}, and the related limit on combining evidence for ultra-high dependability~\cite{littlewood1993}. A paired twin is built from the real events and is therefore \emph{not} an
+independent simulator; pairing is what Result~3 exploits.
+
+\paragraph{Result 2 (the exact price of relaxing confidence)}\label{res:c2} If the demonstration may accept a worse unit
+with probability $\delta'>\delta$ when the simulator is wrong---that is, if one accepts a higher consumer's risk---the
+real demands can be reduced by at most
+\[c=n_0(\varepsilon,\delta)-n_0(\varepsilon,\delta'),\]
+and this reduction is attained by a two-tier plan: run the zero-failure test with $n_0(\varepsilon,\delta')$ demands when
+a simulator test passes and with $n_0(\varepsilon,\delta)$ otherwise. The plan keeps confidence $1-\delta$ only if a simulator of a worse-than-target unit passes with probability at most
+$\pi^\ast$: \nPiStarA, \nPiStarB, \nPiStarC{} and \nPiStarD{} for $\delta'=7.5$, 10, 15 and 20\% at $\varepsilon=\delta=5\%$.
+This requirement is itself a link between simulator and reality, so Result~2 is best read as the price of lowering
+the confidence, not as a free credit. The frequently
+used continuous form $\lfloor\ln(\delta'/\delta)/(-\ln(1-\varepsilon))\rfloor$ is only a lower bound on $c$.
+Table~\ref{tab:c2} gives the numbers.
+
+\begin{table}[t]
+\centering
+\caption{Result 2: exact credit $c$ versus the continuous form $c^\ast$ ($\varepsilon=\delta=5\%$, $n_0=\nNzero$), and the
+two-tier plan run with the twin event pool as an independent simulator (worst case $p=\varepsilon$; closed form given the
+pass probability, and 100{,}000 Monte-Carlo runs).}
+\label{tab:c2}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+$\delta'$ & 7.5\% & 10\% & 15\% & 20\% \\
+\midrule
+exact credit $c$ (demands) & \ncExactA & \ncExactB & \ncExactC & \ncExactD \\
+saving w.r.t.\ $n_0$ & \ncSaveA & \ncSaveB & \ncSaveC & \ncSaveD \\
+continuous form $c^\ast$ & \ncStarA & \ncStarB & \ncStarC & \ncStarD \\
+false acceptance, twin pool (closed form) & \nCtwoCFA & \nCtwoCFB & \nCtwoCFC & \nCtwoCFD \\
+\quad Monte Carlo & \nCtwoFCA & \nCtwoFCB & \nCtwoFCC & \nCtwoFCD \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Monte-Carlo runs match the closed form within \nCtwoMaxDevPP{} percentage points on a \nCtwoNgrid-point grid. Used as an
+independent simulator (its events resampled independently of the real draws), the twin event pool passes the simulator
+test in \nCtwoTwinPass{} of runs, so the credit is only partly realised (\nCtwoTwinPassShort), and the false-acceptance probability at
+$p=\varepsilon$ is $\delta'$ up to the pass probability: the credit is bought exactly with the extra error. An
+off-the-shelf synthetic benchmark (the synthetic part of the BMC benchmark~\cite{bmc2012}; \nCtwoBMCN{} events long enough for the operating point) never passes
+at $\varepsilon=5\%$ (\nCtwoBMCPass): it has too few synthetic events to bound its own miss probability below $5\%$. At
+$\varepsilon=20\%$ it passes in every run and buys the same credit as the twin (supplementary Table~S\SuppTabCtwo), which shows
+that passing the simulator test is no evidence of fidelity. Monte-Carlo standard errors are about \nCtwoSE.
+
+\paragraph{Result 3 (paired-twin bound)}\label{res:c3} For any pairing of real and twin events, the real miss
+probability is at most the twin miss probability plus the discordance,
+\[p\le q+D,\]
+with no assumption on the simulator (the bound splits the real misses into those the twin also misses and those it
+catches). On a single camera the bound does not save demands: if $q\le q_U$ holds with confidence $1-\delta/2$ and $D\le\varepsilon-q_U$ is
+demonstrated by a zero-discordance run at level $\delta/2$, the camera needs
+$\lceil\ln(\delta/2)/\ln(1-\varepsilon+q_U)\rceil$ paired events, i.e.\ \nCthreeA, \nCthreeB{} and \nCthreeC{} for
+$q_U=0,1,2\%$ at $\varepsilon=\delta=5\%$, all above $n_0=\nNzero$. A twin built with a pessimistic (shorter) event length
+remains valid: its miss probability can only grow and its discordance only shrink. On the fixed-camera twin, shortening
+every event by 50\% raises the twin miss rate at \OPs{} from \nCfiveQzero{} to \nCfiveQfifty. With a uniform phase the
+discordance probability of an event is $|R'\setminus R|/K$, where $R,R'$ are the residues modulo $K$ of the real and twin
+hit frames; the worst-phase indicator $\mathbf 1\{R'\setminus R\ne\emptyset\}$ dominates it, so the bounds of Result~4 also
+hold for the integer worst-phase counts we report.
+
+\paragraph{Result 4 (transfer across scenes)}\label{res:c4} Let $m$ calibration scenes contribute $N=\sum_sn_s$ paired
+events, $X$ of them discordant, and let $J$ scenes show at least one discordant event.
+(a)~\emph{Population bound (the transfer guarantee).} If the scenes are drawn independently from a scene population (events within a scene may be dependent), the population-average
+discordance of a new camera is at most $\UCP(J,m)$ with confidence $1-\delta$, so its expected miss probability is at most
+its expected twin miss probability plus $\UCP(J,m)$. The bound counts scenes, not events; it needs no independence of
+events within a scene. Its price is the number of scenes: with $J=0$, $\UCP\le10\%$ needs \nPopScenesTen{} scenes and
+$\UCP\le5\%$ needs \nPopScenesFive. With the \nMainScenes{} fixed-camera scenes of this study, $J=0,1,2,3$ give
+$\UCP(J,m)=\nUpopJzero$, \nUpopJone, \nUpopJtwo{} and \nUpopJthree{} at level $\delta$ and \nUhalfJzero, \nUhalfJone,
+\nUhalfJtwo{} and \nUhalfJthree{} at level $\delta/2$: a single discordant scene costs about three percentage points, and a
+bound below $\varepsilon/2=10\%$ tolerates one discordant scene at level $\delta$ and none at $\delta/2$. Adding
+events to existing scenes does not tighten it; only new scenes do.
+(b)~\emph{Fleet bound (calibrated cameras, independent events).} For the calibrated cameras, the event-weighted discordance is at most $\UCP(X,N)$ with confidence
+$1-\delta$ (for $\delta\le 1/4$), however heterogeneous the cameras are; hence their event-weighted miss rate is at most
+their twin miss rate plus $\UCP(X,N)$. Applying it requires a separate bound on the twin miss rate, with its own share of $\delta$; where real misses exist,
+direct Clopper--Pearson on them is at least as informative. The proof compares the Poisson-binomial count with a
+binomial of the same mean~\cite{hoeffding1956} and uses a lower bound on the probability that a binomial reaches its mean~\cite{greenberg2014}, applied to the complementary count.
+This bound assumes that events are independent given the scenes, so positive dependence within a scene makes
+it optimistic, and it says nothing about a new camera.
+(c)~\emph{Per-camera limit.} A per-camera statement, ``$p\le q+t$ except on a set of cameras of mass $\gamma$'', follows if
+every scene has at least $n_{\min}$ events, with $\gamma=\UCP(J,m)/(1-(1-t)^{n_{\min}})$. Table~\ref{tab:c4b} turns this
+into a data requirement: for $\gamma=5\%$ at least \nPopScenesFive{} scenes, each with tens to hundreds of events. No
+public benchmark we know offers this, so the per-camera form is reported as a limit.
+
+\input{tab_c4b.tex}
+
+\paragraph{Demonstration procedure} The procedure evaluated in Section~\ref{sec:results} is: (1)~declare the domain and
+pair every real event of $m$ calibration scenes from it with its twin; count discordant scenes $J$; (2)~\emph{domain rule}:
+if $\UCP_\delta(J,m)>\varepsilon/2$, withdraw the transfer claim for the whole domain (a design rule for go/no-go, not a
+theorem); (3)~for a new camera of the declared domain, run its twin until its own miss probability is bounded, $q_U$, at
+level $\delta/2$ (a twin \emph{run} is one rendering of one synthetic event in one sprite variant; runs are treated as
+independent, which is optimistic when runs share a trajectory); (4)~accept the camera with no real demand if $q_U+\UCP_{\delta/2}(J,m)\le\varepsilon$, otherwise fall
+back to the zero-failure test (Fig.~\ref{fig:scheme}). By Result~4(a) and a union bound, with confidence $1-\delta$ the population-average discordance is at most
+$\UCP_{\delta/2}(J,m)$. Among \emph{accepted} cameras the average discordance can be larger, by at most the factor
+$1/\PP(\mathrm{accept})$, because acceptance selects cameras with a low twin miss rate; the average miss probability of
+accepted cameras is therefore at most $\varepsilon-\UCP_{\delta/2}+\UCP_{\delta/2}/\PP(\mathrm{accept})$. At \OPs{}, where
+\nPAccept{} of the static cameras are accepted, the inflation is \nAcceptInflation{} percentage points; out of domain it is
+unbounded (Section~\ref{sec:audit}). The acceptance is \emph{not} a per-camera guarantee. In the audit we nevertheless count, per camera, acceptances with $p_s>\varepsilon$ (``false acceptances'') as a
+diagnostic of how the average guarantee behaves on individual cameras.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\footnotesize, node distance=4mm and 6mm,
+  box/.style={draw=black!60, rounded corners=2pt, align=center, inner sep=3pt, minimum height=8mm},
+  arr/.style={-{Latex[length=1.8mm]}, draw=black!70}]
+\node[box] (real) {real event\\(frames, ground truth)};
+\node[box, right=of real] (twin) {paired twin\\(background plate + sprite)};
+\node[box, below=of real] (M) {$M$: real miss\\at phase $\varphi$};
+\node[box, below=of twin] (Mp) {$M'$: twin miss\\at the same $\varphi$};
+\node[box, right=8mm of twin, yshift=-6mm] (qd) {$q$, $D=\PP(M{=}1,M'{=}0)$\\per scene};
+\node[box, below=of qd, yshift=-2mm] (cert) {fleet bound $\UCP(X,N)$\\population bound $\UCP(J,m)$};
+\node[box, below=9mm of M, xshift=20mm, minimum width=60mm] (dec) {new camera: accept iff $q_{\mathrm{new}}+\UCP\le\varepsilon$};
+\draw[arr] (real) -- (twin);
+\draw[arr] (real) -- (M);
+\draw[arr] (twin) -- (Mp);
+\draw[arr] (M) -- (Mp);
+\draw[arr] (Mp.east) -- (qd.west);
+\draw[arr] (qd) -- (cert);
+\draw[arr] (cert.south) |- (dec.east);
+\end{tikzpicture}
+\caption{The demonstration with a paired twin. Each real event is paired with a synthetic twin that replaces the object and
+keeps the scene; both are evaluated by the same detector at the same sampling phase. Discordances calibrated across scenes
+bound the miss probability of a new camera through $p\le q+D$.}
+\label{fig:scheme}
+\end{figure}

@@ -129,6 +129,7 @@ def build():
     add("LosoChFC", lc["false_certificates"]["num"], "(16,16) LOSO false certificates")
     add("ChUpop", pct(lc["U_pop_all"], 1), f"U_CP({lc['J_all']},{lc['m']})"); add("ChJ", lc["J_all"], "(16,16) J")
     add("McFC", pct(va["points"]["OP*"]["mc"]["false_cert_rate"], 1), "MC 10,000 false-cert rate OP*")
+    add("ScenesPgtEpsOP", va["points"]["OP*"]["loso"]["scenes_p_gt_eps"], "static scenes with p_s > eps at OP* (validity_audit loso.scenes_p_gt_eps)")
     add("McFCch", pct(va["points"]["challenge_16_16"]["mc"]["false_cert_rate"], 1), "MC false-cert rate (16,16)")
     mf = va["must_fail"]["d1_K48"]
     add("MustFailScenes", mf["n_scenes_p_gt_eps"], "K=48 scenes with p_s > eps")

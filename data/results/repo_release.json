@@ -1,0 +1,16 @@
+{
+ "tag": "ress-v1.2",
+ "commit": "890465bd9267486d4e1aea348ab13fafee7cef13",
+ "repository": "https://github.com/lamquocdat01/no-free-credit-ress-artifact",
+ "note": "commit A''' (data + code, label-based static domain: CDnet without PTZ/cameraJitter/nightVideos/turbulence, LASIESTA without SM/MC) tagged before the manuscript commit; cited in the Data availability statement",
+ "previous": [
+  {
+   "tag": "ress-v1.1",
+   "commit": "22da0795de098af5e1bc229918e1a6d3b105997e"
+  },
+  {
+   "tag": "ress-v1.0",
+   "commit": "b60195a56383c9d3adf5aa00d4bb847421eb41c8"
+  }
+ ]
+}
