@@ -1,89 +1,117 @@
 {
   "meta": {
-    "doc": "v1.0 / v1.1 comparison at OP* (supplement table; §6 sentence).\n\nv1.0 static domain = 78 scenes = v1.1 static domain (76) + camera-jitter tier (boulevard, traffic).\n1. Recomputes the v1.0 numbers with the CURRENT code on the rows main + jitter (code/f1_worst_phase_site.py,\n   code/m3_validity_audit.py functions; no detector, no twin run).\n2. Checks them against the numbers published at tag ress-v1.0 (data/results/*.json of the repo, via `git show`).\n3. Locates every v1.0 disagreement (discordant events/scenes, LOSO violations, false acceptances) by tier.\nOutput: results/v10_v11_compare.json (data/results/ in the repo); feeds supplement Table S19",
+    "doc": "Static-domain versions at OP* (supplement table S19; Section 6 sentence).\n\nv1.0 static domain = 78 scenes; v1.1 = 76 (CDnet cameraJitter boulevard, traffic moved to the jitter tier);\nv1.2 = 48 (LASIESTA SM, simulated camera motion, moved to the jitter tier; LASIESTA MC, moving camera, excluded).\n1. Recomputes each version with the CURRENT code on the corresponding rows of the same twin run (code/f1_worst_phase_site.py,\n   code/m3_validity_audit.py functions; no detector, no twin run).\n2. Checks v1.0 and v1.1 against the numbers published at tags ress-v1.0 / ress-v1.1 (data/results/*.json via `git show`).\n3. Locates every disagreement of the earlier domains (discordant scenes, LOSO violations, false acceptances).\nOutput: results/v10_v11_compare.json (data/results/ in the repo); feeds supplement Table S19",
     "op": {
       "d_min": 32,
       "K": 16,
       "eps": 0.2
     },
-    "tag_v10": "ress-v1.0",
-    "jitter_scenes": [
-      "boulevard",
-      "traffic"
-    ]
+    "tags": {
+      "v1.0": "ress-v1.0",
+      "v1.1": "ress-v1.1"
+    },
+    "removed": {
+      "v1.0->v1.1": [
+        "boulevard",
+        "traffic"
+      ],
+      "v1.1->v1.2": [
+        "I_MC_01",
+        "I_MC_02",
+        "I_SM_01",
+        "I_SM_02",
+        "I_SM_03",
+        "I_SM_04",
+        "I_SM_05",
+        "I_SM_06",
+        "I_SM_07",
+        "I_SM_08",
+        "I_SM_09",
+        "I_SM_10",
+        "I_SM_11",
+        "I_SM_12",
+        "O_MC_01",
+        "O_MC_02",
+        "O_SM_01",
+        "O_SM_02",
+        "O_SM_03",
+        "O_SM_04",
+        "O_SM_05",
+        "O_SM_06",
+        "O_SM_07",
+        "O_SM_08",
+        "O_SM_09",
+        "O_SM_10",
+        "O_SM_11",
+        "O_SM_12"
+      ]
+    }
   },
-  "v10_recomputed": {
-    "m": 78,
-    "N": 180,
-    "D_w": 3,
-    "U_fleet": 0.04251002239935215,
-    "J": 1,
-    "U_pop": 0.059378492060127144,
-    "loso_viol": 1,
-    "n_direct": 22,
-    "accepted": 74,
-    "false_accept": 1
+  "versions": {
+    "v1.0": {
+      "m": 78,
+      "N": 180,
+      "D_w": 3,
+      "U_fleet": 0.04251002239935215,
+      "J": 1,
+      "U_pop": 0.059378492060127144,
+      "loso_viol": 1,
+      "n_direct": 22,
+      "accepted": 74,
+      "false_accept": 1
+    },
+    "v1.1": {
+      "m": 76,
+      "N": 164,
+      "D_w": 0,
+      "U_fleet": 0.018100835987050628,
+      "J": 0,
+      "U_pop": 0.0386507667257255,
+      "loso_viol": 0,
+      "n_direct": 14,
+      "accepted": 72,
+      "false_accept": 0
+    },
+    "v1.2": {
+      "m": 48,
+      "N": 114,
+      "D_w": 0,
+      "U_fleet": 0.02593608201362844,
+      "J": 0,
+      "U_pop": 0.060503409348894296,
+      "loso_viol": 0,
+      "n_direct": 14,
+      "accepted": 44,
+      "false_accept": 0
+    }
   },
-  "v10_published": {
-    "m": 78,
-    "N": 180,
-    "D_w": 3,
-    "U_fleet": 0.04251002239935215,
-    "J": 1,
-    "U_pop": 0.059378492060127144,
-    "loso_viol": 1,
-    "n_direct": 22,
-    "accepted": 74,
-    "false_accept": 1
+  "reproduced": {
+    "v1.0": true,
+    "v1.1": true,
+    "v1.2_vs_results": true
   },
-  "v10_reproduced": {
-    "m": true,
-    "N": true,
-    "D_w": true,
-    "U_fleet": true,
-    "J": true,
-    "U_pop": true,
-    "loso_viol": true,
-    "n_direct": true,
-    "accepted": true,
-    "false_accept": true
+  "disagreements": {
+    "v1.0": {
+      "discordant_scenes": [
+        "traffic"
+      ],
+      "loso_violating_scenes": [
+        "traffic"
+      ],
+      "false_accept_cameras": [
+        "traffic"
+      ]
+    },
+    "v1.1": {
+      "discordant_scenes": [],
+      "loso_violating_scenes": [],
+      "false_accept_cameras": []
+    },
+    "v1.2": {
+      "discordant_scenes": [],
+      "loso_violating_scenes": [],
+      "false_accept_cameras": []
+    }
   },
-  "v10_reproduced_all": true,
-  "v11": {
-    "m": 76,
-    "N": 164,
-    "D_w": 0,
-    "U_fleet": 0.018100835987050628,
-    "J": 0,
-    "U_pop": 0.0386507667257255,
-    "loso_viol": 0,
-    "n_direct": 14,
-    "accepted": 72,
-    "false_accept": 0
-  },
-  "v11_matches_results": {
-    "N": true,
-    "D_w": true,
-    "false_accept": true
-  },
-  "v10_disagreements": {
-    "discordant_events_in_jitter": 3,
-    "discordant_scenes": [
-      "traffic"
-    ],
-    "loso_violating_scenes": [
-      "traffic"
-    ],
-    "false_accept_cameras": [
-      "traffic"
-    ],
-    "all_in_jitter": true
-  },
-  "v11_disagreements": {
-    "discordant_events_in_jitter": 0,
-    "discordant_scenes": [],
-    "loso_violating_scenes": [],
-    "false_accept_cameras": [],
-    "all_in_jitter": true
-  }
+  "reproduced_all": true
 }

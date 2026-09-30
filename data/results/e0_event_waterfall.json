@@ -31,25 +31,31 @@
       "source": "p1_background17.json by_tier"
     },
     {
+      "step": "LASIESTA moving-camera (MC) excluded (4 scenes; v1.2)",
+      "events": 279,
+      "scenes": 84,
+      "source": "p1_background17.json by_tier excluded_MC"
+    },
+    {
       "step": "scenes actually run in P1b' (turbulence held-out turbulence2/3 not run, decision 28-09)",
-      "events": 273,
-      "scenes": 86,
+      "events": 269,
+      "scenes": 82,
       "source": "twin runs c0_main + nheld_b + ntune_b + ttune_base"
     },
     {
       "step": "OP* event definition: duration >= d_min 32 frames",
-      "events": 207,
-      "scenes": 86,
+      "events": 203,
+      "scenes": 82,
       "source": "= twin_tiers.json all_tiers_final.n_events_OP"
     }
   ],
   "main_domain_OP": {
-    "events": 164,
-    "scenes": 76
+    "events": 114,
+    "scenes": 48
   },
   "jitter_tier_OP": {
-    "events": 16,
-    "scenes": 2
+    "events": 62,
+    "scenes": 26
   },
   "note": "The two headline numbers are in DIFFERENT units: 257 = all A>=256 events of any duration (P1b), 207 = A>=256 events with duration >= 32 (P1b' OP*). On the same basis P1b had 176 OP* events / 64 scenes.",
   "p1b_OP_events": 176

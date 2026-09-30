@@ -20,24 +20,24 @@
           "abs_aspect_err_median": 0.03421802906034688
         },
         "c_gt10pct": {
-          "N": 163,
+          "N": 113,
           "D_hat": 0.0,
           "D_num": 0.0,
-          "q_hat": 0.009585889570552147,
-          "p_hat": 0.006134969325153374,
+          "q_hat": 0.013827433628318585,
+          "p_hat": 0.008849557522123894,
           "twin_recall_app": 1.0,
-          "abs_aspect_err_median": 0.14292972401134807
+          "abs_aspect_err_median": 0.15870986075589655
         }
       },
       "by_kind": {
         "person": {
-          "N": 114,
+          "N": 64,
           "D_hat": 0.0,
           "D_num": 0.0,
-          "q_hat": 0.01206140350877193,
-          "p_hat": 0.008771929824561403,
+          "q_hat": 0.021484375,
+          "p_hat": 0.015625,
           "twin_recall_app": 1.0,
-          "abs_aspect_err_median": 0.12446721473691147
+          "abs_aspect_err_median": 0.11509914729780801
         },
         "vehicle": {
           "N": 50,
@@ -60,13 +60,13 @@
           "abs_aspect_err_median": 0.18810557968593378
         },
         "level": {
-          "N": 99,
+          "N": 49,
           "D_hat": 0.0,
           "D_num": 0.0,
-          "q_hat": 0.003787878787878788,
+          "q_hat": 0.007653061224489796,
           "p_hat": 0.0,
           "twin_recall_app": null,
-          "abs_aspect_err_median": 0.125
+          "abs_aspect_err_median": 0.12154259284151869
         }
       },
       "by_camera_kind": {
@@ -85,10 +85,10 @@
           "D_hat": 0.0
         },
         "level/person": {
-          "N": 94,
-          "abs_aspect_err_median": 0.12446721473691147,
-          "clamp_share_mean": 0.6408214176159562,
-          "q_hat": 0.003989361702127659,
+          "N": 44,
+          "abs_aspect_err_median": 0.10634946353336328,
+          "clamp_share_mean": 0.6097351152475707,
+          "q_hat": 0.008522727272727272,
           "D_hat": 0.0
         },
         "level/vehicle": {
@@ -116,24 +116,24 @@
           "abs_aspect_err_median": 0.03421802906034688
         },
         "c_gt10pct": {
-          "N": 178,
-          "D_hat": 0.0038623595505617976,
+          "N": 128,
+          "D_hat": 0.00537109375,
           "D_num": 0.6875,
-          "q_hat": 0.047401685393258425,
-          "p_hat": 0.03089887640449438,
+          "q_hat": 0.06591796875,
+          "p_hat": 0.04296875,
           "twin_recall_app": 0.875,
-          "abs_aspect_err_median": 0.14921779423824796
+          "abs_aspect_err_median": 0.16099051939622078
         }
       },
       "by_kind": {
         "person": {
-          "N": 116,
+          "N": 66,
           "D_hat": 0.0,
           "D_num": 0.0,
-          "q_hat": 0.029094827586206896,
-          "p_hat": 0.025323275862068964,
+          "q_hat": 0.05113636363636364,
+          "p_hat": 0.04450757575757576,
           "twin_recall_app": 1.0,
-          "abs_aspect_err_median": 0.12461637975159157
+          "abs_aspect_err_median": 0.11725648947125461
         },
         "vehicle": {
           "N": 63,
@@ -156,13 +156,13 @@
           "abs_aspect_err_median": 0.18166430877450465
         },
         "level": {
-          "N": 99,
+          "N": 49,
           "D_hat": 0.0,
           "D_num": 0.0,
-          "q_hat": 0.003787878787878788,
+          "q_hat": 0.007653061224489796,
           "p_hat": 0.0,
           "twin_recall_app": null,
-          "abs_aspect_err_median": 0.125
+          "abs_aspect_err_median": 0.12154259284151869
         }
       },
       "by_camera_kind": {
@@ -181,10 +181,10 @@
           "D_hat": 0.011853448275862068
         },
         "level/person": {
-          "N": 94,
-          "abs_aspect_err_median": 0.12446721473691147,
-          "clamp_share_mean": 0.6408214176159562,
-          "q_hat": 0.003989361702127659,
+          "N": 44,
+          "abs_aspect_err_median": 0.10634946353336328,
+          "clamp_share_mean": 0.6097351152475707,
+          "q_hat": 0.008522727272727272,
           "D_hat": 0.0
         },
         "level/vehicle": {

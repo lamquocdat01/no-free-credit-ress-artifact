@@ -11,10 +11,10 @@
         "eps": 0.2
       },
       "main": {
-        "m_site": 21,
+        "m_site": 17,
         "J_site": 0,
-        "U_pop_site": 0.13294591102652337,
-        "m_scene": 76,
+        "U_pop_site": 0.16156611126074005,
+        "m_scene": 48,
         "J_scene": 0,
         "loso_site_violations": 0,
         "sites": [
@@ -96,13 +96,6 @@
             "D_site": 0.0
           },
           {
-            "site": "LASIESTA:I_MC",
-            "n": 2,
-            "scenes": 2,
-            "disc": 0.0,
-            "D_site": 0.0
-          },
-          {
             "site": "LASIESTA:I_OC",
             "n": 4,
             "scenes": 2,
@@ -117,21 +110,7 @@
             "D_site": 0.0
           },
           {
-            "site": "LASIESTA:I_SM",
-            "n": 34,
-            "scenes": 12,
-            "disc": 0.0,
-            "D_site": 0.0
-          },
-          {
             "site": "LASIESTA:O_CL",
-            "n": 2,
-            "scenes": 2,
-            "disc": 0.0,
-            "D_site": 0.0
-          },
-          {
-            "site": "LASIESTA:O_MC",
             "n": 2,
             "scenes": 2,
             "disc": 0.0,
@@ -141,13 +120,6 @@
             "site": "LASIESTA:O_RA",
             "n": 3,
             "scenes": 2,
-            "disc": 0.0,
-            "D_site": 0.0
-          },
-          {
-            "site": "LASIESTA:O_SM",
-            "n": 12,
-            "scenes": 12,
             "disc": 0.0,
             "D_site": 0.0
           },
@@ -172,7 +144,7 @@
             "n": 15,
             "scenes": 4,
             "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
+            "U_minus": 0.1707497229824809,
             "viol": false
           },
           {
@@ -180,7 +152,7 @@
             "n": 2,
             "scenes": 1,
             "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
+            "U_minus": 0.1707497229824809,
             "viol": false
           },
           {
@@ -188,7 +160,7 @@
             "n": 19,
             "scenes": 6,
             "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
+            "U_minus": 0.1707497229824809,
             "viol": false
           },
           {
@@ -196,7 +168,7 @@
             "n": 4,
             "scenes": 3,
             "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
+            "U_minus": 0.1707497229824809,
             "viol": false
           },
           {
@@ -204,7 +176,7 @@
             "n": 5,
             "scenes": 4,
             "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
+            "U_minus": 0.1707497229824809,
             "viol": false
           },
           {
@@ -212,7 +184,7 @@
             "n": 37,
             "scenes": 6,
             "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
+            "U_minus": 0.1707497229824809,
             "viol": false
           },
           {
@@ -220,7 +192,7 @@
             "n": 7,
             "scenes": 4,
             "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
+            "U_minus": 0.1707497229824809,
             "viol": false
           },
           {
@@ -228,7 +200,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
+            "U_minus": 0.1707497229824809,
             "viol": false
           },
           {
@@ -236,7 +208,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
+            "U_minus": 0.1707497229824809,
             "viol": false
           },
           {
@@ -244,7 +216,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
+            "U_minus": 0.1707497229824809,
             "viol": false
           },
           {
@@ -252,15 +224,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
-            "viol": false
-          },
-          {
-            "site": "LASIESTA:I_MC",
-            "n": 2,
-            "scenes": 2,
-            "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
+            "U_minus": 0.1707497229824809,
             "viol": false
           },
           {
@@ -268,7 +232,7 @@
             "n": 4,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
+            "U_minus": 0.1707497229824809,
             "viol": false
           },
           {
@@ -276,15 +240,7 @@
             "n": 4,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
-            "viol": false
-          },
-          {
-            "site": "LASIESTA:I_SM",
-            "n": 34,
-            "scenes": 12,
-            "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
+            "U_minus": 0.1707497229824809,
             "viol": false
           },
           {
@@ -292,15 +248,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
-            "viol": false
-          },
-          {
-            "site": "LASIESTA:O_MC",
-            "n": 2,
-            "scenes": 2,
-            "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
+            "U_minus": 0.1707497229824809,
             "viol": false
           },
           {
@@ -308,15 +256,7 @@
             "n": 3,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
-            "viol": false
-          },
-          {
-            "site": "LASIESTA:O_SM",
-            "n": 12,
-            "scenes": 12,
-            "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
+            "U_minus": 0.1707497229824809,
             "viol": false
           },
           {
@@ -324,7 +264,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
+            "U_minus": 0.1707497229824809,
             "viol": false
           },
           {
@@ -332,7 +272,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.13910834066826516,
+            "U_minus": 0.1707497229824809,
             "viol": false
           }
         ]
@@ -345,10 +285,10 @@
         "eps": 0.2
       },
       "main": {
-        "m_site": 21,
+        "m_site": 17,
         "J_site": 1,
-        "U_pop_site": 0.20672537900807,
-        "m_scene": 76,
+        "U_pop_site": 0.25012445186647625,
+        "m_scene": 48,
         "J_scene": 2,
         "loso_site_violations": 1,
         "sites": [
@@ -430,13 +370,6 @@
             "D_site": 0.0
           },
           {
-            "site": "LASIESTA:I_MC",
-            "n": 2,
-            "scenes": 2,
-            "disc": 0.0,
-            "D_site": 0.0
-          },
-          {
             "site": "LASIESTA:I_OC",
             "n": 4,
             "scenes": 2,
@@ -451,21 +384,7 @@
             "D_site": 0.0
           },
           {
-            "site": "LASIESTA:I_SM",
-            "n": 34,
-            "scenes": 12,
-            "disc": 0.0,
-            "D_site": 0.0
-          },
-          {
             "site": "LASIESTA:O_CL",
-            "n": 2,
-            "scenes": 2,
-            "disc": 0.0,
-            "D_site": 0.0
-          },
-          {
-            "site": "LASIESTA:O_MC",
             "n": 2,
             "scenes": 2,
             "disc": 0.0,
@@ -475,13 +394,6 @@
             "site": "LASIESTA:O_RA",
             "n": 3,
             "scenes": 2,
-            "disc": 0.0,
-            "D_site": 0.0
-          },
-          {
-            "site": "LASIESTA:O_SM",
-            "n": 12,
-            "scenes": 12,
             "disc": 0.0,
             "D_site": 0.0
           },
@@ -506,7 +418,7 @@
             "n": 15,
             "scenes": 4,
             "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
+            "U_minus": 0.2639573972885686,
             "viol": false
           },
           {
@@ -514,7 +426,7 @@
             "n": 2,
             "scenes": 1,
             "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
+            "U_minus": 0.2639573972885686,
             "viol": false
           },
           {
@@ -522,7 +434,7 @@
             "n": 20,
             "scenes": 6,
             "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
+            "U_minus": 0.2639573972885686,
             "viol": false
           },
           {
@@ -530,7 +442,7 @@
             "n": 4,
             "scenes": 3,
             "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
+            "U_minus": 0.2639573972885686,
             "viol": false
           },
           {
@@ -538,7 +450,7 @@
             "n": 19,
             "scenes": 4,
             "D_site": 0.2631578947368421,
-            "U_minus": 0.13910834066826516,
+            "U_minus": 0.1707497229824809,
             "viol": true
           },
           {
@@ -546,7 +458,7 @@
             "n": 37,
             "scenes": 6,
             "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
+            "U_minus": 0.2639573972885686,
             "viol": false
           },
           {
@@ -554,7 +466,7 @@
             "n": 7,
             "scenes": 4,
             "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
+            "U_minus": 0.2639573972885686,
             "viol": false
           },
           {
@@ -562,7 +474,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
+            "U_minus": 0.2639573972885686,
             "viol": false
           },
           {
@@ -570,7 +482,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
+            "U_minus": 0.2639573972885686,
             "viol": false
           },
           {
@@ -578,7 +490,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
+            "U_minus": 0.2639573972885686,
             "viol": false
           },
           {
@@ -586,15 +498,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
-            "viol": false
-          },
-          {
-            "site": "LASIESTA:I_MC",
-            "n": 2,
-            "scenes": 2,
-            "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
+            "U_minus": 0.2639573972885686,
             "viol": false
           },
           {
@@ -602,7 +506,7 @@
             "n": 4,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
+            "U_minus": 0.2639573972885686,
             "viol": false
           },
           {
@@ -610,15 +514,7 @@
             "n": 4,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
-            "viol": false
-          },
-          {
-            "site": "LASIESTA:I_SM",
-            "n": 34,
-            "scenes": 12,
-            "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
+            "U_minus": 0.2639573972885686,
             "viol": false
           },
           {
@@ -626,15 +522,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
-            "viol": false
-          },
-          {
-            "site": "LASIESTA:O_MC",
-            "n": 2,
-            "scenes": 2,
-            "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
+            "U_minus": 0.2639573972885686,
             "viol": false
           },
           {
@@ -642,15 +530,7 @@
             "n": 3,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
-            "viol": false
-          },
-          {
-            "site": "LASIESTA:O_SM",
-            "n": 12,
-            "scenes": 12,
-            "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
+            "U_minus": 0.2639573972885686,
             "viol": false
           },
           {
@@ -658,7 +538,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
+            "U_minus": 0.2639573972885686,
             "viol": false
           },
           {
@@ -666,7 +546,7 @@
             "n": 2,
             "scenes": 2,
             "D_site": 0.0,
-            "U_minus": 0.21610616420684728,
+            "U_minus": 0.2639573972885686,
             "viol": false
           }
         ]

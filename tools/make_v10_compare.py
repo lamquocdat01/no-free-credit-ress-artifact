@@ -1,10 +1,11 @@
-"""v1.0 / v1.1 comparison at OP* (supplement table; §6 sentence).
+"""Static-domain versions at OP* (supplement table S19; Section 6 sentence).
 
-v1.0 static domain = 78 scenes = v1.1 static domain (76) + camera-jitter tier (boulevard, traffic).
-1. Recomputes the v1.0 numbers with the CURRENT code on the rows main + jitter (code/f1_worst_phase_site.py,
+v1.0 static domain = 78 scenes; v1.1 = 76 (CDnet cameraJitter boulevard, traffic moved to the jitter tier);
+v1.2 = 48 (LASIESTA SM, simulated camera motion, moved to the jitter tier; LASIESTA MC, moving camera, excluded).
+1. Recomputes each version with the CURRENT code on the corresponding rows of the same twin run (code/f1_worst_phase_site.py,
    code/m3_validity_audit.py functions; no detector, no twin run).
-2. Checks them against the numbers published at tag ress-v1.0 (data/results/*.json of the repo, via `git show`).
-3. Locates every v1.0 disagreement (discordant events/scenes, LOSO violations, false acceptances) by tier.
+2. Checks v1.0 and v1.1 against the numbers published at tags ress-v1.0 / ress-v1.1 (data/results/*.json via `git show`).
+3. Locates every disagreement of the earlier domains (discordant scenes, LOSO violations, false acceptances).
 Output: results/v10_v11_compare.json (data/results/ in the repo); feeds supplement Table S19
 """
 from __future__ import annotations
@@ -14,10 +15,9 @@ import subprocess
 import sys
 from pathlib import Path
 
-import pandas as pd
-
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "code"))
+from c4_power import ucp  # noqa: E402
 from common import RESULTS, dump  # noqa: E402
 from e0_checks import event_rows  # noqa: E402
 from f1_worst_phase_site import exchange, tier_record, worst_table  # noqa: E402
@@ -25,7 +25,8 @@ from m3_validity_audit import event_table, loso, scene_table  # noqa: E402
 
 D_MIN, K, EPS = 32, 16, 0.20        # OP*
 REPO = ROOT if (ROOT / ".git").exists() else ROOT / "artifact_repo"   # works in the project and in the repo clone
-TAG10 = "ress-v1.0"
+TAGS = {"v1.0": "ress-v1.0", "v1.1": "ress-v1.1"}
+CDNET_JITTER = {"boulevard", "traffic"}
 
 
 def tagged(tag, name):
@@ -33,53 +34,52 @@ def tagged(tag, name):
     return json.loads(out.stdout.decode("utf-8"))
 
 
-def block(rows_main, rows_jit):
-    rows = rows_main + rows_jit
-    jit = {r["video"] for r in rows_jit}
+def block(rows):
     ev = worst_table(rows, D_MIN, K)
     t, x = tier_record(ev), exchange(ev, EPS)
     L = loso(scene_table(event_table(rows, D_MIN, K)), EPS)
     Sw = ev.groupby("video").D_w.max()
-    disc_scenes = sorted(Sw[Sw > 0].index)
-    viol = sorted({r["video"] for r in L["violating_scenes"] if r["viol_D"]})
-    # false acceptances: recompute per camera (exchange() returns counts only)
     S = ev.groupby("video").agg(p_w=("p_w", "mean"), q_w=("q_w", "mean"), w=("D_w", "max"))
-    from c4_power import ucp  # noqa: E402
     J, m = int(S.w.sum()), len(S)
     fa = sorted(v for v, r in S.iterrows() if r.q_w + float(ucp(J - int(r.w), m - 1, 0.025)) <= EPS and r.p_w > EPS)
     rec = dict(m=t["m"], N=t["N"], D_w=t["D_w"], U_fleet=t["U_fleet"], J=t["J"], U_pop=t["U_pop"],
                loso_viol=L["violation_rate_D"]["num"], n_direct=x["n_direct"], accepted=x["cameras_accepted"],
                false_accept=x["false_accept"])
-    where = dict(discordant_events_in_jitter=int(ev[ev.video.isin(jit)].D_w.sum()),
-                 discordant_scenes=disc_scenes, loso_violating_scenes=viol, false_accept_cameras=fa,
-                 all_in_jitter=bool(set(disc_scenes) | set(viol) | set(fa) <= jit))
+    where = dict(discordant_scenes=sorted(Sw[Sw > 0].index),
+                 loso_violating_scenes=sorted({r["video"] for r in L["violating_scenes"] if r["viol_D"]}),
+                 false_accept_cameras=fa)
     return rec, where
 
 
+def published(tag):
+    wp = tagged(tag, "worst_phase.json")["points"]["OP*"]
+    va = tagged(tag, "validity_audit.json")["points"]["OP*"]
+    t, x = wp["tiers"]["main"], wp["exchange_main"]
+    return dict(m=t["m"], N=t["N"], D_w=t["D_w"], U_fleet=t["U_fleet"], J=t["J"], U_pop=t["U_pop"],
+                loso_viol=va["loso"]["violation_rate_D"]["num"], n_direct=x["n_direct"], accepted=x["cameras_accepted"],
+                false_accept=x["false_accept"])
+
+
 def main():
-    rows_main, rows_jit = event_rows("c0_main", "main"), event_rows("c0_main", "jitter")
-    v10, where10 = block(rows_main, rows_jit)
-    v11, where11 = block(rows_main, [])
-
-    wp = tagged(TAG10, "worst_phase.json")["points"]["OP*"]
-    va = tagged(TAG10, "validity_audit.json")["points"]["OP*"]
-    pub = dict(m=wp["tiers"]["main"]["m"], N=wp["tiers"]["main"]["N"], D_w=wp["tiers"]["main"]["D_w"],
-               U_fleet=wp["tiers"]["main"]["U_fleet"], J=wp["tiers"]["main"]["J"], U_pop=wp["tiers"]["main"]["U_pop"],
-               loso_viol=va["loso"]["violation_rate_D"]["num"], n_direct=wp["exchange_main"]["n_direct"],
-               accepted=wp["exchange_main"]["cameras_accepted"], false_accept=wp["exchange_main"]["false_accept"])
-    match = {k: (abs(v10[k] - pub[k]) < 1e-12) for k in pub}
-
+    main_, jit, mc = (event_rows("c0_main", t) for t in ("main", "jitter", "excluded_MC"))
+    sm = [r for r in jit if r["video"] not in CDNET_JITTER]
+    rows = {"v1.0": main_ + jit + mc, "v1.1": main_ + sm + mc, "v1.2": main_}
+    out = dict(meta=dict(doc=__doc__.strip(), op=dict(d_min=D_MIN, K=K, eps=EPS), tags=TAGS,
+                         removed={"v1.0->v1.1": sorted(CDNET_JITTER),
+                                  "v1.1->v1.2": sorted({r["video"] for r in sm + mc})}),
+               versions={}, reproduced={}, disagreements={})
+    for v, r in rows.items():
+        out["versions"][v], out["disagreements"][v] = block(r)
+    for v, tag in TAGS.items():
+        pub = published(tag)
+        out["reproduced"][v] = all(abs(out["versions"][v][k] - pub[k]) < 1e-12 for k in pub)
     cur = json.loads((RESULTS / "worst_phase.json").read_text(encoding="utf-8"))["points"]["OP*"]
-    match11 = dict(N=v11["N"] == cur["tiers"]["main"]["N"], D_w=v11["D_w"] == cur["tiers"]["main"]["D_w"],
-                   false_accept=v11["false_accept"] == cur["exchange_main"]["false_accept"])
-
-    out = dict(meta=dict(doc=__doc__.strip(), op=dict(d_min=D_MIN, K=K, eps=EPS), tag_v10=TAG10,
-                         jitter_scenes=sorted({r["video"] for r in rows_jit if r["duration"] >= D_MIN})),
-               v10_recomputed=v10, v10_published=pub, v10_reproduced=match, v10_reproduced_all=all(match.values()),
-               v11=v11, v11_matches_results=match11, v10_disagreements=where10, v11_disagreements=where11)
+    out["reproduced"]["v1.2_vs_results"] = (out["versions"]["v1.2"]["N"] == cur["tiers"]["main"]["N"]
+                                            and out["versions"]["v1.2"]["D_w"] == cur["tiers"]["main"]["D_w"]
+                                            and out["versions"]["v1.2"]["false_accept"] == cur["exchange_main"]["false_accept"])
+    out["reproduced_all"] = all(out["reproduced"].values())
     dump(out, "v10_v11_compare.json")
-    print(json.dumps({k: out[k] for k in ("v10_recomputed", "v10_reproduced_all", "v11", "v11_matches_results",
-                                          "v10_disagreements")}, indent=1, default=str))
+    print(json.dumps({k: out[k] for k in ("versions", "reproduced", "disagreements")}, indent=1, default=str))
 
 
 if __name__ == "__main__":

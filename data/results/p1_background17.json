@@ -2,7 +2,7 @@
   "meta": {
     "min_bg_run": 25,
     "criterion": "GT-empty run >= 25 frames (true order) and >= 1 Mode-G* event (gap1)",
-    "tiers": "PTZ excluded (static-background twin); nightVideos = night tier; turbulence = turbulence tier; cameraJitter = jitter tier (post-F1 correction v1.1, CDnet category label); rest = main"
+    "tiers": "PTZ excluded (static-background twin); nightVideos = night tier; turbulence = turbulence tier; cameraJitter = jitter tier (post-F1 correction v1.1, CDnet category label); LASIESTA SM = jitter tier, LASIESTA MC excluded (v1.2, LASIESTA category label); rest = main"
   },
   "scenes": [
     {
@@ -532,7 +532,7 @@
       "longest_gt_empty_run": 140,
       "n_events_gap1": 1,
       "n_events_a256": 1,
-      "tier": "main",
+      "tier": "excluded_MC",
       "longest_detector_silent_run_true_order": 106.0
     },
     {
@@ -542,7 +542,7 @@
       "longest_gt_empty_run": 146,
       "n_events_gap1": 1,
       "n_events_a256": 1,
-      "tier": "main",
+      "tier": "excluded_MC",
       "longest_detector_silent_run_true_order": 0.0
     },
     {
@@ -592,7 +592,7 @@
       "longest_gt_empty_run": 50,
       "n_events_gap1": 3,
       "n_events_a256": 3,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 52.0
     },
     {
@@ -602,7 +602,7 @@
       "longest_gt_empty_run": 50,
       "n_events_gap1": 2,
       "n_events_a256": 2,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 52.0
     },
     {
@@ -612,7 +612,7 @@
       "longest_gt_empty_run": 50,
       "n_events_gap1": 2,
       "n_events_a256": 2,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 52.0
     },
     {
@@ -622,7 +622,7 @@
       "longest_gt_empty_run": 73,
       "n_events_gap1": 3,
       "n_events_a256": 3,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 2.0
     },
     {
@@ -632,7 +632,7 @@
       "longest_gt_empty_run": 73,
       "n_events_gap1": 3,
       "n_events_a256": 3,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 4.0
     },
     {
@@ -642,7 +642,7 @@
       "longest_gt_empty_run": 73,
       "n_events_gap1": 3,
       "n_events_a256": 3,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 6.0
     },
     {
@@ -652,7 +652,7 @@
       "longest_gt_empty_run": 73,
       "n_events_gap1": 3,
       "n_events_a256": 3,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 6.0
     },
     {
@@ -662,7 +662,7 @@
       "longest_gt_empty_run": 72,
       "n_events_gap1": 3,
       "n_events_a256": 3,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 9.0
     },
     {
@@ -672,7 +672,7 @@
       "longest_gt_empty_run": 73,
       "n_events_gap1": 3,
       "n_events_a256": 3,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 10.0
     },
     {
@@ -682,7 +682,7 @@
       "longest_gt_empty_run": 73,
       "n_events_gap1": 3,
       "n_events_a256": 3,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 8.0
     },
     {
@@ -692,7 +692,7 @@
       "longest_gt_empty_run": 73,
       "n_events_gap1": 3,
       "n_events_a256": 3,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 8.0
     },
     {
@@ -702,7 +702,7 @@
       "longest_gt_empty_run": 72,
       "n_events_gap1": 3,
       "n_events_a256": 3,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 9.0
     },
     {
@@ -732,7 +732,7 @@
       "longest_gt_empty_run": 158,
       "n_events_gap1": 1,
       "n_events_a256": 1,
-      "tier": "main",
+      "tier": "excluded_MC",
       "longest_detector_silent_run_true_order": 0.0
     },
     {
@@ -742,7 +742,7 @@
       "longest_gt_empty_run": 74,
       "n_events_gap1": 1,
       "n_events_a256": 1,
-      "tier": "main",
+      "tier": "excluded_MC",
       "longest_detector_silent_run_true_order": 0.0
     },
     {
@@ -772,7 +772,7 @@
       "longest_gt_empty_run": 71,
       "n_events_gap1": 1,
       "n_events_a256": 1,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 41.0
     },
     {
@@ -782,7 +782,7 @@
       "longest_gt_empty_run": 71,
       "n_events_gap1": 1,
       "n_events_a256": 1,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 41.0
     },
     {
@@ -792,7 +792,7 @@
       "longest_gt_empty_run": 71,
       "n_events_gap1": 1,
       "n_events_a256": 1,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 41.0
     },
     {
@@ -802,7 +802,7 @@
       "longest_gt_empty_run": 101,
       "n_events_gap1": 1,
       "n_events_a256": 1,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 109.0
     },
     {
@@ -812,7 +812,7 @@
       "longest_gt_empty_run": 102,
       "n_events_gap1": 1,
       "n_events_a256": 1,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 110.0
     },
     {
@@ -822,7 +822,7 @@
       "longest_gt_empty_run": 101,
       "n_events_gap1": 1,
       "n_events_a256": 1,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 109.0
     },
     {
@@ -832,7 +832,7 @@
       "longest_gt_empty_run": 102,
       "n_events_gap1": 1,
       "n_events_a256": 1,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 110.0
     },
     {
@@ -842,7 +842,7 @@
       "longest_gt_empty_run": 101,
       "n_events_gap1": 1,
       "n_events_a256": 1,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 109.0
     },
     {
@@ -852,7 +852,7 @@
       "longest_gt_empty_run": 101,
       "n_events_gap1": 1,
       "n_events_a256": 1,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 109.0
     },
     {
@@ -862,7 +862,7 @@
       "longest_gt_empty_run": 101,
       "n_events_gap1": 1,
       "n_events_a256": 1,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 109.0
     },
     {
@@ -872,7 +872,7 @@
       "longest_gt_empty_run": 101,
       "n_events_gap1": 1,
       "n_events_a256": 1,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 108.0
     },
     {
@@ -882,7 +882,7 @@
       "longest_gt_empty_run": 101,
       "n_events_gap1": 2,
       "n_events_a256": 1,
-      "tier": "main",
+      "tier": "jitter",
       "longest_detector_silent_run_true_order": 108.0
     },
     {
@@ -927,6 +927,12 @@
     }
   ],
   "by_tier": {
+    "excluded_MC": [
+      "I_MC_01",
+      "I_MC_02",
+      "O_MC_01",
+      "O_MC_02"
+    ],
     "excluded_PTZ": [
       "continuousPan",
       "intermittentPan",
@@ -934,24 +940,6 @@
       "zoomInZoomOut"
     ],
     "jitter": [
-      "boulevard",
-      "traffic"
-    ],
-    "main": [
-      "I_BS_01",
-      "I_BS_02",
-      "I_CA_01",
-      "I_CA_02",
-      "I_IL_01",
-      "I_IL_02",
-      "I_MB_01",
-      "I_MB_02",
-      "I_MC_01",
-      "I_MC_02",
-      "I_OC_01",
-      "I_OC_02",
-      "I_SI_01",
-      "I_SI_02",
       "I_SM_01",
       "I_SM_02",
       "I_SM_03",
@@ -964,12 +952,6 @@
       "I_SM_10",
       "I_SM_11",
       "I_SM_12",
-      "O_CL_01",
-      "O_CL_02",
-      "O_MC_01",
-      "O_MC_02",
-      "O_RA_01",
-      "O_RA_02",
       "O_SM_01",
       "O_SM_02",
       "O_SM_03",
@@ -982,6 +964,26 @@
       "O_SM_10",
       "O_SM_11",
       "O_SM_12",
+      "boulevard",
+      "traffic"
+    ],
+    "main": [
+      "I_BS_01",
+      "I_BS_02",
+      "I_CA_01",
+      "I_CA_02",
+      "I_IL_01",
+      "I_IL_02",
+      "I_MB_01",
+      "I_MB_02",
+      "I_OC_01",
+      "I_OC_02",
+      "I_SI_01",
+      "I_SI_02",
+      "O_CL_01",
+      "O_CL_02",
+      "O_RA_01",
+      "O_RA_02",
       "O_SN_01",
       "O_SN_02",
       "O_SU_01",
@@ -1031,9 +1033,10 @@
     ]
   },
   "n_by_tier": {
+    "excluded_MC": 4,
     "excluded_PTZ": 4,
-    "jitter": 2,
-    "main": 76,
+    "jitter": 26,
+    "main": 48,
     "night": 6,
     "turbulence": 4
   },

@@ -48,7 +48,8 @@ def mustfail():
          r"\caption{Must-fail scenarios. Top: temporal ($d_{\min}=1$, $K=48$), static scenes with $p_s>\varepsilon$, real "
          r"misses split into detector and temporal misses; all refused in every Monte-Carlo run. Middle: night scenes at "
          r"OP$^\ast$ (every miss is a detector miss), and whether each is falsely certified when judged alone (phase-averaged); "
-         r"then the same for the camera-jitter scenes. Bottom: "
+         r"then the same for the camera-jitter scenes (CDnet scenes with real shake listed; the LASIESTA scenes with "
+         r"simulated camera motion pooled, event-weighted). Bottom: "
          r"population bound when $k$ night scenes leak into the calibration set (median over subsets; withdrawn = share of "
          r"subsets with a bound above $\varepsilon/2$).}",
          r"\label{tab:mustfail}", r"\scriptsize", r"\setlength{\tabcolsep}{3pt}", r"\begin{tabular}{@{}lrrrrrr@{}}", r"\toprule",
@@ -63,9 +64,18 @@ def mustfail():
         fc = "yes" if m2["night_with_main_only_calibration"][t["video"]]["false_cert"] else "no"
         L.append(f"{t['video']} & {t['n']} & {P(t['p_s'])} & {P(t['q_s'])} & {P(t['D_s'])} & {t['worst_phase_discordant']} & {fc} \\\\")
     L += [r"\midrule", r"\multicolumn{7}{@{}l}{\emph{3: detector (camera jitter)}} \\", r"\midrule"]
+    sm = [t for t in m2["jitter_table"] if t["video"][:2] in ("I_", "O_")]      # LASIESTA SM: pooled row
     for t in m2["jitter_table"]:
+        if t in sm:
+            continue
         fc = "yes" if m2["jitter_with_main_only_calibration"][t["video"]]["false_cert"] else "no"
         L.append(f"{t['video']} & {t['n']} & {P(t['p_s'])} & {P(t['q_s'])} & {P(t['D_s'])} & {t['worst_phase_discordant']} & {fc} \\\\")
+    if sm:
+        n = sum(t["n"] for t in sm)
+        w = lambda k: sum(t[k] * t["n"] for t in sm) / n
+        fcs = sum(m2["jitter_with_main_only_calibration"][t["video"]]["false_cert"] for t in sm)
+        L.append(f"LASIESTA SM ({len(sm)} scenes) & {n} & {P(w('p_s'))} & {P(w('q_s'))} & {P(w('D_s'))} & "
+                 f"{sum(t['worst_phase_discordant'] for t in sm)} & {fcs} of {len(sm)} \\\\")
     L += [r"\midrule", r"$k$ leaked & 0 & 1 & 2 & 3 & 4 & 6 \\", r"\midrule"]
     cur = {c["k"]: c for c in m2["curve"]}
     L.append(r"$U_{\mathrm{pop}}$ & " + " & ".join(P(cur[k]["U_pop_median"]) for k in (0, 1, 2, 3, 4, 6)) + r" \\")
@@ -81,16 +91,16 @@ def eventdef():
          r"ground-truth event. Discordant events at the worst phase; LOSO: scenes above the bound computed without them.}",
          r"\label{tab:eventdef}", r"\scriptsize", r"\setlength{\tabcolsep}{3pt}", r"\begin{tabular}{@{}llrrrrrr@{}}", r"\toprule",
          r"definition & point & $N$ & $\hat p$ & disc. & $\UCP(X,N)$ & $J$ / $\UCP(J,m)$ & LOSO \\", r"\midrule"]
-    names = {"OP*": r"OP$^\ast$", "OP-A": "OP-A", "OP-C": "OP-C", "challenge_16_16": r"$(16,16)$\textsuperscript{ph}"}
+    names = {"OP*": r"OP$^\ast$", "OP-A": "OP-A", "OP-C": "OP-C"}
     for dfn, lab in (("a256", "primary"), ("orig", "original")):
-        for k in ("OP*", "OP-A", "OP-C", "challenge_16_16"):
+        for k in ("OP*", "OP-A", "OP-C"):
             r = s[dfn]["points"][k]
             L.append(f"{lab} & {names[k]} & {r['N']} & {P(r['p_hat'], 2)} & {r['disc_worst']} & {P(r['U_fleet'], 2)} & "
                      f"{r['J']} / {P(r['U_pop'], 1)} & {r['loso_viol']} \\\\")
             lab = ""
         if dfn == "a256":
             L.append(r"\midrule")
-    L += [r"\bottomrule", r"\multicolumn{8}{@{}l}{\textsuperscript{ph} post-hoc point.}", r"\end{tabular}", r"\end{table}"]
+    L += [r"\bottomrule", r"\end{tabular}", r"\end{table}"]
     (M / "tab_eventdef.tex").write_text("\n".join(L) + "\n", encoding="utf-8")
 
 
@@ -127,11 +137,10 @@ if __name__ == "__main__":
 
 def confusion2x2():
     cf = J("e0_confusion.json")
-    cols = [("static, OP$^\\ast$", cf["by_op"]["OP*"]["main"]), ("static, $(16,16)$\\textsuperscript{ph}", cf["challenged_along_dmin"]["main"]),
-            ("night, OP$^\\ast$", cf["by_op"]["OP*"]["night"])]
+    cols = [("static, OP$^\\ast$", cf["by_op"]["OP*"]["main"]), ("night, OP$^\\ast$", cf["by_op"]["OP*"]["night"])]
     L = [r"\begin{table}[t]", r"\centering",
          r"\caption{Real versus twin outcomes (expected event counts under a uniform sampling phase; twin = majority of three "
-         r"variants). Recall: share of expected real misses that the twin also misses. \textsuperscript{ph}\,post hoc.}",
+         r"variants). Recall: share of expected real misses that the twin also misses.}",
          r"\label{tab:confusion}", r"\scriptsize", r"\setlength{\tabcolsep}{3pt}", r"\begin{tabular}{@{}lrrr@{}}", r"\toprule",
          " & " + " & ".join(c[0] for c in cols) + r" \\", r"\midrule"]
     keys = [("real miss, twin miss", "real_miss & twin_miss"), ("real miss, twin catch ($D$)", "real_miss & twin_catch (D)"),
@@ -148,7 +157,7 @@ def confusion2x2():
 
 def fidelity():
     geo = J("e0_geometry_sensitivity.json")["frame_level"]["by_kind_aspect"]
-    conf = J("twin_discordance_c0_main_main76.json")["confidence"]["by_kind"]
+    conf = J("twin_discordance_c0_main_main48.json")["confidence"]["by_kind"]
     L = [r"\begin{table}[t]", r"\centering",
          r"\caption{Twin fidelity on the same frames (static domain): hit rates by object kind and sprite aspect error before "
          r"the width clamp, and median detector confidence on hits. Negative differences make the twin pessimistic.}",
@@ -172,7 +181,7 @@ def loso_table():
          r"is falsely certified, because $p_s\le\varepsilon$.}",
          r"\label{tab:loso}", r"\scriptsize", r"\setlength{\tabcolsep}{3pt}", r"\begin{tabular}{@{}llrrrrrr@{}}", r"\toprule",
          r"point & scene & $n$ & $D_s$ & $p_s$ & $q_s$ & $U_{-s}$ & $p_s>q_s+U_{-s}$ \\", r"\midrule"]
-    for key, lab in (("OP*", r"OP$^\ast$"), ("challenge_16_16", r"$(16,16)$\textsuperscript{ph}")):
+    for key, lab in (("OP*", r"OP$^\ast$"),):
         for s in va[key]["loso"]["violating_scenes"]:
             L.append(f"{lab} & {s['video'].replace('_', chr(92) + '_')} & {s['n']} & {P(s['D_s'])} & {P(s['p_s'])} & {P(s['q_s'])} & "
                      f"{P(s['U_pop_minus'])} & {'yes' if s['viol_C3'] else 'no'} \\\\")

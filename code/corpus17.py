@@ -20,6 +20,9 @@ Tiers: PTZ (excluded: the twin assumes a static background), nightVideos (night 
        acceptance (traffic) and one of the two LOSO violations (traffic) in this category -> a post-hoc change,
        disclosed as such. Calibration scenes of the category: boulevard, traffic (badminton, sidewalk have no
        GT-empty background run >= 25 frames and were never calibration scenes).
+       Second post-hoc correction (30-09-2026, v1.2): the LASIESTA sequence label (I_/O_<CAT>_nn) is used the same way.
+       SM (simulated camera motion) -> jitter tier, with CDnet cameraJitter; MC (moving camera) -> excluded, like PTZ.
+       v1.1 main held 24 SM + 4 MC scenes; v1.2 main = 28 CDnet + 20 LASIESTA scenes.
 Outputs: results/corpus17_events_T.csv, results/p1_background17.json, results/corpus17_manifest.json
 """
 from __future__ import annotations
@@ -119,6 +122,16 @@ def tier(cat):
     return "main"
 
 
+def tier_lasiesta(video):
+    """v1.2: LASIESTA category from the sequence name (I_SM_01 -> SM)."""
+    cat = str(video).split("_")[1]
+    if cat == "MC":
+        return "excluded_MC"
+    if cat == "SM":
+        return "jitter"
+    return "main"
+
+
 def main():
     T = mode_T()
     T.to_csv(RESULTS / "corpus17_events_T.csv", index=False)
@@ -139,7 +152,7 @@ def main():
     la_cal = la[(la.longest_gt_empty_run >= MIN_BG_RUN) & (la.n_events_gap1 > 0)].copy()
     la_old = la[la.longest_detector_silent_run_true_order >= MIN_BG_RUN]
     cd_cal["tier"] = cd_cal.category.map(tier)
-    la_cal["tier"] = "main"
+    la_cal["tier"] = la_cal.video.map(tier_lasiesta)
     old = json.load(open(RESULTS / "p1_background.json", encoding="utf-8")) if (RESULTS / "p1_background.json").exists() else None
     cmp = {}
     if old:
@@ -153,7 +166,8 @@ def main():
     scenes = pd.concat([cd_cal, la_cal], ignore_index=True)
     bg = dict(meta=dict(min_bg_run=MIN_BG_RUN, criterion="GT-empty run >= 25 frames (true order) and >= 1 Mode-G* event (gap1)",
                         tiers="PTZ excluded (static-background twin); nightVideos = night tier; turbulence = turbulence tier; "
-                             "cameraJitter = jitter tier (post-F1 correction v1.1, CDnet category label); rest = main"),
+                             "cameraJitter = jitter tier (post-F1 correction v1.1, CDnet category label); LASIESTA SM = jitter tier, "
+                             "LASIESTA MC excluded (v1.2, LASIESTA category label); rest = main"),
               scenes=scenes.to_dict("records"),
               by_tier={t: sorted(g.video) for t, g in scenes.groupby("tier")},
               n_by_tier={t: int(len(g)) for t, g in scenes.groupby("tier")},

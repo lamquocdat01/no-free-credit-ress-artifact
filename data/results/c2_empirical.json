@@ -13,8 +13,8 @@
         "K": 1
       },
       "n0": 59,
-      "p_main": 0.006097560975609756,
-      "n_main_events": 164,
+      "p_main": 0.008771929824561403,
+      "n_main_events": 114,
       "pools": {
         "S0_BMC_Gstar": {
           "N_sim": 30,
@@ -31,7 +31,7 @@
               "closed_form": 0.048494525249423104,
               "false_cert_given_pass": null,
               "false_cert_given_pass_le_delta_prime": null,
-              "power_at_p_main": 0.69503
+              "power_at_p_main": 0.59317
             },
             "0.1": {
               "c_exact": 14,
@@ -43,7 +43,7 @@
               "closed_form": 0.048494525249423104,
               "false_cert_given_pass": null,
               "false_cert_given_pass_le_delta_prime": null,
-              "power_at_p_main": 0.69542
+              "power_at_p_main": 0.59303
             },
             "0.15": {
               "c_exact": 22,
@@ -55,7 +55,7 @@
               "closed_form": 0.048494525249423104,
               "false_cert_given_pass": null,
               "false_cert_given_pass_le_delta_prime": null,
-              "power_at_p_main": 0.69576
+              "power_at_p_main": 0.59371
             },
             "0.2": {
               "c_exact": 27,
@@ -67,7 +67,7 @@
               "closed_form": 0.048494525249423104,
               "false_cert_given_pass": null,
               "false_cert_given_pass_le_delta_prime": null,
-              "power_at_p_main": 0.69789
+              "power_at_p_main": 0.59576
             }
           }
         },
@@ -86,7 +86,7 @@
               "closed_form": 0.048494525249423104,
               "false_cert_given_pass": null,
               "false_cert_given_pass_le_delta_prime": null,
-              "power_at_p_main": 0.69614
+              "power_at_p_main": 0.59513
             },
             "0.1": {
               "c_exact": 14,
@@ -98,7 +98,7 @@
               "closed_form": 0.048494525249423104,
               "false_cert_given_pass": null,
               "false_cert_given_pass_le_delta_prime": null,
-              "power_at_p_main": 0.697
+              "power_at_p_main": 0.59327
             },
             "0.15": {
               "c_exact": 22,
@@ -110,7 +110,7 @@
               "closed_form": 0.048494525249423104,
               "false_cert_given_pass": null,
               "false_cert_given_pass_le_delta_prime": null,
-              "power_at_p_main": 0.69522
+              "power_at_p_main": 0.59417
             },
             "0.2": {
               "c_exact": 27,
@@ -122,62 +122,62 @@
               "closed_form": 0.048494525249423104,
               "false_cert_given_pass": null,
               "false_cert_given_pass_le_delta_prime": null,
-              "power_at_p_main": 0.69683
+              "power_at_p_main": 0.59373
             }
           }
         },
         "S1_twin_main": {
-          "N_sim": 164,
-          "q_sim_mean": 0.006097560975609756,
-          "P_sim_pass": 0.98126,
+          "N_sim": 114,
+          "q_sim_mean": 0.008771929824561403,
+          "P_sim_pass": 0.733,
           "by_delta_prime": {
             "0.075": {
               "c_exact": 8,
               "c_expected_table": 8,
               "c_matches": true,
-              "realised_credit_events": 7.85008,
-              "realised_credit_pct_of_n0": 13.305220338983052,
-              "false_cert_at_p_eq_eps": 0.07207,
-              "closed_form": 0.07263666252120035,
-              "false_cert_given_pass": 0.07241709638627887,
+              "realised_credit_events": 5.864,
+              "realised_credit_pct_of_n0": 9.938983050847456,
+              "false_cert_at_p_eq_eps": 0.06706,
+              "closed_form": 0.06652867177553518,
+              "false_cert_given_pass": 0.07364256480218281,
               "false_cert_given_pass_le_delta_prime": true,
-              "power_at_p_main": 0.73352
+              "power_at_p_main": 0.63013
             },
             "0.1": {
               "c_exact": 14,
               "c_expected_table": 14,
               "c_matches": true,
-              "realised_credit_events": 13.73764,
-              "realised_credit_pct_of_n0": 23.28413559322034,
-              "false_cert_at_p_eq_eps": 0.09749,
-              "closed_form": 0.09848553397432833,
-              "false_cert_given_pass": 0.09839390171819905,
+              "realised_credit_events": 10.262,
+              "realised_credit_pct_of_n0": 17.393220338983053,
+              "false_cert_at_p_eq_eps": 0.08447,
+              "closed_form": 0.08583774661313459,
+              "false_cert_given_pass": 0.09776261937244202,
               "false_cert_given_pass_le_delta_prime": true,
-              "power_at_p_main": 0.75854
+              "power_at_p_main": 0.65295
             },
             "0.15": {
               "c_exact": 22,
               "c_expected_table": 22,
               "c_matches": true,
-              "realised_credit_events": 21.58772,
-              "realised_credit_pct_of_n0": 36.58935593220339,
-              "false_cert_at_p_eq_eps": 0.14718,
-              "closed_form": 0.14799009809111482,
-              "false_cert_given_pass": 0.149195931761205,
+              "realised_credit_events": 16.126,
+              "realised_credit_pct_of_n0": 27.332203389830507,
+              "false_cert_at_p_eq_eps": 0.12247,
+              "closed_form": 0.1228175944593777,
+              "false_cert_given_pass": 0.14964529331514326,
               "false_cert_given_pass_le_delta_prime": true,
-              "power_at_p_main": 0.7948
+              "power_at_p_main": 0.69069
             },
             "0.2": {
               "c_exact": 27,
               "c_expected_table": 27,
               "c_matches": true,
-              "realised_credit_events": 26.49402,
-              "realised_credit_pct_of_n0": 44.9051186440678,
-              "false_cert_at_p_eq_eps": 0.19112,
-              "closed_form": 0.19099011864292276,
-              "false_cert_given_pass": 0.19379165562643946,
+              "realised_credit_events": 19.791,
+              "realised_credit_pct_of_n0": 33.544067796610165,
+              "false_cert_at_p_eq_eps": 0.15627,
+              "closed_form": 0.1549385563496771,
+              "false_cert_given_pass": 0.19577080491132332,
               "false_cert_given_pass_le_delta_prime": true,
-              "power_at_p_main": 0.82175
+              "power_at_p_main": 0.71322
             }
           }
         }
@@ -190,8 +190,8 @@
         "K": 16
       },
       "n0": 14,
-      "p_main": 0.006097560975609756,
-      "n_main_events": 164,
+      "p_main": 0.008771929824561403,
+      "n_main_events": 114,
       "pools": {
         "S0_BMC_Gstar": {
           "N_sim": 30,
@@ -204,11 +204,11 @@
               "c_matches": null,
               "realised_credit_events": 2.0,
               "realised_credit_pct_of_n0": 14.285714285714286,
-              "false_cert_at_p_eq_eps": 0.06864,
+              "false_cert_at_p_eq_eps": 0.06981,
               "closed_form": 0.06871947673600004,
-              "false_cert_given_pass": 0.06864,
+              "false_cert_given_pass": 0.06981,
               "false_cert_given_pass_le_delta_prime": true,
-              "power_at_p_main": 0.92921
+              "power_at_p_main": 0.89816
             },
             "0.1": {
               "c_exact": 3,
@@ -216,11 +216,11 @@
               "c_matches": null,
               "realised_credit_events": 3.0,
               "realised_credit_pct_of_n0": 21.428571428571427,
-              "false_cert_at_p_eq_eps": 0.08419,
+              "false_cert_at_p_eq_eps": 0.08543,
               "closed_form": 0.08589934592000005,
-              "false_cert_given_pass": 0.08419,
+              "false_cert_given_pass": 0.08543,
               "false_cert_given_pass_le_delta_prime": true,
-              "power_at_p_main": 0.93605
+              "power_at_p_main": 0.90828
             },
             "0.15": {
               "c_exact": 5,
@@ -228,11 +228,11 @@
               "c_matches": null,
               "realised_credit_events": 5.0,
               "realised_credit_pct_of_n0": 35.714285714285715,
-              "false_cert_at_p_eq_eps": 0.13375,
+              "false_cert_at_p_eq_eps": 0.1338,
               "closed_form": 0.13421772800000006,
-              "false_cert_given_pass": 0.13375,
+              "false_cert_given_pass": 0.1338,
               "false_cert_given_pass_le_delta_prime": true,
-              "power_at_p_main": 0.94572
+              "power_at_p_main": 0.92367
             },
             "0.2": {
               "c_exact": 6,
@@ -240,11 +240,11 @@
               "c_matches": null,
               "realised_credit_events": 6.0,
               "realised_credit_pct_of_n0": 42.857142857142854,
-              "false_cert_at_p_eq_eps": 0.16608,
+              "false_cert_at_p_eq_eps": 0.16691,
               "closed_form": 0.1677721600000001,
-              "false_cert_given_pass": 0.16608,
+              "false_cert_given_pass": 0.16691,
               "false_cert_given_pass_le_delta_prime": true,
-              "power_at_p_main": 0.95227
+              "power_at_p_main": 0.93135
             }
           }
         },
@@ -259,11 +259,11 @@
               "c_matches": null,
               "realised_credit_events": 2.0,
               "realised_credit_pct_of_n0": 14.285714285714286,
-              "false_cert_at_p_eq_eps": 0.069,
+              "false_cert_at_p_eq_eps": 0.06941,
               "closed_form": 0.06871947673600004,
-              "false_cert_given_pass": 0.069,
+              "false_cert_given_pass": 0.06941,
               "false_cert_given_pass_le_delta_prime": true,
-              "power_at_p_main": 0.92755
+              "power_at_p_main": 0.89862
             },
             "0.1": {
               "c_exact": 3,
@@ -271,11 +271,11 @@
               "c_matches": null,
               "realised_credit_events": 3.0,
               "realised_credit_pct_of_n0": 21.428571428571427,
-              "false_cert_at_p_eq_eps": 0.08518,
+              "false_cert_at_p_eq_eps": 0.08633,
               "closed_form": 0.08589934592000005,
-              "false_cert_given_pass": 0.08518,
+              "false_cert_given_pass": 0.08633,
               "false_cert_given_pass_le_delta_prime": true,
-              "power_at_p_main": 0.93523
+              "power_at_p_main": 0.90838
             },
             "0.15": {
               "c_exact": 5,
@@ -283,11 +283,11 @@
               "c_matches": null,
               "realised_credit_events": 5.0,
               "realised_credit_pct_of_n0": 35.714285714285715,
-              "false_cert_at_p_eq_eps": 0.13252,
+              "false_cert_at_p_eq_eps": 0.13446,
               "closed_form": 0.13421772800000006,
-              "false_cert_given_pass": 0.13252,
+              "false_cert_given_pass": 0.13446,
               "false_cert_given_pass_le_delta_prime": true,
-              "power_at_p_main": 0.94659
+              "power_at_p_main": 0.92328
             },
             "0.2": {
               "c_exact": 6,
@@ -295,17 +295,17 @@
               "c_matches": null,
               "realised_credit_events": 6.0,
               "realised_credit_pct_of_n0": 42.857142857142854,
-              "false_cert_at_p_eq_eps": 0.16938,
+              "false_cert_at_p_eq_eps": 0.16977,
               "closed_form": 0.1677721600000001,
-              "false_cert_given_pass": 0.16938,
+              "false_cert_given_pass": 0.16977,
               "false_cert_given_pass_le_delta_prime": true,
-              "power_at_p_main": 0.95158
+              "power_at_p_main": 0.93262
             }
           }
         },
         "S1_twin_main": {
-          "N_sim": 164,
-          "q_sim_mean": 0.009527439024390244,
+          "N_sim": 114,
+          "q_sim_mean": 0.013706140350877192,
           "P_sim_pass": 1.0,
           "by_delta_prime": {
             "0.075": {
@@ -314,11 +314,11 @@
               "c_matches": null,
               "realised_credit_events": 2.0,
               "realised_credit_pct_of_n0": 14.285714285714286,
-              "false_cert_at_p_eq_eps": 0.0678,
+              "false_cert_at_p_eq_eps": 0.06777,
               "closed_form": 0.06871947673600004,
-              "false_cert_given_pass": 0.0678,
+              "false_cert_given_pass": 0.06777,
               "false_cert_given_pass_le_delta_prime": true,
-              "power_at_p_main": 0.92975
+              "power_at_p_main": 0.89708
             },
             "0.1": {
               "c_exact": 3,
@@ -326,11 +326,11 @@
               "c_matches": null,
               "realised_credit_events": 3.0,
               "realised_credit_pct_of_n0": 21.428571428571427,
-              "false_cert_at_p_eq_eps": 0.0874,
+              "false_cert_at_p_eq_eps": 0.08469,
               "closed_form": 0.08589934592000005,
-              "false_cert_given_pass": 0.0874,
+              "false_cert_given_pass": 0.08469,
               "false_cert_given_pass_le_delta_prime": true,
-              "power_at_p_main": 0.93394
+              "power_at_p_main": 0.90809
             },
             "0.15": {
               "c_exact": 5,
@@ -338,11 +338,11 @@
               "c_matches": null,
               "realised_credit_events": 5.0,
               "realised_credit_pct_of_n0": 35.714285714285715,
-              "false_cert_at_p_eq_eps": 0.13453,
+              "false_cert_at_p_eq_eps": 0.13474,
               "closed_form": 0.13421772800000006,
-              "false_cert_given_pass": 0.13453,
+              "false_cert_given_pass": 0.13474,
               "false_cert_given_pass_le_delta_prime": true,
-              "power_at_p_main": 0.94573
+              "power_at_p_main": 0.92359
             },
             "0.2": {
               "c_exact": 6,
@@ -350,11 +350,11 @@
               "c_matches": null,
               "realised_credit_events": 6.0,
               "realised_credit_pct_of_n0": 42.857142857142854,
-              "false_cert_at_p_eq_eps": 0.16809,
+              "false_cert_at_p_eq_eps": 0.16808,
               "closed_form": 0.1677721600000001,
-              "false_cert_given_pass": 0.16809,
+              "false_cert_given_pass": 0.16808,
               "false_cert_given_pass_le_delta_prime": true,
-              "power_at_p_main": 0.952
+              "power_at_p_main": 0.93159
             }
           }
         }

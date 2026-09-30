@@ -23,22 +23,22 @@
 \newcommand{\nLemmaMin}{0.2500} % c4_power.lemma_mean_median.min_F_floor_Np
 \newcommand{\nCorpusT}{3,170} % corpus17_manifest.counts.mode_T_total (events)
 \newcommand{\nCorpusTvideos}{101} % mode_T_real_videos
-\newcommand{\nMainScenes}{76} % calibration_scenes.main
+\newcommand{\nMainScenes}{48} % calibration_scenes.main
 \newcommand{\nNightScenes}{6} % calibration_scenes.night
 \newcommand{\nTurbScenes}{4} % calibration_scenes.turbulence
 \newcommand{\nPTZScenes}{4} % calibration_scenes.excluded_PTZ
-\newcommand{\nJitterScenes}{2} % calibration_scenes.jitter (cameraJitter, post-F1 correction v1.1)
+\newcommand{\nJitterScenes}{26} % calibration_scenes.jitter (cameraJitter, post-F1 correction v1.1)
 \newcommand{\nMainCDnet}{28} % p1_background17.by_tier.main CDnet
-\newcommand{\nMainLASIESTA}{48} % by_tier.main LASIESTA
-\newcommand{\nMainN}{164} % e0_units main N (events, d>=32)
+\newcommand{\nMainLASIESTA}{20} % by_tier.main LASIESTA
+\newcommand{\nMainN}{114} % e0_units main N (events, d>=32)
 \newcommand{\nMainDw}{0} % e0_units main D_worst_phase.num (events)
-\newcommand{\nMainDwPct}{0.00\%} % 0/164
+\newcommand{\nMainDwPct}{0.00\%} % 0/114
 \newcommand{\nMainDexp}{0.0000} % expected discordant events (mean over phases and 3 variants)
-\newcommand{\nMainDexpPct}{0.00\%} % 0.0000/164
-\newcommand{\nMainUfleet}{1.81\%} % U_CP(0,164)
+\newcommand{\nMainDexpPct}{0.00\%} % 0.0000/114
+\newcommand{\nMainUfleet}{2.59\%} % U_CP(0,114)
 \newcommand{\nMainJ}{0} % scenes with a discordant event
-\newcommand{\nMainM}{76} % scenes
-\newcommand{\nMainUpop}{3.87\%} % U_CP(0,76)
+\newcommand{\nMainM}{48} % scenes
+\newcommand{\nMainUpop}{6.05\%} % U_CP(0,48)
 \newcommand{\nNightN}{25} % night events d>=32
 \newcommand{\nNightDw}{12} % night worst-phase discordant
 \newcommand{\nNightDwPct}{48\%} % 12/25
@@ -47,24 +47,24 @@
 \newcommand{\nNightUfleet}{65.9\%} % night U_fleet worst
 \newcommand{\nNightJ}{5} % night J
 \newcommand{\nNightUpop}{99.1\%} % night U_pop
-\newcommand{\nJitN}{16} % jitter events d>=32
+\newcommand{\nJitN}{62} % jitter events d>=32
 \newcommand{\nJitDw}{3} % jitter worst-phase discordant
-\newcommand{\nJitUfleet}{41.7\%} % jitter U_fleet worst
+\newcommand{\nJitUfleet}{12.0\%} % jitter U_fleet worst
 \newcommand{\nJitJ}{1} % jitter J
-\newcommand{\nJitM}{2} % jitter scenes
-\newcommand{\nJitUpop}{97.5\%} % jitter U_pop
+\newcommand{\nJitM}{26} % jitter scenes
+\newcommand{\nJitUpop}{17.0\%} % jitter U_pop
 \newcommand{\nJitFC}{0} % jitter cameras falsely certified, main-only calibration, phase-averaged (OP*)
 \newcommand{\nJitFCch}{0} % same at (16,16)
 \newcommand{\nJitPgt}{0} % jitter cameras with phase-averaged p_s > eps (OP*)
 \newcommand{\nTurbN}{2} % turbulence events d>=32 (scenes run: 2)
-\newcommand{\nAllN}{207} % all tiers N
+\newcommand{\nAllN}{203} % all tiers N
 \newcommand{\nAllDw}{16} % all tiers worst-phase discordant
-\newcommand{\nAllUfleet}{11.5\%} % all tiers U_fleet
+\newcommand{\nAllUfleet}{11.7\%} % all tiers U_fleet
 \newcommand{\nAllJ}{7} % all tiers J
-\newcommand{\nAllM}{86} % all tiers scenes
-\newcommand{\nAllUpop}{14.7\%} % all tiers U_pop
-\newcommand{\nPmainOP}{0.61\%} % 1.0000/164 (phase-expected)
-\newcommand{\nPmainOPshort}{0.6\%} % same, 1 decimal (abstract)
+\newcommand{\nAllM}{82} % all tiers scenes
+\newcommand{\nAllUpop}{15.4\%} % all tiers U_pop
+\newcommand{\nPmainOP}{0.88\%} % 1.0000/114 (phase-expected)
+\newcommand{\nPmainOPshort}{0.9\%} % same, 1 decimal (abstract)
 \newcommand{\nRealMissExpOP}{1.00} % expected real-miss events at OP* (main)
 \newcommand{\nRealMissEvOP}{1} % events with a real miss at >= 1 phase
 \newcommand{\nRealMissScOP}{1} % scenes with a real miss
@@ -73,52 +73,53 @@
 \newcommand{\nChRealMissEv}{13} % (16,16) real-miss events
 \newcommand{\nChTwinAlso}{13} % (16,16) twin also misses
 \newcommand{\nChRecall}{88\%} % (16,16) recall expected
-\newcommand{\nChN}{179} % (16,16) events
+\newcommand{\nChN}{129} % (16,16) events
 \newcommand{\nOldPhat}{11.3\%} % operating_points_v2.final_operating_point.p_hat over 161 CDnet events (all tiers)
 \newcommand{\nOldN}{161} % events behind the pooled 11.3%
 \newcommand{\nOldNreq}{112} % direct n at 11.3%
-\newcommand{\nLosoOP}{0} % LOSO violations D_s > U_pop(-s), OP* (of 76)
-\newcommand{\nLosoCh}{1} % LOSO violations, (16,16) (of 76)
+\newcommand{\nLosoOP}{0} % LOSO violations D_s > U_pop(-s), OP* (of 48)
+\newcommand{\nLosoCh}{0} % LOSO violations, (16,16) (of 48)
 \newcommand{\nLosoOPFC}{0} % OP* LOSO false certificates
 \newcommand{\nLosoChFC}{0} % (16,16) LOSO false certificates
-\newcommand{\nChUpop}{8.1\%} % U_CP(2,76)
+\newcommand{\nChUpop}{12.5\%} % U_CP(2,48)
 \newcommand{\nChJ}{2} % (16,16) J
 \newcommand{\nMcFC}{0.0\%} % MC 10,000 false-cert rate OP*
 \newcommand{\nMcFCch}{0.0\%} % MC false-cert rate (16,16)
 \newcommand{\nMustFailScenes}{3} % K=48 scenes with p_s > eps
 \newcommand{\nMustFailRefuse}{100\%} % refusal rate
 \newcommand{\nMustFailApp}{1} % scenes with detector-miss p > eps
-\newcommand{\nFleetMeasPB}{0.0152} % max exact PB failure over 12 cases
+\newcommand{\nFleetMeasPB}{0.0272} % max exact PB failure over 12 cases
 \newcommand{\nFleetMeasCases}{12} % cases
-\newcommand{\nPopTightMax}{0.047} % C4a-pop tight-case max failure (MC 1e5)
-\newcommand{\nLeakUpopZero}{3.9\%} % k=0 U_pop OP*
-\newcommand{\nLeakUpopSix}{12.4\%} % k=6 U_pop OP*
-\newcommand{\nLeakUpopZeroCh}{8.1\%} % k=0 U_pop (16,16)
-\newcommand{\nLeakUpopSixCh}{15.4\%} % k=6 (16,16)
-\newcommand{\nLeakWithdrawK}{5} % smallest k with all subsets withdrawn (U > eps/2), OP*
-\newcommand{\nLeakWithdrawKfirst}{4} % smallest k with some subsets withdrawn, OP*
+\newcommand{\nPopTightMax}{0.041} % C4a-pop tight-case max failure (MC 1e5)
+\newcommand{\nLeakUpopZero}{6.1\%} % k=0 U_pop OP*
+\newcommand{\nLeakUpopSix}{18.5\%} % k=6 U_pop OP*
+\newcommand{\nLeakUpopZeroCh}{12.5\%} % k=0 U_pop (16,16)
+\newcommand{\nLeakUpopSixCh}{23.0\%} % k=6 (16,16)
+\newcommand{\nLeakWithdrawK}{3} % smallest k with all subsets withdrawn (U > eps/2), OP*
+\newcommand{\nLeakWithdrawKfirst}{2} % smallest k with some subsets withdrawn, OP*
 \newcommand{\nNightFC}{4} % night cameras falsely certified, judged alone (OP*)
-\newcommand{\nNightFCch}{4} % same at (16,16)
+\newcommand{\nNightFCch}{3} % same at (16,16)
 \newcommand{\nNightPgt}{4} % night cameras with p_s > eps
 \newcommand{\nMainFCleak}{0} % main cameras falsely certified, any k
 \newcommand{\nSavedOP}{14} % median real events saved per camera, OP*, q known
-\newcommand{\nSavedCamOP}{74} % cameras saving (of 76)
+\newcommand{\nSavedCamOP}{46} % cameras saving (of 48)
 \newcommand{\nSavedFinCamOP}{3} % cameras saving with the twin as built
 \newcommand{\nSavedFinOP}{0} % median saved, twin as built
-\newcommand{\nTwinRunsOP}{23} % exchange_rate.marked.OP*.q_known.n_twin_events_needed_median
-\newcommand{\nCpuPerSavedOP}{0.037} % CPU-hours per saved real event, OP* median
-\newcommand{\nBreakEven}{27} % 1/c: events/hour (assumes 1 CPU-hour = 1 hour of waiting)
-\newcommand{\nSavedCh}{22} % (16,16) saved per camera
-\newcommand{\nSavedOPC}{29} % OP-C saved per camera
-\newcommand{\nTwinCostScene}{0.13} % CPU-hours per scene, median (C0 build)
-\newcommand{\nTwinCostTotal}{16.5} % CPU-hours, 76 main-domain scenes
+\newcommand{\nTwinRunsOP}{28} % exchange_rate.marked.OP*.q_known.n_twin_events_needed_median
+\newcommand{\nCpuPerSavedOP}{0.069} % CPU-hours per saved real event, OP* median
+\newcommand{\nBreakEven}{14} % 1/c: events/hour (assumes 1 CPU-hour = 1 hour of waiting)
+\newcommand{\nSavedCh}{30} % (16,16) saved per camera
+\newcommand{\nSavedOPC}{46} % OP-C saved per camera
+\newcommand{\nTwinCostScene}{0.20} % CPU-hours per scene, median (C0 build)
+\newcommand{\nTwinCostTotal}{14.1} % CPU-hours, 48 main-domain scenes
 \newcommand{\nGridPts}{70} % grid points eps=20%
-\newcommand{\nGridFinMax}{5} % max cameras saving with the twin as built, any grid point
-\newcommand{\nCtwoTwinPass}{98.1\%} % twin pass probability (MC 1e5)
-\newcommand{\nCtwoFCA}{7.2\%} % false cert at p=eps, delta'=0.075
-\newcommand{\nCtwoFCB}{9.7\%} % false cert at p=eps, delta'=0.1
-\newcommand{\nCtwoFCC}{14.7\%} % false cert at p=eps, delta'=0.15
-\newcommand{\nCtwoFCD}{19.1\%} % false cert at p=eps, delta'=0.2
+\newcommand{\nGridFinMax}{4} % max cameras saving with the twin as built, any grid point
+\newcommand{\nCtwoTwinPass}{73.3\%} % twin pass probability (MC 1e5)
+\newcommand{\nCtwoTwinPassShort}{73\%} % twin pass probability, rounded: share of the exact credit realised on average
+\newcommand{\nCtwoFCA}{6.7\%} % false cert at p=eps, delta'=0.075
+\newcommand{\nCtwoFCB}{8.4\%} % false cert at p=eps, delta'=0.1
+\newcommand{\nCtwoFCC}{12.2\%} % false cert at p=eps, delta'=0.15
+\newcommand{\nCtwoFCD}{15.6\%} % false cert at p=eps, delta'=0.2
 \newcommand{\nCtwoBMCPass}{0\%} % BMC-synth pass probability
 \newcommand{\nCtwoBMCN}{30} % BMC-synth events d>=32
 \newcommand{\nIWtemporal}{0.64} % iw_ablation_v2 all targets, logistic, temporal
@@ -130,89 +131,89 @@
 \newcommand{\nClampShare}{70\%} % share of twin frames with a width clamp
 \newcommand{\nClampExtraDrop}{3.0} % extra twin hit-rate drop (points) on clamped frames
 \newcommand{\nClampPairs}{631} % event x variant pairs
-\newcommand{\nCfiveQzero}{0.95\%} % q at x=0
-\newcommand{\nCfiveQfifty}{1.68\%} % q at x=50%
-\newcommand{\nConfTwin}{0.83} % median detector confidence on twin hits
-\newcommand{\nConfReal}{0.90} % median detector confidence on real hits
-\newcommand{\nOrigN}{166} % original definition events at OP*
+\newcommand{\nCfiveQzero}{1.37\%} % q at x=0
+\newcommand{\nCfiveQfifty}{2.36\%} % q at x=50%
+\newcommand{\nConfTwin}{0.78} % median detector confidence on twin hits
+\newcommand{\nConfReal}{0.87} % median detector confidence on real hits
+\newcommand{\nOrigN}{116} % original definition events at OP*
 \newcommand{\nOrigJ}{0} % original definition J
-\newcommand{\nPmainOPA}{0.61\%} % OP-A main p-hat
+\newcommand{\nPmainOPA}{0.88\%} % OP-A main p-hat
 \newcommand{\nDexpOPA}{0.00} % OP-A expected discordant events
-\newcommand{\nPmainOPC}{0.61\%} % OP-C main p-hat
+\newcommand{\nPmainOPC}{0.88\%} % OP-C main p-hat
 \newcommand{\nDexpOPC}{0.00} % OP-C expected discordant events
 \newcommand{\nTurbDw}{1} % turbulence worst-phase discordant events
 \newcommand{\nTurbUfleet}{97.5\%} % turbulence U_fleet
 \newcommand{\nTurbJ}{1} % turbulence J
 \newcommand{\nTurbM}{2} % turbulence scenes run
 \newcommand{\nTurbUpop}{97.5\%} % turbulence U_pop
-\newcommand{\nUpopJzero}{3.9\%} % U_CP(0,76), formula (worked example)
-\newcommand{\nUpopJone}{6.1\%} % U_CP(1,76), formula (worked example)
-\newcommand{\nUpopJtwo}{8.1\%} % U_CP(2,76), formula (worked example)
-\newcommand{\nUpopJthree}{9.9\%} % U_CP(3,76), formula (worked example)
+\newcommand{\nUpopJzero}{6.1\%} % U_CP(0,48), formula (worked example)
+\newcommand{\nUpopJone}{9.5\%} % U_CP(1,48), formula (worked example)
+\newcommand{\nUpopJtwo}{12.5\%} % U_CP(2,48), formula (worked example)
+\newcommand{\nUpopJthree}{15.4\%} % U_CP(3,48), formula (worked example)
 \newcommand{\nPiStarA}{6.1\%} % Result 2 threshold pi* on the simulator pass probability, delta'=0.075, eps=delta=5%
 \newcommand{\nPiStarB}{3.0\%} % Result 2 threshold pi* on the simulator pass probability, delta'=0.1, eps=delta=5%
 \newcommand{\nPiStarC}{1.5\%} % Result 2 threshold pi* on the simulator pass probability, delta'=0.15, eps=delta=5%
 \newcommand{\nPiStarD}{1.0\%} % Result 2 threshold pi* on the simulator pass probability, delta'=0.2, eps=delta=5%
-\newcommand{\nPAccept}{97.4\%} % share of static cameras accepted by the twin route at OP* (cameras saving / 76)
-\newcommand{\nAcceptInflation}{0.1} % U_delta/2(J,76) (1/P(accept) - 1), percentage points
-\newcommand{\nUhalfJzero}{4.7\%} % U_CP(0,76) at delta/2 (decision level)
-\newcommand{\nUhalfJone}{7.1\%} % U_CP(1,76) at delta/2 (decision level)
-\newcommand{\nUhalfJtwo}{9.2\%} % U_CP(2,76) at delta/2 (decision level)
-\newcommand{\nUhalfJthree}{11.1\%} % U_CP(3,76) at delta/2 (decision level)
-\newcommand{\nFiveBudget}{0.3\%} % eps=5%: room left for q_U after U_delta/2(0,76)
-\newcommand{\nFiveRuns}{1406} % eps=5%: miss-free twin runs needed for q_U <= budget
-\newcommand{\nCalibPerCam}{2.2} % annotated calibration events at OP* per static camera (N/m)
-\newcommand{\nDirectPooledU}{2.9\%} % direct CP on the calibrated cameras' real misses (events missed at some phase / N)
-\newcommand{\nCtwoCFA}{7.3\%} % closed form P(pass)(1-eps)^n1+(1-P(pass))(1-eps)^n0, delta'=0.075
-\newcommand{\nCtwoCFB}{9.8\%} % closed form P(pass)(1-eps)^n1+(1-P(pass))(1-eps)^n0, delta'=0.1
-\newcommand{\nCtwoCFC}{14.8\%} % closed form P(pass)(1-eps)^n1+(1-P(pass))(1-eps)^n0, delta'=0.15
-\newcommand{\nCtwoCFD}{19.1\%} % closed form P(pass)(1-eps)^n1+(1-P(pass))(1-eps)^n0, delta'=0.2
+\newcommand{\nPAccept}{95.8\%} % share of static cameras accepted by the twin route at OP* (cameras saving / 48)
+\newcommand{\nAcceptInflation}{0.3} % U_delta/2(J,48) (1/P(accept) - 1), percentage points
+\newcommand{\nUhalfJzero}{7.4\%} % U_CP(0,48) at delta/2 (decision level)
+\newcommand{\nUhalfJone}{11.1\%} % U_CP(1,48) at delta/2 (decision level)
+\newcommand{\nUhalfJtwo}{14.3\%} % U_CP(2,48) at delta/2 (decision level)
+\newcommand{\nUhalfJthree}{17.2\%} % U_CP(3,48) at delta/2 (decision level)
+\newcommand{\nPopScenesQuarter}{119} % eps=5%: smallest m with U_CP(0,m) <= eps/2 = 2.5% (J=0, delta=5%)
+\newcommand{\nMCScenes}{4} % calibration_scenes.excluded_MC (LASIESTA moving camera)
+\newcommand{\nCalibPerCam}{2.4} % annotated calibration events at OP* per static camera (N/m)
+\newcommand{\nDirectPooledU}{4.1\%} % direct CP on the calibrated cameras' real misses (events missed at some phase / N)
+\newcommand{\nCtwoCFA}{6.7\%} % closed form P(pass)(1-eps)^n1+(1-P(pass))(1-eps)^n0, delta'=0.075
+\newcommand{\nCtwoCFB}{8.6\%} % closed form P(pass)(1-eps)^n1+(1-P(pass))(1-eps)^n0, delta'=0.1
+\newcommand{\nCtwoCFC}{12.3\%} % closed form P(pass)(1-eps)^n1+(1-P(pass))(1-eps)^n0, delta'=0.15
+\newcommand{\nCtwoCFD}{15.5\%} % closed form P(pass)(1-eps)^n1+(1-P(pass))(1-eps)^n0, delta'=0.2
 \newcommand{\nCtwoSE}{0.1\%} % MC standard error bound sqrt(0.1*0.9/1e5)=0.09 pts, rounded to 0.1
 \newcommand{\nNightHeldD}{23.2\%} % night held-out median per-scene D (pre-registered criterion <= 5%)
 \newcommand{\nNightHeldN}{14} % night held-out events at OP*
 \newcommand{\nNightBaseD}{47.2\%} % night tuning scenes, base twin, D-hat (phase-averaged)
 \newcommand{\nNightProfD}{47.0\%} % night tuning scenes, kept profile, D-hat
-\newcommand{\nDefAllA}{211} % primary definition, events of all durations (static)
-\newcommand{\nDefAllO}{273} % original definition, events of all durations (static)
+\newcommand{\nDefAllA}{161} % primary definition, events of all durations (static)
+\newcommand{\nDefAllO}{222} % original definition, events of all durations (static)
 \newcommand{\nOrigChJ}{3} % original definition (16,16) J
-\newcommand{\nOrigChUpop}{9.9\%} % original (16,16) U_pop
-\newcommand{\nOrigOPUfleet}{1.79\%} % original OP* U_fleet (worst phase)
+\newcommand{\nOrigChUpop}{15.4\%} % original (16,16) U_pop
+\newcommand{\nOrigOPUfleet}{2.55\%} % original OP* U_fleet (worst phase)
 \newcommand{\nOrigOPDw}{0} % original OP* disc
-\newcommand{\nTpOPS}{0.61\%} % OP* static-domain p-hat
+\newcommand{\nTpOPS}{0.88\%} % OP* static-domain p-hat
 \newcommand{\nTndOPS}{14} % OP* n_direct (80% power at p-hat)
 \newcommand{\nTsvOPS}{14} % OP* saved per camera (median)
-\newcommand{\nTcamOPS}{74} % OP* cameras saving (of 76)
+\newcommand{\nTcamOPS}{46} % OP* cameras saving (of 48)
 \newcommand{\nTcamfinOPS}{3} % OP* cameras saving, twin as built
-\newcommand{\nTrunsOPS}{23} % OP* twin runs needed per camera
-\newcommand{\nTcpuOPS}{0.037} % OP* CPU-h per saved event
-\newcommand{\nTpOPA}{0.61\%} % OP-A static-domain p-hat
+\newcommand{\nTrunsOPS}{28} % OP* twin runs needed per camera
+\newcommand{\nTcpuOPS}{0.069} % OP* CPU-h per saved event
+\newcommand{\nTpOPA}{0.88\%} % OP-A static-domain p-hat
 \newcommand{\nTndOPA}{14} % OP-A n_direct (80% power at p-hat)
 \newcommand{\nTsvOPA}{14} % OP-A saved per camera (median)
-\newcommand{\nTcamOPA}{75} % OP-A cameras saving (of 76)
+\newcommand{\nTcamOPA}{47} % OP-A cameras saving (of 48)
 \newcommand{\nTcamfinOPA}{3} % OP-A cameras saving, twin as built
-\newcommand{\nTrunsOPA}{23} % OP-A twin runs needed per camera
-\newcommand{\nTcpuOPA}{0.035} % OP-A CPU-h per saved event
-\newcommand{\nTpOPC}{0.61\%} % OP-C static-domain p-hat
-\newcommand{\nTndOPC}{29} % OP-C n_direct (80% power at p-hat)
-\newcommand{\nTsvOPC}{29} % OP-C saved per camera (median)
-\newcommand{\nTcamOPC}{75} % OP-C cameras saving (of 76)
+\newcommand{\nTrunsOPA}{28} % OP-A twin runs needed per camera
+\newcommand{\nTcpuOPA}{0.064} % OP-A CPU-h per saved event
+\newcommand{\nTpOPC}{0.88\%} % OP-C static-domain p-hat
+\newcommand{\nTndOPC}{46} % OP-C n_direct (80% power at p-hat)
+\newcommand{\nTsvOPC}{46} % OP-C saved per camera (median)
+\newcommand{\nTcamOPC}{47} % OP-C cameras saving (of 48)
 \newcommand{\nTcamfinOPC}{0} % OP-C cameras saving, twin as built
-\newcommand{\nTrunsOPC}{70} % OP-C twin runs needed per camera
-\newcommand{\nTcpuOPC}{0.049} % OP-C CPU-h per saved event
-\newcommand{\nTpCH}{3.07\%} % challenge_16_16 static-domain p-hat
-\newcommand{\nTndCH}{22} % challenge_16_16 n_direct (80% power at p-hat)
-\newcommand{\nTsvCH}{22} % challenge_16_16 saved per camera (median)
-\newcommand{\nTcamCH}{73} % challenge_16_16 cameras saving (of 76)
-\newcommand{\nTcamfinCH}{2} % challenge_16_16 cameras saving, twin as built
-\newcommand{\nTrunsCH}{33} % challenge_16_16 twin runs needed per camera
-\newcommand{\nTcpuCH}{0.034} % challenge_16_16 CPU-h per saved event
-\newcommand{\nWPSpMain}{0.6\%} % worst-phase real miss rate, main, OP* (events missed at >= 1 phase / N=164)
-\newcommand{\nWPSqMain}{2.4\%} % worst-phase twin miss rate (majority), main, OP*
-\newcommand{\nPASpMain}{0.6\%} % phase-averaged real miss rate, main, OP*
-\newcommand{\nPASqMain}{1.0\%} % phase-averaged twin miss rate (majority), main, OP*
-\newcommand{\nWPSpJit}{18.8\%} % worst-phase real miss rate, jitter, OP* (events missed at >= 1 phase / N=16)
+\newcommand{\nTrunsOPC}{149} % OP-C twin runs needed per camera
+\newcommand{\nTcpuOPC}{0.104} % OP-C CPU-h per saved event
+\newcommand{\nTpCH}{4.26\%} % challenge_16_16 static-domain p-hat
+\newcommand{\nTndCH}{30} % challenge_16_16 n_direct (80% power at p-hat)
+\newcommand{\nTsvCH}{30} % challenge_16_16 saved per camera (median)
+\newcommand{\nTcamCH}{45} % challenge_16_16 cameras saving (of 48)
+\newcommand{\nTcamfinCH}{0} % challenge_16_16 cameras saving, twin as built
+\newcommand{\nTrunsCH}{66} % challenge_16_16 twin runs needed per camera
+\newcommand{\nTcpuCH}{0.078} % challenge_16_16 CPU-h per saved event
+\newcommand{\nWPSpMain}{0.9\%} % worst-phase real miss rate, main, OP* (events missed at >= 1 phase / N=114)
+\newcommand{\nWPSqMain}{3.5\%} % worst-phase twin miss rate (majority), main, OP*
+\newcommand{\nPASpMain}{0.9\%} % phase-averaged real miss rate, main, OP*
+\newcommand{\nPASqMain}{1.4\%} % phase-averaged twin miss rate (majority), main, OP*
+\newcommand{\nWPSpJit}{4.8\%} % worst-phase real miss rate, jitter, OP* (events missed at >= 1 phase / N=62)
 \newcommand{\nWPSqJit}{0.0\%} % worst-phase twin miss rate (majority), jitter, OP*
-\newcommand{\nPASpJit}{2.0\%} % phase-averaged real miss rate, jitter, OP*
+\newcommand{\nPASpJit}{0.5\%} % phase-averaged real miss rate, jitter, OP*
 \newcommand{\nPASqJit}{0.0\%} % phase-averaged twin miss rate (majority), jitter, OP*
 \newcommand{\nWPSpNight}{52.0\%} % worst-phase real miss rate, night, OP* (events missed at >= 1 phase / N=25)
 \newcommand{\nWPSqNight}{16.0\%} % worst-phase twin miss rate (majority), night, OP*
@@ -222,25 +223,25 @@
 \newcommand{\nWPSqTurb}{0.0\%} % worst-phase twin miss rate (majority), turbulence, OP*
 \newcommand{\nPASpTurb}{6.2\%} % phase-averaged real miss rate, turbulence, OP*
 \newcommand{\nPASqTurb}{0.0\%} % phase-averaged twin miss rate (majority), turbulence, OP*
-\newcommand{\nWPSpAll}{8.7\%} % worst-phase real miss rate, all_tiers, OP* (events missed at >= 1 phase / N=207)
+\newcommand{\nWPSpAll}{8.9\%} % worst-phase real miss rate, all_tiers, OP* (events missed at >= 1 phase / N=203)
 \newcommand{\nWPSqAll}{3.9\%} % worst-phase twin miss rate (majority), all_tiers, OP*
-\newcommand{\nPASpAll}{5.1\%} % phase-averaged real miss rate, all_tiers, OP*
-\newcommand{\nPASqAll}{1.3\%} % phase-averaged twin miss rate (majority), all_tiers, OP*
-\newcommand{\nWXSp}{0.6\%} % pooled worst-phase real miss rate, main, OP*
+\newcommand{\nPASpAll}{5.2\%} % phase-averaged real miss rate, all_tiers, OP*
+\newcommand{\nPASqAll}{1.4\%} % phase-averaged twin miss rate (majority), all_tiers, OP*
+\newcommand{\nWXSp}{0.9\%} % pooled worst-phase real miss rate, main, OP*
 \newcommand{\nWXSnd}{14} % direct plan at the worst-phase p, OP*
-\newcommand{\nWXSacc}{72} % cameras accepted with worst-phase q (of 76), OP*
+\newcommand{\nWXSacc}{44} % cameras accepted with worst-phase q (of 48), OP*
 \newcommand{\nWXSsaved}{14} % median real events saved per camera, worst-phase, OP*
 \newcommand{\nWXSfa}{0} % accepted cameras with worst-phase p_s > eps, OP*
-\newcommand{\nWXSruns}{23} % twin runs needed per camera (median), worst-phase q, OP*
-\newcommand{\nWPSDwMain}{0} % worst-phase discordant events, main, OP* (of N=164)
-\newcommand{\nWPSNMain}{164} % main events, OP*
-\newcommand{\nWPSUfMain}{1.8\%} % U_CP(0,164), main, OP*
-\newcommand{\nWPSJMain}{0} % main scenes with a worst-phase discordant event, OP* (of 76)
-\newcommand{\nWPSUpMain}{3.9\%} % U_CP(0,76), main, OP*
-\newcommand{\nWPSNJit}{16} % jitter events, OP*
+\newcommand{\nWXSruns}{28} % twin runs needed per camera (median), worst-phase q, OP*
+\newcommand{\nWPSDwMain}{0} % worst-phase discordant events, main, OP* (of N=114)
+\newcommand{\nWPSNMain}{114} % main events, OP*
+\newcommand{\nWPSUfMain}{2.6\%} % U_CP(0,114), main, OP*
+\newcommand{\nWPSJMain}{0} % main scenes with a worst-phase discordant event, OP* (of 48)
+\newcommand{\nWPSUpMain}{6.1\%} % U_CP(0,48), main, OP*
+\newcommand{\nWPSNJit}{62} % jitter events, OP*
 \newcommand{\nWPSDwJit}{3} % jitter worst-phase discordant events, OP*
-\newcommand{\nOODSJitcams}{2} % jitter cameras judged with a main-only calibration, OP*
-\newcommand{\nOODSJitacc}{2} % jitter cameras accepted (worst-phase q_w + U_delta/2(J_main,m_main) <= eps), OP*
+\newcommand{\nOODSJitcams}{26} % jitter cameras judged with a main-only calibration, OP*
+\newcommand{\nOODSJitacc}{26} % jitter cameras accepted (worst-phase q_w + U_delta/2(J_main,m_main) <= eps), OP*
 \newcommand{\nOODSJitfa}{1} % jitter cameras falsely accepted (accepted and p_w > eps), OP*
 \newcommand{\nOODSJitpgt}{1} % jitter cameras with p_w > eps, OP*
 \newcommand{\nOODSNightcams}{6} % night cameras judged with a main-only calibration, OP*
@@ -248,13 +249,13 @@
 \newcommand{\nOODSNightfa}{4} % night cameras falsely accepted (accepted and p_w > eps), OP*
 \newcommand{\nOODSNightpgt}{5} % night cameras with p_w > eps, OP*
 \newcommand{\nOODSJitFApw}{37.5\%} % p_w of the falsely accepted jitter camera traffic, OP*
-\newcommand{\nWPCpMain}{7.3\%} % worst-phase real miss rate, main, challenge_16_16 (events missed at >= 1 phase / N=179)
-\newcommand{\nWPCqMain}{9.5\%} % worst-phase twin miss rate (majority), main, challenge_16_16
-\newcommand{\nPACpMain}{3.1\%} % phase-averaged real miss rate, main, challenge_16_16
-\newcommand{\nPACqMain}{4.7\%} % phase-averaged twin miss rate (majority), main, challenge_16_16
-\newcommand{\nWPCpJit}{33.3\%} % worst-phase real miss rate, jitter, challenge_16_16 (events missed at >= 1 phase / N=21)
+\newcommand{\nWPCpMain}{10.1\%} % worst-phase real miss rate, main, challenge_16_16 (events missed at >= 1 phase / N=129)
+\newcommand{\nWPCqMain}{13.2\%} % worst-phase twin miss rate (majority), main, challenge_16_16
+\newcommand{\nPACpMain}{4.3\%} % phase-averaged real miss rate, main, challenge_16_16
+\newcommand{\nPACqMain}{6.5\%} % phase-averaged twin miss rate (majority), main, challenge_16_16
+\newcommand{\nWPCpJit}{10.4\%} % worst-phase real miss rate, jitter, challenge_16_16 (events missed at >= 1 phase / N=67)
 \newcommand{\nWPCqJit}{0.0\%} % worst-phase twin miss rate (majority), jitter, challenge_16_16
-\newcommand{\nPACpJit}{6.0\%} % phase-averaged real miss rate, jitter, challenge_16_16
+\newcommand{\nPACpJit}{1.9\%} % phase-averaged real miss rate, jitter, challenge_16_16
 \newcommand{\nPACqJit}{0.0\%} % phase-averaged twin miss rate (majority), jitter, challenge_16_16
 \newcommand{\nWPCpNight}{63.9\%} % worst-phase real miss rate, night, challenge_16_16 (events missed at >= 1 phase / N=36)
 \newcommand{\nWPCqNight}{30.6\%} % worst-phase twin miss rate (majority), night, challenge_16_16
@@ -264,25 +265,25 @@
 \newcommand{\nWPCqTurb}{0.0\%} % worst-phase twin miss rate (majority), turbulence, challenge_16_16
 \newcommand{\nPACpTurb}{6.2\%} % phase-averaged real miss rate, turbulence, challenge_16_16
 \newcommand{\nPACqTurb}{0.0\%} % phase-averaged twin miss rate (majority), turbulence, challenge_16_16
-\newcommand{\nWPCpAll}{18.5\%} % worst-phase real miss rate, all_tiers, challenge_16_16 (events missed at >= 1 phase / N=238)
-\newcommand{\nWPCqAll}{11.8\%} % worst-phase twin miss rate (majority), all_tiers, challenge_16_16
-\newcommand{\nPACpAll}{10.4\%} % phase-averaged real miss rate, all_tiers, challenge_16_16
+\newcommand{\nWPCpAll}{18.8\%} % worst-phase real miss rate, all_tiers, challenge_16_16 (events missed at >= 1 phase / N=234)
+\newcommand{\nWPCqAll}{12.0\%} % worst-phase twin miss rate (majority), all_tiers, challenge_16_16
+\newcommand{\nPACpAll}{10.6\%} % phase-averaged real miss rate, all_tiers, challenge_16_16
 \newcommand{\nPACqAll}{4.8\%} % phase-averaged twin miss rate (majority), all_tiers, challenge_16_16
-\newcommand{\nWXCp}{7.3\%} % pooled worst-phase real miss rate, main, challenge_16_16
-\newcommand{\nWXCnd}{50} % direct plan at the worst-phase p, challenge_16_16
-\newcommand{\nWXCacc}{71} % cameras accepted with worst-phase q (of 76), challenge_16_16
-\newcommand{\nWXCsaved}{50} % median real events saved per camera, worst-phase, challenge_16_16
+\newcommand{\nWXCp}{10.1\%} % pooled worst-phase real miss rate, main, challenge_16_16
+\newcommand{\nWXCnd}{88} % direct plan at the worst-phase p, challenge_16_16
+\newcommand{\nWXCacc}{43} % cameras accepted with worst-phase q (of 48), challenge_16_16
+\newcommand{\nWXCsaved}{88} % median real events saved per camera, worst-phase, challenge_16_16
 \newcommand{\nWXCfa}{0} % accepted cameras with worst-phase p_s > eps, challenge_16_16
-\newcommand{\nWXCruns}{33} % twin runs needed per camera (median), worst-phase q, challenge_16_16
-\newcommand{\nWPCDwMain}{5} % worst-phase discordant events, main, challenge_16_16 (of N=179)
-\newcommand{\nWPCNMain}{179} % main events, challenge_16_16
-\newcommand{\nWPCUfMain}{5.8\%} % U_CP(5,179), main, challenge_16_16
-\newcommand{\nWPCJMain}{2} % main scenes with a worst-phase discordant event, challenge_16_16 (of 76)
-\newcommand{\nWPCUpMain}{8.1\%} % U_CP(2,76), main, challenge_16_16
-\newcommand{\nWPCNJit}{21} % jitter events, challenge_16_16
+\newcommand{\nWXCruns}{66} % twin runs needed per camera (median), worst-phase q, challenge_16_16
+\newcommand{\nWPCDwMain}{5} % worst-phase discordant events, main, challenge_16_16 (of N=129)
+\newcommand{\nWPCNMain}{129} % main events, challenge_16_16
+\newcommand{\nWPCUfMain}{8.0\%} % U_CP(5,129), main, challenge_16_16
+\newcommand{\nWPCJMain}{2} % main scenes with a worst-phase discordant event, challenge_16_16 (of 48)
+\newcommand{\nWPCUpMain}{12.5\%} % U_CP(2,48), main, challenge_16_16
+\newcommand{\nWPCNJit}{67} % jitter events, challenge_16_16
 \newcommand{\nWPCDwJit}{7} % jitter worst-phase discordant events, challenge_16_16
-\newcommand{\nOODCJitcams}{2} % jitter cameras judged with a main-only calibration, challenge_16_16
-\newcommand{\nOODCJitacc}{2} % jitter cameras accepted (worst-phase q_w + U_delta/2(J_main,m_main) <= eps), challenge_16_16
+\newcommand{\nOODCJitcams}{26} % jitter cameras judged with a main-only calibration, challenge_16_16
+\newcommand{\nOODCJitacc}{26} % jitter cameras accepted (worst-phase q_w + U_delta/2(J_main,m_main) <= eps), challenge_16_16
 \newcommand{\nOODCJitfa}{1} % jitter cameras falsely accepted (accepted and p_w > eps), challenge_16_16
 \newcommand{\nOODCJitpgt}{1} % jitter cameras with p_w > eps, challenge_16_16
 \newcommand{\nOODCNightcams}{6} % night cameras judged with a main-only calibration, challenge_16_16
@@ -290,13 +291,11 @@
 \newcommand{\nOODCNightfa}{3} % night cameras falsely accepted (accepted and p_w > eps), challenge_16_16
 \newcommand{\nOODCNightpgt}{6} % night cameras with p_w > eps, challenge_16_16
 \newcommand{\nOODCJitFApw}{53.8\%} % p_w of the falsely accepted jitter camera traffic, challenge_16_16
-\newcommand{\nSiteSm}{21} % sites (CDnet categories + LASIESTA groups), OP*
+\newcommand{\nSiteSm}{17} % sites (CDnet categories + LASIESTA groups), OP*
 \newcommand{\nSiteSJ}{0} % sites with a discordant event, OP*
-\newcommand{\nSiteSU}{13.3\%} % site-level population bound U_CP(J_site, m_site), OP*
+\newcommand{\nSiteSU}{16.2\%} % site-level population bound U_CP(J_site, m_site), OP*
 \newcommand{\nSiteSloso}{0} % leave-one-site-out violations, OP*
-\newcommand{\nSiteCm}{21} % sites (CDnet categories + LASIESTA groups), challenge_16_16
+\newcommand{\nSiteCm}{17} % sites (CDnet categories + LASIESTA groups), challenge_16_16
 \newcommand{\nSiteCJ}{1} % sites with a discordant event, challenge_16_16
-\newcommand{\nSiteCU}{20.7\%} % site-level population bound U_CP(J_site, m_site), challenge_16_16
+\newcommand{\nSiteCU}{25.0\%} % site-level population bound U_CP(J_site, m_site), challenge_16_16
 \newcommand{\nSiteCloso}{1} % leave-one-site-out violations, challenge_16_16
-\newcommand{\nRepoTag}{ress-v1.1} % artifact release tag
-\newcommand{\nRepoHashShort}{22da0795de09} % commit A (tagged) short hash

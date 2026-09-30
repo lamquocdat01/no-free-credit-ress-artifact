@@ -44,6 +44,7 @@ STEP_LABELS = ["initial twin run, original definition (all events, all durations
                "same scenes, LASIESTA frames in true temporal order",
                "LASIESTA scene list rebuilt (20 to 48 scenes)",
                "pan-tilt-zoom scenes excluded (4)",
+               "LASIESTA moving-camera scenes excluded (4)",
                "scenes run (2 held-out turbulence scenes not run)",
                "events of at least $d_{\\min}=32$ frames"]
 
@@ -54,7 +55,7 @@ def main():
     out.append(tab("tab:waterfall", "Event counts from the initial twin run to the analysed set (primary definition: largest "
                    "object $\\ge 256$ px). The two headline counts differ in unit: all durations vs.\\ duration $\\ge 32$.",
                    "lrr", ["step", "events", "scenes"],
-                   [(lab, s["events"], s["scenes"]) for lab, s in zip(STEP_LABELS, wf["steps"])]))
+                   [(lab, s["events"], s["scenes"]) for lab, s in zip(STEP_LABELS, wf["steps"], strict=True)]))
     u = J("e0_units.json")["recomputed"]
     rows = []
     for t in ("main", "jitter", "night", "turbulence", "all_tiers"):
@@ -78,7 +79,7 @@ def main():
                ["$d_{\\min}$", "$K$", "$\\hat p$", "$n_{\\mathrm{dir}}$", "saved", "cams", "as built", "CPU-h"], rows)
                + r"\endgroup")
     m2 = J("must_fail_v2.json")["points"]
-    for key, lab in (("OP*", "OP$^\\ast$"), ("challenge_16_16", "$(16,16)$ (post hoc)")):
+    for key, lab in (("OP*", "OP$^\\ast$"),):
         rows = [(t["video"], t["n"], P(t["p_s"]), P(t["p_detector"]), P(t["p_temporal"]), P(t["q_s"]), P(t["D_s"]),
                  t["worst_phase_discordant"], "yes" if m2[key]["night_with_main_only_calibration"][t["video"]]["false_cert"] else "no")
                 for t in m2[key]["night_table"]]
@@ -101,6 +102,8 @@ def main():
                    ["point", "scene", "$n$", "$p_s$", "detector", "temporal", "$q_s$"], rows))
     rows = []
     for k, v in va["points"].items():
+        if k != "OP*":
+            continue
         for s in v["loso"]["violating_scenes"]:
             rows.append((k.replace("challenge_16_16", "(16,16)").replace("OP*", "OP$^\\ast$"), s["video"].replace("_", "\\_"), s["n"],
                          P(s["D_s"]), P(s["p_s"]), P(s["q_s"]), P(s["U_pop_minus"]), "yes" if s["viol_C3"] else "no",
@@ -146,7 +149,7 @@ def main():
     # P4-final F1: worst-phase convention and site-level bound
     wp = J("worst_phase.json")["points"]
     rows = []
-    for pt, lab in (("OP*", "OP$^\\ast$"), ("challenge_16_16", "$(16,16)$ post hoc")):
+    for pt, lab in (("OP*", "OP$^\\ast$"),):
         for t in ("main", "jitter", "night", "turbulence", "all_tiers"):
             r = wp[pt]["tiers"][t]
             rows.append((lab, t.replace("_", " "), r["N"], P(r["p_phase_avg"]), P(r["p_w"]), P(r["q_phase_avg"]), P(r["q_w"]),
@@ -157,7 +160,7 @@ def main():
                    ["point", "tier", "$N$", "$\\hat p$ avg", "$\\hat p$ worst", "$\\hat q$ avg", "$\\hat q$ worst", "disc.",
                     "$U(X,N)$", "$J/m$", "$U(J,m)$"], rows, small=False) + r"\endgroup")
     rows = []
-    for pt, lab in (("OP*", "OP$^\\ast$"), ("challenge_16_16", "$(16,16)$ post hoc")):
+    for pt, lab in (("OP*", "OP$^\\ast$"),):
         x = wp[pt]["exchange_main"]
         rows.append((lab, P(x["p_main_worst"]), x["n_direct"], x["cameras_accepted"], F(x["saved_median"], 0),
                      x["false_accept"], F(x["n_twin_needed_median"], 0)))
@@ -165,7 +168,7 @@ def main():
                    "twin run to convergence).",
                    "lrrrrrr", ["point", "$\\hat p$ worst", "$n_{\\mathrm{dir}}$", "accepted", "saved", "false acc.", "twin runs"], rows))
     rows = []
-    for pt, lab in (("OP*", "OP$^\\ast$"), ("challenge_16_16", "$(16,16)$ post hoc")):
+    for pt, lab in (("OP*", "OP$^\\ast$"),):
         for t in ("jitter", "night"):
             o = wp[pt]["ood_with_main_calibration"][t]
             for c in o["per_camera"]:
@@ -178,7 +181,7 @@ def main():
                ["point", "tier", "camera", "$n$", "$p_w$", "$q_w$", "$U_{\\delta/2}$", "accepted", "false acc."], rows, small=False)
                + r"\endgroup")
     sb = J("site_bound.json")["points"]
-    for pt, lab, key in (("OP*", "OP$^\\ast$", "OP"), ("challenge_16_16", "$(16,16)$ post hoc", "CH")):
+    for pt, lab, key in (("OP*", "OP$^\\ast$", "OP"),):
         r = sb[pt]["main"]
         lo = {x["site"]: x for x in r["loso"]}
         rows = [(x["site"].replace("_", "\\_").replace("CDnet:", "CDnet ").replace("LASIESTA:", "LASIESTA "), x["scenes"], x["n"],
@@ -188,23 +191,32 @@ def main():
                        "bound without the site, leave-one-site-out violation.", "lrrrrl",
                        ["site", "scenes", "events", "disc.", "$U_{-\\mathrm{site}}$", "violation"], rows))
     vc = J("v10_v11_compare.json")
-    assert vc["v10_reproduced_all"] and vc["v10_disagreements"]["all_in_jitter"]
-    a, b, w = vc["v10_recomputed"], vc["v11"], vc["v10_disagreements"]
-    loc = ", ".join(s.replace("_", "\\_") for s in sorted(set(w["discordant_scenes"]) | set(w["loso_violating_scenes"])
-                                                            | set(w["false_accept_cameras"])))
-    rows = [("static scenes / events", f"{a['m']} / {a['N']}", f"{b['m']} / {b['N']}", "--"),
-            ("discordant events (worst phase), $U(X,N)$", f"{a['D_w']}, {P(a['U_fleet'], 2)}", f"{b['D_w']}, {P(b['U_fleet'], 2)}", loc),
-            ("discordant scenes $J/m$, $U(J,m)$", f"{a['J']}/{a['m']}, {P(a['U_pop'], 2)}", f"{b['J']}/{b['m']}, {P(b['U_pop'], 2)}", loc),
-            ("scenes above their LOSO bound", f"{a['loso_viol']}/{a['m']}", f"{b['loso_viol']}/{b['m']}", loc),
-            ("worst-phase exchange: $n_{\\mathrm{dir}}$; accepted; false acc.", f"{a['n_direct']}; {a['accepted']}/{a['m']}; {a['false_accept']}",
-             f"{b['n_direct']}; {b['accepted']}/{b['m']}; {b['false_accept']}", loc)]
-    out.append(tab("tab:v10v11", "Static domain at OP$^\\ast$ before and after the camera-jitter split: earlier version "
-                   f"({a['m']} scenes, camera-jitter scenes {' and '.join(vc['meta']['jitter_scenes'])} included) and this version "
-                   f"({b['m']} scenes). The earlier numbers are recomputed by the released code on the {b['m']} static plus "
-                   f"{a['m'] - b['m']} camera-jitter scenes and equal the published ones; the last column gives the scenes "
-                   "that carry the earlier disagreements.", "llll",
-                   ["quantity", "earlier", "this version", "located in"], rows))
+    assert vc["reproduced_all"]
+    V = vc["versions"]
+    a, b, c = V["v1.0"], V["v1.1"], V["v1.2"]
+    loc = ", ".join(sorted({s for w in vc["disagreements"].values() for k in w for s in w[k]}))
+    cell = {"sc": lambda r: f"{r['m']} / {r['N']}", "dw": lambda r: f"{r['D_w']}, {P(r['U_fleet'], 2)}",
+            "j": lambda r: f"{r['J']}/{r['m']}, {P(r['U_pop'], 2)}", "lo": lambda r: f"{r['loso_viol']}/{r['m']}",
+            "x": lambda r: f"{r['n_direct']}; {r['accepted']}/{r['m']}; {r['false_accept']}"}
+    lab = {"sc": "static scenes / events", "dw": "discordant events (worst phase), $U(X,N)$",
+           "j": "discordant scenes $J/m$, $U(J,m)$", "lo": "scenes above their LOSO bound",
+           "x": r"worst-phase exchange: $n_{\mathrm{dir}}$; accepted; false acc."}
+    rows = [(lab[k], cell[k](a), cell[k](b), cell[k](c), "--" if k == "sc" else loc) for k in lab]
+    out.append(tab("tab:v10v11", r"Static domain at OP$^\ast$ in the three versions of this study: "
+                   f"{a['m']} scenes; {b['m']} scenes (CDnet camera-jitter scenes moved to the jitter tier); {c['m']} scenes "
+                   "(LASIESTA simulated-motion scenes moved to the jitter tier and LASIESTA moving-camera scenes excluded; "
+                   "this version). Each column is recomputed by the released code from the same twin run and, for the two "
+                   "earlier versions, equals the published numbers; the last column gives the scenes that carry the "
+                   "earlier disagreements.", "lllll",
+                   ["quantity", f"{a['m']} scenes", f"{b['m']} scenes", f"{c['m']} scenes", "located in"], rows))
     (ROOT / "manuscript" / "supp_tables.tex").write_text("\n".join(out), encoding="utf-8")
+    # supplementary table numbers cited in the main text (every supplementary table comes from this file, in order)
+    import re
+    labels = re.findall(r"\\label\{(tab:[^}]+)\}", "\n".join(out))
+    cited = {"SuppTabCtwo": "tab:c2emp", "SuppTabVersions": "tab:v10v11"}
+    (ROOT / "manuscript" / "supp_refs.tex").write_text(
+        "% generated by tools/make_supp_tables.py -- supplementary table numbers cited in the main text\n"
+        + "".join(f"\\newcommand{{\\{k}}}{{{labels.index(v) + 1}}}\n" for k, v in cited.items()), encoding="utf-8")
     print("[write] supp_tables.tex", len(out) - 1, "tables")
 
 

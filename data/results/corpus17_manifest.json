@@ -74,9 +74,10 @@
       "a256": 30
     },
     "calibration_scenes": {
+      "excluded_MC": 4,
       "excluded_PTZ": 4,
-      "jitter": 2,
-      "main": 76,
+      "jitter": 26,
+      "main": 48,
       "night": 6,
       "turbulence": 4
     }

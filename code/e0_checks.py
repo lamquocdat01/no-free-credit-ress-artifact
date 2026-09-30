@@ -209,12 +209,17 @@ def waterfall(tiers_rows):
     n, m = cnt(in_cd | ((A.dataset == "LASIESTA") & A.video.isin(las_old)))
     steps.append(dict(step="same 64 scenes, LASIESTA events rebuilt in TRUE frame order (B0 fix)", events=n, scenes=m,
                       source="miss_matrix_Gstar_a256.csv (corpus17), CDnet 44 + LASIESTA old 20"))
-    n, m = cnt(in_cd | (A.dataset == "LASIESTA") & A.video.map(tier).eq("main"))
+    las_cal = set(bg["comparison_with_P1b_lists"]["lasiesta_gt_empty_list"])
+    n, m = cnt(in_cd | (A.dataset == "LASIESTA") & A.video.isin(las_cal))
     steps.append(dict(step="LASIESTA list 20 -> 48 scenes (GT-empty criterion, true order)", events=n, scenes=m,
                       source="p1_background17.json lasiesta_gt_empty_list"))
+    keep_ptz = A.video.map(tier).isin(["main", "jitter", "night", "turbulence", "excluded_MC"])
+    n, m = cnt(keep_ptz)
+    steps.append(dict(step="PTZ excluded (4 scenes)", events=n, scenes=m, source="p1_background17.json by_tier"))
     keep = A.video.map(tier).isin(["main", "jitter", "night", "turbulence"])
     n, m = cnt(keep)
-    steps.append(dict(step="PTZ excluded (4 scenes)", events=n, scenes=m, source="p1_background17.json by_tier"))
+    steps.append(dict(step="LASIESTA moving-camera (MC) excluded (4 scenes; v1.2)", events=n, scenes=m,
+                      source="p1_background17.json by_tier excluded_MC"))
     run = set(r["video"] for rows in tiers_rows.values() for r in rows)
     n, m = cnt(keep & A.video.isin(run))
     steps.append(dict(step="scenes actually run in P1b' (turbulence held-out turbulence2/3 not run, decision 28-09)",
@@ -300,10 +305,10 @@ def main():
                 disc_ev.append(dict(video=r["video"], event_id=r["event_id"], duration=r["duration"], kind=r["kind"],
                                     phases_discordant=int((rm & tc).sum()), phases_real_miss=int(rm.sum()),
                                     per_variant_phases=[int((rm & r["th16"][v]).sum()) for v in range(3)]))
-    v10 = summary(ev_metrics(tiers_rows["main"] + tiers_rows["jitter"], 32, 16, 1))
+    v10 = summary(ev_metrics(tiers_rows["main"] + tiers_rows["jitter"] + event_rows("c0_main", "excluded_MC"), 32, 16, 1))
     ok = abs(v10["D_old_variant_mean"]["value"] - old["main"]["D_hat"]) < 1e-12
     units["check_reproduces_printed_main_D"] = bool(ok)
-    units["check_reproduces_printed_main_D_note"] = "v1.0 main (78) = v1.1 main (76) + jitter (2)"
+    units["check_reproduces_printed_main_D_note"] = "v1.0 main (78) = v1.2 main (48) + jitter (2 CDnet + 24 LASIESTA SM) + LASIESTA MC (4)"
     units["erratum"] = dict(
         main=dict(printed_v10_78_scenes=dict(D_hat=old["main"]["D_hat"], U_fleet=old["main"]["c4a_fleet_U"], J=old["main"]["J"],
                                U_pop=old["main"]["c4a_pop_U"]),

@@ -82,21 +82,21 @@
         }
       ],
       "main_miss_split": {
-        "p": 0.006097560975609756,
-        "p_detector": 0.006097560975609756,
+        "p": 0.008771929824561403,
+        "p_detector": 0.008771929824561403,
         "p_temporal": 0.0,
-        "N": 164
+        "N": 114
       },
       "curve": [
         {
           "k": 0,
           "n_subsets": 1,
-          "U_pop_median": 0.0386507667257255,
-          "U_pop_min": 0.0386507667257255,
-          "U_pop_max": 0.0386507667257255,
-          "U_fleet_median": 0.018100835987050628,
-          "U_fleet_min": 0.018100835987050628,
-          "U_fleet_max": 0.018100835987050628,
+          "U_pop_median": 0.060503409348894296,
+          "U_pop_min": 0.060503409348894296,
+          "U_pop_max": 0.060503409348894296,
+          "U_fleet_median": 0.02593608201362844,
+          "U_fleet_min": 0.02593608201362844,
+          "U_fleet_max": 0.02593608201362844,
           "share_fleet_refused": 0.0,
           "leaked_certified_total": 0,
           "leaked_cameras_total": 0,
@@ -107,12 +107,12 @@
         {
           "k": 1,
           "n_subsets": 6,
-          "U_pop_median": 0.06013094819774172,
-          "U_pop_min": 0.038158510711545454,
-          "U_pop_max": 0.06013094819774172,
-          "U_fleet_median": 0.032627978462441476,
-          "U_fleet_min": 0.01788471559897055,
-          "U_fleet_max": 0.05365372481391685,
+          "U_pop_median": 0.09319247143420123,
+          "U_pop_min": 0.059306014189697054,
+          "U_pop_max": 0.09319247143420123,
+          "U_fleet_median": 0.04631629186466621,
+          "U_fleet_min": 0.025494657957392263,
+          "U_fleet_max": 0.07589027256382241,
           "share_fleet_refused": 0.0,
           "leaked_certified_total": 6,
           "leaked_cameras_total": 6,
@@ -124,16 +124,16 @@
               "leaked": [
                 "bridgeEntry"
               ],
-              "N": 166,
-              "m": 77,
+              "N": 116,
+              "m": 49,
               "X_worst": 1.0,
               "J": 1,
-              "U_fleet": 0.028257251526644562,
-              "U_pop": 0.06013094819774172,
+              "U_fleet": 0.04024133189368149,
+              "U_pop": 0.09319247143420123,
               "fleet_refused": false,
               "leaked_certified": 1,
               "leaked_false_cert": 0,
-              "main_certified": 74,
+              "main_certified": 46,
               "main_false_cert": 0
             },
             {
@@ -141,16 +141,16 @@
               "leaked": [
                 "busyBoulvard"
               ],
-              "N": 168,
-              "m": 77,
+              "N": 118,
+              "m": 49,
               "X_worst": 4.0,
               "J": 1,
-              "U_fleet": 0.05365372481391685,
-              "U_pop": 0.06013094819774172,
+              "U_fleet": 0.07589027256382241,
+              "U_pop": 0.09319247143420123,
               "fleet_refused": false,
               "leaked_certified": 1,
               "leaked_false_cert": 1,
-              "main_certified": 74,
+              "main_certified": 46,
               "main_false_cert": 0
             },
             {
@@ -158,16 +158,16 @@
               "leaked": [
                 "fluidHighway"
               ],
-              "N": 168,
-              "m": 77,
+              "N": 118,
+              "m": 49,
               "X_worst": 2.0,
               "J": 1,
-              "U_fleet": 0.036998705398238386,
-              "U_pop": 0.06013094819774172,
+              "U_fleet": 0.05239125183565094,
+              "U_pop": 0.09319247143420123,
               "fleet_refused": false,
               "leaked_certified": 1,
               "leaked_false_cert": 1,
-              "main_certified": 74,
+              "main_certified": 46,
               "main_false_cert": 0
             },
             {
@@ -175,16 +175,16 @@
               "leaked": [
                 "streetCornerAtNight"
               ],
-              "N": 174,
-              "m": 77,
+              "N": 124,
+              "m": 49,
               "X_worst": 4.0,
               "J": 1,
-              "U_fleet": 0.05183114708743598,
-              "U_pop": 0.06013094819774172,
+              "U_fleet": 0.07229508753871734,
+              "U_pop": 0.09319247143420123,
               "fleet_refused": false,
               "leaked_certified": 1,
               "leaked_false_cert": 1,
-              "main_certified": 74,
+              "main_certified": 46,
               "main_false_cert": 0
             },
             {
@@ -192,16 +192,16 @@
               "leaked": [
                 "tramStation"
               ],
-              "N": 166,
-              "m": 77,
+              "N": 116,
+              "m": 49,
               "X_worst": 0.0,
               "J": 0,
-              "U_fleet": 0.01788471559897055,
-              "U_pop": 0.038158510711545454,
+              "U_fleet": 0.025494657957392263,
+              "U_pop": 0.059306014189697054,
               "fleet_refused": false,
               "leaked_certified": 1,
               "leaked_false_cert": 0,
-              "main_certified": 75,
+              "main_certified": 46,
               "main_false_cert": 0
             },
             {
@@ -209,16 +209,16 @@
               "leaked": [
                 "winterStreet"
               ],
-              "N": 167,
-              "m": 77,
+              "N": 117,
+              "m": 49,
               "X_worst": 1.0,
               "J": 1,
-              "U_fleet": 0.028089940720843976,
-              "U_pop": 0.06013094819774172,
+              "U_fleet": 0.039902882128061055,
+              "U_pop": 0.09319247143420123,
               "fleet_refused": false,
               "leaked_certified": 1,
               "leaked_false_cert": 1,
-              "main_certified": 74,
+              "main_certified": 46,
               "main_false_cert": 0
             }
           ]
@@ -226,32 +226,32 @@
         {
           "k": 2,
           "n_subsets": 15,
-          "U_pop_median": 0.07852108907382152,
-          "U_pop_min": 0.059378492060127144,
-          "U_pop_max": 0.07852108907382152,
-          "U_fleet_median": 0.053032124260621885,
-          "U_fleet_min": 0.027761193090069924,
-          "U_fleet_max": 0.07963052307890892,
-          "share_fleet_refused": 0.0,
-          "leaked_certified_total": 30,
+          "U_pop_median": 0.12061415542204408,
+          "U_pop_min": 0.09139813071969734,
+          "U_pop_max": 0.12061415542204408,
+          "U_fleet_median": 0.0746528081665543,
+          "U_fleet_min": 0.03924277735630698,
+          "U_fleet_max": 0.10994336389187276,
+          "share_fleet_refused": 0.6666666666666666,
+          "leaked_certified_total": 26,
           "leaked_cameras_total": 30,
-          "leaked_false_cert_total": 20,
+          "leaked_false_cert_total": 16,
           "main_false_cert_max": 0,
           "subsets": null
         },
         {
           "k": 3,
           "n_subsets": 20,
-          "U_pop_median": 0.08639176751687315,
-          "U_pop_min": 0.07755422716977177,
-          "U_pop_max": 0.09522930786397453,
-          "U_fleet_median": 0.06600186543128689,
-          "U_fleet_min": 0.03635776583264329,
-          "U_fleet_max": 0.09141668030900094,
-          "share_fleet_refused": 0.0,
-          "leaked_certified_total": 60,
+          "U_pop_median": 0.13171205101533126,
+          "U_pop_min": 0.11834909903946435,
+          "U_pop_max": 0.1450750029911982,
+          "U_fleet_median": 0.09149832156303092,
+          "U_fleet_min": 0.05111538445067786,
+          "U_fleet_max": 0.1251132546362117,
+          "share_fleet_refused": 1.0,
+          "leaked_certified_total": 50,
           "leaked_cameras_total": 60,
-          "leaked_false_cert_total": 40,
+          "leaked_false_cert_total": 30,
           "main_false_cert_max": 0,
           "subsets": [
             {
@@ -261,16 +261,16 @@
                 "busyBoulvard",
                 "fluidHighway"
               ],
-              "N": 174,
-              "m": 79,
+              "N": 124,
+              "m": 51,
               "X_worst": 7.0,
               "J": 3,
-              "U_fleet": 0.07423252179403472,
-              "U_pop": 0.09522930786397453,
-              "fleet_refused": false,
+              "U_fleet": 0.10341444260940258,
+              "U_pop": 0.1450750029911982,
+              "fleet_refused": true,
               "leaked_certified": 3,
               "leaked_false_cert": 2,
-              "main_certified": 74,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -280,16 +280,16 @@
                 "busyBoulvard",
                 "streetCornerAtNight"
               ],
-              "N": 180,
-              "m": 79,
+              "N": 130,
+              "m": 51,
               "X_worst": 9.0,
               "J": 3,
-              "U_fleet": 0.08562775914545942,
-              "U_pop": 0.09522930786397453,
-              "fleet_refused": false,
-              "leaked_certified": 3,
-              "leaked_false_cert": 2,
-              "main_certified": 74,
+              "U_fleet": 0.11769794765817708,
+              "U_pop": 0.1450750029911982,
+              "fleet_refused": true,
+              "leaked_certified": 2,
+              "leaked_false_cert": 1,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -299,16 +299,16 @@
                 "busyBoulvard",
                 "tramStation"
               ],
-              "N": 172,
-              "m": 79,
+              "N": 122,
+              "m": 51,
               "X_worst": 5.0,
               "J": 2,
-              "U_fleet": 0.06014689100003976,
-              "U_pop": 0.07755422716977177,
-              "fleet_refused": false,
+              "U_fleet": 0.08423699309583989,
+              "U_pop": 0.11834909903946435,
+              "fleet_refused": true,
               "leaked_certified": 3,
               "leaked_false_cert": 1,
-              "main_certified": 74,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -318,16 +318,16 @@
                 "busyBoulvard",
                 "winterStreet"
               ],
-              "N": 173,
-              "m": 79,
+              "N": 123,
+              "m": 51,
               "X_worst": 6.0,
               "J": 3,
-              "U_fleet": 0.06730134128027297,
-              "U_pop": 0.09522930786397453,
-              "fleet_refused": false,
+              "U_fleet": 0.09400423320523969,
+              "U_pop": 0.1450750029911982,
+              "fleet_refused": true,
               "leaked_certified": 3,
               "leaked_false_cert": 2,
-              "main_certified": 74,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -337,16 +337,16 @@
                 "fluidHighway",
                 "streetCornerAtNight"
               ],
-              "N": 180,
-              "m": 79,
+              "N": 130,
+              "m": 51,
               "X_worst": 7.0,
               "J": 3,
-              "U_fleet": 0.07180089381251364,
-              "U_pop": 0.09522930786397453,
-              "fleet_refused": false,
-              "leaked_certified": 3,
-              "leaked_false_cert": 2,
-              "main_certified": 74,
+              "U_fleet": 0.09875635711627447,
+              "U_pop": 0.1450750029911982,
+              "fleet_refused": true,
+              "leaked_certified": 2,
+              "leaked_false_cert": 1,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -356,16 +356,16 @@
                 "fluidHighway",
                 "tramStation"
               ],
-              "N": 172,
-              "m": 79,
+              "N": 122,
+              "m": 51,
               "X_worst": 3.0,
               "J": 2,
-              "U_fleet": 0.044459839641961194,
-              "U_pop": 0.07755422716977177,
-              "fleet_refused": false,
+              "U_fleet": 0.0623258356605507,
+              "U_pop": 0.11834909903946435,
+              "fleet_refused": true,
               "leaked_certified": 3,
               "leaked_false_cert": 1,
-              "main_certified": 74,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -375,16 +375,16 @@
                 "fluidHighway",
                 "winterStreet"
               ],
-              "N": 173,
-              "m": 79,
+              "N": 123,
+              "m": 51,
               "X_worst": 4.0,
               "J": 3,
-              "U_fleet": 0.0521262635995077,
-              "U_pop": 0.09522930786397453,
-              "fleet_refused": false,
+              "U_fleet": 0.07287044928776405,
+              "U_pop": 0.1450750029911982,
+              "fleet_refused": true,
               "leaked_certified": 3,
               "leaked_false_cert": 2,
-              "main_certified": 74,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -394,16 +394,16 @@
                 "streetCornerAtNight",
                 "tramStation"
               ],
-              "N": 178,
-              "m": 79,
+              "N": 128,
+              "m": 51,
               "X_worst": 5.0,
               "J": 2,
-              "U_fleet": 0.05815110896617158,
-              "U_pop": 0.07755422716977177,
-              "fleet_refused": false,
-              "leaked_certified": 3,
-              "leaked_false_cert": 1,
-              "main_certified": 74,
+              "U_fleet": 0.0803743690919792,
+              "U_pop": 0.11834909903946435,
+              "fleet_refused": true,
+              "leaked_certified": 2,
+              "leaked_false_cert": 0,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -413,16 +413,16 @@
                 "streetCornerAtNight",
                 "winterStreet"
               ],
-              "N": 179,
-              "m": 79,
+              "N": 129,
+              "m": 51,
               "X_worst": 6.0,
               "J": 3,
-              "U_fleet": 0.06508261992499664,
-              "U_pop": 0.09522930786397453,
-              "fleet_refused": false,
-              "leaked_certified": 3,
-              "leaked_false_cert": 2,
-              "main_certified": 74,
+              "U_fleet": 0.08973239288216782,
+              "U_pop": 0.1450750029911982,
+              "fleet_refused": true,
+              "leaked_certified": 2,
+              "leaked_false_cert": 1,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -432,16 +432,16 @@
                 "tramStation",
                 "winterStreet"
               ],
-              "N": 171,
-              "m": 79,
+              "N": 121,
+              "m": 51,
               "X_worst": 2.0,
               "J": 2,
-              "U_fleet": 0.03635776583264329,
-              "U_pop": 0.07755422716977177,
-              "fleet_refused": false,
+              "U_fleet": 0.05111538445067786,
+              "U_pop": 0.11834909903946435,
+              "fleet_refused": true,
               "leaked_certified": 3,
               "leaked_false_cert": 1,
-              "main_certified": 74,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -451,16 +451,16 @@
                 "fluidHighway",
                 "streetCornerAtNight"
               ],
-              "N": 182,
-              "m": 79,
+              "N": 132,
+              "m": 51,
               "X_worst": 10.0,
               "J": 3,
-              "U_fleet": 0.09141668030900094,
-              "U_pop": 0.09522930786397453,
-              "fleet_refused": false,
-              "leaked_certified": 3,
-              "leaked_false_cert": 3,
-              "main_certified": 74,
+              "U_fleet": 0.1251132546362117,
+              "U_pop": 0.1450750029911982,
+              "fleet_refused": true,
+              "leaked_certified": 2,
+              "leaked_false_cert": 2,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -470,16 +470,16 @@
                 "fluidHighway",
                 "tramStation"
               ],
-              "N": 174,
-              "m": 79,
+              "N": 124,
+              "m": 51,
               "X_worst": 6.0,
               "J": 2,
-              "U_fleet": 0.06692111093757713,
-              "U_pop": 0.07755422716977177,
-              "fleet_refused": false,
+              "U_fleet": 0.09326425024389402,
+              "U_pop": 0.11834909903946435,
+              "fleet_refused": true,
               "leaked_certified": 3,
               "leaked_false_cert": 2,
-              "main_certified": 74,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -489,16 +489,16 @@
                 "fluidHighway",
                 "winterStreet"
               ],
-              "N": 175,
-              "m": 79,
+              "N": 125,
+              "m": 51,
               "X_worst": 7.0,
               "J": 3,
-              "U_fleet": 0.07381588033015393,
-              "U_pop": 0.09522930786397453,
-              "fleet_refused": false,
+              "U_fleet": 0.10260783496465899,
+              "U_pop": 0.1450750029911982,
+              "fleet_refused": true,
               "leaked_certified": 3,
               "leaked_false_cert": 3,
-              "main_certified": 74,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -508,16 +508,16 @@
                 "streetCornerAtNight",
                 "tramStation"
               ],
-              "N": 180,
-              "m": 79,
+              "N": 130,
+              "m": 51,
               "X_worst": 8.0,
               "J": 2,
-              "U_fleet": 0.0787617865773369,
-              "U_pop": 0.07755422716977177,
-              "fleet_refused": false,
-              "leaked_certified": 3,
-              "leaked_false_cert": 2,
-              "main_certified": 74,
+              "U_fleet": 0.10829465766907938,
+              "U_pop": 0.11834909903946435,
+              "fleet_refused": true,
+              "leaked_certified": 2,
+              "leaked_false_cert": 1,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -527,16 +527,16 @@
                 "streetCornerAtNight",
                 "winterStreet"
               ],
-              "N": 181,
-              "m": 79,
+              "N": 131,
+              "m": 51,
               "X_worst": 9.0,
               "J": 3,
-              "U_fleet": 0.08516358950260228,
-              "U_pop": 0.09522930786397453,
-              "fleet_refused": false,
-              "leaked_certified": 3,
-              "leaked_false_cert": 3,
-              "main_certified": 74,
+              "U_fleet": 0.11682303493636367,
+              "U_pop": 0.1450750029911982,
+              "fleet_refused": true,
+              "leaked_certified": 2,
+              "leaked_false_cert": 2,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -546,16 +546,16 @@
                 "tramStation",
                 "winterStreet"
               ],
-              "N": 173,
-              "m": 79,
+              "N": 123,
+              "m": 51,
               "X_worst": 5.0,
               "J": 2,
-              "U_fleet": 0.05980480323595614,
-              "U_pop": 0.07755422716977177,
-              "fleet_refused": false,
+              "U_fleet": 0.08356765562756507,
+              "U_pop": 0.11834909903946435,
+              "fleet_refused": true,
               "leaked_certified": 3,
               "leaked_false_cert": 2,
-              "main_certified": 74,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -565,16 +565,16 @@
                 "streetCornerAtNight",
                 "tramStation"
               ],
-              "N": 180,
-              "m": 79,
+              "N": 130,
+              "m": 51,
               "X_worst": 6.0,
               "J": 2,
-              "U_fleet": 0.06472697471294181,
-              "U_pop": 0.07755422716977177,
-              "fleet_refused": false,
-              "leaked_certified": 3,
-              "leaked_false_cert": 2,
-              "main_certified": 74,
+              "U_fleet": 0.08905786594703191,
+              "U_pop": 0.11834909903946435,
+              "fleet_refused": true,
+              "leaked_certified": 2,
+              "leaked_false_cert": 1,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -584,16 +584,16 @@
                 "streetCornerAtNight",
                 "winterStreet"
               ],
-              "N": 181,
-              "m": 79,
+              "N": 131,
+              "m": 51,
               "X_worst": 7.0,
               "J": 3,
-              "U_fleet": 0.07141102235232807,
-              "U_pop": 0.09522930786397453,
-              "fleet_refused": false,
-              "leaked_certified": 3,
-              "leaked_false_cert": 3,
-              "main_certified": 74,
+              "U_fleet": 0.09802048170248548,
+              "U_pop": 0.1450750029911982,
+              "fleet_refused": true,
+              "leaked_certified": 2,
+              "leaked_false_cert": 2,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -603,16 +603,16 @@
                 "tramStation",
                 "winterStreet"
               ],
-              "N": 173,
-              "m": 79,
+              "N": 123,
+              "m": 51,
               "X_worst": 3.0,
               "J": 2,
-              "U_fleet": 0.04420638769943177,
-              "U_pop": 0.07755422716977177,
-              "fleet_refused": false,
+              "U_fleet": 0.06182895497800852,
+              "U_pop": 0.11834909903946435,
+              "fleet_refused": true,
               "leaked_certified": 3,
               "leaked_false_cert": 2,
-              "main_certified": 74,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -622,16 +622,16 @@
                 "tramStation",
                 "winterStreet"
               ],
-              "N": 179,
-              "m": 79,
+              "N": 129,
+              "m": 51,
               "X_worst": 5.0,
               "J": 2,
-              "U_fleet": 0.057831282264951926,
-              "U_pop": 0.07755422716977177,
-              "fleet_refused": false,
-              "leaked_certified": 3,
-              "leaked_false_cert": 2,
-              "main_certified": 74,
+              "U_fleet": 0.07976476435025254,
+              "U_pop": 0.11834909903946435,
+              "fleet_refused": true,
+              "leaked_certified": 2,
+              "leaked_false_cert": 1,
+              "main_certified": 45,
               "main_false_cert": 0
             }
           ]
@@ -639,28 +639,28 @@
         {
           "k": 4,
           "n_subsets": 15,
-          "U_pop_median": 0.09407454652521366,
-          "U_pop_min": 0.09407454652521366,
-          "U_pop_max": 0.11077195194253935,
-          "U_fleet_median": 0.0774936399344419,
-          "U_fleet_min": 0.05153935290028973,
-          "U_fleet_max": 0.09701443015733396,
-          "share_fleet_refused": 0.3333333333333333,
-          "leaked_certified_total": 56,
+          "U_pop_median": 0.14241400520397396,
+          "U_pop_min": 0.14241400520397396,
+          "U_pop_max": 0.1674446812204766,
+          "U_fleet_median": 0.10591222003859105,
+          "U_fleet_min": 0.07172873759767934,
+          "U_fleet_max": 0.13221876934024065,
+          "share_fleet_refused": 1.0,
+          "leaked_certified_total": 50,
           "leaked_cameras_total": 60,
-          "leaked_false_cert_total": 36,
+          "leaked_false_cert_total": 30,
           "main_false_cert_max": 0,
           "subsets": null
         },
         {
           "k": 5,
           "n_subsets": 6,
-          "U_pop_median": 0.10944841272038806,
-          "U_pop_min": 0.10944841272038806,
-          "U_pop_max": 0.12541289083796667,
-          "U_fleet_median": 0.09272568671372826,
-          "U_fleet_min": 0.07667064851084117,
-          "U_fleet_max": 0.1018986752068081,
+          "U_pop_median": 0.16444182211130057,
+          "U_pop_min": 0.16444182211130057,
+          "U_pop_max": 0.18818062989721812,
+          "U_fleet_median": 0.12590426659967935,
+          "U_fleet_min": 0.1043812900546502,
+          "U_fleet_max": 0.13805292675111003,
           "share_fleet_refused": 1.0,
           "leaked_certified_total": 25,
           "leaked_cameras_total": 30,
@@ -671,12 +671,12 @@
         {
           "k": 6,
           "n_subsets": 1,
-          "U_pop_median": 0.12393574581034697,
-          "U_pop_min": 0.12393574581034697,
-          "U_pop_max": 0.12393574581034697,
-          "U_fleet_median": 0.1008421184249049,
-          "U_fleet_min": 0.1008421184249049,
-          "U_fleet_max": 0.1008421184249049,
+          "U_pop_median": 0.1848784434166947,
+          "U_pop_min": 0.1848784434166947,
+          "U_pop_max": 0.1848784434166947,
+          "U_fleet_median": 0.13612149440132348,
+          "U_fleet_min": 0.13612149440132348,
+          "U_fleet_max": 0.13612149440132348,
           "share_fleet_refused": 1.0,
           "leaked_certified_total": 5,
           "leaked_cameras_total": 6,
@@ -693,16 +693,16 @@
                 "tramStation",
                 "winterStreet"
               ],
-              "N": 189,
-              "m": 82,
+              "N": 139,
+              "m": 54,
               "X_worst": 12.0,
               "J": 5,
-              "U_fleet": 0.1008421184249049,
-              "U_pop": 0.12393574581034697,
+              "U_fleet": 0.13612149440132348,
+              "U_pop": 0.1848784434166947,
               "fleet_refused": true,
               "leaked_certified": 5,
               "leaked_false_cert": 3,
-              "main_certified": 73,
+              "main_certified": 44,
               "main_false_cert": 0
             }
           ]
@@ -710,42 +710,42 @@
       ],
       "night_with_main_only_calibration": {
         "bridgeEntry": {
-          "U_pop_minus": 0.0386507667257255,
+          "U_pop_minus": 0.060503409348894296,
           "certified": true,
           "p_s": 0.15625,
           "q_s": 0.0,
           "false_cert": false
         },
         "busyBoulvard": {
-          "U_pop_minus": 0.0386507667257255,
+          "U_pop_minus": 0.060503409348894296,
           "certified": true,
           "p_s": 0.96875,
           "q_s": 0.0,
           "false_cert": true
         },
         "fluidHighway": {
-          "U_pop_minus": 0.0386507667257255,
+          "U_pop_minus": 0.060503409348894296,
           "certified": true,
           "p_s": 0.265625,
           "q_s": 0.0,
           "false_cert": true
         },
         "streetCornerAtNight": {
-          "U_pop_minus": 0.0386507667257255,
+          "U_pop_minus": 0.060503409348894296,
           "certified": true,
           "p_s": 0.28125,
           "q_s": 0.11875,
           "false_cert": true
         },
         "tramStation": {
-          "U_pop_minus": 0.0386507667257255,
+          "U_pop_minus": 0.060503409348894296,
           "certified": true,
           "p_s": 0.0,
           "q_s": 0.0,
           "false_cert": false
         },
         "winterStreet": {
-          "U_pop_minus": 0.0386507667257255,
+          "U_pop_minus": 0.060503409348894296,
           "certified": true,
           "p_s": 0.3333333333333333,
           "q_s": 0.0,
@@ -755,15 +755,183 @@
       "night_false_cert_main_only": 4,
       "night_p_gt_eps": 4,
       "jitter_with_main_only_calibration": {
+        "I_SM_01": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_02": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_03": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_04": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_05": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_06": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_07": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_08": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_09": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_10": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_11": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_12": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_01": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_02": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_03": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_04": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_05": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_06": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_07": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_08": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_09": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_10": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_11": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_12": {
+          "U_pop_minus": 0.060503409348894296,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
         "boulevard": {
-          "U_pop_minus": 0.0386507667257255,
+          "U_pop_minus": 0.060503409348894296,
           "certified": true,
           "p_s": 0.0,
           "q_s": 0.0,
           "false_cert": false
         },
         "traffic": {
-          "U_pop_minus": 0.0386507667257255,
+          "U_pop_minus": 0.060503409348894296,
           "certified": true,
           "p_s": 0.0390625,
           "q_s": 0.0,
@@ -773,6 +941,246 @@
       "jitter_false_cert_main_only": 0,
       "jitter_p_gt_eps": 0,
       "jitter_table": [
+        {
+          "video": "I_SM_01",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_02",
+          "n": 2,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_03",
+          "n": 2,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_04",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_05",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_06",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_07",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_08",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_09",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_10",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_11",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_12",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_01",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_02",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_03",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_04",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_05",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_06",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_07",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_08",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_09",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_10",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_11",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_12",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
         {
           "video": "boulevard",
           "n": 8,
@@ -873,22 +1281,22 @@
         }
       ],
       "main_miss_split": {
-        "p": 0.030726256983240222,
-        "p_detector": 0.030726256983240222,
+        "p": 0.04263565891472868,
+        "p_detector": 0.04263565891472868,
         "p_temporal": 0.0,
-        "N": 179
+        "N": 129
       },
       "curve": [
         {
           "k": 0,
           "n_subsets": 1,
-          "U_pop_median": 0.08052895143025197,
-          "U_pop_min": 0.08052895143025197,
-          "U_pop_max": 0.08052895143025197,
-          "U_fleet_median": 0.057831282264951926,
-          "U_fleet_min": 0.057831282264951926,
-          "U_fleet_max": 0.057831282264951926,
-          "share_fleet_refused": 0.0,
+          "U_pop_median": 0.1254144044744802,
+          "U_pop_min": 0.1254144044744802,
+          "U_pop_max": 0.1254144044744802,
+          "U_fleet_median": 0.07976476435025254,
+          "U_fleet_min": 0.07976476435025254,
+          "U_fleet_max": 0.07976476435025254,
+          "share_fleet_refused": 1.0,
           "leaked_certified_total": 0,
           "leaked_cameras_total": 0,
           "leaked_false_cert_total": 0,
@@ -898,16 +1306,16 @@
         {
           "k": 1,
           "n_subsets": 6,
-          "U_pop_median": 0.09762596403282232,
-          "U_pop_min": 0.07951235212777794,
-          "U_pop_max": 0.09762596403282232,
-          "U_fleet_median": 0.06750951795685636,
-          "U_fleet_min": 0.056892564108092535,
-          "U_fleet_max": 0.13585047197827635,
-          "share_fleet_refused": 0.16666666666666666,
-          "leaked_certified_total": 5,
+          "U_pop_median": 0.1507063969826992,
+          "U_pop_min": 0.12296750440536462,
+          "U_pop_max": 0.1507063969826992,
+          "U_fleet_median": 0.09248726572641383,
+          "U_fleet_min": 0.07799018002517787,
+          "U_fleet_max": 0.18216007551783794,
+          "share_fleet_refused": 1.0,
+          "leaked_certified_total": 4,
           "leaked_cameras_total": 6,
-          "leaked_false_cert_total": 4,
+          "leaked_false_cert_total": 3,
           "main_false_cert_max": 0,
           "subsets": [
             {
@@ -915,16 +1323,16 @@
               "leaked": [
                 "bridgeEntry"
               ],
-              "N": 181,
-              "m": 77,
+              "N": 131,
+              "m": 49,
               "X_worst": 6.0,
               "J": 3,
-              "U_fleet": 0.06437519438716642,
-              "U_pop": 0.09762596403282232,
-              "fleet_refused": false,
+              "U_fleet": 0.08839339997923111,
+              "U_pop": 0.1507063969826992,
+              "fleet_refused": true,
               "leaked_certified": 1,
               "leaked_false_cert": 0,
-              "main_certified": 73,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -932,16 +1340,16 @@
               "leaked": [
                 "busyBoulvard"
               ],
-              "N": 192,
-              "m": 77,
+              "N": 142,
+              "m": 49,
               "X_worst": 18.0,
               "J": 3,
-              "U_fleet": 0.13585047197827635,
-              "U_pop": 0.09762596403282232,
+              "U_fleet": 0.18216007551783794,
+              "U_pop": 0.1507063969826992,
               "fleet_refused": true,
               "leaked_certified": 1,
               "leaked_false_cert": 1,
-              "main_certified": 73,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -949,16 +1357,16 @@
               "leaked": [
                 "fluidHighway"
               ],
-              "N": 183,
-              "m": 77,
+              "N": 133,
+              "m": 49,
               "X_worst": 7.0,
               "J": 3,
-              "U_fleet": 0.07064384152654629,
-              "U_pop": 0.09762596403282232,
-              "fleet_refused": false,
+              "U_fleet": 0.09658113147359657,
+              "U_pop": 0.1507063969826992,
+              "fleet_refused": true,
               "leaked_certified": 1,
               "leaked_false_cert": 1,
-              "main_certified": 73,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -966,16 +1374,16 @@
               "leaked": [
                 "streetCornerAtNight"
               ],
-              "N": 190,
-              "m": 77,
+              "N": 140,
+              "m": 49,
               "X_worst": 9.0,
               "J": 3,
-              "U_fleet": 0.08120191393527569,
-              "U_pop": 0.09762596403282232,
-              "fleet_refused": false,
-              "leaked_certified": 1,
-              "leaked_false_cert": 1,
-              "main_certified": 73,
+              "U_fleet": 0.10949711194499079,
+              "U_pop": 0.1507063969826992,
+              "fleet_refused": true,
+              "leaked_certified": 0,
+              "leaked_false_cert": 0,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -983,16 +1391,16 @@
               "leaked": [
                 "tramStation"
               ],
-              "N": 182,
-              "m": 77,
+              "N": 132,
+              "m": 49,
               "X_worst": 5.0,
               "J": 2,
-              "U_fleet": 0.056892564108092535,
-              "U_pop": 0.07951235212777794,
-              "fleet_refused": false,
+              "U_fleet": 0.07799018002517787,
+              "U_pop": 0.12296750440536462,
+              "fleet_refused": true,
               "leaked_certified": 0,
               "leaked_false_cert": 0,
-              "main_certified": 73,
+              "main_certified": 45,
               "main_false_cert": 0
             },
             {
@@ -1000,16 +1408,16 @@
               "leaked": [
                 "winterStreet"
               ],
-              "N": 182,
-              "m": 77,
+              "N": 132,
+              "m": 49,
               "X_worst": 6.0,
               "J": 3,
-              "U_fleet": 0.06402721630119151,
-              "U_pop": 0.09762596403282232,
-              "fleet_refused": false,
+              "U_fleet": 0.08773877164664771,
+              "U_pop": 0.1507063969826992,
+              "fleet_refused": true,
               "leaked_certified": 1,
               "leaked_false_cert": 1,
-              "main_certified": 73,
+              "main_certified": 45,
               "main_false_cert": 0
             }
           ]
@@ -1017,32 +1425,32 @@
         {
           "k": 2,
           "n_subsets": 15,
-          "U_pop_median": 0.11351736195607218,
-          "U_pop_min": 0.09641275320690612,
-          "U_pop_max": 0.11351736195607218,
-          "U_fleet_median": 0.08630219699792854,
-          "U_fleet_min": 0.06300548899774894,
-          "U_fleet_max": 0.15112624022386903,
-          "share_fleet_refused": 0.7333333333333333,
-          "leaked_certified_total": 21,
+          "U_pop_median": 0.17379115816419352,
+          "U_pop_min": 0.14783717636418123,
+          "U_pop_max": 0.17379115816419352,
+          "U_fleet_median": 0.11572979510343055,
+          "U_fleet_min": 0.08583177609254275,
+          "U_fleet_max": 0.19891706664605185,
+          "share_fleet_refused": 1.0,
+          "leaked_certified_total": 16,
           "leaked_cameras_total": 30,
-          "leaked_false_cert_total": 16,
+          "leaked_false_cert_total": 11,
           "main_false_cert_max": 0,
           "subsets": null
         },
         {
           "k": 3,
           "n_subsets": 20,
-          "U_pop_median": 0.12030157579695153,
-          "U_pop_min": 0.11212786779848265,
-          "U_pop_max": 0.12847528379542042,
-          "U_fleet_median": 0.11746640946973291,
-          "U_fleet_min": 0.06915787954417674,
-          "U_fleet_max": 0.15916680219724222,
+          "U_pop_median": 0.18285503192597607,
+          "U_pop_min": 0.17055902294011674,
+          "U_pop_max": 0.1951510409118354,
+          "U_fleet_median": 0.1562140531482053,
+          "U_fleet_min": 0.09382556901007401,
+          "U_fleet_max": 0.20819488551359241,
           "share_fleet_refused": 1.0,
-          "leaked_certified_total": 40,
+          "leaked_certified_total": 30,
           "leaked_cameras_total": 60,
-          "leaked_false_cert_total": 30,
+          "leaked_false_cert_total": 20,
           "main_false_cert_max": 0,
           "subsets": [
             {
@@ -1052,16 +1460,16 @@
                 "busyBoulvard",
                 "fluidHighway"
               ],
-              "N": 198,
-              "m": 79,
+              "N": 148,
+              "m": 51,
               "X_worst": 21.0,
               "J": 5,
-              "U_fleet": 0.1491305457637024,
-              "U_pop": 0.12847528379542042,
+              "U_fleet": 0.19786207343098666,
+              "U_pop": 0.1951510409118354,
               "fleet_refused": true,
-              "leaked_certified": 3,
-              "leaked_false_cert": 2,
-              "main_certified": 73,
+              "leaked_certified": 2,
+              "leaked_false_cert": 1,
+              "main_certified": 43,
               "main_false_cert": 0
             },
             {
@@ -1071,130 +1479,130 @@
                 "busyBoulvard",
                 "streetCornerAtNight"
               ],
-              "N": 205,
-              "m": 79,
+              "N": 155,
+              "m": 51,
               "X_worst": 23.0,
               "J": 5,
-              "U_fleet": 0.15519441379225482,
-              "U_pop": 0.12847528379542042,
-              "fleet_refused": true,
-              "leaked_certified": 2,
-              "leaked_false_cert": 1,
-              "main_certified": 73,
-              "main_false_cert": 0
-            },
-            {
-              "k": 3,
-              "leaked": [
-                "bridgeEntry",
-                "busyBoulvard",
-                "tramStation"
-              ],
-              "N": 197,
-              "m": 79,
-              "X_worst": 19.0,
-              "J": 4,
-              "U_fleet": 0.13830443776622947,
-              "U_pop": 0.11212786779848265,
-              "fleet_refused": true,
-              "leaked_certified": 2,
-              "leaked_false_cert": 1,
-              "main_certified": 73,
-              "main_false_cert": 0
-            },
-            {
-              "k": 3,
-              "leaked": [
-                "bridgeEntry",
-                "busyBoulvard",
-                "winterStreet"
-              ],
-              "N": 197,
-              "m": 79,
-              "X_worst": 20.0,
-              "J": 5,
-              "U_fleet": 0.14409969116012206,
-              "U_pop": 0.12847528379542042,
-              "fleet_refused": true,
-              "leaked_certified": 3,
-              "leaked_false_cert": 2,
-              "main_certified": 73,
-              "main_false_cert": 0
-            },
-            {
-              "k": 3,
-              "leaked": [
-                "bridgeEntry",
-                "fluidHighway",
-                "streetCornerAtNight"
-              ],
-              "N": 196,
-              "m": 79,
-              "X_worst": 12.0,
-              "J": 5,
-              "U_fleet": 0.09731059826428963,
-              "U_pop": 0.12847528379542042,
-              "fleet_refused": true,
-              "leaked_certified": 2,
-              "leaked_false_cert": 1,
-              "main_certified": 73,
-              "main_false_cert": 0
-            },
-            {
-              "k": 3,
-              "leaked": [
-                "bridgeEntry",
-                "fluidHighway",
-                "tramStation"
-              ],
-              "N": 188,
-              "m": 79,
-              "X_worst": 8.0,
-              "J": 4,
-              "U_fleet": 0.07546841426682584,
-              "U_pop": 0.11212786779848265,
-              "fleet_refused": true,
-              "leaked_certified": 2,
-              "leaked_false_cert": 1,
-              "main_certified": 73,
-              "main_false_cert": 0
-            },
-            {
-              "k": 3,
-              "leaked": [
-                "bridgeEntry",
-                "fluidHighway",
-                "winterStreet"
-              ],
-              "N": 188,
-              "m": 79,
-              "X_worst": 9.0,
-              "J": 5,
-              "U_fleet": 0.08205011136165441,
-              "U_pop": 0.12847528379542042,
-              "fleet_refused": true,
-              "leaked_certified": 3,
-              "leaked_false_cert": 2,
-              "main_certified": 73,
-              "main_false_cert": 0
-            },
-            {
-              "k": 3,
-              "leaked": [
-                "bridgeEntry",
-                "streetCornerAtNight",
-                "tramStation"
-              ],
-              "N": 195,
-              "m": 79,
-              "X_worst": 10.0,
-              "J": 4,
-              "U_fleet": 0.0854331352696085,
-              "U_pop": 0.11212786779848265,
+              "U_fleet": 0.2036266851039856,
+              "U_pop": 0.1951510409118354,
               "fleet_refused": true,
               "leaked_certified": 1,
               "leaked_false_cert": 0,
-              "main_certified": 73,
+              "main_certified": 43,
+              "main_false_cert": 0
+            },
+            {
+              "k": 3,
+              "leaked": [
+                "bridgeEntry",
+                "busyBoulvard",
+                "tramStation"
+              ],
+              "N": 147,
+              "m": 51,
+              "X_worst": 19.0,
+              "J": 4,
+              "U_fleet": 0.18386423091607113,
+              "U_pop": 0.17055902294011674,
+              "fleet_refused": true,
+              "leaked_certified": 1,
+              "leaked_false_cert": 0,
+              "main_certified": 43,
+              "main_false_cert": 0
+            },
+            {
+              "k": 3,
+              "leaked": [
+                "bridgeEntry",
+                "busyBoulvard",
+                "winterStreet"
+              ],
+              "N": 147,
+              "m": 51,
+              "X_worst": 20.0,
+              "J": 5,
+              "U_fleet": 0.1915321177547488,
+              "U_pop": 0.1951510409118354,
+              "fleet_refused": true,
+              "leaked_certified": 2,
+              "leaked_false_cert": 1,
+              "main_certified": 43,
+              "main_false_cert": 0
+            },
+            {
+              "k": 3,
+              "leaked": [
+                "bridgeEntry",
+                "fluidHighway",
+                "streetCornerAtNight"
+              ],
+              "N": 146,
+              "m": 51,
+              "X_worst": 12.0,
+              "J": 5,
+              "U_fleet": 0.12976687491222702,
+              "U_pop": 0.1951510409118354,
+              "fleet_refused": true,
+              "leaked_certified": 2,
+              "leaked_false_cert": 1,
+              "main_certified": 43,
+              "main_false_cert": 0
+            },
+            {
+              "k": 3,
+              "leaked": [
+                "bridgeEntry",
+                "fluidHighway",
+                "tramStation"
+              ],
+              "N": 138,
+              "m": 51,
+              "X_worst": 8.0,
+              "J": 4,
+              "U_fleet": 0.10216607405667189,
+              "U_pop": 0.17055902294011674,
+              "fleet_refused": true,
+              "leaked_certified": 2,
+              "leaked_false_cert": 1,
+              "main_certified": 43,
+              "main_false_cert": 0
+            },
+            {
+              "k": 3,
+              "leaked": [
+                "bridgeEntry",
+                "fluidHighway",
+                "winterStreet"
+              ],
+              "N": 138,
+              "m": 51,
+              "X_worst": 9.0,
+              "J": 5,
+              "U_fleet": 0.11104461997026911,
+              "U_pop": 0.1951510409118354,
+              "fleet_refused": true,
+              "leaked_certified": 3,
+              "leaked_false_cert": 2,
+              "main_certified": 43,
+              "main_false_cert": 0
+            },
+            {
+              "k": 3,
+              "leaked": [
+                "bridgeEntry",
+                "streetCornerAtNight",
+                "tramStation"
+              ],
+              "N": 145,
+              "m": 51,
+              "X_worst": 10.0,
+              "J": 4,
+              "U_fleet": 0.1141728004992827,
+              "U_pop": 0.17055902294011674,
+              "fleet_refused": true,
+              "leaked_certified": 1,
+              "leaked_false_cert": 0,
+              "main_certified": 43,
               "main_false_cert": 0
             },
             {
@@ -1204,16 +1612,16 @@
                 "streetCornerAtNight",
                 "winterStreet"
               ],
-              "N": 195,
-              "m": 79,
+              "N": 145,
+              "m": 51,
               "X_worst": 11.0,
               "J": 5,
-              "U_fleet": 0.09164514324274338,
-              "U_pop": 0.12847528379542042,
+              "U_fleet": 0.12244519209062493,
+              "U_pop": 0.1951510409118354,
               "fleet_refused": true,
               "leaked_certified": 2,
               "leaked_false_cert": 1,
-              "main_certified": 73,
+              "main_certified": 43,
               "main_false_cert": 0
             },
             {
@@ -1223,16 +1631,16 @@
                 "tramStation",
                 "winterStreet"
               ],
-              "N": 187,
-              "m": 79,
+              "N": 137,
+              "m": 51,
               "X_worst": 7.0,
               "J": 4,
-              "U_fleet": 0.06915787954417674,
-              "U_pop": 0.11212786779848265,
+              "U_fleet": 0.09382556901007401,
+              "U_pop": 0.17055902294011674,
               "fleet_refused": true,
               "leaked_certified": 2,
               "leaked_false_cert": 1,
-              "main_certified": 73,
+              "main_certified": 43,
               "main_false_cert": 0
             },
             {
@@ -1242,16 +1650,16 @@
                 "fluidHighway",
                 "streetCornerAtNight"
               ],
-              "N": 207,
-              "m": 79,
+              "N": 157,
+              "m": 51,
               "X_worst": 24.0,
               "J": 5,
-              "U_fleet": 0.15916680219724222,
-              "U_pop": 0.12847528379542042,
+              "U_fleet": 0.20819488551359241,
+              "U_pop": 0.1951510409118354,
               "fleet_refused": true,
-              "leaked_certified": 2,
-              "leaked_false_cert": 2,
-              "main_certified": 73,
+              "leaked_certified": 1,
+              "leaked_false_cert": 1,
+              "main_certified": 43,
               "main_false_cert": 0
             },
             {
@@ -1261,16 +1669,16 @@
                 "fluidHighway",
                 "tramStation"
               ],
-              "N": 199,
-              "m": 79,
+              "N": 149,
+              "m": 51,
               "X_worst": 20.0,
               "J": 4,
-              "U_fleet": 0.1426858349507579,
-              "U_pop": 0.11212786779848265,
+              "U_fleet": 0.18904399999518157,
+              "U_pop": 0.17055902294011674,
               "fleet_refused": true,
-              "leaked_certified": 2,
-              "leaked_false_cert": 2,
-              "main_certified": 73,
+              "leaked_certified": 1,
+              "leaked_false_cert": 1,
+              "main_certified": 43,
               "main_false_cert": 0
             },
             {
@@ -1280,16 +1688,16 @@
                 "fluidHighway",
                 "winterStreet"
               ],
-              "N": 199,
-              "m": 79,
+              "N": 149,
+              "m": 51,
               "X_worst": 21.0,
               "J": 5,
-              "U_fleet": 0.14839933028253455,
-              "U_pop": 0.12847528379542042,
+              "U_fleet": 0.1965778814449161,
+              "U_pop": 0.1951510409118354,
               "fleet_refused": true,
-              "leaked_certified": 3,
-              "leaked_false_cert": 3,
-              "main_certified": 73,
+              "leaked_certified": 2,
+              "leaked_false_cert": 2,
+              "main_certified": 43,
               "main_false_cert": 0
             },
             {
@@ -1299,16 +1707,16 @@
                 "streetCornerAtNight",
                 "tramStation"
               ],
-              "N": 206,
-              "m": 79,
+              "N": 156,
+              "m": 51,
               "X_worst": 22.0,
               "J": 4,
-              "U_fleet": 0.1489779991320779,
-              "U_pop": 0.11212786779848265,
+              "U_fleet": 0.1952144893211755,
+              "U_pop": 0.17055902294011674,
               "fleet_refused": true,
-              "leaked_certified": 1,
-              "leaked_false_cert": 1,
-              "main_certified": 73,
+              "leaked_certified": 0,
+              "leaked_false_cert": 0,
+              "main_certified": 43,
               "main_false_cert": 0
             },
             {
@@ -1318,16 +1726,16 @@
                 "streetCornerAtNight",
                 "winterStreet"
               ],
-              "N": 206,
-              "m": 79,
+              "N": 156,
+              "m": 51,
               "X_worst": 23.0,
               "J": 5,
-              "U_fleet": 0.15445942251276745,
-              "U_pop": 0.12847528379542042,
+              "U_fleet": 0.20236414845242437,
+              "U_pop": 0.1951510409118354,
               "fleet_refused": true,
-              "leaked_certified": 2,
-              "leaked_false_cert": 2,
-              "main_certified": 73,
+              "leaked_certified": 1,
+              "leaked_false_cert": 1,
+              "main_certified": 43,
               "main_false_cert": 0
             },
             {
@@ -1337,16 +1745,16 @@
                 "tramStation",
                 "winterStreet"
               ],
-              "N": 198,
-              "m": 79,
+              "N": 148,
+              "m": 51,
               "X_worst": 19.0,
               "J": 4,
-              "U_fleet": 0.13762222067517618,
-              "U_pop": 0.11212786779848265,
+              "U_fleet": 0.18266123138418358,
+              "U_pop": 0.17055902294011674,
               "fleet_refused": true,
-              "leaked_certified": 2,
-              "leaked_false_cert": 2,
-              "main_certified": 73,
+              "leaked_certified": 1,
+              "leaked_false_cert": 1,
+              "main_certified": 43,
               "main_false_cert": 0
             },
             {
@@ -1356,16 +1764,16 @@
                 "streetCornerAtNight",
                 "tramStation"
               ],
-              "N": 197,
-              "m": 79,
+              "N": 147,
+              "m": 51,
               "X_worst": 11.0,
               "J": 4,
-              "U_fleet": 0.09073210242813369,
-              "U_pop": 0.11212786779848265,
+              "U_fleet": 0.12082124893905127,
+              "U_pop": 0.17055902294011674,
               "fleet_refused": true,
               "leaked_certified": 1,
               "leaked_false_cert": 1,
-              "main_certified": 73,
+              "main_certified": 43,
               "main_false_cert": 0
             },
             {
@@ -1375,16 +1783,16 @@
                 "streetCornerAtNight",
                 "winterStreet"
               ],
-              "N": 197,
-              "m": 79,
+              "N": 147,
+              "m": 51,
               "X_worst": 12.0,
               "J": 5,
-              "U_fleet": 0.09682617808396358,
-              "U_pop": 0.12847528379542042,
+              "U_fleet": 0.12890714620544874,
+              "U_pop": 0.1951510409118354,
               "fleet_refused": true,
               "leaked_certified": 2,
               "leaked_false_cert": 2,
-              "main_certified": 73,
+              "main_certified": 43,
               "main_false_cert": 0
             },
             {
@@ -1394,16 +1802,16 @@
                 "tramStation",
                 "winterStreet"
               ],
-              "N": 189,
-              "m": 79,
+              "N": 139,
+              "m": 51,
               "X_worst": 8.0,
               "J": 4,
-              "U_fleet": 0.07507600211981068,
-              "U_pop": 0.11212786779848265,
+              "U_fleet": 0.101448405103382,
+              "U_pop": 0.17055902294011674,
               "fleet_refused": true,
               "leaked_certified": 2,
               "leaked_false_cert": 2,
-              "main_certified": 73,
+              "main_certified": 43,
               "main_false_cert": 0
             },
             {
@@ -1413,16 +1821,16 @@
                 "tramStation",
                 "winterStreet"
               ],
-              "N": 196,
-              "m": 79,
+              "N": 146,
+              "m": 51,
               "X_worst": 10.0,
               "J": 4,
-              "U_fleet": 0.08500513286840843,
-              "U_pop": 0.11212786779848265,
+              "U_fleet": 0.1134098987668652,
+              "U_pop": 0.17055902294011674,
               "fleet_refused": true,
               "leaked_certified": 1,
               "leaked_false_cert": 1,
-              "main_certified": 73,
+              "main_certified": 43,
               "main_false_cert": 0
             }
           ]
@@ -1430,48 +1838,48 @@
         {
           "k": 4,
           "n_subsets": 15,
-          "U_pop_median": 0.12692563640459445,
-          "U_pop_min": 0.12692563640459445,
-          "U_pop_max": 0.14266470647077978,
-          "U_fleet_median": 0.14695818320712856,
-          "U_fleet_min": 0.0807843555490105,
-          "U_fleet_max": 0.16304722812998573,
+          "U_pop_median": 0.19160262209934695,
+          "U_pop_min": 0.19160262209934695,
+          "U_pop_max": 0.21508710484020888,
+          "U_fleet_median": 0.19405878223188008,
+          "U_fleet_min": 0.108739410802557,
+          "U_fleet_max": 0.21262839396906819,
           "share_fleet_refused": 1.0,
-          "leaked_certified_total": 36,
+          "leaked_certified_total": 30,
           "leaked_cameras_total": 60,
-          "leaked_false_cert_total": 26,
+          "leaked_false_cert_total": 20,
           "main_false_cert_max": 0,
           "subsets": null
         },
         {
           "k": 5,
           "n_subsets": 6,
-          "U_pop_median": 0.14096837217967395,
-          "U_pop_min": 0.14096837217967395,
-          "U_pop_max": 0.15619669816142684,
-          "U_fleet_median": 0.158141498977939,
-          "U_fleet_min": 0.10037302077047272,
-          "U_fleet_max": 0.1660720171538282,
+          "U_pop_median": 0.21126065515709067,
+          "U_pop_min": 0.21126065515709067,
+          "U_pop_max": 0.23380743402362297,
+          "U_fleet_median": 0.20538514463605495,
+          "U_fleet_min": 0.1325365153226191,
+          "U_fleet_max": 0.21563911058836902,
           "share_fleet_refused": 1.0,
-          "leaked_certified_total": 19,
+          "leaked_certified_total": 12,
           "leaked_cameras_total": 30,
-          "leaked_false_cert_total": 14,
+          "leaked_false_cert_total": 8,
           "main_false_cert_max": 0,
           "subsets": null
         },
         {
           "k": 6,
           "n_subsets": 1,
-          "U_pop_median": 0.1543652717453404,
-          "U_pop_min": 0.1543652717453404,
-          "U_pop_max": 0.1543652717453404,
-          "U_fleet_median": 0.16381198669708122,
-          "U_fleet_min": 0.16381198669708122,
-          "U_fleet_max": 0.16381198669708122,
+          "U_pop_median": 0.22973518557846748,
+          "U_pop_min": 0.22973518557846748,
+          "U_pop_max": 0.22973518557846748,
+          "U_fleet_median": 0.21184690797380104,
+          "U_fleet_min": 0.21184690797380104,
+          "U_fleet_max": 0.21184690797380104,
           "share_fleet_refused": 1.0,
-          "leaked_certified_total": 3,
+          "leaked_certified_total": 0,
           "leaked_cameras_total": 6,
-          "leaked_false_cert_total": 2,
+          "leaked_false_cert_total": 0,
           "main_false_cert_max": 0,
           "subsets": [
             {
@@ -1484,16 +1892,16 @@
                 "tramStation",
                 "winterStreet"
               ],
-              "N": 215,
-              "m": 82,
+              "N": 165,
+              "m": 54,
               "X_worst": 26.0,
               "J": 7,
-              "U_fleet": 0.16381198669708122,
-              "U_pop": 0.1543652717453404,
+              "U_fleet": 0.21184690797380104,
+              "U_pop": 0.22973518557846748,
               "fleet_refused": true,
-              "leaked_certified": 3,
-              "leaked_false_cert": 2,
-              "main_certified": 72,
+              "leaked_certified": 0,
+              "leaked_false_cert": 0,
+              "main_certified": 0,
               "main_false_cert": 0
             }
           ]
@@ -1501,60 +1909,228 @@
       ],
       "night_with_main_only_calibration": {
         "bridgeEntry": {
-          "U_pop_minus": 0.08052895143025197,
+          "U_pop_minus": 0.1254144044744802,
           "certified": true,
           "p_s": 0.15625,
           "q_s": 0.0,
           "false_cert": false
         },
         "busyBoulvard": {
-          "U_pop_minus": 0.08052895143025197,
+          "U_pop_minus": 0.1254144044744802,
           "certified": true,
           "p_s": 0.9615384615384616,
           "q_s": 0.07211538461538461,
           "false_cert": true
         },
         "fluidHighway": {
-          "U_pop_minus": 0.08052895143025197,
+          "U_pop_minus": 0.1254144044744802,
           "certified": true,
           "p_s": 0.265625,
           "q_s": 0.0,
           "false_cert": true
         },
         "streetCornerAtNight": {
-          "U_pop_minus": 0.08052895143025197,
-          "certified": true,
+          "U_pop_minus": 0.1254144044744802,
+          "certified": false,
           "p_s": 0.2556818181818182,
           "q_s": 0.10795454545454546,
-          "false_cert": true
+          "false_cert": false
         },
         "tramStation": {
-          "U_pop_minus": 0.08052895143025197,
+          "U_pop_minus": 0.1254144044744802,
           "certified": false,
           "p_s": 0.0625,
           "q_s": 0.25,
           "false_cert": false
         },
         "winterStreet": {
-          "U_pop_minus": 0.08052895143025197,
+          "U_pop_minus": 0.1254144044744802,
           "certified": true,
           "p_s": 0.3333333333333333,
           "q_s": 0.0,
           "false_cert": true
         }
       },
-      "night_false_cert_main_only": 4,
+      "night_false_cert_main_only": 3,
       "night_p_gt_eps": 4,
       "jitter_with_main_only_calibration": {
+        "I_SM_01": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_02": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_03": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_04": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_05": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_06": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_07": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_08": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_09": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_10": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_11": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "I_SM_12": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_01": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_02": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_03": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_04": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_05": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_06": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_07": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_08": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_09": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_10": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_11": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
+        "O_SM_12": {
+          "U_pop_minus": 0.1254144044744802,
+          "certified": true,
+          "p_s": 0.0,
+          "q_s": 0.0,
+          "false_cert": false
+        },
         "boulevard": {
-          "U_pop_minus": 0.08052895143025197,
+          "U_pop_minus": 0.1254144044744802,
           "certified": true,
           "p_s": 0.0,
           "q_s": 0.0,
           "false_cert": false
         },
         "traffic": {
-          "U_pop_minus": 0.08052895143025197,
+          "U_pop_minus": 0.1254144044744802,
           "certified": true,
           "p_s": 0.09615384615384616,
           "q_s": 0.0,
@@ -1564,6 +2140,246 @@
       "jitter_false_cert_main_only": 0,
       "jitter_p_gt_eps": 0,
       "jitter_table": [
+        {
+          "video": "I_SM_01",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_02",
+          "n": 2,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_03",
+          "n": 2,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_04",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_05",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_06",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_07",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_08",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_09",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_10",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_11",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "I_SM_12",
+          "n": 3,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_01",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_02",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_03",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_04",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_05",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_06",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_07",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_08",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_09",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_10",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_11",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
+        {
+          "video": "O_SM_12",
+          "n": 1,
+          "p_s": 0.0,
+          "p_detector": 0.0,
+          "p_temporal": 0.0,
+          "q_s": 0.0,
+          "D_s": 0.0,
+          "worst_phase_discordant": 0
+        },
         {
           "video": "boulevard",
           "n": 8,

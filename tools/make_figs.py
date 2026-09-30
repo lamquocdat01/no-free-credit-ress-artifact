@@ -1,6 +1,6 @@
 """Figures F3-F6 of the manuscript (F2 = code/w0_exchange_rate_v2.py; F1 = TikZ in main.tex).
 F3 tier certificates (e0_units.json), F4 U_pop vs number of leaked night scenes (must_fail_v2.json),
-F5 LOSO per scene at OP* and (16,16) (recomputed with code/m3_validity_audit.py functions; same numbers as
+F5 LOSO per scene at OP* (recomputed with code/m3_validity_audit.py functions; same numbers as
 validity_audit.json), F6 sprite gallery on grey (CC0 MPFB person sprites only; no dataset frames are reproduced
 because CDnet 2014 / LASIESTA publish no reuse terms we could record).
 Palette: categorical slots 1-2 of the validated default palette; text in neutral inks.
@@ -67,7 +67,7 @@ def f3(plt):
 def f4(plt):
     m = J("must_fail_v2.json")["points"]
     fig, ax = plt.subplots(figsize=(3.5, 2.2))
-    for key, col, mk, lab in (("OP*", C1, "o", "OP* $(d_{\\min}=32,K=16)$"), ("challenge_16_16", C2, "s", "$(16,16)$, post hoc")):
+    for key, col, mk, lab in (("OP*", C1, "o", "OP* $(d_{\\min}=32,K=16)$"),):
         c = m[key]["curve"]
         k = [r["k"] for r in c]
         ax.fill_between(k, [r["U_pop_min"] for r in c], [r["U_pop_max"] for r in c], color=col, alpha=0.15, lw=0)
@@ -87,8 +87,9 @@ def f5(plt):
     from m3_validity_audit import event_table, loso, scene_table
     rows = event_rows("c0_main", "main")
     va = J("validity_audit.json")["points"]
-    fig, axes = plt.subplots(1, 2, figsize=(3.5, 1.9), sharey=True)
-    for ax, (key, d, K, lab) in zip(axes, (("OP*", 32, 16, "OP*"), ("challenge_16_16", 16, 16, "(16,16) post hoc"))):
+    fig, ax0 = plt.subplots(figsize=(3.5, 2.2))
+    axes = [ax0]
+    for ax, (key, d, K, lab) in zip(axes, (("OP*", 32, 16, "OP*"),)):
         S = scene_table(event_table(rows, d, K))
         m, J_ = len(S), int(S.w.sum())
         from c4_power import ucp

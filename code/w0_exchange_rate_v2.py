@@ -73,7 +73,7 @@ def figure(rows):
         hi = np.array([r[tag]["events_saved_per_camera"]["iqr"][1] for r in R]) - y
         ax.errorbar(x, y, yerr=[lo, hi], fmt=mk, ms=3.5, mfc=col, mec="#fcfcfb", mew=0.6, ecolor=col, elinewidth=0.8,
                     capsize=0, color=col, label=lab, zorder=3)
-    for name, lab in (("OP*", "OP*"), ("challenge_16_16", "(16,16) post-hoc")):
+    for name, lab in (("OP*", "OP*"),):
         d, K, e = MARKED[name]
         r = [r for r in R if (r["d_min"], r["K"]) == (d, K)][0]
         x, y = r["p_main"] * 100, r["q_known"]["events_saved_per_camera"]["median"]

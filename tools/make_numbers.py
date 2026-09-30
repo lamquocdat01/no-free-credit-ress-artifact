@@ -174,6 +174,7 @@ def build():
     ce = J("c2_empirical.json")["results"]["eps5_d32_K1"]["pools"]
     tw = ce["S1_twin_main"]
     add("CtwoTwinPass", pct(tw["P_sim_pass"], 1), "twin pass probability (MC 1e5)")
+    add("CtwoTwinPassShort", pct(tw["P_sim_pass"], 0), "twin pass probability, rounded: share of the exact credit realised on average")
     for dp, tag in (("0.075", "A"), ("0.1", "B"), ("0.15", "C"), ("0.2", "D")):
         add(f"CtwoFC{tag}", pct(tw["by_delta_prime"][dp]["false_cert_at_p_eq_eps"], 1), f"false cert at p=eps, delta'={dp}")
     add("CtwoBMCPass", pct(ce["S0_BMC_Gstar"]["P_sim_pass"], 0), "BMC-synth pass probability")
@@ -194,11 +195,11 @@ def build():
     add("ClampPairs", geo["paired_within_event"]["n_event_variants"], "event x variant pairs")
     c5 = J("c5a_monotone.json")["tables"]["d_min32"]["K16"]["q_by_x"]
     add("CfiveQzero", pct(c5["0.0"], 2), "q at x=0"); add("CfiveQfifty", pct(c5["0.5"], 2), "q at x=50%")
-    conf = J("twin_discordance_c0_main_main76.json")["confidence"]
+    conf = J("twin_discordance_c0_main_main48.json")["confidence"]
     add("ConfTwin", f(conf["twin_score_median_pooled"]), "median detector confidence on twin hits")
     add("ConfReal", f(conf["real_score_median_pooled"]), "median detector confidence on real hits")
     # sensitivity: original event definition and OP-A / OP-C
-    orig = J("twin_discordance_c0_main_main76.json")["by_definition"]["orig"]["operating_point"]
+    orig = J("twin_discordance_c0_main_main48.json")["by_definition"]["orig"]["operating_point"]
     add("OrigN", orig["N"], "original definition events at OP*"); add("OrigJ", orig["J_possible"], "original definition J")
     for name, key in (("OPA", "OP-A"), ("OPC", "OP-C")):
         c = cf["by_op"][key]["main"]
@@ -243,9 +244,10 @@ def extra(M_add):
     M_add("AcceptInflation", f"{100 * uh * (1 / pacc - 1):.1f}", f"U_delta/2(J,{m}) (1/P(accept) - 1), percentage points")
     for j, w in ((0, "zero"), (1, "one"), (2, "two"), (3, "three")):
         M_add(f"UhalfJ{w}", pct(ucp(j, m, 0.025), 1), f"U_CP({j},{m}) at delta/2 (decision level)")
-    budget = 0.05 - ucp(0, m, 0.025)
-    M_add("FiveBudget", pct(budget, 1), f"eps=5%: room left for q_U after U_delta/2(0,{m})")
-    M_add("FiveRuns", math.ceil(math.log(0.025) / math.log(1 - budget)), "eps=5%: miss-free twin runs needed for q_U <= budget")
+    mq = next(k for k in range(1, 10_000) if ucp(0, k) <= 0.025)      # domain rule U_pop <= eps/2 at eps = 5%
+    M_add("PopScenesQuarter", mq, "eps=5%: smallest m with U_CP(0,m) <= eps/2 = 2.5% (J=0, delta=5%)")
+    M_add("MCScenes", J("corpus17_manifest.json")["counts"]["calibration_scenes"]["excluded_MC"],
+          "calibration_scenes.excluded_MC (LASIESTA moving camera)")
     c0 = J("e0_confusion.json")["by_op"]["OP*"]["main"]
     M_add("CalibPerCam", f(c0["N_events"] / c0["m_scenes"], 1), "annotated calibration events at OP* per static camera (N/m)")
     M_add("DirectPooledU", pct(ucp(c0["real_miss_events_any_phase"], c0["N_events"]), 1),

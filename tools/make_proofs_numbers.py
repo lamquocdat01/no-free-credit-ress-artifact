@@ -52,7 +52,9 @@ def main():
     m["CfourbFailMax"] = f"{va['pop_theorem_check']['c4b_max_fail']:.4f}"
     m["PopScenesTen"] = str(c4["scenes_needed_c4a_pop"]["U<=0.1"])
     m["PopScenesFive"] = str(c4["scenes_needed_c4a_pop"]["U<=0.05"])
-    ch = va["points"]["challenge_16_16"]["loso"]
+    ch = va["points"]["OP*"]["loso"]
+    m["PopM"] = str(va["pop_theorem_check"]["m"])
+    m["CtwoTwinN"] = str(ce["eps5_d32_K1"]["pools"]["S1_twin_main"]["N_sim"])
     m["LosoViolNum"], m["LosoViolDen"] = str(ch["violation_rate_D"]["num"]), str(ch["violation_rate_D"]["den"])
     m["CfiveAll"] = "yes" if c5["all_monotone"] else "no"
     t = c5["tables"]["d_min32"]["K16"]["q_by_x"]
