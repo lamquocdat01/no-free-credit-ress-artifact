@@ -1,0 +1,7 @@
+{
+ "tag": "ress-v1.1",
+ "commit": "22da0795de098af5e1bc229918e1a6d3b105997e",
+ "repository": "https://github.com/lamquocdat01/no-free-credit-ress-artifact",
+ "note": "commit A'' (data + code after the post-F1 domain correction: CDnet cameraJitter split off the static domain) tagged before the manuscript commit; cited in the Data availability statement",
+ "previous": {"tag": "ress-v1.0", "commit": "b60195a56383c9d3adf5aa00d4bb847421eb41c8"}
+}

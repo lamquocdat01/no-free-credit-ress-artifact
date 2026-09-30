@@ -1,0 +1,103 @@
+\documentclass[preprint,12pt]{elsarticle}
+% RESS (Reliability Engineering & System Safety) review version. All numbers come from numbers.tex and
+% ../proofs_numbers.tex (generated from results/*.json); tables from tools/make_main_tables.py; bibliography refs_ress.bib
+% (tools/make_bib.py, DOIs checked on Crossref). Build: bash build.sh main_ress
+\usepackage{lineno}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\input{numbers.tex}
+\providecommand{\nRepoHashShort}{(hash set at tagging)}
+\newcommand{\repohash}{\nRepoHashShort}
+\input{../proofs_numbers.tex}
+\hypersetup{pdftitle={No Free Credit: How Much Simulated Evidence Can Replace Real Events in Zero-Failure Reliability
+Demonstration of Perception Systems}, pdfauthor={Lam Quoc Dat},
+pdfkeywords={reliability demonstration, zero-failure testing, synthetic data, digital twin, success-run, perception system,
+transfer bound}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\UCP}{U}
+\newcommand{\Bin}{\mathrm{Bin}}
+\newcommand{\Bern}{\mathrm{Bern}}
+\newcommand{\OPs}{$\mathrm{OP}^\ast$}
+\newcommand{\paperstart}[2]{#1#2}
+\emergencystretch=2em
+
+\journal{Reliability Engineering \& System Safety}
+
+\begin{document}
+\begin{frontmatter}
+\title{No Free Credit: How Much Simulated Evidence Can Replace Real Events in Zero-Failure Reliability Demonstration of
+Perception Systems}
+\author{Lam Quoc Dat\fnref{orcid}}
+\ead{lamquocdat@gmail.com}
+\fntext[orcid]{ORCID: \href{https://orcid.org/0009-0004-5432-9343}{0009-0004-5432-9343}}
+\affiliation{organization={School of Business and Technology (FSB), FPT University},
+  city={Ho Chi Minh City}, country={Vietnam}}
+
+\begin{abstract}
+\input{abstract_ress.tex}
+\end{abstract}
+
+\begin{keyword}
+reliability demonstration \sep zero-failure testing \sep synthetic data \sep digital twin \sep success-run \sep
+perception system \sep transfer bound
+\end{keyword}
+\end{frontmatter}
+
+\linenumbers
+
+\input{ress_sec12.tex}
+\input{ress_sec34.tex}
+\input{ress_sec58.tex}
+
+\section*{CRediT authorship contribution statement}
+\textbf{Lam Quoc Dat:} Conceptualization, Methodology, Software, Validation, Formal analysis, Investigation, Data
+curation, Writing -- original draft, Writing -- review \& editing, Visualization.
+
+\section*{Declaration of competing interest}
+The author declares no competing interests. This research received no specific grant from any funding agency in the
+public, commercial, or not-for-profit sectors.
+
+\section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
+During the preparation of this work the author used an AI assistant (Claude, Anthropic) to write analysis and plotting
+scripts, to check the numbers of the manuscript against the result files, and to draft and edit text. After using this
+tool, the author reviewed and edited the content as needed and takes full responsibility for the content of the
+publication.
+
+\section*{Data availability}
+Code, event manifests, result tables and the CC0 person-sprite set are publicly available at
+\url{https://github.com/lamquocdat01/no-free-credit-ress-artifact} (tag \nRepoTag, commit \repohash). Raw video frames
+(CDnet 2014, LASIESTA, BMC) and Virtual KITTI~2 sprites are not redistributed under their licences; the repository
+provides download instructions and SHA-256 checksums to regenerate every derived file.
+
+\appendix
+\section{Formal statements and proofs}\label{app:proofs}
+\renewcommand{\thetheorem}{A.\arabic{theorem}}
+This appendix states the results of Section~\ref{sec:results-theory} formally and proves them. Theorem~\ref{thm:c1} is
+Result~1, Theorem~\ref{thm:c2} is Result~2, Lemma~\ref{lem:c3} and Proposition~\ref{prop:c5a} are Result~3, and
+Proposition~\ref{prop:pop}, Theorem~\ref{thm:fleet} and Proposition~\ref{prop:c4b} are Result~4(a), (b) and (c).
+{\let\section\subsection
+\renewcommand{\paragraph}[1]{\par\medskip\noindent\textbf{#1}\ }% run-in heading; titles carry their own period
+\input{../proofs_body.tex}
+}
+
+\bibliographystyle{elsarticle-num}
+\bibliography{refs_ress}
+
+\end{document}

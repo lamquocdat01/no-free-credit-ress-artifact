@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\caption{Twin fidelity on the same frames (static domain): hit rates by object kind and sprite aspect error before the width clamp, and median detector confidence on hits. Negative differences make the twin pessimistic.}
+\label{tab:fidelity}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llrrrr@{}}
+\toprule
+kind & $|$aspect error$|$ & frames & twin hit & real hit & diff.\ (pts) \\
+\midrule
+person & $\le$10\% & 8,870 & 91.7\% & 94.8\% & -3.2 \\
+person & 10-20\% & 5,899 & 90.1\% & 94.2\% & -4.2 \\
+person & 20-40\% & 4,404 & 74.0\% & 86.2\% & -12.2 \\
+person & $>$40\% & 5,449 & 34.4\% & 44.5\% & -10.0 \\
+vehicle & $\le$10\% & 4,105 & 86.9\% & 89.0\% & -2.1 \\
+vehicle & 10-20\% & 2,569 & 88.0\% & 90.2\% & -2.2 \\
+vehicle & 20-40\% & 3,087 & 87.6\% & 85.1\% & +2.5 \\
+vehicle & $>$40\% & 3,881 & 64.9\% & 74.2\% & -9.3 \\
+\midrule
+person & confidence & & 0.86 & 0.92 & \\
+vehicle & confidence & & 0.72 & 0.78 & \\
+\bottomrule
+\end{tabular}
+\end{table}
