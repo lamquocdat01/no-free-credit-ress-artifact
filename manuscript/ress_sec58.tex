@@ -14,7 +14,7 @@ tiers before any twin result: a \emph{static} (main) domain of \nMainScenes{} sc
 the tier is reported but not certified), a camera-jitter tier (\nJitterScenes{} scenes of the CDnet category
 \emph{cameraJitter}), and \nPTZScenes{} pan-tilt-zoom scenes that are excluded because the twin assumes a static
 background. The camera-jitter tier is a correction made after the worst-phase and site-level checks of
-Section~\ref{sec:checks}: in the first version of this study these scenes belonged to the static domain, and the
+Section~\ref{sec:checks}: in an earlier version of this study these scenes belonged to the static domain, and the
 checks placed its only fixed-phase false acceptance there. The split uses only the category label that CDnet already
 provides (a shaking camera breaks the static-background assumption, as pan-tilt-zoom does); no twin or detector was
 re-run, and every static-domain number below is recomputed without these scenes.
@@ -233,7 +233,7 @@ the diagonal exceed the bound; the proposition bounds the population mean, not e
 
 \subsection{Illustrative example at a post-hoc operating point}
 To see the certificate under actual real misses, we moved, after inspecting the data, to $(d_{\min},K)=(16,16)$, the
-nearest operating point with at least 20 missed real events in the first version of the static domain. This choice is
+nearest operating point with at least 20 missed real events in the earlier, wider static domain. This choice is
 post hoc and is reported as an illustration only. Without the camera-jitter scenes, \nChRealMissEv{} of \nChN{} events
 have a real miss at some phase and the twin also misses \nChTwinAlso{} of them (counting events); weighting by phases,
 the twin reproduces \nChRecall{} of the expected real misses; $J=\nChJ$, $\UCP(J,m)=\nChUpop$, the number of scenes
@@ -251,7 +251,7 @@ the static-domain real and twin miss rates become \nWPSpMain{} and \nWPSqMain{} 
 \nPASqMain), while the discordance counts and both bounds are unchanged (Table~\ref{tab:tiers}). The direct plan then
 needs \nWXSnd{} events, and a twin run to convergence accepts \nWXSacc{} of \nMainScenes{} cameras, saving \nWXSsaved{}
 events each (Table~\ref{tab:exchange}); the number of accepted static cameras with a worst-phase real miss rate above
-$\varepsilon$ is \nWXSfa{} (\nWXCfa{} at $(16,16)$). In the first version of this study the camera-jitter scene
+$\varepsilon$ is \nWXSfa{} (\nWXCfa{} at $(16,16)$). In the earlier version of this study the camera-jitter scene
 \emph{traffic} was in the static domain and was such a false acceptance; it is now reported as a failure mode
 (Section~\ref{sec:audit}).
 
