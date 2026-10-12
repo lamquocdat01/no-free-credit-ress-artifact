@@ -99,8 +99,10 @@ def main():
             t = rd(f)
             return t.split(r"\begin{document}")[1] if r"\begin{document}" in t else ""
         RESS = [MS / "abstract_ress.tex", MS / "highlights.tex"] + sorted(MS.glob("ress_sec*.tex"))
+        SIMPAT = [MS / "abstract_simpat.tex", MS / "highlights_simpat.tex"] + sorted(MS.glob("simpat_sec*.tex"))  # P5
         files = ([MS / "main.tex", MS / "body.tex", MS / "abstract.tex", MS / "supplement.tex", MS / "supplement_ress.tex",
-                  MS / "main_ress.tex"] + RESS + sorted(MS.glob("tab_*.tex")))
+                  MS / "main_ress.tex", MS / "main_simpat.tex", MS / "supplement_simpat.tex"] + RESS + SIMPAT
+                 + sorted(MS.glob("tab_*.tex")))
         used = set()
         for f in files:
             used |= set(re.findall(r"\\n([A-Za-z]+)", rd(f)))
@@ -112,7 +114,8 @@ def main():
         if undefined:
             fails.append(f"undefined macros used: {undefined}")
         body = (after_doc(MS / "main.tex") + rd(MS / "body.tex") + rd(MS / "abstract.tex")
-                + "".join(rd(f) for f in RESS) + after_doc(MS / "main_ress.tex") + rd(MS / "tab_gap.tex"))
+                + "".join(rd(f) for f in RESS) + after_doc(MS / "main_ress.tex") + rd(MS / "tab_gap.tex")
+                + "".join(rd(f) for f in SIMPAT) + after_doc(MS / "main_simpat.tex") + rd(MS / "tab_gap_simpat.tex"))
         body = re.sub(r"%.*", "", body)
         body = re.sub(r"Software:.*?Core i7-1185G7\.", " ", body, flags=re.S)  # version strings, not numbers
         body = re.sub(r"\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}", " ", body, flags=re.S)  # layout
@@ -124,7 +127,7 @@ def main():
         typed = re.findall(r"(?<![A-Za-z\\])\d+(?:\.\d+)?", body)
         ALLOW = {"0", "1", "2", "3", "4", "5", "6", "7.5", "8", "10", "12", "15", "16", "20", "24", "25", "32", "44", "48",
                  "50", "59", "60", "80", "95", "100", "150", "256", "640", "0.25", "0.3", "2014", "2026", "0009", "0004",
-                 "5432", "9343", "22", "3.0", "42", "000", "2025"}  # 3.0: licence version; 42: seed; 000: 10{,}000
+                 "5432", "9343", "22", "3.0", "42", "000", "2025", "40"}  # 3.0: licence version; 42: seed; 000: 10{,}000; 40: ASME V&V 40
         bad = sorted({t for t in typed if t not in ALLOW})
         if bad:
             fails.append(f"digits typed in the manuscript outside the allow-list: {bad}")

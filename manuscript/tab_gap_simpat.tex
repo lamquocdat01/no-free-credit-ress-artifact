@@ -1,0 +1,25 @@
+% Table 1 (SIMPAT): research gap, five rows. Row (e) numbers via numbers.tex (same macros as tab_gap.tex).
+\begin{table*}[t]
+\centering
+\caption{Research gap. Credibility: how the worth of simulation evidence is expressed. ZF: is the zero-failure acceptance
+test treated? Field events: is the number of field observations that simulation replaces quantified? Transfer: does the
+guarantee reach an untested unit? Link: assumption needed between simulation and reality. Evidence: empirical basis.}
+\label{tab:gap}
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}L{0.17\textwidth}L{0.13\textwidth}L{0.04\textwidth}L{0.15\textwidth}L{0.15\textwidth}L{0.15\textwidth}L{0.13\textwidth}@{}}
+\toprule
+Body of work & Credibility expressed as & ZF & Field events replaced & Transfer & Sim--real link & Evidence \\
+\midrule
+(a) Simulation validation and credibility~\cite{sargent2013vv,oberkampf2010vv,asme2018vv40,kennedy2001calibration,roy2011vvuq,pathmanathan2017applicability,shi2025dtcredibility}
+ & level, score or predictive uncertainty & no & not quantified & applicability to a new context of use argued, not bounded & validation against field data; discrepancy model & case studies \\
+(b) Simulation-assisted testing of automated and perception systems~\cite{wang2025dtplatform,li2025flamedt,riedmaier2021vvuq,reway2020simgap,luo2025sim2val,angelopoulos2023ppi}
+ & gap measured; variance reduction for means & no & fewer real samples for a mean metric & not addressed (extrapolation named as open) & paired outputs (control variate, rectifier) or none & benchmarks, case studies \\
+(c) Zero-failure test planning~\cite{hanley1983,baze1979,wilson2021assurance,ding2024truncated,wang2024monoprop,zhao2018perfection}
+ & prior or auxiliary information & yes & through a prior; not as field events saved & to the tested unit; prior-system evidence handled conservatively & prior or similarity assumption (Bayesian); none (frequentist) & case studies \\
+(d) Finite-sample guarantees and assurance for learned perception~\cite{angelopoulos2025ltt,degrancey2022conformaldet,mei2025pwc,yuan2026conformal,paterson2025amlas}
+ & not addressed (real calibration data) & no & none & exchangeability of calibration and deployment & exchangeability & detection data sets \\
+(e) This paper & field events saved per unit & yes & exact: none without a link; $n_0(\delta)-n_0(\delta')$ when relaxing; \nSavedOP{} events per camera at most & yes at scene level (withdrawn at site level), priced by scene count ($\UCP(J,m)=\nMainUpop$, $J=\nMainJ$, $m=\nMainScenes$); scenes exchangeable (i.i.d.), as in (d) at scene level & paired twin + measured discordance $D$ & \nMainScenes{} fixed-camera scenes, \nMainN{} events; failure mode measured \\
+\bottomrule
+\end{tabular}
+\end{table*}

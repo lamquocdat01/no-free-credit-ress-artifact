@@ -172,6 +172,62 @@ def entry(key, doi, m):
     return f"@{bt}{{{key},\n{body}\n}}\n"
 
 
+SIMPAT_DOIS = {   # P5 (12-10-2026): simulation V&V / credibility and SIMPAT precedents; appended to refs_ress.bib
+    "sargent2013vv": "10.1057/jos.2012.20",
+    "oberkampf2010vv": "10.1017/CBO9780511760396",
+    "oberkampf2004vvcomp": "10.1115/1.1767847",
+    "roy2011vvuq": "10.1016/j.cma.2011.03.016",
+    "kennedy2001calibration": "10.1111/1467-9868.00294",
+    "pathmanathan2017applicability": "10.1115/1.4037671",
+    "aldieri2023vv40": "10.1016/j.cmpb.2023.107727",
+    "viceconti2021insilico": "10.1016/j.ymeth.2020.01.011",
+    "bitencourt2024dtvv": "10.1080/00207543.2024.2357741",
+    "shi2025dtcredibility": "10.1016/j.simpat.2025.103152",
+    "nosenko2026gammadt": "10.1016/j.simpat.2026.103360",
+    "li2025flamedt": "10.1016/j.simpat.2025.103143",
+    "wang2025dtplatform": "10.1016/j.simpat.2025.103206",
+    "zhang2025drivingsim": "10.1016/j.simpat.2024.103020",
+    "wang2026simaudit": "10.1016/j.simpat.2026.103342",
+    "wang2025maglevdt": "10.1016/j.simpat.2025.103134",
+}
+SIMPAT_MANUAL = r"""
+@misc{asme2018vv40,
+  author = {{ASME}},
+  title = {{V\&V 40-2018}: Assessing Credibility of Computational Modeling through Verification and Validation: Application to Medical Devices},
+  howpublished = {American Society of Mechanical Engineers, New York. ISBN 978-0-7918-7204-8},
+  year = {2018},
+  url = {https://www.asme.org/codes-standards/find-codes-standards/assessing-credibility-of-computational-modeling-through-verification-and-validation-application-to-medical-devices},
+  note = {Accessed 2026-10-12}
+}
+"""
+
+
+def simpat():
+    """refs_simpat.bib = refs_ress.bib (unchanged entries) + SIMPAT_DOIS fetched from Crossref + SIMPAT_MANUAL."""
+    import re as _re
+    out, log = [], []
+    for key, doi in SIMPAT_DOIS.items():
+        st, m = fetch(doi)
+        if not m.get("page") and m.get("article-number"):
+            m["page"] = m["article-number"]   # Elsevier article number printed as pages
+        e = entry(key, doi, m)
+        e = _re.sub(r"  note = \{doi: \\href\{https://doi.org/([^}]*)\}\{[^}]*\}\},?\n", lambda mm: "  doi = {" + mm.group(1) + "},\n", e)
+        e = _re.sub(r"(  doi = \{[^}]*\}),\n(  doi = \{[^}]*\},\n)", r"\1,\n", e)
+        out.append(e)
+        log.append(dict(key=key, doi=doi, http=st, container=(m.get("container-title") or [""])[0], title=m["title"][0],
+                        checked=str(date.today())))
+        print("OK ", key, "|", (m.get("container-title") or [""])[0][:40], "|", m["title"][0][:70])
+        time.sleep(0.5)
+    base = (ROOT / "manuscript" / "refs_ress.bib").read_text(encoding="utf-8")
+    for old in ("  note = {Bundled assets CC0; accessed 2026-09-27}\n", "  note = {Accessed 2026-09-25}\n"):
+        assert base.count(old) == 1, old
+        base = base.replace(old, old.rstrip("\n") + ",\n  year = {2026}\n")   # bibtex "empty year" (software, accessed 2026)
+    (ROOT / "manuscript" / "refs_simpat.bib").write_text(
+        base.replace("RESS variant", "SIMPAT variant (refs_ress.bib + P5 additions)", 1) + "\n" + "\n".join(out) + SIMPAT_MANUAL,
+        encoding="utf-8")
+    (ROOT / "manuscript" / "refs_check_simpat.json").write_text(json.dumps(log, indent=1, ensure_ascii=False), encoding="utf-8")
+
+
 def main():
     out, log = [], []
     for key, doi in DOIS.items():
@@ -196,4 +252,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    simpat() if "--simpat" in sys.argv else main()

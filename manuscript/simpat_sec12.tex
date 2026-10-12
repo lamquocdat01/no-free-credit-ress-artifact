@@ -1,0 +1,141 @@
+% SIMPAT Sections 1-2 (P5 S1, 12-10-2026): simulation-credibility framing. Results 1-4 and all numbers unchanged
+% from ress_sec12.tex (v1.2); only framing, related-work groups and references changed.
+\section{Introduction}\label{sec:intro}
+
+Simulation models are used more and more as evidence that a system may be accepted; regulators, for instance, have
+started to accept evidence obtained in silico~\cite{viceconti2021insilico}. When such evidence is credible has its own
+literature. Validation compares a model with real data for its intended use~\cite{sargent2013vv,oberkampf2010vv,oberkampf2004vvcomp};
+the ASME V\&V~40 standard assesses the credibility a model needs through a risk-based framework~\cite{asme2018vv40,aldieri2023vv40};
+verification, validation and uncertainty quantification frameworks and Bayesian calibration attach uncertainty to model
+predictions~\cite{roy2011vvuq,kennedy2001calibration}; and the credibility of digital twins has been evaluated with
+evidence theory~\cite{shi2025dtcredibility}. These frameworks express credibility qualitatively, as levels or scores,
+or through uncertainty analysis. None of them states how many field observations a credible model may replace in a
+given acceptance test.
+
+A perception system on a fixed camera is a favourable case for this question: the context of use is the acceptance of a new
+fixed-camera installation within a declared domain of static scenes, and a composite model can keep the real background, illumination and detector while synthesising only
+the passing object, so operational validation of the composite model, for this decision, reduces to comparing the system's output on
+paired real and synthetic events. We
+study the question for one common test. A zero-failure (success-run) test accepts a unit when it passes a planned
+number of demands (independent trials; here, object passages) without failure~\cite{hanley1983,meeker2017}. If each demand fails independently with probability $p$,
+a unit with $p>\varepsilon$ passes $n$ demands with probability at most $(1-\varepsilon)^n$, so passing
+$n_0(\varepsilon,\delta)=\lceil\ln\delta/\ln(1-\varepsilon)\rceil$ demands without failure demonstrates $p\le\varepsilon$
+at confidence $1-\delta$: \nNzero{} demands at $\varepsilon=\delta=5\%$. In reliability engineering this test is called
+a reliability demonstration test; we call it a \emph{zero-failure acceptance test}. Its sample-size burden motivates
+test plans that borrow auxiliary information~\cite{ding2024truncated,wang2024monoprop}.
+
+The unit under test is a learned perception component: a fixed object detector on a fixed camera that samples frames
+periodically. A demand is the passage of an object (an \emph{event}); a failure is an event on which no sampled frame
+yields a detection. Demands are rare and every new installation is a new unit, so \nNzero{} failure-free events must be
+collected per camera; for road vehicles the field exposure needed to show rare-failure reliability is
+prohibitive~\cite{kalra2016}. Simulation is the obvious remedy: digital twins already serve as platforms for testing
+path-planning algorithms~\cite{wang2025dtplatform}, as virtual scenes for camera detectors~\cite{li2025flamedt}, and as
+generators of synthetic sensor data with a validation step~\cite{nosenko2026gammadt}; virtual scenario
+testing is a leading proposed alternative to mileage-based testing of automated vehicles~\cite{riedmaier2020}. For
+perception, however, the simulation-to-reality gap is measurable and depends on conditions~\cite{reway2020simgap,dieter2023drone},
+and performance in simulation need not predict performance in the field~\cite{kadian2020}. The credibility question
+is therefore quantitative: \emph{how many of the $n_0$ field events can simulation evidence replace, and what form of
+guarantee survives when the evidence is transferred to an untested unit?}
+
+This paper answers the question for the zero-failure acceptance test of a perception component. We use the
+\emph{composite simulation model}, or \emph{synthetic twin}, of an event: the real background of the event with the
+object replaced by a rendered one drawn on the ground-truth trajectory (Section~\ref{sec:protocol}).
+\begin{enumerate}
+\item \emph{No free credit.} Without an assumption that links the simulator to reality, no valid procedure can use
+independent simulated data to shorten a zero-failure test, for any simulator and any amount of simulation.
+This makes precise, for success-run tests, a principle known from clinical
+borrowing~\cite{koppschneider2020}, and relates to the limits on combining evidence in software
+dependability~\cite{littlewood1993}.
+\item \emph{The exact price of relaxing confidence.} Accepting error probability $\delta'>\delta$ when the simulator is
+wrong buys at most, and exactly, $n_0(\varepsilon,\delta)-n_0(\varepsilon,\delta')$ demands: \ncExactA, \ncExactB,
+\ncExactC{} and \ncExactD{} of the \nNzero{} for $\delta'=7.5$, 10, 15 and 20\%.
+\item \emph{A paired-twin bound and a fleet-level transfer bound.} A synthetic twin of each real event bounds the real
+failure probability by the twin failure probability plus a discordance rate, with no assumption; on one camera this
+costs more real events than the plain test (\nCthreeA--\nCthreeC). Calibrated once across scenes, the discordance
+transfers to an untested camera as a population-average bound whose price is the number of calibration scenes, not the
+number of events.
+\item \emph{An exchange rate on public benchmarks, and a named failure mode.} On \nMainScenes{} fixed-camera scenes the twin
+as built saves no real event for the median camera (\nTcamfinOPS{} of \nMainScenes{} cameras save any); a twin run to convergence would save at most \nSavedOP{} real events per camera, if the discordance calibrated with
+paired twins also held for the twins of new cameras (not verified), at the
+operating point fixed in advance, where real failures are rare (\nPmainOP) and the certificate is therefore untested.
+The transfer certificate stands at scene level but is withdrawn when the unit is the site (\nSiteSm{} sites).
+When out-of-domain cameras are judged alone, they pass through: \nNightFC{} of \nNightScenes{} night cameras and, at a
+fixed sampling phase, \nOODSJitfa{} of \nJitterScenes{} camera-jitter cameras (a scene with real shake) are falsely accepted; we call this
+\emph{out-of-domain pass-through}, with two named modes, night and camera jitter.
+\end{enumerate}
+
+\emph{Simulation credibility is today scored qualitatively or by uncertainty analysis; to our knowledge, no result states how much field
+evidence a credible twin may replace in a zero-failure acceptance test, nor how that credit transfers to an untested
+unit. This paper gives a finite-sample answer (none without an assumption; an exact price for relaxing confidence; a
+fleet-level bound whose price is scene count) and measures it on \nMainScenes{} fixed-camera scenes.}
+
+% =====================================================================================================
+\section{Related work and research gap}\label{sec:related}
+
+Table~\ref{tab:gap} positions the paper against four bodies of work.
+
+\input{tab_gap_simpat.tex}
+
+\emph{(a) Simulation validation and credibility.} Verification and validation of simulation models is an established
+discipline that separates conceptual model validity, verification, operational validity and data
+validity~\cite{sargent2013vv,oberkampf2010vv}. In validation the relation between computation and experimental data is
+the issue, and predictive capability goes beyond it~\cite{oberkampf2004vvcomp,roy2011vvuq}; Bayesian calibration
+learns the unknown parameters of a computer model from physical observations of the system~\cite{kennedy2001calibration}.
+ASME V\&V~40 provides a risk-based framework for assessing the credibility of a computational model through predefined
+credibility activities~\cite{asme2018vv40,aldieri2023vv40}, and a recurring difficulty is that validation cannot be
+performed in a setting that closely resembles how the model will be used~\cite{pathmanathan2017applicability}. Regulatory
+use of in silico evidence has made such credibility assessment a practical matter~\cite{viceconti2021insilico}. For digital
+twins, credibility has been evaluated with evidence theory~\cite{shi2025dtcredibility}; twins are verified against
+physical experiments~\cite{wang2025maglevdt,ye2023structuraldt}, driving-simulator validation studies tie the credibility
+of results to scenario fidelity~\cite{zhang2025drivingsim}, and a review of manufacturing twins found little work that
+performed both verification and validation~\cite{bitencourt2024dtvv}.
+\emph{What is missing:} credibility is expressed as a level, a score or a predictive uncertainty; none of these is
+converted into the number of field observations a credible model may replace in a given acceptance test, and none
+bounds how that replacement carries over to a unit whose own validation data are absent.
+
+\emph{(b) Simulation-assisted testing of automated and perception systems.} Digital twins serve as platforms for
+testing and optimising path-planning algorithms~\cite{wang2025dtplatform}, as virtual tunnels for a camera flame
+detector~\cite{li2025flamedt} and as generators of synthetic spectra with a validation step~\cite{nosenko2026gammadt};
+a multifidelity simulation audit screens the dynamic executability of continuum-robot motions and reports
+accepted cases out of randomized trials~\cite{wang2026simaudit}; virtual scenario
+testing has been proposed in place of mileage-based testing of automated vehicles~\cite{riedmaier2020}, and model
+validation for automated driving names extrapolation to untested conditions as a major challenge~\cite{riedmaier2021vvuq}.
+The simulation-to-reality gap of camera object detectors has been measured across day, night, fog and
+rain~\cite{reway2020simgap} and for drone detection~\cite{dieter2023drone}; synthetic images used to test driving
+perception have a distribution mismatch that can bias test results~\cite{amini2024translators}, perception digital twins
+reproduce field data only approximately~\cite{saad2025dtperception}, statistical model checking evaluates perception in
+simulation only~\cite{barbier2019smc}, simulation performance can fail to predict field performance~\cite{kadian2020},
+and a statistical foundation for aligning synthetic and real testing outcomes has been called
+for~\cite{zhao2025statfoundation}. Closest to our question, Sim2Val uses simulator outputs as control variates to reduce
+the number of real samples needed for a confidence bound on mean performance (CoRL 2025, arXiv
+preprint)~\cite{luo2025sim2val}, SCAPE combines limited real rollouts with simulation proxies for policy evaluation
+(preprint)~\cite{zhu2026scape}, multi-fidelity fusion weights simulation by its fidelity gap in reliability
+prediction~\cite{wang2026fusion}, and prediction-powered inference combines many proxy outcomes with few real labels
+through a paired rectifier~\cite{angelopoulos2023ppi,fisch2024stratppi}. \emph{What is missing:} these methods estimate
+a mean performance or reduce its variance; none treats the zero-failure regime, where the quantity to bound is a rare
+failure probability and the rectifier itself would cost almost $n_0$ real events per unit.
+
+\emph{(c) Zero-failure test planning.} The zero-numerator bound and the rule of three are
+classical~\cite{hanley1983,meeker2017}, and the Bayesian zero-failure (BAZE) test sets the required test time through a
+prior on the failure rate~\cite{baze1979}. Later work designs sample sizes by assurance~\cite{wilson2021assurance},
+studies the limits of Bayesian zero-failure plans~\cite{yoon2025bayesian} and plans success--failure verification and
+qualification tests with subsystem, Monte-Carlo or expert information~\cite{ding2024truncated,wang2024monoprop,tan2025weibull}.
+For software and autonomous systems, conservative Bayesian inference uses prior knowledge, including evidence from
+previous similar systems, without optimistic bias~\cite{zhao2018perfection,zhao2019cbi,zhao2020operational}, and reusing
+the reliability of an older system as a prior is optimistic rather than conservative~\cite{littlewood2020replacement}.
+Bayesian borrowing quantifies the worth of a prior through its effective sample size~\cite{morita2008ess} and discounts
+historical data through power or commensurate priors~\cite{ibrahim2000power,hobbs2011commensurate}; conservative
+frequentist bounds exist when the test profile differs from the operational profile~\cite{bishop2017profiles}.
+\emph{What is missing:} a frequentist statement of how much the zero-failure sample size can be reduced by simulation
+rather than prior-system evidence, and at what price.
+
+\emph{(d) Finite-sample guarantees and assurance for learned perception.} Conformal prediction gives distribution-free
+finite-sample guarantees~\cite{angelopoulos2023gentle}, calibrated risk control extends them to general
+losses~\cite{angelopoulos2025ltt}, and they have been applied to object detection~\cite{degrancey2022conformaldet},
+keypoint-based pose estimation~\cite{yang2023purse}, perception for safe navigation~\cite{mei2025pwc} and anomaly detection
+in cyber-physical systems~\cite{yuan2026conformal}. Reliability of machine-learning components is also modelled directly,
+through multi-version architectures~\cite{wen2025nversion}, safety-assurance cases for object
+detectors~\cite{paterson2025amlas} and failure-free-operation definitions under an operational
+profile~\cite{aghazadeh2026hipllm}. \emph{What is missing:} these guarantees are calibrated on real data from the
+deployment distribution; they do not say how much of that calibration data may be synthetic, nor how a guarantee
+transfers to a unit whose own data are absent.

@@ -206,7 +206,7 @@ def main():
                    f"{a['m']} scenes; {b['m']} scenes (CDnet camera-jitter scenes moved to the jitter tier); {c['m']} scenes "
                    "(LASIESTA simulated-motion scenes moved to the jitter tier and LASIESTA moving-camera scenes excluded; "
                    "this version). Each column is recomputed by the released code from the same twin run and, for the two "
-                   "earlier versions, equals the published numbers; the last column gives the scenes that carry the "
+                   "earlier versions, equals the numbers of those internal, unpublished drafts (tags ress-v1.0, ress-v1.1); the last column gives the scenes that carry the "
                    "earlier disagreements.", "lllll",
                    ["quantity", f"{a['m']} scenes", f"{b['m']} scenes", f"{c['m']} scenes", "located in"], rows))
     (ROOT / "manuscript" / "supp_tables.tex").write_text("\n".join(out), encoding="utf-8")

@@ -1,7 +1,11 @@
-# No Free Credit — research artifact (RESS submission)
+# No Free Credit — research artifact
 
-Artifact for the manuscript *"No Free Credit: How Much Simulated Evidence Can Replace Real Events in Zero-Failure
-Reliability Demonstration of Perception Systems"* (Lam Quoc Dat, submitted to Reliability Engineering & System Safety).
+**Manuscript version: SIMPAT** (12-10-2026). Artifact for the manuscript *"No Free Credit: How Much Simulation Evidence
+Can Replace Field Events in Zero-Failure Acceptance Testing of a Perception System"* (Lam Quoc Dat), prepared for
+Simulation Modelling Practice and Theory: `manuscript/main_simpat.tex`, `manuscript/supplement_simpat.tex`. The
+repository name and the data tag `ress-v1.2` predate the choice of journal; the data, code and every number are those of
+tag `ress-v1.2` (commit 890465bd9267). The earlier, unsubmitted RESS-formatted version (`main_ress.tex`) is kept for
+reference and prints the same numbers.
 
 The artifact reproduces every number, table and figure of the manuscript from the result tables in `data/results/`.
 The detector is **frozen — no training is performed anywhere in this study**; all results come from a fixed pre-trained
@@ -12,7 +16,7 @@ detector applied to public video benchmarks and to synthetic twins of their even
 | Path | Content | Licence |
 |---|---|---|
 | `code/` | analysis pipeline: corpus rebuild, per-frame hit tables, twin construction, discordance, certificates, audits (`e0_checks.py`, `m3_validity_audit.py`, `m4_exchange_rate.py`, `c2_c5a_empirical.py`, `w0_*.py`, `w2_event_definition.py`, …) | MIT (`LICENSE-CODE`) |
-| `tools/` | number/table/figure generators and checkers: `make_numbers.py`, `check_numbers.py`, `make_main_tables.py`, `make_supp_tables.py`, `make_figs.py`, `make_proofs_numbers.py`, `check_front_ress.py` | MIT |
+| `tools/` | number/table/figure generators and checkers: `make_numbers.py`, `check_numbers.py`, `make_main_tables.py`, `make_supp_tables.py`, `make_figs.py`, `make_proofs_numbers.py`, `check_front_ress.py`, `check_front_simpat.py` | MIT |
 | `data/results/` | result tables used by the manuscript (JSON, CSV, Parquet): event manifests, per-frame hit tables, twin outcomes, certificates, audits | CC BY 4.0 (`LICENSE-DATA`) |
 | `data/numbers.tex`, `data/proofs_numbers.tex` | every number printed in the manuscript, one macro each, generated from `data/results/` | CC BY 4.0 |
 | `data/sprites/person/` | synthetic person sprites generated with MPFB 2 from its CC0 assets | CC0 (as generated) |
