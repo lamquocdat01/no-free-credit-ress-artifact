@@ -1,7 +1,7 @@
 # No Free Credit — research artifact
 
 **Manuscript version: SIMPAT** (12-10-2026). Artifact for the manuscript *"No Free Credit: How Much Simulation Evidence
-Can Replace Field Events in Zero-Failure Acceptance Testing of a Perception System"* (Lam Quoc Dat), prepared for
+Can Replace Field Events in Zero-Failure Acceptance Testing of a Perception System"* (Dat Lam Quoc), prepared for
 Simulation Modelling Practice and Theory: `manuscript/main_simpat.tex`, `manuscript/supplement_simpat.tex`. The
 repository name and the data tag `ress-v1.2` predate the choice of journal; the data, code and every number are those of
 tag `ress-v1.2` (commit 890465bd9267). The earlier, unsubmitted RESS-formatted version (`main_ress.tex`) is kept for
